@@ -229,7 +229,7 @@ footer .wrap{padding-block:18px 26px}
   <div class="wrap">
     <div class="eyebrow"><a href="../../../">Inicio</a> &middot; <a href="../../">3.&ordm; ESO</a> &middot; <a href="../">TyD</a> &middot; Tema 5</div>
     <h1>Pensamiento computacional, programaci&oacute;n y rob&oacute;tica</h1>
-    <nav class="sesiones" id="nav" aria-label="Sesiones del tema"><button type="button" data-ses="1" aria-selected="true">S1 &middot; S1 &middot; Sistemas de control</button></nav>
+    <nav class="sesiones" id="nav" aria-label="Sesiones del tema"><button type="button" data-ses="1" aria-selected="true">S1 &middot; S1 &middot; Sistemas de control</button><button type="button" data-ses="2">S2 &middot; S2 &middot; Repaso</button></nav>
   </div>
 </header>
 
@@ -423,11 +423,46 @@ footer .wrap{padding-block:18px 26px}
         <a href="https://www.juntadeandalucia.es/boja/2023/104/BOJA23-104-00281-9728-01_00284744.pdf"
         target="_blank" rel="noopener">Orden de 30 de mayo de 2023 (BOJA n&uacute;m. 104)</a>, anexo&nbsp;II.
       </div>
-      <div class="aviso">
-        <span class="n-tag">Pendiente</span>
-        Software de programaci&oacute;n para Arduino, c&oacute;mo conectarlo, pr&aacute;cticas de
-        ordenador, resumen y autoevaluaci&oacute;n.
-      </div>
+  
+    </section>
+
+  </div>
+
+  <div id="ses-2" hidden>
+    <div class="ses-head">
+      <div class="eyebrow">Sesi&oacute;n 2 &middot; 60 minutos</div>
+      <h2>Resumen y autoevaluaci&oacute;n</h2>
+      <p>Recapitulamos automatismos, robots, sistemas de control y sensores.</p>
+      <div class="minutado"><span class="min"><b>0-20</b> Resumen</span><span class="min"><b>20-50</b> Autoevaluaci&oacute;n</span></div>
+      <div class="chips"><span class="chip sab">C.1</span><span class="chip sab">C.2</span></div>
+    </div>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">04</span> Resumen de la unidad</div>
+
+      <ol>
+        <li><b>Automatismo</b> (tarea fija, sin adaptarse) frente a <b>robot</b> (capta, procesa y
+        act&uacute;a).</li>
+        <li><b>Microcontrolador y tarjeta controladora</b> (Arduino): interfaz entre el ordenador y
+        sensores/actuadores.</li>
+        <li><b>Lazo abierto</b> (no comprueba el resultado) frente a <b>lazo cerrado</b> (un sensor
+        corrige el error).</li>
+        <li><b>Sensores</b> (LDR, NTC, ultrasonidos, infrarrojos, PIR&hellip;) y <b>actuadores</b>
+        (LED, motores CC, servomotores).</li>
+      </ol>
+  
+    </section>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">05</span> Autoevaluaci&oacute;n</div>
+
+      <ol>
+              <li>Un ventilador que siempre gira igual, sin tener en cuenta la temperatura de la habitaci&oacute;n, &iquest;es de lazo abierto o cerrado?
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>De <b>lazo abierto</b>: no comprueba el resultado (la temperatura real) para corregirse.</p></div></details></li>
+        <li>&iquest;Qu&eacute; sensor usar&iacute;as para que un robot sepa si hay un obst&aacute;culo delante, sin tocarlo?
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>Un sensor de <b>ultrasonidos</b> (o de infrarrojos).</p></div></details></li>
+        <li>&iquest;Por qu&eacute; Arduino no puede mover directamente un motor de corriente continua normal?
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>Porque sus pines solo dan hasta <b>40&nbsp;mA</b>, insuficiente para un motor; hace falta un transistor, un rel&eacute; o un circuito integrado (L293/L298) para darle m&aacute;s corriente.</p></div></details></li>
+
+      </ol>
   
     </section>
 
