@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tema 5 &middot; Pensamiento computacional, automatizaci&oacute;n y rob&oacute;tica</title>
+<meta name="description" content="Tema 5 de Tecnolog&iacute;a de 4.&ordm; de ESO (Andaluc&iacute;a): sistemas de control programado, inteligencia artificial, internet de las cosas y los elementos de un robot, con las competencias, criterios y saberes b&aacute;sicos de la Orden de 30 de mayo de 2023.">
+<link rel="canonical" href="https://rgllorente82-png.github.io/danieltecnologia/4eso/Tecnologia/tema5/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"Tema 5 &middot; Pensamiento computacional, automatizaci&oacute;n y rob&oacute;tica","url":"https://rgllorente82-png.github.io/danieltecnologia/4eso/Tecnologia/tema5/","inLanguage":"es",
+ "isAccessibleForFree":true,
+ "educationalLevel":"Educaci&oacute;n Secundaria Obligatoria","learningResourceType":"Unidad did&aacute;ctica interactiva"}
+</script>
+<style>
+:root{
+  --paper:#f8f9fa;--surface:#fff;--surface-2:#f1f3f4;--ink:#202124;--ink-soft:#5f6368;
+  --line:#dadce0;--line-soft:#e8eaed;--accent:#1a73e8;--accent-soft:#e8f0fe;
+  --goo-azul:#4285f4;--goo-rojo:#ea4335;--goo-amarillo:#fbbc04;--goo-verde:#34a853;
+  --grid:rgba(66,133,244,.09);
+  --f-b:"Roboto",-apple-system,"Segoe UI",Arial,sans-serif;
+  --f-m:"Roboto Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#202124;--surface:#292a2d;--surface-2:#35363a;--ink:#e8eaed;--ink-soft:#9aa0a6;
+  --line:#5f6368;--line-soft:#3c4043;--accent:#8ab4f8;--accent-soft:#1f3347;
+  --goo-azul:#8ab4f8;--goo-rojo:#f28b82;--goo-amarillo:#fdd663;--goo-verde:#81c995;
+  --grid:rgba(138,180,248,.09)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 var(--f-b);letter-spacing:.01em}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+header.top{background:var(--surface);border-bottom:2px solid var(--ink);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:24px 24px;position:sticky;top:0;z-index:50}
+header.top .wrap{padding-block:16px 0}
+.eyebrow{font-family:var(--f-m);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.eyebrow a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
+.eyebrow a:hover{border-bottom-color:currentColor}
+h1{font-weight:700;font-size:clamp(22px,4.4vw,30px);margin:6px 0 12px;letter-spacing:-.015em}
+nav.sesiones{display:flex;gap:8px;overflow-x:auto;padding-bottom:12px}
+nav.sesiones button{flex:none;background:var(--surface);color:var(--ink-soft);border:1.5px solid var(--line);
+  border-radius:2px;padding:7px 14px;font:400 13px var(--f-m);cursor:pointer;white-space:nowrap}
+nav.sesiones button[aria-selected="true"]{background:var(--goo-azul);border-color:var(--goo-azul);color:#fff}
+nav.sesiones button[disabled]{opacity:.45;cursor:default}
+main{padding-block:26px 70px}
+.ses-head{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;padding:20px;margin-bottom:26px}
+.ses-head h2{font-size:22px;margin:6px 0 8px;letter-spacing:-.01em}
+.ses-head p{margin:0 0 14px;color:var(--ink-soft)}
+.minutado{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.min{font-family:var(--f-m);font-size:11.5px;border:1px solid var(--line);border-radius:2px;padding:4px 9px;color:var(--ink-soft)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-family:var(--f-m);font-size:11px;border:1px solid var(--goo-azul);color:var(--goo-azul);border-radius:2px;padding:3px 8px}
+.chip.sab{border-color:var(--line);color:var(--ink-soft)}
+.bloque{margin-bottom:34px}
+.rotulo{display:flex;align-items:center;gap:10px;font-family:var(--f-m);font-size:12px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-soft);margin-bottom:12px}
+.rotulo .num{background:var(--goo-azul);color:#fff;border-radius:2px;min-width:26px;height:24px;
+  display:inline-grid;place-items:center;font-weight:500}
+.rotulo::after{content:"";flex:1;height:2px;background:var(--goo-azul);opacity:.3}
+.bloque:nth-of-type(4n+2) .rotulo .num,.bloque:nth-of-type(4n+2) .rotulo::after{background:var(--goo-rojo)}
+.bloque:nth-of-type(4n+3) .rotulo .num,.bloque:nth-of-type(4n+3) .rotulo::after{background:var(--goo-verde)}
+.bloque:nth-of-type(4n+4) .rotulo .num{background:var(--goo-amarillo);color:#202124}
+.bloque:nth-of-type(4n+4) .rotulo::after{background:var(--goo-amarillo)}
+h3{font-size:18px;margin:22px 0 6px;letter-spacing:-.01em}
+h4{font-size:15.5px;margin:16px 0 4px}
+.bloque ul,.bloque ol{padding-left:22px}
+.bloque li{margin-bottom:5px}
+.nota,.aviso,.def{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;padding:14px 16px;margin:16px 0}
+.nota{border-left:5px solid var(--goo-azul)}
+.aviso{border-left:5px solid var(--goo-amarillo)}
+.def{border-left:5px solid var(--goo-verde)}
+.n-tag{display:block;font-family:var(--f-m);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-soft);margin-bottom:5px}
+.nota .n-tag{color:var(--goo-azul)}
+.escena{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;margin:18px 0}
+.escena-barra{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
+  padding:12px 16px;border-bottom:1px solid var(--line)}
+.escena-titulo{font-family:var(--f-m);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.seg button{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;padding:6px 12px;
+  font:400 12px var(--f-m);color:var(--ink-soft);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--goo-azul);border-color:var(--goo-azul);color:#fff}
+.lienzo{padding:10px;background:var(--surface);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:20px 20px}
+.lienzo svg{width:100%;height:auto;display:block}
+.pie{padding:12px 16px;border-top:1px solid var(--line);font-size:14.5px;color:var(--ink-soft)}
+.ficha{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;margin:16px 0;overflow:hidden}
+.ficha-cab{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;
+  background:var(--ink);color:var(--surface);padding:12px 16px;font-family:var(--f-m);font-size:11.5px;
+  letter-spacing:.08em;text-transform:uppercase}
+.ficha-cab .chip{border-color:var(--surface);color:var(--surface)}
+.ficha-cuerpo{padding:16px}
+.resp{border:1px solid var(--line);border-radius:2px;margin:8px 0}
+.resp summary{cursor:pointer;padding:9px 13px;font-family:var(--f-m);font-size:11.5px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink-soft)}
+.resp summary::-webkit-details-marker{display:none}
+.resp-cuerpo{padding:0 13px 13px}
+.resp-cuerpo p:last-child{margin-bottom:0}
+
+.narra{display:flex;gap:14px;align-items:flex-start}
+.avatar-caja{flex:none;width:104px}
+.avatar-caja svg.avatar{width:104px;height:72px;display:block}
+.avatar.habla{animation:habla .34s ease-in-out infinite alternate}
+@keyframes habla{from{transform:translateY(0)}to{transform:translateY(-2.5px)}}
+.globo{flex:1;background:var(--surface-2);border:1.5px solid var(--line);border-radius:2px;padding:11px 13px;position:relative}
+.globo::before{content:"";position:absolute;left:-9px;top:20px;width:0;height:0;
+  border-top:8px solid transparent;border-bottom:8px solid transparent;border-right:9px solid var(--line)}
+.avatar-dice{margin-top:8px;font-family:var(--f-m);font-size:12px;color:var(--goo-azul);font-style:italic}
+.voz-no{margin:10px 0 0;font-size:13px;color:var(--ink-soft)}
+@media (max-width:520px){.narra{flex-direction:column;align-items:center}.globo::before{display:none}}
+
+.reto-piensa{background:var(--surface);border:1.5px solid var(--goo-amarillo);border-left-width:5px;
+  border-radius:2px;padding:14px 16px;margin:16px 0}
+.reto-piensa .n-tag{color:#9a7326}
+.reto-piensa p{margin:0}
+.resp.revela summary{color:var(--goo-azul);font-weight:500}
+.resp.revela[open] summary{color:var(--ink-soft)}
+.resp.revela table{margin:0}
+.secuencia li.oculto{color:transparent;background:var(--surface-2);border-radius:2px;user-select:none}
+.secuencia li.oculto *{visibility:hidden}
+.secuencia li{transition:color .25s ease,background .25s ease;padding:2px 4px}
+#btn-secuencia{background:var(--surface);border:1.5px solid var(--goo-azul);color:var(--goo-azul);
+  border-radius:2px;padding:7px 14px;font:500 12px var(--f-m);cursor:pointer}
+#btn-secuencia:disabled{border-color:var(--line);color:var(--ink-soft);cursor:default}
+
+/* series del grafico de coste: validadas con el script de dataviz
+   claro  #ea4335/#1a73e8  -> min CVD 27.0, vision normal 36.8
+   oscuro #ef5350/#4285f4  -> min CVD 24.6, vision normal 33.2 */
+:root{--c-analog:#ea4335;--c-digital:#1a73e8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--c-analog:#ef5350;--c-digital:#4285f4}}
+.ejeq{fill:var(--ink-soft);font-family:var(--f-m);font-size:11px}
+.etq{fill:var(--ink);font-family:var(--f-m);font-size:11px;font-weight:500}
+
+
+.foto{margin:16px 0;border:1.5px solid var(--line);border-radius:2px;background:var(--surface);overflow:hidden}
+.foto img{width:100%;height:auto;display:block}
+.foto figcaption{padding:11px 14px;font-size:14px;line-height:1.5;color:var(--ink);border-top:1px solid var(--line)}
+.credito{display:block;margin-top:7px;font-family:var(--f-m);font-size:10.5px;color:var(--ink-soft);letter-spacing:.02em}
+.credito a{color:var(--ink-soft)}
+.galeria-ri{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));margin:16px 0}
+.galeria-ri .foto{margin:0}
+.galeria-ri figcaption{font-size:13.5px}
+
+.video{margin:16px 0}
+.video-play{width:100%;display:flex;align-items:center;gap:16px;padding:22px 20px;cursor:pointer;
+  background:var(--surface);border:1.5px solid var(--line);border-radius:2px;text-align:left;
+  transition:border-color .18s ease}
+.video-play:hover{border-color:var(--goo-rojo)}
+.video-tri{flex:none;width:52px;height:38px;border-radius:6px;background:var(--goo-rojo);position:relative}
+.video-tri::after{content:"";position:absolute;left:20px;top:11px;border-left:14px solid #fff;
+  border-top:8px solid transparent;border-bottom:8px solid transparent}
+.video-txt b{display:block;font:500 16px var(--f-b);color:var(--ink);margin-bottom:3px}
+.video-txt span{font:400 12px var(--f-m);color:var(--ink-soft)}
+.video-nota{margin:9px 0 0;font-size:12.5px;color:var(--ink-soft);line-height:1.5}
+.video iframe{width:100%;aspect-ratio:16/9;height:auto;border:1.5px solid var(--line);border-radius:2px;display:block}
+
+/* lo que se copia en la libreta, frente a lo que es solo para entender */
+.copiar{background:var(--surface);border:2px solid var(--goo-azul);border-radius:2px;
+  padding:16px 18px;margin:18px 0;position:relative}
+.copiar::before{content:"PARA LA LIBRETA";position:absolute;top:-11px;left:14px;
+  background:var(--goo-azul);color:#fff;font-family:var(--f-m);font-size:10.5px;letter-spacing:.1em;
+  padding:3px 9px;border-radius:2px}
+.copiar > :first-child{margin-top:6px}
+.copiar > :last-child{margin-bottom:0}
+.copiar h4{font-size:15px;margin:10px 0 4px}
+.entender{border-left:4px solid var(--line);padding:2px 0 2px 16px;margin:18px 0;color:var(--ink-soft)}
+.entender .e-tag{display:block;font-family:var(--f-m);font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
+.entender b{color:var(--ink)}
+@media print{
+  .entender,.escena,.video,.narra,nav.sesiones{display:none}
+  .copiar{border-width:1.5px;break-inside:avoid}
+}
+.rotulo-svg{fill:var(--ink-soft);font-family:var(--f-m);font-size:11px;letter-spacing:.06em}
+.hito{fill:var(--surface);stroke:var(--goo-azul);stroke-width:2;cursor:pointer}
+.hito.on{fill:var(--goo-azul)}
+.eje-t{fill:none;stroke:var(--line);stroke-width:2}
+
+.necesidades{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:16px 0}
+.necesidad{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;padding:14px 10px;text-align:center;
+  transition:border-color .18s ease,transform .18s ease}
+.necesidad:hover{border-color:var(--goo-azul);transform:translateY(-2px)}
+.necesidad svg{width:34px;height:34px;display:block;margin:0 auto 8px;stroke:var(--goo-azul);fill:none;
+  stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.necesidad b{display:block;font-size:13.5px;margin-bottom:3px}
+.necesidad span{font-size:11.5px;color:var(--ink-soft);line-height:1.3}
+
+.stepper{display:flex;flex-wrap:wrap;gap:2px;padding:16px 6px;justify-content:center}
+.fase-nodo{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1 0 18%;min-width:82px;
+  background:none;border:none;cursor:pointer;padding:8px 4px;font-family:var(--f-b)}
+.fase-nodo .num{width:32px;height:32px;border-radius:50%;border:2px solid var(--line);display:grid;
+  place-items:center;font-family:var(--f-m);font-weight:700;font-size:13px;color:var(--ink-soft);
+  background:var(--surface);transition:all .18s ease}
+.fase-nodo[aria-pressed="true"] .num{background:var(--goo-azul);border-color:var(--goo-azul);color:#fff;
+  transform:scale(1.12)}
+.fase-nodo .etq{font-size:10.5px;text-align:center;color:var(--ink-soft);line-height:1.25;max-width:90px}
+.fase-nodo[aria-pressed="true"] .etq{color:var(--ink);font-weight:500}
+.fase-nodo:hover .num{border-color:var(--goo-azul)}
+
+footer{border-top:1px solid var(--line);color:var(--ink-soft);font-size:13.5px;margin-top:30px}
+footer .wrap{padding-block:18px 26px}
+@media (max-width:560px){body{font-size:15.5px}.lienzo{padding:4px}}
+
+/* ---- avatar narrador, plano y sincronizado con la voz ---- */
+.narrador{display:flex;gap:16px;align-items:flex-start;background:var(--surface);
+  border:1.5px solid var(--line);border-radius:2px;padding:16px;margin:18px 0}
+.narrador-fig{flex:none;width:110px}
+.narrador-fig svg{width:110px;height:120px;display:block}
+.narrador-txt{flex:1;min-width:0}
+.narrador-txt h4{margin:0 0 3px;font-size:15.5px}
+.narrador-quien{font-family:var(--f-m);font-size:11px;color:var(--ink-soft);display:block;margin-bottom:9px}
+.narrador-barra{height:4px;background:var(--surface-2);border-radius:2px;overflow:hidden;margin:11px 0 8px}
+.narrador-barra i{display:block;height:100%;width:0;background:var(--goo-azul);transition:width .1s linear}
+.narrador-nota{font-size:12.5px;color:var(--ink-soft);margin:8px 0 0;line-height:1.5}
+@media (max-width:520px){.narrador{flex-direction:column;align-items:center}
+  .narrador-txt{text-align:center}}
+
+.tipos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:16px 0}
+.tipo-card{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;padding:10px 12px}
+.tipo-card b{display:block;font-size:13px;margin-bottom:3px;color:var(--goo-azul)}
+.tipo-card span{font-size:12px;color:var(--ink-soft);line-height:1.35}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="eyebrow"><a href="../../../">Inicio</a> &middot; <a href="../../">4.&ordm; ESO</a> &middot; <a href="../">Tecnolog&iacute;a</a> &middot; Tema 5</div>
+    <h1>Pensamiento computacional, automatizaci&oacute;n y rob&oacute;tica</h1>
+    <nav class="sesiones" id="nav" aria-label="Sesiones del tema"><button type="button" data-ses="1" aria-selected="true">S1 &middot; S1 &middot; IA, IoT y robots</button></nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div id="ses-1">
+    <div class="ses-head">
+      <div class="eyebrow">Sesi&oacute;n 1 &middot; 60 minutos</div>
+      <h2>Pensamiento computacional, automatizaci&oacute;n y rob&oacute;tica</h2>
+      <p>Sistemas de control programado, inteligencia artificial, internet de las cosas y los elementos de un robot.</p>
+      <div class="minutado"><span class="min"><b>0-15</b> Sistemas de control programado</span><span class="min"><b>15-30</b> IA e IoT</span><span class="min"><b>30-50</b> Rob&oacute;tica</span></div>
+      <div class="chips"><span class="chip">CE4 &middot; 4.2</span><span class="chip sab">C.1</span><span class="chip sab">C.3</span><span class="chip sab">C.4</span></div>
+    </div>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">01</span> Sistemas de control programado</div>
+
+      <div class="def">
+        <span class="n-tag">Definici&oacute;n</span>
+        Un <b>sistema de control</b> es un circuito electr&oacute;nico con <b>controladores,
+        sensores y actuadores</b> coordinados. Recibe informaci&oacute;n por los sensores
+        (<b>entradas</b>) y responde con los actuadores (<b>salidas</b>). Un <b>microcontrolador</b>
+        re&uacute;ne proceso, memoria y entradas/salidas en un solo chip; montado en una <b>tarjeta
+        controladora</b> (Arduino, BQ Zum Core, ESP32) puede conectarse a sensores y actuadores y
+        programarse desde un ordenador (IDE de Arduino, ArduinoBlocks, Bitbloq).</p>
+      </div>
+  
+    </section>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">02</span> Inteligencia artificial e internet de las cosas</div>
+
+
+      <div class="narrador" id="nar-4u5">
+        <div class="narrador-fig" id="nar-4u5-fig"></div>
+        <div class="narrador-txt">
+          <h4>Sensores + IA + conexi&oacute;n permanente</h4>
+          <span class="narrador-quien">Narrado &middot; 45 s</span>
+          <div class="seg">
+            <button type="button" data-a="play">&#9654; Escuchar</button>
+            <button type="button" data-a="stop">&#9632; Parar</button>
+          </div>
+          <div class="narrador-barra"><i></i></div>
+          <p class="narrador-nota">Escucha la explicaci&oacute;n y toca despu&eacute;s cada parte del robot.</p>
+        </div>
+      </div>
+
+      <script>
+      (function(){
+        var C = document.getElementById('nar-4u5');
+        if(!C) return;
+        var fig = document.getElementById('nar-4u5-fig');
+        var barra = C.querySelector('.narrador-barra i');
+        var ENV = [0.0, 0.0, 0.0, 0.003, 0.958, 1.0, 0.808, 0.96, 1.0, 0.955, 1.0, 0.136, 0.484, 0.865, 0.831, 0.349, 0.642, 0.813, 0.306, 0.074, 0.785, 0.88, 0.546, 0.357, 0.492, 0.142, 0.81, 0.718, 0.511, 0.379, 0.19, 0.395, 0.4, 0.136, 0.61, 0.9, 0.38, 0.391, 0.838, 0.453, 0.56, 0.826, 0.291, 0.581, 0.3, 0.517, 0.287, 0.421, 0.365, 0.265, 0.203, 0.084, 0.044, 0.0, 0.0, 0.053, 0.234, 0.772, 0.588, 0.371, 0.902, 0.663, 0.518, 0.207, 0.547, 0.121, 0.568, 0.226, 0.496, 0.8, 0.733, 0.713, 0.644, 0.483, 0.214, 0.589, 0.459, 0.291, 0.274, 0.136, 0.007, 0.001, 0.001, 0.001, 0.0, 0.002, 0.591, 1.0, 0.985, 0.302, 1.0, 0.348, 0.223, 0.893, 0.592, 0.391, 0.652, 0.86, 0.356, 0.757, 0.605, 0.467, 0.82, 0.949, 0.498, 0.058, 0.563, 0.436, 0.359, 0.389, 1.0, 0.427, 0.396, 0.169, 0.006, 0.001, 0.0, 0.243, 0.882, 0.809, 0.027, 0.832, 0.912, 0.804, 0.64, 0.481, 0.269, 0.043, 0.65, 0.254, 0.419, 0.196, 0.842, 0.395, 0.689, 0.44, 0.407, 0.379, 0.378, 0.232, 0.252, 0.26, 0.223, 0.089, 0.002, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.038, 0.985, 0.427, 0.747, 0.749, 0.927, 0.429, 0.669, 0.89, 0.631, 0.648, 0.75, 0.506, 0.265, 0.055, 0.001, 0.0, 0.0, 0.678, 0.985, 0.506, 0.169, 0.009, 0.0, 0.0, 0.069, 0.244, 0.741, 0.178, 0.946, 0.736, 0.792, 0.58, 0.564, 0.067, 0.748, 0.671, 0.597, 0.831, 0.219, 0.351, 0.573, 0.506, 0.762, 0.625, 0.27, 0.108, 0.885, 0.67, 0.311, 0.178, 0.082, 0.68, 0.635, 0.232, 0.698, 0.88, 0.729, 0.56, 0.346, 0.204, 0.344, 0.345, 0.264, 0.202, 0.047, 0.001, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.028, 0.845, 1.0, 0.72, 0.694, 0.798, 0.787, 0.124, 0.821, 0.498, 0.096, 0.851, 0.578, 0.108, 0.568, 0.31, 0.4, 0.211, 1.0, 0.762, 0.361, 0.193, 0.008, 0.001, 0.0, 0.001, 0.083, 1.0, 0.96, 0.731, 0.278, 0.649, 0.277, 0.514, 0.892, 0.238, 0.665, 0.797, 0.654, 0.43, 0.39, 0.648, 0.931, 0.762, 0.441, 0.266, 0.172, 0.51, 0.666, 0.866, 0.53, 0.561, 0.648, 0.077, 0.563, 0.159, 0.853, 0.586, 0.582, 0.804, 0.053, 0.692, 0.303, 0.594, 0.638, 0.298, 0.479, 0.42, 0.748, 0.574, 0.322, 0.417, 0.316, 0.217, 0.287, 0.236, 0.11, 0.084, 0.014, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.475, 0.927, 1.0, 1.0, 0.577, 0.438, 0.606, 0.453, 0.924, 0.712, 0.134, 0.926, 0.547, 0.289, 0.215, 0.424, 0.829, 0.301, 0.299, 0.282, 0.081, 0.052, 0.006, 0.0, 0.0, 0.0, 0.0, 0.0, 0.173, 0.951, 0.143, 1.0, 0.953, 0.552, 0.029, 0.913, 0.349, 0.716, 0.612, 0.402, 0.914, 0.913, 0.675, 0.302, 0.654, 0.42, 0.075, 0.547, 0.563, 0.663, 0.464, 0.103, 0.661, 0.308, 0.585, 0.591, 1.0, 0.629, 0.363, 0.257, 0.297, 0.792, 0.887, 0.768, 0.76, 0.569, 0.874, 0.175, 0.003, 0.709, 0.568, 0.161, 0.504, 0.114, 0.835, 0.579, 0.343, 0.711, 0.285, 0.457, 0.664, 0.865, 0.316, 0.568, 0.576, 0.516, 0.323, 0.115, 0.962, 0.69, 0.132, 0.631, 0.419, 0.183, 0.539, 0.474, 0.199, 0.39, 0.265, 0.297, 0.215, 0.198, 0.224, 0.051, 0.002, 0.0, 0.001, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.001, 0.002, 0.935, 0.92, 0.221, 0.759, 0.847, 0.269, 0.538, 0.981, 0.59, 0.499, 1.0, 0.858, 0.659, 0.648, 0.839, 0.624, 0.241, 0.569, 0.708, 0.266, 0.092, 0.735, 0.616, 0.283, 0.192, 0.827, 0.316, 0.523, 0.291, 0.574, 0.528, 0.363, 0.418, 0.216, 0.026, 0.002, 0.0, 0.0, 0.091, 0.283, 0.689, 0.383, 0.375, 1.0, 0.78, 0.63, 0.228, 0.541, 0.27, 0.576, 0.204, 0.65, 0.91, 0.864, 0.754, 0.583, 0.256, 0.438, 0.411, 0.205, 0.421, 0.336, 0.297, 0.117, 0.012, 0.0, 0.0, 0.0, 0.0, 0.0, 0.243, 1.0, 0.88, 0.243, 1.0, 0.987, 0.329, 0.465, 0.831, 0.381, 0.39, 0.687, 0.252, 0.65, 0.141, 0.524, 0.095, 0.882, 0.909, 0.311, 0.627, 0.585, 0.67, 0.167, 0.856, 0.803, 0.892, 0.116, 0.421, 0.318, 0.069, 0.484, 0.364, 0.091, 0.008, 0.001, 0.0, 0.0, 0.001, 0.001, 0.011, 0.806, 0.133, 1.0, 0.966, 0.411, 0.387, 0.599, 0.806, 0.522, 0.677, 0.701, 0.77, 0.651, 0.781, 0.842, 0.459, 0.334, 0.334, 0.103, 0.808, 0.715, 0.263, 0.246, 0.825, 0.65, 0.192, 0.67, 0.643, 0.328, 0.455, 0.944, 0.41, 0.208, 0.704, 0.533, 0.539, 0.106, 0.797, 0.779, 0.792, 0.599, 0.131, 0.97, 0.834, 0.208, 0.552, 0.301, 0.388, 0.359, 0.324, 0.218, 0.123, 0.011, 0.001, 0.0, 0.0, 0.0, 0.0, 0.001, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.001, 0.055, 1.0, 0.171, 0.746, 0.141, 0.835, 0.825, 0.66, 0.807, 1.0, 0.46, 0.779, 0.611, 0.954, 0.493, 0.467, 0.601, 0.598, 1.0, 0.393, 0.694, 0.692, 0.669, 0.351, 0.058, 0.992, 0.64, 0.429, 0.272, 0.48, 0.419, 0.376, 0.181, 0.419, 0.296, 0.525, 0.388, 0.251, 0.305, 0.131, 0.015, 0.001, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0];            /* una muestra cada 66 ms, de 0 a 1 */
+        var PASO = 0.066;
+        var audio = new Audio('audio/4u5-intro.mp3');
+        audio.preload = 'none';
+        var raf = null, parpadeo = 0, tParp = 0;
+
+        /* El personaje se dibuja entero cada cuadro: la boca depende del
+           volumen de la voz en ese instante, y los ojos parpadean solos.   */
+        function dibuja(a, ojosCerrados){
+          var abre = 3 + a * 13;                 /* alto de la boca */
+          var ancho = 15 + a * 5;
+          var ceja = -a * 2.5;                   /* las cejas acompanan */
+          var ojo = ojosCerrados
+            ? '<path d="M35 46 h11 M64 46 h11" stroke="#202124" stroke-width="2.6" stroke-linecap="round"/>'
+            : '<circle cx="40.5" cy="46" r="4.2" fill="#202124"/>'
+            + '<circle cx="69.5" cy="46" r="4.2" fill="#202124"/>'
+            + '<circle cx="42" cy="44.6" r="1.5" fill="#fff"/>'
+            + '<circle cx="71" cy="44.6" r="1.5" fill="#fff"/>';
+          return '<svg viewBox="0 0 110 120" aria-hidden="true">'
+            /* cuerpo, en azul de la web */
+            + '<path d="M22 120 v-18 q0-16 16-20 h34 q16 4 16 20 v18 Z" fill="#4285f4"/>'
+            + '<path d="M46 82 h18 v12 h-18 Z" fill="#e8b48a"/>'
+            /* cabeza */
+            + '<rect x="26" y="20" width="58" height="66" rx="16" fill="#f3d3b3" stroke="#d3ae87" stroke-width="2"/>'
+            /* pelo, plano y geometrico */
+            + '<path d="M26 40 v-6 q0-14 29-14 q29 0 29 14 v6 q-8-9-29-9 q-21 0-29 9 Z" fill="#3c4043"/>'
+            /* cejas */
+            + '<path d="M33 ' + (37+ceja) + ' h13" stroke="#3c4043" stroke-width="3" stroke-linecap="round"/>'
+            + '<path d="M64 ' + (37+ceja) + ' h13" stroke="#3c4043" stroke-width="3" stroke-linecap="round"/>'
+            + ojo
+            /* colorete */
+            + '<circle cx="32" cy="58" r="5" fill="#ea4335" opacity=".17"/>'
+            + '<circle cx="78" cy="58" r="5" fill="#ea4335" opacity=".17"/>'
+            /* boca: se abre con la voz */
+            + '<ellipse cx="55" cy="66" rx="' + (ancho/2).toFixed(1) + '" ry="' + (abre/2).toFixed(1)
+            + '" fill="#8c3b2e"/>'
+            + (a > 0.35 ? '<ellipse cx="55" cy="' + (66 + abre/4).toFixed(1)
+                 + '" rx="' + (ancho/3).toFixed(1) + '" ry="' + (abre/5).toFixed(1) + '" fill="#c96a5a"/>' : '')
+            + '</svg>';
+        }
+
+        function cuadro(){
+          var t = audio.currentTime;
+          var i = Math.floor(t / PASO);
+          var a = (i >= 0 && i < ENV.length) ? ENV[i] : 0;
+          /* parpadeo cada 3-5 segundos */
+          if(t > tParp){ parpadeo = 6; tParp = t + 3 + Math.random()*2; }
+          if(parpadeo > 0) parpadeo--;
+          fig.innerHTML = dibuja(a, parpadeo > 3);
+          if(audio.duration) barra.style.width = (100*t/audio.duration).toFixed(1) + '%';
+          if(!audio.paused) raf = requestAnimationFrame(cuadro);
+        }
+
+        C.querySelector('[data-a="play"]').addEventListener('click', function(){
+          audio.currentTime = 0;
+          audio.play().then(function(){ cuadro(); }).catch(function(){
+            C.querySelector('.narrador-nota').innerHTML =
+              'No se ha podido reproducir el audio. Comprueba el sonido del equipo.';
+          });
+        });
+        C.querySelector('[data-a="stop"]').addEventListener('click', function(){
+          audio.pause(); audio.currentTime = 0;
+          if(raf) cancelAnimationFrame(raf);
+          fig.innerHTML = dibuja(0, false); barra.style.width = '0';
+        });
+        audio.addEventListener('ended', function(){
+          if(raf) cancelAnimationFrame(raf);
+          fig.innerHTML = dibuja(0, false); barra.style.width = '0';
+        });
+
+        fig.innerHTML = dibuja(0, false);
+      })();
+      </script>
+
+      <div class="def">
+        <span class="n-tag">Inteligencia artificial (IA)</span>
+        Capacidad de un sistema de <b>imitar funciones cognitivas humanas</b>: interpretar datos,
+        aprender de ellos y actuar adapt&aacute;ndose a la situaci&oacute;n.
+      </div>
+      <div class="tipos-grid"><div class="tipo-card"><b>Asistentes de voz</b><span>Alexa, Siri, Cortana: &oacute;rdenes por reconocimiento de voz.</span></div><div class="tipo-card"><b>Transporte</b><span>Rutas &oacute;ptimas (Maps, Waze) y coches aut&oacute;nomos.</span></div><div class="tipo-card"><b>Ciberseguridad</b><span>Filtra correo peligroso y detecta spam.</span></div><div class="tipo-card"><b>Ventas y marketing</b><span>Analiza datos de navegaci&oacute;n y predice productos.</span></div><div class="tipo-card"><b>Reconocimiento facial</b><span>Desbloqueo de m&oacute;viles y c&aacute;maras de seguridad.</span></div></div>
+      <div class="def">
+        <span class="n-tag">Internet de las cosas (IoT)</span>
+        Interconexi&oacute;n de dispositivos f&iacute;sicos en red para que puedan comunicarse entre
+        s&iacute; (sensores, actuadores y objetos cotidianos). Genera <b>big data</b>, dif&iacute;cil
+        de procesar sin IA.
+      </div>
+      <div class="tipos-grid"><div class="tipo-card"><b>Industria</b><span>Procesos conectados y control del estado en tiempo real.</span></div><div class="tipo-card"><b>Salud</b><span>Control remoto de pacientes y seguridad laboral.</span></div><div class="tipo-card"><b>Agricultura</b><span>Datos de riego, humedad y estado de los cultivos.</span></div><div class="tipo-card"><b>Transporte</b><span>Etiquetas RFID: identificar contenido sin abrirlo.</span></div><div class="tipo-card"><b>Hogar</b><span>Frigor&iacute;ficos, aspiradores y bombillas inteligentes.</span></div></div>
+  
+    </section>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">03</span> Rob&oacute;tica</div>
+
+      <div class="def">
+        <span class="n-tag">Definici&oacute;n</span>
+        Un <b>robot</b> es una m&aacute;quina autom&aacute;tica programable capaz de captar
+        informaci&oacute;n de su entorno, procesarla y actuar en consecuencia: <b>percibe</b> con
+        sensores, <b>procesa</b> con la tarjeta controladora y <b>ejecuta</b> con actuadores.
+      </div>
+      <h4>Las partes de un robot &middot; toca cada una</h4>
+      <div class="escena" id="esc-robot">
+        <div class="escena-barra"><span class="escena-titulo">Elementos gen&eacute;ricos de un robot</span></div>
+        <div class="lienzo"><div class="stepper" id="stepper-robot"></div></div>
+        <div class="pie" id="pie-robot">Toca una parte para ver su funci&oacute;n.</div>
+      </div>
+      <script>
+      (function(){
+        var F = [
+          ['Estructura', 'La parte mec&aacute;nica que se ve: el chasis que soporta los dem&aacute;s elementos.'],
+          ['Sensores', 'Perciben las se&ntilde;ales del entorno (ultrasonidos, infrarrojos&hellip;).'],
+          ['Unidad de control', 'La tarjeta (Arduino) que recibe las se&ntilde;ales, las procesa y da &oacute;rdenes.'],
+          ['Etapa de potencia', 'Transistores que dan a los motores la potencia que Arduino no puede suministrar solo.'],
+          ['Accionamiento', 'Motores el&eacute;ctricos, neum&aacute;ticos o hidr&aacute;ulicos que mueven el robot.'],
+          ['Energ&iacute;a', 'Las pilas o bater&iacute;as que alimentan todo el sistema.']
+        ];
+        var t = document.getElementById('stepper-robot'), p = document.getElementById('pie-robot');
+        F.forEach(function(f, i){
+          var b = document.createElement('button');
+          b.type = 'button'; b.className = 'fase-nodo'; b.setAttribute('aria-pressed', 'false');
+          b.innerHTML = '<span class="num">' + (i+1) + '</span><span class="etq">' + f[0] + '</span>';
+          b.addEventListener('click', function(){
+            t.querySelectorAll('.fase-nodo').forEach(function(x){ x.setAttribute('aria-pressed','false'); });
+            b.setAttribute('aria-pressed', 'true'); p.innerHTML = '<b>' + f[0] + '.</b> ' + f[1];
+          });
+          t.appendChild(b);
+        });
+      })();
+      </script>
+      <div class="nota" id="curriculo-andalucia">
+        <span class="n-tag">Curr&iacute;culo de Andaluc&iacute;a</span>
+        Esta unidad trabaja la <b>competencia espec&iacute;fica 4</b>, el <b>criterio de evaluaci&oacute;n
+        4.2</b>, y los <b>saberes b&aacute;sicos C.1, C.3 y C.4</b> (sistemas de control, IoT y
+        rob&oacute;tica), seg&uacute;n la
+        <a href="https://www.juntadeandalucia.es/boja/2023/104/BOJA23-104-00281-9728-01_00284744.pdf"
+        target="_blank" rel="noopener">Orden de 30 de mayo de 2023 (BOJA n&uacute;m. 104)</a>, anexo&nbsp;II.
+      </div>
+      <div class="aviso">
+        <span class="n-tag">Pendiente</span>
+        Sensores anal&oacute;gicos y digitales en detalle, pr&aacute;cticas de programaci&oacute;n
+        con Arduino, resumen y autoevaluaci&oacute;n.
+      </div>
+  
+    </section>
+
+  </div>
+
+</main>
+
+<footer><div class="wrap">Tema 5 &middot; 4.&ordm; de ESO &middot; Tecnolog&iacute;a</div></footer>
+
+<script>
+(function(){
+  var nav = document.getElementById('nav');
+  if(!nav) return;
+  nav.addEventListener('click', function(e){
+    var b = e.target.closest('button[data-ses]');
+    if(!b || b.disabled) return;
+    nav.querySelectorAll('button').forEach(function(x){
+      x.setAttribute('aria-selected', x === b ? 'true' : 'false');
+    });
+    document.querySelectorAll('[id^="ses-"]').forEach(function(p){
+      p.hidden = (p.id !== 'ses-' + b.dataset.ses);
+    });
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+})();
+</script>
+
+</body>
+</html>
