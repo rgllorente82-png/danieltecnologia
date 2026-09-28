@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Tema 5 &middot; Pensamiento computacional, automatizaci&oacute;n y rob&oacute;tica</title>
-<meta name="description" content="Tema 5 de Tecnolog&iacute;a de 4.&ordm; de ESO (Andaluc&iacute;a): sistemas de control programado, inteligencia artificial, internet de las cosas y los elementos de un robot, con las competencias, criterios y saberes b&aacute;sicos de la Orden de 30 de mayo de 2023.">
+<meta name="description" content="Tema 5 de Tecnolog&iacute;a de 4.&ordm; de ESO (Andaluc&iacute;a): sistemas de control programado, el ordenador como elemento de programaci&oacute;n (IDE de Arduino, ArduinoBlocks, Bitbloq), inteligencia artificial, internet de las cosas y los elementos de un robot, con las competencias, criterios y saberes b&aacute;sicos de la Orden de 30 de mayo de 2023.">
 <link rel="canonical" href="https://rgllorente82-png.github.io/danieltecnologia/4eso/Tecnologia/tema5/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -258,7 +258,34 @@ footer .wrap{padding-block:18px 26px}
   
     </section>
     <section class="bloque">
-      <div class="rotulo"><span class="num">02</span> Inteligencia artificial e internet de las cosas</div>
+      <div class="rotulo"><span class="num">02</span> El ordenador como elemento de programaci&oacute;n y control</div>
+
+      <p>El microprocesador tiene una peque&ntilde;a memoria donde guarda un <b>programa</b>: su
+      funci&oacute;n es interpretar las se&ntilde;ales de los sensores y dar &oacute;rdenes a las
+      salidas. Ese programa hay que <b>escribirlo antes y volcarlo desde un ordenador</b>. El
+      software cambia seg&uacute;n la tarjeta controladora:</p>
+      <div class="tipos-grid">
+        <div class="tipo-card"><b>IDE de Arduino</b><span>Editor y depurador oficial (para tarjetas
+        Arduino), con lenguaje propio basado en Processing. Compila y carga el programa por USB: una
+        vez grabado, la tarjeta sigue funcionando sola con alimentaci&oacute;n externa, incluso al
+        desconectar el cable. www.arduino.cc</span></div>
+        <div class="tipo-card"><b>ArduinoBlocks</b><span>Para la tarjeta ESP32 Plus STEAMakers:
+        programaci&oacute;n por bloques, online, necesita conexi&oacute;n a Internet.
+        www.arduinoblocks.com</span></div>
+        <div class="tipo-card"><b>Bitbloq</b><span>De la empresa BQ, para las tarjetas Zum (compatible
+        con Arduino): plataforma online de programaci&oacute;n por bloques.
+        https://bitbloq.bq.com</span></div>
+      </div>
+      <p><b>ACTIVIDAD</b></p>
+      <ol>
+              <li>Si desconectas el cable USB de una tarjeta Arduino despu&eacute;s de cargar un programa, y la conectas a una pila, &iquest;sigue funcionando? &iquest;Por qu&eacute;?
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p><b>S&iacute;.</b> El programa qued&oacute; grabado en la <b>memoria del microcontrolador</b>, no en el ordenador: el USB solo hac&iacute;a falta para cargarlo. Mientras la tarjeta tenga alimentaci&oacute;n (la pila), sigue ejecut&aacute;ndolo, y lo recordar&aacute; tambi&eacute;n la pr&oacute;xima vez que se encienda.</p></div></details></li>
+
+      </ol>
+  
+    </section>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">03</span> Inteligencia artificial e internet de las cosas</div>
 
 
       <div class="narrador" id="nar-4u5">
@@ -401,7 +428,7 @@ footer .wrap{padding-block:18px 26px}
   
     </section>
     <section class="bloque">
-      <div class="rotulo"><span class="num">03</span> Rob&oacute;tica</div>
+      <div class="rotulo"><span class="num">04</span> Rob&oacute;tica</div>
 
       <div class="def">
         <span class="n-tag">Definici&oacute;n</span>
@@ -495,6 +522,9 @@ footer .wrap{padding-block:18px 26px}
       <ol>
         <li><b>Sistema de control:</b> controladores, sensores (entradas) y actuadores (salidas),
         coordinados por un microcontrolador.</li>
+        <li><b>El ordenador programa la tarjeta:</b> IDE de Arduino, ArduinoBlocks (ESP32) o Bitbloq
+        (BQ Zum), seg&uacute;n la tarjeta. El programa queda grabado en la memoria del
+        microcontrolador, no en el ordenador.</li>
         <li><b>Inteligencia artificial:</b> imita funciones cognitivas humanas &mdash;asistentes de
         voz, transporte, ciberseguridad, reconocimiento facial.</li>
         <li><b>Internet de las cosas (IoT):</b> dispositivos interconectados en red; genera <i>big
