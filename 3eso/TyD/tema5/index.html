@@ -229,7 +229,7 @@ footer .wrap{padding-block:18px 26px}
   <div class="wrap">
     <div class="eyebrow"><a href="../../../">Inicio</a> &middot; <a href="../../">3.&ordm; ESO</a> &middot; <a href="../">TyD</a> &middot; Tema 5</div>
     <h1>Pensamiento computacional, programaci&oacute;n y rob&oacute;tica</h1>
-    <nav class="sesiones" id="nav" aria-label="Sesiones del tema"><button type="button" data-ses="1" aria-selected="true">S1 &middot; S1 &middot; Sistemas de control</button><button type="button" data-ses="2">S2 &middot; S2 &middot; Repaso</button></nav>
+    <nav class="sesiones" id="nav" aria-label="Sesiones del tema"><button type="button" data-ses="1" aria-selected="true">S1 &middot; S1 &middot; Sistemas de control</button><button type="button" data-ses="2">S2 &middot; S2 &middot; IA, IoT y Arduino</button></nav>
   </div>
 </header>
 
@@ -461,13 +461,151 @@ footer .wrap{padding-block:18px 26px}
   <div id="ses-2" hidden>
     <div class="ses-head">
       <div class="eyebrow">Sesi&oacute;n 2 &middot; 60 minutos</div>
-      <h2>Resumen y autoevaluaci&oacute;n</h2>
-      <p>Recapitulamos automatismos, robots, sistemas de control y sensores.</p>
-      <div class="minutado"><span class="min"><b>0-20</b> Resumen</span><span class="min"><b>20-50</b> Autoevaluaci&oacute;n</span></div>
-      <div class="chips"><span class="chip sab">C.1</span><span class="chip sab">C.2</span></div>
+      <h2>Inteligencia artificial, Internet de las cosas y la tarjeta Arduino</h2>
+      <p>Qu&eacute; es la IA y el IoT con ejemplos reales, los elementos de un robot, la tarjeta Arduino Uno, su software y c&oacute;mo conectarla al ordenador.</p>
+      <div class="minutado"><span class="min"><b>0-15</b> IA e IoT</span><span class="min"><b>15-30</b> Arduino Uno</span><span class="min"><b>30-50</b> Software y conexi&oacute;n</span></div>
+      <div class="chips"><span class="chip">CE5 &middot; 5.3</span><span class="chip sab">C.1</span><span class="chip sab">C.2</span></div>
     </div>
     <section class="bloque">
-      <div class="rotulo"><span class="num">04</span> Resumen de la unidad</div>
+      <div class="rotulo"><span class="num">04</span> Inteligencia artificial e Internet de las cosas</div>
+
+      <div class="def">
+        <span class="n-tag">Inteligencia artificial (IA)</span>
+        Capacidad de un sistema de <b>imitar las funciones cognitivas</b> de los humanos: interpretar
+        datos externos, aprender de ellos y emplear esos conocimientos para lograr tareas concretas,
+        adapt&aacute;ndose a las situaciones que se vayan planteando.
+      </div>
+      <p>Ejemplos: asistentes personales virtuales (Alexa, Siri), asistentes de voz para empresas
+      (<i>chatbots</i>), ciberseguridad (filtrar spam), transporte (Google Maps/Waze, coches
+      aut&oacute;nomos), ventas y marketing (recomendaciones), reconocimiento facial.</p>
+      <div class="video" id="vid-t3u5-ia" data-vid="PPCDj8t5hdc">
+        <button type="button" class="video-play" aria-label="Reproducir el v&iacute;deo: Ejemplo de inteligencia artificial con micro:bit">
+          <span class="video-tri" aria-hidden="true"></span>
+          <span class="video-txt">
+            <b>Ejemplo de inteligencia artificial con micro:bit</b>
+            <span>Citado en el libro de texto (p.&nbsp;156)</span>
+          </span>
+        </button>
+        <p class="video-nota">Un robot que reconoce qu&eacute; le dices con IA en una tarjeta micro:bit. El v&iacute;deo no se carga hasta que lo pulsas, y se reproduce sin
+          cookies de seguimiento. Si no se ve aqu&iacute;,
+          <a href="https://www.youtube.com/watch?v=PPCDj8t5hdc" target="_blank" rel="noopener">&aacute;brelo directamente aqu&iacute;</a>.
+          El v&iacute;deo es de su autor y no forma parte del material publicado en esta p&aacute;gina.</p>
+      </div>
+      <script>
+      (function(){
+        var c = document.getElementById('vid-t3u5-ia');
+        if(!c) return;
+        var b = c.querySelector('.video-play');
+        b.addEventListener('click', function(){
+          var f = document.createElement('iframe');
+          f.src = 'https://www.youtube-nocookie.com/embed/' + c.dataset.vid + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+          f.title = b.querySelector('.video-txt b').textContent;
+          f.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture';
+          f.referrerPolicy = 'strict-origin-when-cross-origin';
+          f.allowFullscreen = true;
+          b.replaceWith(f);
+        });
+      })();
+      </script>
+
+      <div class="def">
+        <span class="n-tag">Internet de las cosas (IoT)</span>
+        Interconexi&oacute;n de dispositivos f&iacute;sicos a trav&eacute;s de una red (privada o
+        Internet), de modo que todos pueden ser visibles e interactuar entre s&iacute;.
+      </div>
+      <p>Ejemplos de &laquo;hiperconexi&oacute;n&raquo;: industria, salud (control remoto de
+      pacientes), agricultura (riego seg&uacute;n humedad), ganader&iacute;a, transporte (RFID), hogar
+      (frigor&iacute;fico, aspiradoras rob&oacute;ticas, bombillas inteligentes). Plataformas IoT para
+      Arduino: <b>Arduino Cloud</b>, <b>Cayenne</b>, <b>Thinger.io</b>.</p>
+      <div class="nota" id="curriculo-andalucia">
+        <span class="n-tag">Curr&iacute;culo de Andaluc&iacute;a</span>
+        Esta unidad trabaja la <b>competencia espec&iacute;fica 5</b>, el <b>criterio de
+        evaluaci&oacute;n 5.3</b>, y los <b>saberes b&aacute;sicos C.1 (introducci&oacute;n a la IA) y
+        C.2 (rob&oacute;tica)</b>, seg&uacute;n la
+        <a href="https://www.juntadeandalucia.es/boja/2023/104/BOJA23-104-00281-9728-01_00284744.pdf"
+        target="_blank" rel="noopener">Orden de 30 de mayo de 2023 (BOJA n&uacute;m. 104)</a>, anexo&nbsp;II.
+      </div>
+  
+    </section>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">05</span> La tarjeta controladora Arduino Uno</div>
+
+      <p><b>Arduino</b> es una plataforma de electr&oacute;nica <i>open hardware</i> para crear
+      prototipos, basada en un microcontrolador (ATMega328) y con su propio entorno de
+      desarrollo (IDE).</p>
+      <h4>Partes de la Arduino Uno R3</h4>
+      <ul>
+        <li><b>Alimentaci&oacute;n externa</b> (7-12&nbsp;V) y pines de potencia (+5&nbsp;V, +3,3&nbsp;V, GND).</li>
+        <li><b>6 entradas anal&oacute;gicas</b> (A0-A5), de 0 a 5&nbsp;V.</li>
+        <li><b>Puerto USB</b>, para comunicarse con el ordenador.</li>
+        <li><b>Bot&oacute;n de reset.</b></li>
+        <li><b>14 entradas/salidas digitales</b> (evitando la 0 y la 1), m&aacute;ximo 40&nbsp;mA por
+        pin.</li>
+        <li><b>Salidas anal&oacute;gicas o PWM</b> en los pines 3, 5, 6, 9, 10 y 11.</li>
+        <li><b>LED de encendido</b> y el propio <b>microcontrolador ATMega328</b>.</li>
+      </ul>
+      <div class="nota">
+        <span class="n-tag">Ojo</span>
+        Los pines solo dan hasta <b>40&nbsp;mA</b>: nunca se conecta un motor de corriente continua
+        directamente, hace falta un <b>transistor</b> o un <b>rel&eacute;</b> de por medio. Existen
+        adem&aacute;s tarjetas <i>shield</i> que a&ntilde;aden Wi-Fi, control de motores o Bluetooth.
+        Solo hace falta el USB para cargar el programa: despu&eacute;s, funciona sola con
+        alimentaci&oacute;n externa, y lo recuerda la pr&oacute;xima vez que se conecte.
+      </div>
+      <p>Los <b>sensores anal&oacute;gicos</b> var&iacute;an su voltaje (0-5&nbsp;V) y se leen por las
+      entradas anal&oacute;gicas; los <b>sensores digitales</b> solo dan dos estados (<i>high</i>
+      5&nbsp;V / <i>low</i> 0&nbsp;V), como un interruptor.</p>
+  
+    </section>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">06</span> Software de programaci&oacute;n y conexi&oacute;n al ordenador</div>
+
+      <h4>Cuatro programas para programar Arduino</h4>
+      <div class="tipos-grid">
+        <div class="tipo-card"><b>IDE de Arduino</b><span>Editor y depurador oficial, lenguaje basado
+        en Processing; compila y carga por USB. www.arduino.cc</span></div>
+        <div class="tipo-card"><b>Tinkercad</b><span>Web gratuita: crea y simula circuitos con
+        c&oacute;digo o por bloques, en la nube. www.tinkercad.com</span></div>
+        <div class="tipo-card"><b>mBlock</b><span>Entorno gr&aacute;fico basado en Scratch 2.0, con
+        bloques para Arduino. https://mblock.makeblock.com</span></div>
+        <div class="tipo-card"><b>Bitbloq</b><span>De la empresa BQ, programaci&oacute;n por bloques
+        online, compatible con Arduino. https://bitbloq.bq.com</span></div>
+      </div>
+      <h4>C&oacute;mo conectar Arduino al ordenador (primera vez)</h4>
+      <ol class="pasos">
+        <li>Descargar e instalar el IDE <b>antes</b> de conectar la placa (desde
+        www.arduino.cc/Download, o el editor web en create.arduino.cc).</li>
+        <li>Conectar la placa por USB: el piloto verde debe encenderse. Si el ordenador la reconoce
+        sola, pasar al paso&nbsp;5.</li>
+        <li>Si no, ir a <i>Panel de control &rarr; Sistema y seguridad &rarr; Sistema &rarr;
+        Administrador de dispositivos &rarr; Puertos (COM y LPT)</i> y localizar &laquo;Arduino Uno
+        (COM&nbsp;X)&raquo;.</li>
+        <li>Clic derecho en ese puerto &rarr; <i>Actualizar controlador</i> &rarr; elegir la carpeta
+        de <i>drivers</i> de la instalaci&oacute;n.</li>
+        <li>Comprobar que se comunica correctamente.</li>
+        <li>En el IDE: <i>Herramientas &rarr; Placa &rarr; Arduino AVR Boards &rarr; Arduino Uno</i>, y
+        comprobar el puerto en <i>Herramientas &rarr; Puerto</i>.</li>
+      </ol>
+      <h4>Cargar un programa de ejemplo (Blink)</h4>
+      <ol class="pasos">
+        <li>Abrir el IDE.</li>
+        <li><i>Herramientas &rarr; Puerto</i> &rarr; seleccionar el puerto de la Arduino Uno.</li>
+        <li><i>Archivo &rarr; Ejemplos &rarr; 01.Basics &rarr; Blink</i> &rarr; pulsar <b>Verificar</b>
+        y luego <b>Subir</b>. El LED de la placa debe parpadear cada segundo.</li>
+      </ol>
+      <p style="font-size:13px;color:var(--ink-soft)">Las siguientes veces solo hace falta repetir
+      <i>Herramientas &rarr; Puerto</i>; si no se sabe cu&aacute;l es, se repite el programa Blink y se
+      comprueba con qu&eacute; puerto parpadea el LED.</p>
+      <p><b>ACTIVIDAD</b></p>
+      <ol>
+              <li>&iquest;Por qu&eacute; el IDE de Arduino sigue funcionando la placa aunque desconectes el cable USB despu&eacute;s de cargar el programa?
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>Porque al <b>subir</b> el programa, este queda <b>grabado en la memoria</b> del microcontrolador (no en el ordenador): el USB solo hac&iacute;a falta para cargarlo. Mientras la placa tenga <b>alimentaci&oacute;n externa</b> (una pila, por ejemplo), sigue ejecut&aacute;ndolo, incluso la pr&oacute;xima vez que se encienda.</p></div></details></li>
+
+      </ol>
+  
+    </section>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">07</span> Resumen de la unidad</div>
 
       <ol>
         <li><b>Automatismo</b> (tarea fija, sin adaptarse) frente a <b>robot</b> (capta, procesa y
@@ -478,11 +616,15 @@ footer .wrap{padding-block:18px 26px}
         corrige el error).</li>
         <li><b>Sensores</b> (LDR, NTC, ultrasonidos, infrarrojos, PIR&hellip;) y <b>actuadores</b>
         (LED, motores CC, servomotores).</li>
+        <li><b>IA:</b> imita funciones cognitivas humanas. <b>IoT:</b> dispositivos f&iacute;sicos
+        interconectados en red.</li>
+        <li><b>Arduino Uno:</b> entradas anal&oacute;gicas y digitales, salidas PWM, m&aacute;ximo
+        40&nbsp;mA por pin. Se programa con el IDE, Tinkercad, mBlock o Bitbloq.</li>
       </ol>
   
     </section>
     <section class="bloque">
-      <div class="rotulo"><span class="num">05</span> Autoevaluaci&oacute;n</div>
+      <div class="rotulo"><span class="num">08</span> Autoevaluaci&oacute;n</div>
 
       <ol>
               <li>Un ventilador que siempre gira igual, sin tener en cuenta la temperatura de la habitaci&oacute;n, &iquest;es de lazo abierto o cerrado?
