@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tema 1 &middot; El proceso de resoluci&oacute;n de problemas tecnol&oacute;gicos</title>
+<meta name="description" content="Tema 1 de Tecnolog&iacute;a y Digitalizaci&oacute;n de 2.&ordm; de ESO (Andaluc&iacute;a): el m&eacute;todo de proyectos, sus documentos y c&oacute;mo se trabaja en la asignatura, con las competencias, criterios y saberes b&aacute;sicos de la Orden de 30 de mayo de 2023.">
+<link rel="canonical" href="https://rgllorente82-png.github.io/danieltecnologia/2eso/TyD/tema1/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"Tema 1 &middot; El proceso de resoluci&oacute;n de problemas tecnol&oacute;gicos","url":"https://rgllorente82-png.github.io/danieltecnologia/2eso/TyD/tema1/","inLanguage":"es",
+ "isAccessibleForFree":true,
+ "educationalLevel":"Educaci&oacute;n Secundaria Obligatoria","learningResourceType":"Unidad did&aacute;ctica interactiva"}
+</script>
+<style>
+:root{
+  --paper:#f8f9fa;--surface:#fff;--surface-2:#f1f3f4;--ink:#202124;--ink-soft:#5f6368;
+  --line:#dadce0;--line-soft:#e8eaed;--accent:#1a73e8;--accent-soft:#e8f0fe;
+  --goo-azul:#4285f4;--goo-rojo:#ea4335;--goo-amarillo:#fbbc04;--goo-verde:#34a853;
+  --grid:rgba(66,133,244,.09);
+  --f-b:"Roboto",-apple-system,"Segoe UI",Arial,sans-serif;
+  --f-m:"Roboto Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#202124;--surface:#292a2d;--surface-2:#35363a;--ink:#e8eaed;--ink-soft:#9aa0a6;
+  --line:#5f6368;--line-soft:#3c4043;--accent:#8ab4f8;--accent-soft:#1f3347;
+  --goo-azul:#8ab4f8;--goo-rojo:#f28b82;--goo-amarillo:#fdd663;--goo-verde:#81c995;
+  --grid:rgba(138,180,248,.09)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 var(--f-b);letter-spacing:.01em}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+header.top{background:var(--surface);border-bottom:2px solid var(--ink);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:24px 24px;position:sticky;top:0;z-index:50}
+header.top .wrap{padding-block:16px 0}
+.eyebrow{font-family:var(--f-m);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.eyebrow a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
+.eyebrow a:hover{border-bottom-color:currentColor}
+h1{font-weight:700;font-size:clamp(22px,4.4vw,30px);margin:6px 0 12px;letter-spacing:-.015em}
+nav.sesiones{display:flex;gap:8px;overflow-x:auto;padding-bottom:12px}
+nav.sesiones button{flex:none;background:var(--surface);color:var(--ink-soft);border:1.5px solid var(--line);
+  border-radius:2px;padding:7px 14px;font:400 13px var(--f-m);cursor:pointer;white-space:nowrap}
+nav.sesiones button[aria-selected="true"]{background:var(--goo-azul);border-color:var(--goo-azul);color:#fff}
+nav.sesiones button[disabled]{opacity:.45;cursor:default}
+main{padding-block:26px 70px}
+.ses-head{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;padding:20px;margin-bottom:26px}
+.ses-head h2{font-size:22px;margin:6px 0 8px;letter-spacing:-.01em}
+.ses-head p{margin:0 0 14px;color:var(--ink-soft)}
+.minutado{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.min{font-family:var(--f-m);font-size:11.5px;border:1px solid var(--line);border-radius:2px;padding:4px 9px;color:var(--ink-soft)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-family:var(--f-m);font-size:11px;border:1px solid var(--goo-azul);color:var(--goo-azul);border-radius:2px;padding:3px 8px}
+.chip.sab{border-color:var(--line);color:var(--ink-soft)}
+.bloque{margin-bottom:34px}
+.rotulo{display:flex;align-items:center;gap:10px;font-family:var(--f-m);font-size:12px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-soft);margin-bottom:12px}
+.rotulo .num{background:var(--goo-azul);color:#fff;border-radius:2px;min-width:26px;height:24px;
+  display:inline-grid;place-items:center;font-weight:500}
+.rotulo::after{content:"";flex:1;height:2px;background:var(--goo-azul);opacity:.3}
+.bloque:nth-of-type(4n+2) .rotulo .num,.bloque:nth-of-type(4n+2) .rotulo::after{background:var(--goo-rojo)}
+.bloque:nth-of-type(4n+3) .rotulo .num,.bloque:nth-of-type(4n+3) .rotulo::after{background:var(--goo-verde)}
+.bloque:nth-of-type(4n+4) .rotulo .num{background:var(--goo-amarillo);color:#202124}
+.bloque:nth-of-type(4n+4) .rotulo::after{background:var(--goo-amarillo)}
+h3{font-size:18px;margin:22px 0 6px;letter-spacing:-.01em}
+h4{font-size:15.5px;margin:16px 0 4px}
+.bloque ul,.bloque ol{padding-left:22px}
+.bloque li{margin-bottom:5px}
+.nota,.aviso,.def{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;padding:14px 16px;margin:16px 0}
+.nota{border-left:5px solid var(--goo-azul)}
+.aviso{border-left:5px solid var(--goo-amarillo)}
+.def{border-left:5px solid var(--goo-verde)}
+.n-tag{display:block;font-family:var(--f-m);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-soft);margin-bottom:5px}
+.nota .n-tag{color:var(--goo-azul)}
+.escena{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;margin:18px 0}
+.escena-barra{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
+  padding:12px 16px;border-bottom:1px solid var(--line)}
+.escena-titulo{font-family:var(--f-m);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.seg button{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;padding:6px 12px;
+  font:400 12px var(--f-m);color:var(--ink-soft);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--goo-azul);border-color:var(--goo-azul);color:#fff}
+.lienzo{padding:10px;background:var(--surface);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:20px 20px}
+.lienzo svg{width:100%;height:auto;display:block}
+.pie{padding:12px 16px;border-top:1px solid var(--line);font-size:14.5px;color:var(--ink-soft)}
+.ficha{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;margin:16px 0;overflow:hidden}
+.ficha-cab{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;
+  background:var(--ink);color:var(--surface);padding:12px 16px;font-family:var(--f-m);font-size:11.5px;
+  letter-spacing:.08em;text-transform:uppercase}
+.ficha-cab .chip{border-color:var(--surface);color:var(--surface)}
+.ficha-cuerpo{padding:16px}
+.resp{border:1px solid var(--line);border-radius:2px;margin:8px 0}
+.resp summary{cursor:pointer;padding:9px 13px;font-family:var(--f-m);font-size:11.5px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink-soft)}
+.resp summary::-webkit-details-marker{display:none}
+.resp-cuerpo{padding:0 13px 13px}
+.resp-cuerpo p:last-child{margin-bottom:0}
+
+.narra{display:flex;gap:14px;align-items:flex-start}
+.avatar-caja{flex:none;width:104px}
+.avatar-caja svg.avatar{width:104px;height:72px;display:block}
+.avatar.habla{animation:habla .34s ease-in-out infinite alternate}
+@keyframes habla{from{transform:translateY(0)}to{transform:translateY(-2.5px)}}
+.globo{flex:1;background:var(--surface-2);border:1.5px solid var(--line);border-radius:2px;padding:11px 13px;position:relative}
+.globo::before{content:"";position:absolute;left:-9px;top:20px;width:0;height:0;
+  border-top:8px solid transparent;border-bottom:8px solid transparent;border-right:9px solid var(--line)}
+.avatar-dice{margin-top:8px;font-family:var(--f-m);font-size:12px;color:var(--goo-azul);font-style:italic}
+.voz-no{margin:10px 0 0;font-size:13px;color:var(--ink-soft)}
+@media (max-width:520px){.narra{flex-direction:column;align-items:center}.globo::before{display:none}}
+
+.reto-piensa{background:var(--surface);border:1.5px solid var(--goo-amarillo);border-left-width:5px;
+  border-radius:2px;padding:14px 16px;margin:16px 0}
+.reto-piensa .n-tag{color:#9a7326}
+.reto-piensa p{margin:0}
+.resp.revela summary{color:var(--goo-azul);font-weight:500}
+.resp.revela[open] summary{color:var(--ink-soft)}
+.resp.revela table{margin:0}
+.secuencia li.oculto{color:transparent;background:var(--surface-2);border-radius:2px;user-select:none}
+.secuencia li.oculto *{visibility:hidden}
+.secuencia li{transition:color .25s ease,background .25s ease;padding:2px 4px}
+#btn-secuencia{background:var(--surface);border:1.5px solid var(--goo-azul);color:var(--goo-azul);
+  border-radius:2px;padding:7px 14px;font:500 12px var(--f-m);cursor:pointer}
+#btn-secuencia:disabled{border-color:var(--line);color:var(--ink-soft);cursor:default}
+
+/* series del grafico de coste: validadas con el script de dataviz
+   claro  #ea4335/#1a73e8  -> min CVD 27.0, vision normal 36.8
+   oscuro #ef5350/#4285f4  -> min CVD 24.6, vision normal 33.2 */
+:root{--c-analog:#ea4335;--c-digital:#1a73e8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--c-analog:#ef5350;--c-digital:#4285f4}}
+.ejeq{fill:var(--ink-soft);font-family:var(--f-m);font-size:11px}
+.etq{fill:var(--ink);font-family:var(--f-m);font-size:11px;font-weight:500}
+
+
+.foto{margin:16px 0;border:1.5px solid var(--line);border-radius:2px;background:var(--surface);overflow:hidden}
+.foto img{width:100%;height:auto;display:block}
+.foto figcaption{padding:11px 14px;font-size:14px;line-height:1.5;color:var(--ink);border-top:1px solid var(--line)}
+.credito{display:block;margin-top:7px;font-family:var(--f-m);font-size:10.5px;color:var(--ink-soft);letter-spacing:.02em}
+.credito a{color:var(--ink-soft)}
+.galeria-ri{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));margin:16px 0}
+.galeria-ri .foto{margin:0}
+.galeria-ri figcaption{font-size:13.5px}
+
+.video{margin:16px 0}
+.video-play{width:100%;display:flex;align-items:center;gap:16px;padding:22px 20px;cursor:pointer;
+  background:var(--surface);border:1.5px solid var(--line);border-radius:2px;text-align:left;
+  transition:border-color .18s ease}
+.video-play:hover{border-color:var(--goo-rojo)}
+.video-tri{flex:none;width:52px;height:38px;border-radius:6px;background:var(--goo-rojo);position:relative}
+.video-tri::after{content:"";position:absolute;left:20px;top:11px;border-left:14px solid #fff;
+  border-top:8px solid transparent;border-bottom:8px solid transparent}
+.video-txt b{display:block;font:500 16px var(--f-b);color:var(--ink);margin-bottom:3px}
+.video-txt span{font:400 12px var(--f-m);color:var(--ink-soft)}
+.video-nota{margin:9px 0 0;font-size:12.5px;color:var(--ink-soft);line-height:1.5}
+.video iframe{width:100%;aspect-ratio:16/9;height:auto;border:1.5px solid var(--line);border-radius:2px;display:block}
+
+/* lo que se copia en la libreta, frente a lo que es solo para entender */
+.copiar{background:var(--surface);border:2px solid var(--goo-azul);border-radius:2px;
+  padding:16px 18px;margin:18px 0;position:relative}
+.copiar::before{content:"PARA LA LIBRETA";position:absolute;top:-11px;left:14px;
+  background:var(--goo-azul);color:#fff;font-family:var(--f-m);font-size:10.5px;letter-spacing:.1em;
+  padding:3px 9px;border-radius:2px}
+.copiar > :first-child{margin-top:6px}
+.copiar > :last-child{margin-bottom:0}
+.copiar h4{font-size:15px;margin:10px 0 4px}
+.entender{border-left:4px solid var(--line);padding:2px 0 2px 16px;margin:18px 0;color:var(--ink-soft)}
+.entender .e-tag{display:block;font-family:var(--f-m);font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
+.entender b{color:var(--ink)}
+@media print{
+  .entender,.escena,.video,.narra,nav.sesiones{display:none}
+  .copiar{border-width:1.5px;break-inside:avoid}
+}
+.rotulo-svg{fill:var(--ink-soft);font-family:var(--f-m);font-size:11px;letter-spacing:.06em}
+.hito{fill:var(--surface);stroke:var(--goo-azul);stroke-width:2;cursor:pointer}
+.hito.on{fill:var(--goo-azul)}
+.eje-t{fill:none;stroke:var(--line);stroke-width:2}
+footer{border-top:1px solid var(--line);color:var(--ink-soft);font-size:13.5px;margin-top:30px}
+footer .wrap{padding-block:18px 26px}
+@media (max-width:560px){body{font-size:15.5px}.lienzo{padding:4px}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="eyebrow"><a href="../../../">Inicio</a> &middot; <a href="../../">2.&ordm; ESO</a> &middot; <a href="../">TyD</a> &middot; Tema 1</div>
+    <h1>El proceso de resoluci&oacute;n de problemas tecnol&oacute;gicos</h1>
+    <nav class="sesiones" id="nav" aria-label="Sesiones del tema"><button type="button" data-ses="1" aria-selected="true">S1 &middot; S1 &middot; M&eacute;todo de proyectos</button></nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div id="ses-1">
+    <div class="ses-head">
+      <div class="eyebrow">Sesi&oacute;n 1 &middot; 60 minutos</div>
+      <h2>El proceso de resoluci&oacute;n de problemas tecnol&oacute;gicos</h2>
+      <p>Qu&eacute; es la tecnolog&iacute;a, el m&eacute;todo de proyectos en diez fases, los documentos que lo acompa&ntilde;an y c&oacute;mo se trabaja en esta asignatura.</p>
+      <div class="minutado"><span class="min"><b>0-15</b> Secciones 1-2</span><span class="min"><b>15-35</b> Secci&oacute;n 3 y actividades</span><span class="min"><b>35-55</b> Secci&oacute;n 4 y actividad 8</span></div>
+      <div class="chips"><span class="chip">CE1 &middot; 1.1</span><span class="chip">CE1 &middot; 1.2</span><span class="chip">CE1 &middot; 1.3</span><span class="chip">CE2 &middot; 2.1</span><span class="chip">CE2 &middot; 2.2</span><span class="chip sab">A.1</span><span class="chip sab">A.2</span><span class="chip sab">A.8</span></div>
+    </div>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">01</span> La tecnolog&iacute;a como respuesta a las necesidades humanas</div>
+
+      <p>La actividad tecnol&oacute;gica se inici&oacute; casi al mismo tiempo que la aparici&oacute;n
+      del ser humano sobre la Tierra, y surgi&oacute; como respuesta a sus necesidades m&aacute;s
+      b&aacute;sicas, de las que depend&iacute;a su supervivencia: alimento, cobijo, ropa&hellip;</p>
+      <div class="def">
+        <span class="n-tag">Definici&oacute;n</span>
+        La <b>tecnolog&iacute;a</b> es el conjunto de conocimientos y t&eacute;cnicas que se emplean
+        para satisfacer las necesidades humanas y resolver problemas que se nos presentan en
+        nuestra vida diaria.
+      </div>
+      <p>As&iacute;, la labor de un tecn&oacute;logo ser&aacute; inventar, dise&ntilde;ar y construir
+      <b>productos tecnol&oacute;gicos</b>, o modificar algunos ya inventados, para dar respuesta a
+      las necesidades planteadas.</p>
+      <div class="copiar">
+        <h4>Siete necesidades, siete familias de productos</h4>
+        <table style="width:100%;border-collapse:collapse;font-size:14.5px">
+          <tr><td style="padding:4px 8px 4px 0"><b>Alimentaci&oacute;n</b></td><td>nevera, microondas, batidora&hellip;</td></tr>
+          <tr><td style="padding:4px 8px 4px 0"><b>Vestido</b></td><td>pantal&oacute;n, camisa, zapatillas&hellip;</td></tr>
+          <tr><td style="padding:4px 8px 4px 0"><b>Refugio</b></td><td>casas, pisos&hellip;</td></tr>
+          <tr><td style="padding:4px 8px 4px 0"><b>Transporte</b></td><td>autob&uacute;s, avi&oacute;n, bicicleta&hellip;</td></tr>
+          <tr><td style="padding:4px 8px 4px 0"><b>Trabajo</b></td><td>ordenador, calculadora, herramientas&hellip;</td></tr>
+          <tr><td style="padding:4px 8px 4px 0"><b>Ocio</b></td><td>parques de atracciones, videojuegos&hellip;</td></tr>
+          <tr><td style="padding:4px 8px 4px 0"><b>Comunicaci&oacute;n</b></td><td>tel&eacute;fono, televisi&oacute;n, peri&oacute;dico&hellip;</td></tr>
+          <tr><td style="padding:4px 8px 4px 0"><b>Salud e higiene</b></td><td>aparatos de rayos X, jeringuilla, jab&oacute;n&hellip;</td></tr>
+        </table>
+      </div>
+      <div class="def">
+        <span class="n-tag">Definici&oacute;n</span>
+        El <b>saber tecnol&oacute;gico</b> es el resultado de sumar el conocimiento cient&iacute;fico
+        (f&iacute;sica, matem&aacute;ticas, dibujo&hellip;), el conocimiento t&eacute;cnico (t&eacute;cnicas
+        de trabajo, herramientas, m&aacute;quinas&hellip;) y la influencia social de cada &eacute;poca
+        (costumbres, consideraciones medioambientales&hellip;): <b>ciencia + t&eacute;cnica + sociedad
+        = tecnolog&iacute;a</b>.
+      </div>
+  
+    </section>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">02</span> El m&eacute;todo de proyectos</div>
+
+      <div class="def">
+        <span class="n-tag">Definici&oacute;n</span>
+        El <b>m&eacute;todo de proyectos</b> es una forma ordenada de abordar y resolver problemas
+        pr&aacute;cticos que se presentan en cualquier sociedad. Sigue un m&eacute;todo estructurado
+        en diez fases, desde el problema planteado hasta la soluci&oacute;n encontrada.
+      </div>
+      <h4>Las diez fases</h4>
+      <ol>
+        <li><b>Detecci&oacute;n de un problema o una necesidad.</b> &iquest;Con qu&eacute; problema nos
+        encontramos o qu&eacute; propuesta de trabajo nos han hecho? &iquest;Con qu&eacute; condiciones?</li>
+        <li><b>B&uacute;squeda de informaci&oacute;n e investigaci&oacute;n.</b> Se recopila, analiza y
+        selecciona la informaci&oacute;n relacionada con las distintas posibilidades de resolver el
+        problema, y se analizan productos que satisfagan necesidades semejantes.</li>
+        <li><b>B&uacute;squeda de soluciones posibles.</b> Se piensan distintas alternativas y se
+        analizan y eval&uacute;an para saber si son viables.</li>
+        <li><b>Elecci&oacute;n de una de las soluciones,</b> de acuerdo con los criterios que se
+        consideren prioritarios (tipo de material, tama&ntilde;o, forma, costes&hellip;).</li>
+        <li><b>Dise&ntilde;o.</b> Bocetos, croquis y esquemas o planos de la soluci&oacute;n elegida,
+        primero a mano alzada y luego con m&aacute;s detalle.</li>
+        <li><b>Preparaci&oacute;n y planificaci&oacute;n del trabajo:</b> materiales, t&eacute;cnicas
+        y herramientas; tareas, tiempos y secuencia.</li>
+        <li><b>Construcci&oacute;n del producto.</b> Fabricaci&oacute;n, montaje y acabados,
+        economizando materiales.</li>
+        <li><b>Comprobaci&oacute;n del resultado.</b> &iquest;Funciona? &iquest;Responde a su
+        finalidad? Se propone mejoras si hace falta.</li>
+        <li><b>Presentaci&oacute;n y evaluaci&oacute;n.</b> Se expone el trabajo y se somete a la
+        valoraci&oacute;n de personas externas al grupo.</li>
+        <li><b>Elaboraci&oacute;n de la memoria</b> del proyecto realizado.</li>
+      </ol>
+      <div class="nota">
+        <span class="n-tag">Ojo</span>
+        Las diez fases est&aacute;n conectadas: en muchas ocasiones hay que <b>volver a una etapa
+        anterior</b> para repensar hip&oacute;tesis, incluir ideas nuevas o redise&ntilde;ar algo.
+      </div>
+  
+    </section>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">03</span> Documentos b&aacute;sicos de un proyecto</div>
+
+      <p>Los proyectos requieren una <b>documentaci&oacute;n</b> tan importante como el objeto que
+      se va a construir: recoge las diez fases del m&eacute;todo de proyectos, y se elabora antes,
+      durante y despu&eacute;s de la construcci&oacute;n.</p>
+      <table style="width:100%;border-collapse:collapse;font-size:14.5px;margin:14px 0">
+        <tr><td style="padding:6px 10px 6px 0;vertical-align:top"><b>Antes</b><br>organizamos el trabajo</td>
+            <td style="padding:6px 0">el <b>anteproyecto</b>: bocetos y croquis, listas de materiales y
+            herramientas, presupuesto, reparto de tareas</td></tr>
+        <tr><td style="padding:6px 10px 6px 0;vertical-align:top"><b>Durante</b><br>detallamos el proceso</td>
+            <td style="padding:6px 0">el <b>diario de construcci&oacute;n</b> (qu&eacute; ha hecho cada
+            d&iacute;a cada miembro) y la <b>hoja de procesos</b> (c&oacute;mo es cada pieza, con qu&eacute;
+            herramientas, cu&aacute;nto tiempo, qui&eacute;n)</td></tr>
+        <tr><td style="padding:6px 10px 6px 0;vertical-align:top"><b>Despu&eacute;s</b><br>documentamos y evaluamos</td>
+            <td style="padding:6px 0">la <b>memoria</b>: portada, &iacute;ndice, definici&oacute;n de la
+            propuesta, investigaci&oacute;n, soluciones posibles, soluci&oacute;n elegida, planos,
+            planificaci&oacute;n, realizaci&oacute;n, pruebas y conclusiones</td></tr>
+      </table>
+      <div class="ficha">
+        <div class="ficha-cab"><span>Ejemplo de memoria del libro</span>
+          <span class="chips"><span class="chip">A.1</span><span class="chip">A.8</span></span>
+          <span>resumido</span></div>
+        <div class="ficha-cuerpo">
+          <p><b>Propuesta:</b> un sistema de iluminaci&oacute;n de bolsillo que se alimente con una o
+          dos pilas de hasta 3,5&nbsp;V, que no supere los 2&nbsp;dm de largo y hecho con material
+          reutilizado o madera.</p>
+          <p><b>Soluciones posibles:</b> una caja de cerillas, un tubo de cart&oacute;n de papel
+          higi&eacute;nico, un bote cil&iacute;ndrico de especias.</p>
+          <p><b>Soluci&oacute;n elegida:</b> la caja de cerillas dividida en dos partes por dentro,
+          con una ventana transl&uacute;cida roja.</p>
+          <p><b>Durante la construcci&oacute;n:</b> costó separar el eje del bote de pegamento;
+          se resolvi&oacute; perforando con una barrena y tirando con unas tenazas.</p>
+          <p><b>Conclusiones:</b> la linterna funciona, pero el interruptor est&aacute; duro y la
+          caja es fr&aacute;gil. Los materiales elegidos fueron adecuados, aunque hab&iacute;a otros
+          igual de v&aacute;lidos.</p>
+        </div>
+      </div>
+      <p><b>ACTIVIDADES</b> (del libro, p.&nbsp;23)</p>
+      <ol>
+              <li>1. Indica qu&eacute; necesidades cubren estos productos: moto, cepillo de dientes, microondas, ordenador, televisi&oacute;n, tienda de campa&ntilde;a, zapatillas de deporte, tel&eacute;fono m&oacute;vil, metro, nevera, aparato de rayos X.
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>Transporte: moto, metro. Salud e higiene: cepillo de dientes, aparato de rayos X. Alimentaci&oacute;n: microondas, nevera. Trabajo/ocio: ordenador. Comunicaci&oacute;n: televisi&oacute;n, tel&eacute;fono m&oacute;vil. Refugio: tienda de campa&ntilde;a. Vestido: zapatillas de deporte.</p></div></details></li>
+        <li>2. Anota dos t&eacute;cnicas necesarias para hacer un tangram de madera y explica su utilidad.
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>Por ejemplo, <b>medir y trazar</b> (para que las piezas encajen entre s&iacute;) y <b>cortar/lijar la madera</b> (para separar las piezas y dejar los bordes lisos y seguros).</p></div></details></li>
+        <li>3. Si s&eacute; cortar con una sierra pero desconozco las propiedades de la madera, &iquest;crees que soy un buen tecn&oacute;logo? Razona tu respuesta.
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>No del todo: el saber tecnol&oacute;gico junta <b>ciencia + t&eacute;cnica + sociedad</b>. Saber manejar la herramienta es solo la t&eacute;cnica; sin conocer las propiedades del material se corre el riesgo de elegir mal o de que la pieza falle.</p></div></details></li>
+        <li>4. Enumera ventajas e inconvenientes de los estuches de tela frente a los de metal.
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>Tela: m&aacute;s ligeros y baratos, pero se rompen antes y no protegen bien de golpes. Metal: m&aacute;s resistentes y duraderos, pero pesan m&aacute;s y cuestan m&aacute;s.</p></div></details></li>
+        <li>5. Imagina que vas a construir un parch&iacute;s. Escribe en qu&eacute; consistir&iacute;an las diez fases del m&eacute;todo de proyectos.
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>Respuesta abierta: debe recorrer las diez fases aplicadas a un parch&iacute;s (detectar la necesidad de un juego de mesa, buscar parch&iacute;s existentes, pensar materiales &mdash;cart&oacute;n, madera&mdash;, elegir uno, dise&ntilde;ar el tablero, planificar materiales y tiempo, construirlo, comprobar que las fichas y el dado funcionan, presentarlo y hacer la memoria).</p></div></details></li>
+        <li>6. &iquest;Cu&aacute;l es la diferencia, en el tiempo de realizaci&oacute;n, entre el anteproyecto y la memoria?
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>El <b>anteproyecto</b> se hace <b>antes</b> de construir (para planificar); la <b>memoria</b> se hace <b>despu&eacute;s</b> (para documentar y evaluar lo ya hecho).</p></div></details></li>
+        <li>7. &iquest;Qu&eacute; apartados tiene el anteproyecto? &iquest;Y la memoria?
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p><b>Anteproyecto:</b> dibujos, lista de materiales y herramientas, presupuesto y reparto de tareas. <b>Memoria:</b> portada, &iacute;ndice, definici&oacute;n de la propuesta, investigaci&oacute;n, soluciones posibles, soluci&oacute;n elegida, planos, planificaci&oacute;n, realizaci&oacute;n, pruebas finales y conclusiones.</p></div></details></li>
+
+      </ol>
+  
+    </section>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">04</span> C&oacute;mo se trabaja en esta asignatura</div>
+
+      <p>Se trabaja en tres espacios: la <b>clase</b>, el <b>aula de inform&aacute;tica</b> y el
+      <b>taller</b>. En el taller, el trabajo en grupo exige repartir tareas para evitar
+      duplicidades:</p>
+      <ul>
+        <li><b>Coordinador/a</b>: reparte tareas y evita que nadie est&eacute; desocupado.</li>
+        <li><b>Secretario/a</b>: guarda los documentos y completa el diario de construcci&oacute;n.</li>
+        <li><b>Investigador/a</b>: busca informaci&oacute;n sobre posibles soluciones.</li>
+        <li><b>Encargado/a de herramientas</b>: las revisa al principio y al final de la clase.</li>
+        <li><b>Encargado/a de material</b>: lo guarda y avisa cuando falta.</li>
+        <li><b>Encargado/a de seguridad e higiene</b>: vigila el orden y la limpieza del taller.</li>
+      </ul>
+      <p>Toda la documentaci&oacute;n generada se guarda en la <b>carpeta de proyecto</b>.
+      En el aula de inform&aacute;tica se trabaja para escribir, presentar, buscar informaci&oacute;n,
+      dibujar, simular y programar, siguiendo siempre la misma estructura de guardado de archivos.</p>
+      <p><b>ACTIVIDAD</b> (del libro, p.&nbsp;27)</p>
+      <ol>
+              <li>8. El equipamiento del taller incluye elementos de protecci&oacute;n personal y colectiva tales como gafas o guantes. Elige cu&aacute;l usar&iacute;as para: a) usar el taladro, b) cortar chapa, c) cortar con un c&uacute;ter, d) serrar.
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>a) Gafas de protecci&oacute;n (por las virutas). b) Gafas y guantes (bordes cortantes). c) Guantes (el c&uacute;ter puede resbalar). d) Gafas (serr&iacute;n) y, si la pieza es peque&ntilde;a, un sargento para sujetarla en vez de la mano.</p></div></details></li>
+
+      </ol>
+      <div class="nota" id="curriculo-andalucia">
+        <span class="n-tag">Curr&iacute;culo de Andaluc&iacute;a</span>
+        Esta unidad trabaja las <b>competencias espec&iacute;ficas 1 y 2</b> de Tecnolog&iacute;a y
+        Digitalizaci&oacute;n, los <b>criterios de evaluaci&oacute;n 1.1, 1.2, 1.3, 2.1 y 2.2</b>, y los
+        <b>saberes b&aacute;sicos A.1 (estrategias de resoluci&oacute;n de problemas), A.2
+        (b&uacute;squeda cr&iacute;tica de informaci&oacute;n) y A.8 (emprendimiento, resiliencia,
+        perseverancia y creatividad)</b>, seg&uacute;n la
+        <a href="https://www.juntadeandalucia.es/boja/2023/104/BOJA23-104-00281-9728-01_00284744.pdf"
+        target="_blank" rel="noopener">Orden de 30 de mayo de 2023 (BOJA n&uacute;m. 104, de 2 de junio de
+        2023), anexo&nbsp;II</a>.
+      </div>
+      <div class="aviso">
+        <span class="n-tag">Pendiente de la pr&oacute;xima sesi&oacute;n</span>
+        Las pr&aacute;cticas de <b>Aprende con el ordenador</b>, el <b>rinc&oacute;n del programador</b>,
+        el resumen de la unidad y la autoevaluaci&oacute;n.
+      </div>
+  
+    </section>
+
+  </div>
+
+</main>
+
+<footer><div class="wrap">Tema 1 &middot; 2.&ordm; de ESO &middot; Tecnolog&iacute;a y Digitalizaci&oacute;n</div></footer>
+
+<script>
+(function(){
+  var nav = document.getElementById('nav');
+  if(!nav) return;
+  nav.addEventListener('click', function(e){
+    var b = e.target.closest('button[data-ses]');
+    if(!b || b.disabled) return;
+    nav.querySelectorAll('button').forEach(function(x){
+      x.setAttribute('aria-selected', x === b ? 'true' : 'false');
+    });
+    document.querySelectorAll('[id^="ses-"]').forEach(function(p){
+      p.hidden = (p.id !== 'ses-' + b.dataset.ses);
+    });
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+})();
+</script>
+
+</body>
+</html>
