@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tema 4 &middot; Los materiales tecnol&oacute;gicos y su impacto ambiental</title>
+<meta name="description" content="Tema 4 de Tecnolog&iacute;a y Digitalizaci&oacute;n de 2.&ordm; de ESO (Andaluc&iacute;a): materiales de uso t&eacute;cnico, su elecci&oacute;n, propiedades, la madera y los metales, con las competencias, criterios y saberes b&aacute;sicos de la Orden de 30 de mayo de 2023.">
+<link rel="canonical" href="https://rgllorente82-png.github.io/danieltecnologia/2eso/TyD/tema4/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"Tema 4 &middot; Los materiales tecnol&oacute;gicos y su impacto ambiental","url":"https://rgllorente82-png.github.io/danieltecnologia/2eso/TyD/tema4/","inLanguage":"es",
+ "isAccessibleForFree":true,
+ "educationalLevel":"Educaci&oacute;n Secundaria Obligatoria","learningResourceType":"Unidad did&aacute;ctica interactiva"}
+</script>
+<style>
+:root{
+  --paper:#f8f9fa;--surface:#fff;--surface-2:#f1f3f4;--ink:#202124;--ink-soft:#5f6368;
+  --line:#dadce0;--line-soft:#e8eaed;--accent:#1a73e8;--accent-soft:#e8f0fe;
+  --goo-azul:#4285f4;--goo-rojo:#ea4335;--goo-amarillo:#fbbc04;--goo-verde:#34a853;
+  --grid:rgba(66,133,244,.09);
+  --f-b:"Roboto",-apple-system,"Segoe UI",Arial,sans-serif;
+  --f-m:"Roboto Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#202124;--surface:#292a2d;--surface-2:#35363a;--ink:#e8eaed;--ink-soft:#9aa0a6;
+  --line:#5f6368;--line-soft:#3c4043;--accent:#8ab4f8;--accent-soft:#1f3347;
+  --goo-azul:#8ab4f8;--goo-rojo:#f28b82;--goo-amarillo:#fdd663;--goo-verde:#81c995;
+  --grid:rgba(138,180,248,.09)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 var(--f-b);letter-spacing:.01em}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+header.top{background:var(--surface);border-bottom:2px solid var(--ink);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:24px 24px;position:sticky;top:0;z-index:50}
+header.top .wrap{padding-block:16px 0}
+.eyebrow{font-family:var(--f-m);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.eyebrow a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
+.eyebrow a:hover{border-bottom-color:currentColor}
+h1{font-weight:700;font-size:clamp(22px,4.4vw,30px);margin:6px 0 12px;letter-spacing:-.015em}
+nav.sesiones{display:flex;gap:8px;overflow-x:auto;padding-bottom:12px}
+nav.sesiones button{flex:none;background:var(--surface);color:var(--ink-soft);border:1.5px solid var(--line);
+  border-radius:2px;padding:7px 14px;font:400 13px var(--f-m);cursor:pointer;white-space:nowrap}
+nav.sesiones button[aria-selected="true"]{background:var(--goo-azul);border-color:var(--goo-azul);color:#fff}
+nav.sesiones button[disabled]{opacity:.45;cursor:default}
+main{padding-block:26px 70px}
+.ses-head{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;padding:20px;margin-bottom:26px}
+.ses-head h2{font-size:22px;margin:6px 0 8px;letter-spacing:-.01em}
+.ses-head p{margin:0 0 14px;color:var(--ink-soft)}
+.minutado{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.min{font-family:var(--f-m);font-size:11.5px;border:1px solid var(--line);border-radius:2px;padding:4px 9px;color:var(--ink-soft)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-family:var(--f-m);font-size:11px;border:1px solid var(--goo-azul);color:var(--goo-azul);border-radius:2px;padding:3px 8px}
+.chip.sab{border-color:var(--line);color:var(--ink-soft)}
+.bloque{margin-bottom:34px}
+.rotulo{display:flex;align-items:center;gap:10px;font-family:var(--f-m);font-size:12px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-soft);margin-bottom:12px}
+.rotulo .num{background:var(--goo-azul);color:#fff;border-radius:2px;min-width:26px;height:24px;
+  display:inline-grid;place-items:center;font-weight:500}
+.rotulo::after{content:"";flex:1;height:2px;background:var(--goo-azul);opacity:.3}
+.bloque:nth-of-type(4n+2) .rotulo .num,.bloque:nth-of-type(4n+2) .rotulo::after{background:var(--goo-rojo)}
+.bloque:nth-of-type(4n+3) .rotulo .num,.bloque:nth-of-type(4n+3) .rotulo::after{background:var(--goo-verde)}
+.bloque:nth-of-type(4n+4) .rotulo .num{background:var(--goo-amarillo);color:#202124}
+.bloque:nth-of-type(4n+4) .rotulo::after{background:var(--goo-amarillo)}
+h3{font-size:18px;margin:22px 0 6px;letter-spacing:-.01em}
+h4{font-size:15.5px;margin:16px 0 4px}
+.bloque ul,.bloque ol{padding-left:22px}
+.bloque li{margin-bottom:5px}
+.nota,.aviso,.def{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;padding:14px 16px;margin:16px 0}
+.nota{border-left:5px solid var(--goo-azul)}
+.aviso{border-left:5px solid var(--goo-amarillo)}
+.def{border-left:5px solid var(--goo-verde)}
+.n-tag{display:block;font-family:var(--f-m);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-soft);margin-bottom:5px}
+.nota .n-tag{color:var(--goo-azul)}
+.escena{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;margin:18px 0}
+.escena-barra{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
+  padding:12px 16px;border-bottom:1px solid var(--line)}
+.escena-titulo{font-family:var(--f-m);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.seg button{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;padding:6px 12px;
+  font:400 12px var(--f-m);color:var(--ink-soft);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--goo-azul);border-color:var(--goo-azul);color:#fff}
+.lienzo{padding:10px;background:var(--surface);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:20px 20px}
+.lienzo svg{width:100%;height:auto;display:block}
+.pie{padding:12px 16px;border-top:1px solid var(--line);font-size:14.5px;color:var(--ink-soft)}
+.ficha{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;margin:16px 0;overflow:hidden}
+.ficha-cab{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;
+  background:var(--ink);color:var(--surface);padding:12px 16px;font-family:var(--f-m);font-size:11.5px;
+  letter-spacing:.08em;text-transform:uppercase}
+.ficha-cab .chip{border-color:var(--surface);color:var(--surface)}
+.ficha-cuerpo{padding:16px}
+.resp{border:1px solid var(--line);border-radius:2px;margin:8px 0}
+.resp summary{cursor:pointer;padding:9px 13px;font-family:var(--f-m);font-size:11.5px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink-soft)}
+.resp summary::-webkit-details-marker{display:none}
+.resp-cuerpo{padding:0 13px 13px}
+.resp-cuerpo p:last-child{margin-bottom:0}
+
+.narra{display:flex;gap:14px;align-items:flex-start}
+.avatar-caja{flex:none;width:104px}
+.avatar-caja svg.avatar{width:104px;height:72px;display:block}
+.avatar.habla{animation:habla .34s ease-in-out infinite alternate}
+@keyframes habla{from{transform:translateY(0)}to{transform:translateY(-2.5px)}}
+.globo{flex:1;background:var(--surface-2);border:1.5px solid var(--line);border-radius:2px;padding:11px 13px;position:relative}
+.globo::before{content:"";position:absolute;left:-9px;top:20px;width:0;height:0;
+  border-top:8px solid transparent;border-bottom:8px solid transparent;border-right:9px solid var(--line)}
+.avatar-dice{margin-top:8px;font-family:var(--f-m);font-size:12px;color:var(--goo-azul);font-style:italic}
+.voz-no{margin:10px 0 0;font-size:13px;color:var(--ink-soft)}
+@media (max-width:520px){.narra{flex-direction:column;align-items:center}.globo::before{display:none}}
+
+.reto-piensa{background:var(--surface);border:1.5px solid var(--goo-amarillo);border-left-width:5px;
+  border-radius:2px;padding:14px 16px;margin:16px 0}
+.reto-piensa .n-tag{color:#9a7326}
+.reto-piensa p{margin:0}
+.resp.revela summary{color:var(--goo-azul);font-weight:500}
+.resp.revela[open] summary{color:var(--ink-soft)}
+.resp.revela table{margin:0}
+.secuencia li.oculto{color:transparent;background:var(--surface-2);border-radius:2px;user-select:none}
+.secuencia li.oculto *{visibility:hidden}
+.secuencia li{transition:color .25s ease,background .25s ease;padding:2px 4px}
+#btn-secuencia{background:var(--surface);border:1.5px solid var(--goo-azul);color:var(--goo-azul);
+  border-radius:2px;padding:7px 14px;font:500 12px var(--f-m);cursor:pointer}
+#btn-secuencia:disabled{border-color:var(--line);color:var(--ink-soft);cursor:default}
+
+/* series del grafico de coste: validadas con el script de dataviz
+   claro  #ea4335/#1a73e8  -> min CVD 27.0, vision normal 36.8
+   oscuro #ef5350/#4285f4  -> min CVD 24.6, vision normal 33.2 */
+:root{--c-analog:#ea4335;--c-digital:#1a73e8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--c-analog:#ef5350;--c-digital:#4285f4}}
+.ejeq{fill:var(--ink-soft);font-family:var(--f-m);font-size:11px}
+.etq{fill:var(--ink);font-family:var(--f-m);font-size:11px;font-weight:500}
+
+
+.foto{margin:16px 0;border:1.5px solid var(--line);border-radius:2px;background:var(--surface);overflow:hidden}
+.foto img{width:100%;height:auto;display:block}
+.foto figcaption{padding:11px 14px;font-size:14px;line-height:1.5;color:var(--ink);border-top:1px solid var(--line)}
+.credito{display:block;margin-top:7px;font-family:var(--f-m);font-size:10.5px;color:var(--ink-soft);letter-spacing:.02em}
+.credito a{color:var(--ink-soft)}
+.galeria-ri{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));margin:16px 0}
+.galeria-ri .foto{margin:0}
+.galeria-ri figcaption{font-size:13.5px}
+
+.video{margin:16px 0}
+.video-play{width:100%;display:flex;align-items:center;gap:16px;padding:22px 20px;cursor:pointer;
+  background:var(--surface);border:1.5px solid var(--line);border-radius:2px;text-align:left;
+  transition:border-color .18s ease}
+.video-play:hover{border-color:var(--goo-rojo)}
+.video-tri{flex:none;width:52px;height:38px;border-radius:6px;background:var(--goo-rojo);position:relative}
+.video-tri::after{content:"";position:absolute;left:20px;top:11px;border-left:14px solid #fff;
+  border-top:8px solid transparent;border-bottom:8px solid transparent}
+.video-txt b{display:block;font:500 16px var(--f-b);color:var(--ink);margin-bottom:3px}
+.video-txt span{font:400 12px var(--f-m);color:var(--ink-soft)}
+.video-nota{margin:9px 0 0;font-size:12.5px;color:var(--ink-soft);line-height:1.5}
+.video iframe{width:100%;aspect-ratio:16/9;height:auto;border:1.5px solid var(--line);border-radius:2px;display:block}
+
+/* lo que se copia en la libreta, frente a lo que es solo para entender */
+.copiar{background:var(--surface);border:2px solid var(--goo-azul);border-radius:2px;
+  padding:16px 18px;margin:18px 0;position:relative}
+.copiar::before{content:"PARA LA LIBRETA";position:absolute;top:-11px;left:14px;
+  background:var(--goo-azul);color:#fff;font-family:var(--f-m);font-size:10.5px;letter-spacing:.1em;
+  padding:3px 9px;border-radius:2px}
+.copiar > :first-child{margin-top:6px}
+.copiar > :last-child{margin-bottom:0}
+.copiar h4{font-size:15px;margin:10px 0 4px}
+.entender{border-left:4px solid var(--line);padding:2px 0 2px 16px;margin:18px 0;color:var(--ink-soft)}
+.entender .e-tag{display:block;font-family:var(--f-m);font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
+.entender b{color:var(--ink)}
+@media print{
+  .entender,.escena,.video,.narra,nav.sesiones{display:none}
+  .copiar{border-width:1.5px;break-inside:avoid}
+}
+.rotulo-svg{fill:var(--ink-soft);font-family:var(--f-m);font-size:11px;letter-spacing:.06em}
+.hito{fill:var(--surface);stroke:var(--goo-azul);stroke-width:2;cursor:pointer}
+.hito.on{fill:var(--goo-azul)}
+.eje-t{fill:none;stroke:var(--line);stroke-width:2}
+
+.necesidades{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:16px 0}
+.necesidad{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;padding:14px 10px;text-align:center;
+  transition:border-color .18s ease,transform .18s ease}
+.necesidad:hover{border-color:var(--goo-azul);transform:translateY(-2px)}
+.necesidad svg{width:34px;height:34px;display:block;margin:0 auto 8px;stroke:var(--goo-azul);fill:none;
+  stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.necesidad b{display:block;font-size:13.5px;margin-bottom:3px}
+.necesidad span{font-size:11.5px;color:var(--ink-soft);line-height:1.3}
+
+.stepper{display:flex;flex-wrap:wrap;gap:2px;padding:16px 6px;justify-content:center}
+.fase-nodo{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1 0 18%;min-width:82px;
+  background:none;border:none;cursor:pointer;padding:8px 4px;font-family:var(--f-b)}
+.fase-nodo .num{width:32px;height:32px;border-radius:50%;border:2px solid var(--line);display:grid;
+  place-items:center;font-family:var(--f-m);font-weight:700;font-size:13px;color:var(--ink-soft);
+  background:var(--surface);transition:all .18s ease}
+.fase-nodo[aria-pressed="true"] .num{background:var(--goo-azul);border-color:var(--goo-azul);color:#fff;
+  transform:scale(1.12)}
+.fase-nodo .etq{font-size:10.5px;text-align:center;color:var(--ink-soft);line-height:1.25;max-width:90px}
+.fase-nodo[aria-pressed="true"] .etq{color:var(--ink);font-weight:500}
+.fase-nodo:hover .num{border-color:var(--goo-azul)}
+
+footer{border-top:1px solid var(--line);color:var(--ink-soft);font-size:13.5px;margin-top:30px}
+footer .wrap{padding-block:18px 26px}
+@media (max-width:560px){body{font-size:15.5px}.lienzo{padding:4px}}
+
+/* ---- avatar narrador, plano y sincronizado con la voz ---- */
+.narrador{display:flex;gap:16px;align-items:flex-start;background:var(--surface);
+  border:1.5px solid var(--line);border-radius:2px;padding:16px;margin:18px 0}
+.narrador-fig{flex:none;width:110px}
+.narrador-fig svg{width:110px;height:120px;display:block}
+.narrador-txt{flex:1;min-width:0}
+.narrador-txt h4{margin:0 0 3px;font-size:15.5px}
+.narrador-quien{font-family:var(--f-m);font-size:11px;color:var(--ink-soft);display:block;margin-bottom:9px}
+.narrador-barra{height:4px;background:var(--surface-2);border-radius:2px;overflow:hidden;margin:11px 0 8px}
+.narrador-barra i{display:block;height:100%;width:0;background:var(--goo-azul);transition:width .1s linear}
+.narrador-nota{font-size:12.5px;color:var(--ink-soft);margin:8px 0 0;line-height:1.5}
+@media (max-width:520px){.narrador{flex-direction:column;align-items:center}
+  .narrador-txt{text-align:center}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="eyebrow"><a href="../../../">Inicio</a> &middot; <a href="../../">2.&ordm; ESO</a> &middot; <a href="../">TyD</a> &middot; Tema 4</div>
+    <h1>Los materiales tecnol&oacute;gicos y su impacto ambiental</h1>
+    <nav class="sesiones" id="nav" aria-label="Sesiones del tema"><button type="button" data-ses="1" aria-selected="true">S1 &middot; S1 &middot; Materiales</button></nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div id="ses-1">
+    <div class="ses-head">
+      <div class="eyebrow">Sesi&oacute;n 1 &middot; 60 minutos</div>
+      <h2>Los materiales tecnol&oacute;gicos y su impacto ambiental</h2>
+      <p>De la materia prima al material de uso t&eacute;cnico, c&oacute;mo se elige un material, sus propiedades y dos casos: la madera y los metales.</p>
+      <div class="minutado"><span class="min"><b>0-15</b> Materiales de uso t&eacute;cnico</span><span class="min"><b>15-35</b> Elecci&oacute;n y propiedades</span><span class="min"><b>35-55</b> La madera y los metales</span></div>
+      <div class="chips"><span class="chip">CE7 &middot; 7.1</span><span class="chip">CE7 &middot; 7.2</span><span class="chip sab">A.7</span><span class="chip sab">E.1</span></div>
+    </div>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">01</span> Materiales de uso t&eacute;cnico</div>
+
+      <div class="def">
+        <span class="n-tag">Definici&oacute;n</span>
+        Los <b>materiales de uso t&eacute;cnico</b> son los que se utilizan para construir objetos y
+        se obtienen a partir de <b>materias primas</b> (lo que da la naturaleza directamente:
+        madera, lana, minerales&hellip;), que se acondicionan en <b>materiales naturales</b> o se
+        transforman en <b>materiales transformados</b> (el petr&oacute;leo en pl&aacute;stico, la
+        madera en papel).
+      </div>
+      <div class="necesidades">
+        <div class="necesidad"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h18v3H3z"/><path d="M3 13h18v3H3z"/><circle cx="7" cy="9.5" r=".6" fill="currentColor" stroke="none"/><circle cx="15" cy="14.5" r=".6" fill="currentColor" stroke="none"/></svg><b>Maderas</b><span>naturales o transformadas: contrachapado, cart&oacute;n&hellip;</span></div>
+        <div class="necesidad"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg><b>Metales</b><span>hierro, aluminio, aleaciones como el lat&oacute;n&hellip;</span></div>
+        <div class="necesidad"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2h8v4l2 3v11a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V9l2-3Z"/><path d="M6 9h12"/></svg><b>Pl&aacute;sticos</b><span>naturales (caucho) o del petr&oacute;leo: PVC, nailon&hellip;</span></div>
+        <div class="necesidad"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6c2 0 2 2 4 2s2-2 4-2 2 2 4 2 2-2 4-2"/><path d="M4 12c2 0 2 2 4 2s2-2 4-2 2 2 4 2 2-2 4-2"/><path d="M4 18c2 0 2 2 4 2s2-2 4-2 2 2 4 2 2-2 4-2"/></svg><b>Textiles</b><span>lana, algod&oacute;n, o transformados: licra, poli&eacute;ster&hellip;</span></div>
+        <div class="necesidad"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="10" width="7" height="4"/><rect x="11" y="10" width="7" height="4"/><rect x="7" y="15" width="7" height="4"/><rect x="3" y="5" width="7" height="4"/><rect x="11" y="5" width="7" height="4"/></svg><b>Construcci&oacute;n</b><span>m&aacute;rmol, arcilla, o vidrio, cemento, hormig&oacute;n&hellip;</span></div>
+      </div>
+      <p><b>ACTIVIDADES</b> (selecci&oacute;n, p.&nbsp;127)</p>
+      <ol>
+              <li>Clasifica estas materias primas en animales, vegetales o minerales: lana, m&aacute;rmol, lino, arcilla, corcho, arena, seda.
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p><b>Animales:</b> lana, seda. <b>Vegetales:</b> lino, corcho. <b>Minerales:</b> m&aacute;rmol, arcilla, arena.</p></div></details></li>
+        <li>Nombra cinco materiales naturales y cinco transformados o artificiales.
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p><b>Naturales:</b> madera, lana, m&aacute;rmol, algod&oacute;n, corcho. <b>Transformados:</b> pl&aacute;stico (PVC), papel, vidrio, cemento, poli&eacute;ster.</p></div></details></li>
+        <li>La seda es un material textil de origen natural. &iquest;De qu&eacute; animal se obtiene y c&oacute;mo se produce?
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>Se obtiene del <b>gusano de seda</b> (larva de <i>Bombyx mori</i>), que fabrica un capullo con un &uacute;nico hilo continuo de fibra prote&iacute;nica; ese hilo se desenrolla y se hila para obtener la seda.</p></div></details></li>
+
+      </ol>
+  
+    </section>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">02</span> La elecci&oacute;n de materiales</div>
+
+
+      <div class="narrador" id="nar-u4">
+        <div class="narrador-fig" id="nar-u4-fig"></div>
+        <div class="narrador-txt">
+          <h4>Ning&uacute;n material es "el mejor"</h4>
+          <span class="narrador-quien">Narrado &middot; 35 s</span>
+          <div class="seg">
+            <button type="button" data-a="play">&#9654; Escuchar</button>
+            <button type="button" data-a="stop">&#9632; Parar</button>
+          </div>
+          <div class="narrador-barra"><i></i></div>
+          <p class="narrador-nota">Escucha por qu&eacute; importa elegir bien, y luego repasa la obtenci&oacute;n de la madera.</p>
+        </div>
+      </div>
+
+      <script>
+      (function(){
+        var C = document.getElementById('nar-u4');
+        if(!C) return;
+        var fig = document.getElementById('nar-u4-fig');
+        var barra = C.querySelector('.narrador-barra i');
+        var ENV = [0.0, 0.0, 0.0, 0.2, 0.787, 1.0, 0.669, 0.976, 0.688, 1.0, 1.0, 0.124, 0.621, 0.201, 0.8, 0.433, 0.523, 0.218, 1.0, 0.786, 0.793, 0.38, 0.407, 0.998, 0.85, 0.514, 0.504, 0.395, 0.338, 0.327, 0.255, 0.255, 0.164, 0.037, 0.002, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.587, 0.971, 0.443, 0.532, 0.889, 0.085, 0.646, 0.275, 0.418, 0.867, 0.53, 0.751, 0.734, 0.819, 0.829, 0.765, 0.277, 0.698, 0.612, 0.84, 0.345, 0.458, 0.709, 0.392, 0.26, 0.128, 0.021, 0.002, 0.001, 0.002, 0.523, 0.856, 1.0, 0.886, 0.834, 0.845, 0.541, 0.83, 0.612, 0.468, 0.882, 0.959, 0.632, 0.239, 0.849, 0.815, 0.328, 0.343, 0.456, 0.462, 0.556, 0.539, 0.566, 0.485, 0.607, 0.927, 0.61, 0.697, 0.678, 0.571, 0.442, 0.422, 0.352, 0.278, 0.2, 0.076, 0.004, 0.0, 0.0, 0.0, 0.0, 0.862, 0.48, 0.952, 0.309, 0.784, 0.73, 0.323, 0.077, 1.0, 0.645, 0.84, 0.66, 0.31, 0.152, 0.603, 0.094, 0.701, 0.654, 0.788, 0.399, 0.419, 0.766, 0.32, 0.35, 0.8, 0.852, 0.738, 0.563, 0.48, 0.311, 0.39, 0.567, 0.983, 0.76, 0.23, 0.349, 0.685, 0.677, 0.606, 0.427, 0.572, 0.654, 0.383, 0.362, 0.232, 0.445, 0.305, 0.256, 0.156, 0.092, 0.072, 0.013, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.17, 0.952, 1.0, 0.399, 0.179, 0.893, 0.697, 0.504, 1.0, 0.887, 0.783, 0.366, 0.58, 0.557, 0.429, 0.35, 0.431, 0.801, 0.839, 0.403, 0.344, 0.618, 0.934, 0.53, 0.331, 0.382, 0.835, 0.197, 0.633, 0.862, 0.666, 0.504, 0.446, 0.422, 0.164, 0.241, 0.313, 0.122, 0.064, 0.001, 0.0, 0.0, 0.0, 0.395, 0.851, 0.933, 0.799, 0.08, 0.209, 0.528, 0.51, 0.661, 0.097, 0.326, 0.548, 0.106, 0.738, 0.774, 0.758, 0.691, 0.275, 0.286, 0.647, 0.305, 0.591, 0.474, 0.561, 0.388, 0.284, 0.137, 0.317, 0.28, 0.215, 0.315, 0.223, 0.215, 0.199, 0.087, 0.071, 0.019, 0.001, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.895, 1.0, 0.429, 1.0, 1.0, 0.312, 0.854, 0.695, 0.158, 0.476, 0.344, 0.942, 0.36, 0.886, 0.625, 0.366, 0.35, 0.333, 0.128, 0.812, 0.81, 0.32, 0.214, 0.435, 0.25, 0.068, 0.001, 0.0, 0.368, 0.967, 0.921, 0.509, 1.0, 0.812, 0.863, 0.671, 0.4, 0.407, 0.577, 0.215, 0.817, 0.811, 0.375, 0.327, 0.599, 0.883, 0.333, 0.182, 0.344, 0.159, 0.004, 0.0, 0.606, 0.945, 0.297, 0.507, 0.917, 1.0, 0.533, 0.807, 0.797, 0.613, 0.269, 0.43, 0.554, 0.645, 0.543, 0.611, 0.587, 0.454, 0.354, 0.448, 0.21, 0.325, 0.333, 0.188, 0.266, 0.096, 0.227, 0.196, 0.026, 0.001, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.005, 0.079, 0.815, 0.182, 0.579, 0.479, 0.787, 0.82, 0.519, 0.18, 0.878, 0.776, 0.574, 0.312, 0.359, 0.816, 0.084, 0.188, 0.825, 0.602, 0.63, 0.724, 0.607, 0.361, 0.551, 0.436, 0.323, 0.135, 0.024, 0.001, 0.0, 0.0, 0.01, 1.0, 0.474, 0.336, 0.935, 0.721, 0.466, 0.889, 0.358, 0.285, 0.344, 0.204, 0.016, 0.001, 0.002, 0.251, 1.0, 0.476, 0.77, 0.764, 0.731, 0.726, 0.455, 0.535, 0.631, 0.65, 0.219, 0.438, 0.495, 0.43, 0.08, 0.794, 0.489, 0.625, 0.582, 0.885, 0.338, 0.069, 0.468, 0.086, 0.434, 0.343, 0.294, 0.106, 0.393, 0.241, 0.393, 0.285, 0.085, 0.003, 0.0, 0.0, 0.0, 0.0, 0.001, 0.146, 0.324, 1.0, 0.861, 0.436, 0.723, 1.0, 0.635, 0.565, 0.434, 0.973, 0.296, 0.306, 0.321, 0.127, 0.07, 0.001, 0.0, 0.376, 0.712, 0.236, 0.832, 0.713, 0.806, 0.747, 0.738, 0.675, 0.589, 0.348, 0.859, 0.753, 0.861, 0.845, 0.582, 0.783, 0.727, 0.564, 0.295, 0.077, 0.447, 0.182, 0.51, 0.424, 0.508, 0.399, 0.267, 0.079, 0.422, 0.298, 0.262, 0.236, 0.127, 0.085, 0.034, 0.001, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0];            /* una muestra cada 66 ms, de 0 a 1 */
+        var PASO = 0.066;
+        var audio = new Audio('audio/u4-intro.mp3');
+        audio.preload = 'none';
+        var raf = null, parpadeo = 0, tParp = 0;
+
+        /* El personaje se dibuja entero cada cuadro: la boca depende del
+           volumen de la voz en ese instante, y los ojos parpadean solos.   */
+        function dibuja(a, ojosCerrados){
+          var abre = 3 + a * 13;                 /* alto de la boca */
+          var ancho = 15 + a * 5;
+          var ceja = -a * 2.5;                   /* las cejas acompanan */
+          var ojo = ojosCerrados
+            ? '<path d="M35 46 h11 M64 46 h11" stroke="#202124" stroke-width="2.6" stroke-linecap="round"/>'
+            : '<circle cx="40.5" cy="46" r="4.2" fill="#202124"/>'
+            + '<circle cx="69.5" cy="46" r="4.2" fill="#202124"/>'
+            + '<circle cx="42" cy="44.6" r="1.5" fill="#fff"/>'
+            + '<circle cx="71" cy="44.6" r="1.5" fill="#fff"/>';
+          return '<svg viewBox="0 0 110 120" aria-hidden="true">'
+            /* cuerpo, en azul de la web */
+            + '<path d="M22 120 v-18 q0-16 16-20 h34 q16 4 16 20 v18 Z" fill="#4285f4"/>'
+            + '<path d="M46 82 h18 v12 h-18 Z" fill="#e8b48a"/>'
+            /* cabeza */
+            + '<rect x="26" y="20" width="58" height="66" rx="16" fill="#f3d3b3" stroke="#d3ae87" stroke-width="2"/>'
+            /* pelo, plano y geometrico */
+            + '<path d="M26 40 v-6 q0-14 29-14 q29 0 29 14 v6 q-8-9-29-9 q-21 0-29 9 Z" fill="#3c4043"/>'
+            /* cejas */
+            + '<path d="M33 ' + (37+ceja) + ' h13" stroke="#3c4043" stroke-width="3" stroke-linecap="round"/>'
+            + '<path d="M64 ' + (37+ceja) + ' h13" stroke="#3c4043" stroke-width="3" stroke-linecap="round"/>'
+            + ojo
+            /* colorete */
+            + '<circle cx="32" cy="58" r="5" fill="#ea4335" opacity=".17"/>'
+            + '<circle cx="78" cy="58" r="5" fill="#ea4335" opacity=".17"/>'
+            /* boca: se abre con la voz */
+            + '<ellipse cx="55" cy="66" rx="' + (ancho/2).toFixed(1) + '" ry="' + (abre/2).toFixed(1)
+            + '" fill="#8c3b2e"/>'
+            + (a > 0.35 ? '<ellipse cx="55" cy="' + (66 + abre/4).toFixed(1)
+                 + '" rx="' + (ancho/3).toFixed(1) + '" ry="' + (abre/5).toFixed(1) + '" fill="#c96a5a"/>' : '')
+            + '</svg>';
+        }
+
+        function cuadro(){
+          var t = audio.currentTime;
+          var i = Math.floor(t / PASO);
+          var a = (i >= 0 && i < ENV.length) ? ENV[i] : 0;
+          /* parpadeo cada 3-5 segundos */
+          if(t > tParp){ parpadeo = 6; tParp = t + 3 + Math.random()*2; }
+          if(parpadeo > 0) parpadeo--;
+          fig.innerHTML = dibuja(a, parpadeo > 3);
+          if(audio.duration) barra.style.width = (100*t/audio.duration).toFixed(1) + '%';
+          if(!audio.paused) raf = requestAnimationFrame(cuadro);
+        }
+
+        C.querySelector('[data-a="play"]').addEventListener('click', function(){
+          audio.currentTime = 0;
+          audio.play().then(function(){ cuadro(); }).catch(function(){
+            C.querySelector('.narrador-nota').innerHTML =
+              'No se ha podido reproducir el audio. Comprueba el sonido del equipo.';
+          });
+        });
+        C.querySelector('[data-a="stop"]').addEventListener('click', function(){
+          audio.pause(); audio.currentTime = 0;
+          if(raf) cancelAnimationFrame(raf);
+          fig.innerHTML = dibuja(0, false); barra.style.width = '0';
+        });
+        audio.addEventListener('ended', function(){
+          if(raf) cancelAnimationFrame(raf);
+          fig.innerHTML = dibuja(0, false); barra.style.width = '0';
+        });
+
+        fig.innerHTML = dibuja(0, false);
+      })();
+      </script>
+
+      <p>Cada material tiene unas <b>propiedades</b> que lo hacen adecuado para un uso determinado:
+      para una presa de hormig&oacute;n o un puente, un material <b>resistente</b>; para un avi&oacute;n,
+      uno <b>ligero</b>; para un juguete, uno <b>no t&oacute;xico</b>; para una escultura, uno
+      <b>agradable a la vista</b>.</p>
+      <h4>Propiedades sensoriales</h4>
+      <p>Relacionadas con los sentidos: color, tacto, textura, brillo, transparencia&hellip; Por
+      ejemplo, los cristales de una ventana son transparentes para dejar pasar la luz; los
+      cubiertos de beb&eacute; son de pl&aacute;stico, m&aacute;s agradable que el metal.</p>
+      <h4>Propiedades mec&aacute;nicas</h4>
+      <table style="width:100%;border-collapse:collapse;font-size:13.5px;margin:12px 0">
+        <tr><td style="padding:5px 10px 5px 0"><b>Duro</b> (diamante)</td><td>&harr;</td><td style="padding:5px 0"><b>Blando</b> (plastilina)</td></tr>
+        <tr><td style="padding:5px 10px 5px 0"><b>Tenaz</b> (palo de golf)</td><td>&harr;</td><td style="padding:5px 0"><b>Fr&aacute;gil</b> (cristal)</td></tr>
+        <tr><td style="padding:5px 10px 5px 0"><b>El&aacute;stico</b> (goma)</td><td>&harr;</td><td style="padding:5px 0"><b>Pl&aacute;stico</b> (arcilla)</td></tr>
+        <tr><td style="padding:5px 10px 5px 0"><b>Maleable</b> (oro, l&aacute;minas)</td><td>&harr;</td><td style="padding:5px 0"><b>D&uacute;ctil</b> (nailon, hilos)</td></tr>
+      </table>
+      <h4>Propiedades f&iacute;sicas</h4>
+      <p><b>Conductores</b> (el&eacute;ctricos: cobre; t&eacute;rmicos: metales; sonoros: cristal)
+      frente a <b>aislantes</b> (el&eacute;ctricos: pl&aacute;sticos; t&eacute;rmicos: madera;
+      sonoros: corcho).</p>
+      <div class="nota">
+        <span class="n-tag">Ojo</span>
+        Una propiedad buena para un uso puede ser un problema para otro: la madera es porosa
+        (ligera) pero absorbe humedad y arde f&aacute;cilmente &mdash;por eso existen barnices
+        impermeables e ign&iacute;fugos.
+      </div>
+      <p><b>ACTIVIDADES</b> (selecci&oacute;n, p.&nbsp;129)</p>
+      <ol>
+              <li>Indica con qu&eacute; material construir&iacute;as: a) una silla, &iquest;pl&aacute;stico o madera? b) unos pendientes, &iquest;plata o aluminio? Explica por qu&eacute;.
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>a) <b>Madera</b>: m&aacute;s tenaz y resistente al uso diario que la mayor&iacute;a de pl&aacute;sticos. b) <b>Plata</b>: por su brillo (propiedad sensorial) y por no oxidarse ni causar reacciones en la piel.</p></div></details></li>
+        <li>&iquest;Qu&eacute; tipo de material usar&iacute;as para insonorizar el aula de m&uacute;sica de tu instituto? &iquest;Por qu&eacute;?
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>Un <b>aislante sonoro</b>, como el corcho o la espuma ac&uacute;stica: evita que el sonido se propague f&aacute;cilmente a otras aulas.</p></div></details></li>
+
+      </ol>
+  
+    </section>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">03</span> La madera</div>
+
+      <div class="def">
+        <span class="n-tag">Definici&oacute;n</span>
+        La <b>madera</b> es la parte s&oacute;lida y r&iacute;gida bajo la corteza de los troncos.
+        Es <b>tenaz</b>, <b>aislante</b> del calor y de la electricidad, <b>conductora</b> del
+        sonido, <b>resistente</b> y <b>porosa</b>.
+      </div>
+      <h4>C&oacute;mo se obtiene &middot; toca cada fase</h4>
+      <div class="escena" id="esc-madera">
+        <div class="escena-barra"><span class="escena-titulo">De la tala al material listo</span></div>
+        <div class="lienzo"><div class="stepper" id="stepper-madera"></div></div>
+        <div class="pie" id="pie-madera">Toca un n&uacute;mero para ver esa fase.</div>
+      </div>
+      <script>
+      (function(){
+        var F = [
+          ['Tala', 'Se cortan los &aacute;rboles seleccionados.'],
+          ['Quitar corteza', 'Se retira la corteza y las ramas del tronco.'],
+          ['Transporte', 'El tronco viaja al aserradero.'],
+          ['Aserrado', 'Se corta seg&uacute;n el uso final que vaya a tener la madera.'],
+          ['Secado', 'Se reduce la humedad de la madera antes de trabajarla.'],
+          ['Limpieza', 'Se cepilla y se lija la superficie.'],
+          ['Acabados', 'Tratamientos de protecci&oacute;n: barnices, contra la carcoma, etc.']
+        ];
+        var t = document.getElementById('stepper-madera'), p = document.getElementById('pie-madera');
+        F.forEach(function(f, i){
+          var b = document.createElement('button');
+          b.type = 'button'; b.className = 'fase-nodo'; b.setAttribute('aria-pressed', 'false');
+          b.innerHTML = '<span class="num">' + (i+1) + '</span><span class="etq">' + f[0] + '</span>';
+          b.addEventListener('click', function(){
+            t.querySelectorAll('.fase-nodo').forEach(function(x){ x.setAttribute('aria-pressed','false'); });
+            b.setAttribute('aria-pressed', 'true'); p.innerHTML = '<b>' + f[0] + '.</b> ' + f[1];
+          });
+          t.appendChild(b);
+        });
+      })();
+      </script>
+      <p>Las maderas <b>blandas</b> (pino, abeto, chopo) proceden de &aacute;rboles de hoja perenne:
+      f&aacute;ciles de trabajar y baratas. Las <b>duras</b> (roble, haya, casta&ntilde;o) son m&aacute;s
+      caras y dif&iacute;ciles de trabajar, pero de mejor acabado.</p>
+  
+    </section>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">04</span> Los metales</div>
+
+      <div class="def">
+        <span class="n-tag">Definici&oacute;n</span>
+        Los <b>metales</b> son materiales duros, buenos conductores del calor, la electricidad y el
+        sonido, que se dilatan y contraen con la temperatura, se oxidan f&aacute;cilmente y son
+        fr&iacute;os al tacto. Se extraen de minerales mediante miner&iacute;a; la parte &uacute;til
+        se llama <b>mena</b>, el resto, <b>ganga</b>. Casi siempre aparecen aleados (mezclados con
+        otros metales o elementos): una <b>aleaci&oacute;n</b>.
+      </div>
+      <p>Se dividen en <b>f&eacute;rricos</b> (con hierro) y <b>no f&eacute;rricos</b>:</p>
+      <ul>
+        <li><b>Cobre:</b> rojizo, muy buen conductor &mdash;cables, conducciones.</li>
+        <li><b>Esta&ntilde;o:</b> plateado, muy d&uacute;ctil y maleable &mdash;soldadura blanda.</li>
+        <li><b>Aluminio:</b> blanco, ligero, reciclable y no t&oacute;xico &mdash;envases de alimentos.</li>
+        <li><b>Cinc:</b> resistente a la oxidaci&oacute;n &mdash;recubre hierro y acero para protegerlos.</li>
+      </ul>
+      <div class="nota" id="curriculo-andalucia">
+        <span class="n-tag">Curr&iacute;culo de Andaluc&iacute;a</span>
+        Esta unidad trabaja la <b>competencia espec&iacute;fica 7</b>, los <b>criterios de
+        evaluaci&oacute;n 7.1 y 7.2</b>, y los <b>saberes b&aacute;sicos A.7 (materiales tecnol&oacute;gicos
+        y su impacto ambiental) y E.1</b>, seg&uacute;n la
+        <a href="https://www.juntadeandalucia.es/boja/2023/104/BOJA23-104-00281-9728-01_00284744.pdf"
+        target="_blank" rel="noopener">Orden de 30 de mayo de 2023 (BOJA n&uacute;m. 104)</a>, anexo&nbsp;II.
+      </div>
+      <div class="aviso">
+        <span class="n-tag">Pendiente</span>
+        Pr&aacute;cticas de taller (identificador de madera, organizador reciclado) y de ordenador,
+        resumen y autoevaluaci&oacute;n.
+      </div>
+  
+    </section>
+
+  </div>
+
+</main>
+
+<footer><div class="wrap">Tema 4 &middot; 2.&ordm; de ESO &middot; Tecnolog&iacute;a y Digitalizaci&oacute;n</div></footer>
+
+<script>
+(function(){
+  var nav = document.getElementById('nav');
+  if(!nav) return;
+  nav.addEventListener('click', function(e){
+    var b = e.target.closest('button[data-ses]');
+    if(!b || b.disabled) return;
+    nav.querySelectorAll('button').forEach(function(x){
+      x.setAttribute('aria-selected', x === b ? 'true' : 'false');
+    });
+    document.querySelectorAll('[id^="ses-"]').forEach(function(p){
+      p.hidden = (p.id !== 'ses-' + b.dataset.ses);
+    });
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+})();
+</script>
+
+</body>
+</html>
