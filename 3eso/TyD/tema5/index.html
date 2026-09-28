@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tema 5 &middot; Pensamiento computacional, programaci&oacute;n y rob&oacute;tica</title>
+<meta name="description" content="Tema 5 de Tecnolog&iacute;a y Digitalizaci&oacute;n de 3.&ordm; de ESO (Andaluc&iacute;a): automatismos, robots, microcontroladores, sistemas de control de lazo abierto y cerrado, sensores y actuadores, con las competencias, criterios y saberes b&aacute;sicos de la Orden de 30 de mayo de 2023.">
+<link rel="canonical" href="https://rgllorente82-png.github.io/danieltecnologia/3eso/TyD/tema5/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"Tema 5 &middot; Pensamiento computacional, programaci&oacute;n y rob&oacute;tica","url":"https://rgllorente82-png.github.io/danieltecnologia/3eso/TyD/tema5/","inLanguage":"es",
+ "isAccessibleForFree":true,
+ "educationalLevel":"Educaci&oacute;n Secundaria Obligatoria","learningResourceType":"Unidad did&aacute;ctica interactiva"}
+</script>
+<style>
+:root{
+  --paper:#f8f9fa;--surface:#fff;--surface-2:#f1f3f4;--ink:#202124;--ink-soft:#5f6368;
+  --line:#dadce0;--line-soft:#e8eaed;--accent:#1a73e8;--accent-soft:#e8f0fe;
+  --goo-azul:#4285f4;--goo-rojo:#ea4335;--goo-amarillo:#fbbc04;--goo-verde:#34a853;
+  --grid:rgba(66,133,244,.09);
+  --f-b:"Roboto",-apple-system,"Segoe UI",Arial,sans-serif;
+  --f-m:"Roboto Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#202124;--surface:#292a2d;--surface-2:#35363a;--ink:#e8eaed;--ink-soft:#9aa0a6;
+  --line:#5f6368;--line-soft:#3c4043;--accent:#8ab4f8;--accent-soft:#1f3347;
+  --goo-azul:#8ab4f8;--goo-rojo:#f28b82;--goo-amarillo:#fdd663;--goo-verde:#81c995;
+  --grid:rgba(138,180,248,.09)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 var(--f-b);letter-spacing:.01em}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+header.top{background:var(--surface);border-bottom:2px solid var(--ink);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:24px 24px;position:sticky;top:0;z-index:50}
+header.top .wrap{padding-block:16px 0}
+.eyebrow{font-family:var(--f-m);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.eyebrow a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
+.eyebrow a:hover{border-bottom-color:currentColor}
+h1{font-weight:700;font-size:clamp(22px,4.4vw,30px);margin:6px 0 12px;letter-spacing:-.015em}
+nav.sesiones{display:flex;gap:8px;overflow-x:auto;padding-bottom:12px}
+nav.sesiones button{flex:none;background:var(--surface);color:var(--ink-soft);border:1.5px solid var(--line);
+  border-radius:2px;padding:7px 14px;font:400 13px var(--f-m);cursor:pointer;white-space:nowrap}
+nav.sesiones button[aria-selected="true"]{background:var(--goo-azul);border-color:var(--goo-azul);color:#fff}
+nav.sesiones button[disabled]{opacity:.45;cursor:default}
+main{padding-block:26px 70px}
+.ses-head{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;padding:20px;margin-bottom:26px}
+.ses-head h2{font-size:22px;margin:6px 0 8px;letter-spacing:-.01em}
+.ses-head p{margin:0 0 14px;color:var(--ink-soft)}
+.minutado{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.min{font-family:var(--f-m);font-size:11.5px;border:1px solid var(--line);border-radius:2px;padding:4px 9px;color:var(--ink-soft)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-family:var(--f-m);font-size:11px;border:1px solid var(--goo-azul);color:var(--goo-azul);border-radius:2px;padding:3px 8px}
+.chip.sab{border-color:var(--line);color:var(--ink-soft)}
+.bloque{margin-bottom:34px}
+.rotulo{display:flex;align-items:center;gap:10px;font-family:var(--f-m);font-size:12px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-soft);margin-bottom:12px}
+.rotulo .num{background:var(--goo-azul);color:#fff;border-radius:2px;min-width:26px;height:24px;
+  display:inline-grid;place-items:center;font-weight:500}
+.rotulo::after{content:"";flex:1;height:2px;background:var(--goo-azul);opacity:.3}
+.bloque:nth-of-type(4n+2) .rotulo .num,.bloque:nth-of-type(4n+2) .rotulo::after{background:var(--goo-rojo)}
+.bloque:nth-of-type(4n+3) .rotulo .num,.bloque:nth-of-type(4n+3) .rotulo::after{background:var(--goo-verde)}
+.bloque:nth-of-type(4n+4) .rotulo .num{background:var(--goo-amarillo);color:#202124}
+.bloque:nth-of-type(4n+4) .rotulo::after{background:var(--goo-amarillo)}
+h3{font-size:18px;margin:22px 0 6px;letter-spacing:-.01em}
+h4{font-size:15.5px;margin:16px 0 4px}
+.bloque ul,.bloque ol{padding-left:22px}
+.bloque li{margin-bottom:5px}
+.nota,.aviso,.def{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;padding:14px 16px;margin:16px 0}
+.nota{border-left:5px solid var(--goo-azul)}
+.aviso{border-left:5px solid var(--goo-amarillo)}
+.def{border-left:5px solid var(--goo-verde)}
+.n-tag{display:block;font-family:var(--f-m);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-soft);margin-bottom:5px}
+.nota .n-tag{color:var(--goo-azul)}
+.escena{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;margin:18px 0}
+.escena-barra{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
+  padding:12px 16px;border-bottom:1px solid var(--line)}
+.escena-titulo{font-family:var(--f-m);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.seg button{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;padding:6px 12px;
+  font:400 12px var(--f-m);color:var(--ink-soft);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--goo-azul);border-color:var(--goo-azul);color:#fff}
+.lienzo{padding:10px;background:var(--surface);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:20px 20px}
+.lienzo svg{width:100%;height:auto;display:block}
+.pie{padding:12px 16px;border-top:1px solid var(--line);font-size:14.5px;color:var(--ink-soft)}
+.ficha{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;margin:16px 0;overflow:hidden}
+.ficha-cab{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;
+  background:var(--ink);color:var(--surface);padding:12px 16px;font-family:var(--f-m);font-size:11.5px;
+  letter-spacing:.08em;text-transform:uppercase}
+.ficha-cab .chip{border-color:var(--surface);color:var(--surface)}
+.ficha-cuerpo{padding:16px}
+.resp{border:1px solid var(--line);border-radius:2px;margin:8px 0}
+.resp summary{cursor:pointer;padding:9px 13px;font-family:var(--f-m);font-size:11.5px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink-soft)}
+.resp summary::-webkit-details-marker{display:none}
+.resp-cuerpo{padding:0 13px 13px}
+.resp-cuerpo p:last-child{margin-bottom:0}
+
+.narra{display:flex;gap:14px;align-items:flex-start}
+.avatar-caja{flex:none;width:104px}
+.avatar-caja svg.avatar{width:104px;height:72px;display:block}
+.avatar.habla{animation:habla .34s ease-in-out infinite alternate}
+@keyframes habla{from{transform:translateY(0)}to{transform:translateY(-2.5px)}}
+.globo{flex:1;background:var(--surface-2);border:1.5px solid var(--line);border-radius:2px;padding:11px 13px;position:relative}
+.globo::before{content:"";position:absolute;left:-9px;top:20px;width:0;height:0;
+  border-top:8px solid transparent;border-bottom:8px solid transparent;border-right:9px solid var(--line)}
+.avatar-dice{margin-top:8px;font-family:var(--f-m);font-size:12px;color:var(--goo-azul);font-style:italic}
+.voz-no{margin:10px 0 0;font-size:13px;color:var(--ink-soft)}
+@media (max-width:520px){.narra{flex-direction:column;align-items:center}.globo::before{display:none}}
+
+.reto-piensa{background:var(--surface);border:1.5px solid var(--goo-amarillo);border-left-width:5px;
+  border-radius:2px;padding:14px 16px;margin:16px 0}
+.reto-piensa .n-tag{color:#9a7326}
+.reto-piensa p{margin:0}
+.resp.revela summary{color:var(--goo-azul);font-weight:500}
+.resp.revela[open] summary{color:var(--ink-soft)}
+.resp.revela table{margin:0}
+.secuencia li.oculto{color:transparent;background:var(--surface-2);border-radius:2px;user-select:none}
+.secuencia li.oculto *{visibility:hidden}
+.secuencia li{transition:color .25s ease,background .25s ease;padding:2px 4px}
+#btn-secuencia{background:var(--surface);border:1.5px solid var(--goo-azul);color:var(--goo-azul);
+  border-radius:2px;padding:7px 14px;font:500 12px var(--f-m);cursor:pointer}
+#btn-secuencia:disabled{border-color:var(--line);color:var(--ink-soft);cursor:default}
+
+/* series del grafico de coste: validadas con el script de dataviz
+   claro  #ea4335/#1a73e8  -> min CVD 27.0, vision normal 36.8
+   oscuro #ef5350/#4285f4  -> min CVD 24.6, vision normal 33.2 */
+:root{--c-analog:#ea4335;--c-digital:#1a73e8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--c-analog:#ef5350;--c-digital:#4285f4}}
+.ejeq{fill:var(--ink-soft);font-family:var(--f-m);font-size:11px}
+.etq{fill:var(--ink);font-family:var(--f-m);font-size:11px;font-weight:500}
+
+
+.foto{margin:16px 0;border:1.5px solid var(--line);border-radius:2px;background:var(--surface);overflow:hidden}
+.foto img{width:100%;height:auto;display:block}
+.foto figcaption{padding:11px 14px;font-size:14px;line-height:1.5;color:var(--ink);border-top:1px solid var(--line)}
+.credito{display:block;margin-top:7px;font-family:var(--f-m);font-size:10.5px;color:var(--ink-soft);letter-spacing:.02em}
+.credito a{color:var(--ink-soft)}
+.galeria-ri{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));margin:16px 0}
+.galeria-ri .foto{margin:0}
+.galeria-ri figcaption{font-size:13.5px}
+
+.video{margin:16px 0}
+.video-play{width:100%;display:flex;align-items:center;gap:16px;padding:22px 20px;cursor:pointer;
+  background:var(--surface);border:1.5px solid var(--line);border-radius:2px;text-align:left;
+  transition:border-color .18s ease}
+.video-play:hover{border-color:var(--goo-rojo)}
+.video-tri{flex:none;width:52px;height:38px;border-radius:6px;background:var(--goo-rojo);position:relative}
+.video-tri::after{content:"";position:absolute;left:20px;top:11px;border-left:14px solid #fff;
+  border-top:8px solid transparent;border-bottom:8px solid transparent}
+.video-txt b{display:block;font:500 16px var(--f-b);color:var(--ink);margin-bottom:3px}
+.video-txt span{font:400 12px var(--f-m);color:var(--ink-soft)}
+.video-nota{margin:9px 0 0;font-size:12.5px;color:var(--ink-soft);line-height:1.5}
+.video iframe{width:100%;aspect-ratio:16/9;height:auto;border:1.5px solid var(--line);border-radius:2px;display:block}
+
+/* lo que se copia en la libreta, frente a lo que es solo para entender */
+.copiar{background:var(--surface);border:2px solid var(--goo-azul);border-radius:2px;
+  padding:16px 18px;margin:18px 0;position:relative}
+.copiar::before{content:"PARA LA LIBRETA";position:absolute;top:-11px;left:14px;
+  background:var(--goo-azul);color:#fff;font-family:var(--f-m);font-size:10.5px;letter-spacing:.1em;
+  padding:3px 9px;border-radius:2px}
+.copiar > :first-child{margin-top:6px}
+.copiar > :last-child{margin-bottom:0}
+.copiar h4{font-size:15px;margin:10px 0 4px}
+.entender{border-left:4px solid var(--line);padding:2px 0 2px 16px;margin:18px 0;color:var(--ink-soft)}
+.entender .e-tag{display:block;font-family:var(--f-m);font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
+.entender b{color:var(--ink)}
+@media print{
+  .entender,.escena,.video,.narra,nav.sesiones{display:none}
+  .copiar{border-width:1.5px;break-inside:avoid}
+}
+.rotulo-svg{fill:var(--ink-soft);font-family:var(--f-m);font-size:11px;letter-spacing:.06em}
+.hito{fill:var(--surface);stroke:var(--goo-azul);stroke-width:2;cursor:pointer}
+.hito.on{fill:var(--goo-azul)}
+.eje-t{fill:none;stroke:var(--line);stroke-width:2}
+
+.necesidades{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:16px 0}
+.necesidad{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;padding:14px 10px;text-align:center;
+  transition:border-color .18s ease,transform .18s ease}
+.necesidad:hover{border-color:var(--goo-azul);transform:translateY(-2px)}
+.necesidad svg{width:34px;height:34px;display:block;margin:0 auto 8px;stroke:var(--goo-azul);fill:none;
+  stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.necesidad b{display:block;font-size:13.5px;margin-bottom:3px}
+.necesidad span{font-size:11.5px;color:var(--ink-soft);line-height:1.3}
+
+.stepper{display:flex;flex-wrap:wrap;gap:2px;padding:16px 6px;justify-content:center}
+.fase-nodo{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1 0 18%;min-width:82px;
+  background:none;border:none;cursor:pointer;padding:8px 4px;font-family:var(--f-b)}
+.fase-nodo .num{width:32px;height:32px;border-radius:50%;border:2px solid var(--line);display:grid;
+  place-items:center;font-family:var(--f-m);font-weight:700;font-size:13px;color:var(--ink-soft);
+  background:var(--surface);transition:all .18s ease}
+.fase-nodo[aria-pressed="true"] .num{background:var(--goo-azul);border-color:var(--goo-azul);color:#fff;
+  transform:scale(1.12)}
+.fase-nodo .etq{font-size:10.5px;text-align:center;color:var(--ink-soft);line-height:1.25;max-width:90px}
+.fase-nodo[aria-pressed="true"] .etq{color:var(--ink);font-weight:500}
+.fase-nodo:hover .num{border-color:var(--goo-azul)}
+
+footer{border-top:1px solid var(--line);color:var(--ink-soft);font-size:13.5px;margin-top:30px}
+footer .wrap{padding-block:18px 26px}
+@media (max-width:560px){body{font-size:15.5px}.lienzo{padding:4px}}
+
+/* ---- avatar narrador, plano y sincronizado con la voz ---- */
+.narrador{display:flex;gap:16px;align-items:flex-start;background:var(--surface);
+  border:1.5px solid var(--line);border-radius:2px;padding:16px;margin:18px 0}
+.narrador-fig{flex:none;width:110px}
+.narrador-fig svg{width:110px;height:120px;display:block}
+.narrador-txt{flex:1;min-width:0}
+.narrador-txt h4{margin:0 0 3px;font-size:15.5px}
+.narrador-quien{font-family:var(--f-m);font-size:11px;color:var(--ink-soft);display:block;margin-bottom:9px}
+.narrador-barra{height:4px;background:var(--surface-2);border-radius:2px;overflow:hidden;margin:11px 0 8px}
+.narrador-barra i{display:block;height:100%;width:0;background:var(--goo-azul);transition:width .1s linear}
+.narrador-nota{font-size:12.5px;color:var(--ink-soft);margin:8px 0 0;line-height:1.5}
+@media (max-width:520px){.narrador{flex-direction:column;align-items:center}
+  .narrador-txt{text-align:center}}
+
+.tipos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:16px 0}
+.tipo-card{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;padding:10px 12px}
+.tipo-card b{display:block;font-size:13px;margin-bottom:3px;color:var(--goo-azul)}
+.tipo-card span{font-size:12px;color:var(--ink-soft);line-height:1.35}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="eyebrow"><a href="../../../">Inicio</a> &middot; <a href="../../">3.&ordm; ESO</a> &middot; <a href="../">TyD</a> &middot; Tema 5</div>
+    <h1>Pensamiento computacional, programaci&oacute;n y rob&oacute;tica</h1>
+    <nav class="sesiones" id="nav" aria-label="Sesiones del tema"><button type="button" data-ses="1" aria-selected="true">S1 &middot; S1 &middot; Sistemas de control</button></nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div id="ses-1">
+    <div class="ses-head">
+      <div class="eyebrow">Sesi&oacute;n 1 &middot; 60 minutos</div>
+      <h2>Pensamiento computacional, programaci&oacute;n y rob&oacute;tica</h2>
+      <p>Automatismos y robots, microcontroladores, sistemas de control de lazo abierto y cerrado, y sensores y actuadores.</p>
+      <div class="minutado"><span class="min"><b>0-15</b> Automatismos, robots y microcontroladores</span><span class="min"><b>15-35</b> Sistemas de control</span><span class="min"><b>35-50</b> Sensores y actuadores</span></div>
+      <div class="chips"><span class="chip">CE4 &middot; 5.1</span><span class="chip">CE4 &middot; 5.3</span><span class="chip sab">C.1</span><span class="chip sab">C.2</span></div>
+    </div>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">01</span> Automatismos, robots y microcontroladores</div>
+
+      <div class="def">
+        <span class="n-tag">Definiciones</span>
+        Un <b>automatismo</b> es un mecanismo que realiza una tarea concreta y no se puede modificar
+        (un limpiaparabrisas). Un <b>robot</b> es una m&aacute;quina program&aacute;ble capaz de
+        captar informaci&oacute;n de su entorno, procesarla y actuar en consecuencia.
+      </div>
+      <p>Un <b>microcontrolador</b> re&uacute;ne en un solo chip lo b&aacute;sico de un ordenador
+      (proceso, memoria, entradas/salidas), pero con <b>menor coste y consumo</b>, y solo realiza
+      una tarea espec&iacute;fica &mdash;puede funcionar con pilas y conectarse directo a sensores y
+      motores. La <b>tarjeta controladora</b> hace de interfaz entre el ordenador y esos
+      dispositivos; la familia m&aacute;s extendida es <b>Arduino</b> (hardware libre).</p>
+  
+    </section>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">02</span> Sistemas de control</div>
+
+
+      <div class="narrador" id="nar-3u5">
+        <div class="narrador-fig" id="nar-3u5-fig"></div>
+        <div class="narrador-txt">
+          <h4>Lazo abierto o lazo cerrado</h4>
+          <span class="narrador-quien">Narrado &middot; 46 s</span>
+          <div class="seg">
+            <button type="button" data-a="play">&#9654; Escuchar</button>
+            <button type="button" data-a="stop">&#9632; Parar</button>
+          </div>
+          <div class="narrador-barra"><i></i></div>
+          <p class="narrador-nota">Escucha la diferencia y compara despu&eacute;s los dos sistemas.</p>
+        </div>
+      </div>
+
+      <script>
+      (function(){
+        var C = document.getElementById('nar-3u5');
+        if(!C) return;
+        var fig = document.getElementById('nar-3u5-fig');
+        var barra = C.querySelector('.narrador-barra i');
+        var ENV = [0.0, 0.0, 0.0, 0.001, 0.873, 0.972, 0.977, 0.749, 0.645, 0.825, 0.78, 0.181, 0.801, 0.572, 0.412, 0.779, 0.599, 0.499, 0.076, 0.67, 0.297, 0.527, 0.933, 0.451, 0.438, 0.456, 0.444, 0.385, 0.617, 0.386, 0.178, 0.293, 0.212, 0.029, 0.001, 0.0, 0.046, 0.225, 1.0, 1.0, 0.737, 0.438, 0.748, 0.74, 0.28, 0.249, 0.51, 0.642, 0.805, 0.193, 0.451, 0.316, 0.864, 0.293, 0.336, 0.349, 0.234, 0.481, 0.601, 0.333, 0.448, 0.373, 0.327, 0.418, 0.334, 0.131, 0.005, 0.001, 0.0, 0.0, 0.0, 0.788, 1.0, 1.0, 0.843, 0.276, 1.0, 0.321, 0.949, 0.691, 0.431, 0.889, 0.336, 0.357, 0.339, 0.166, 0.557, 0.846, 0.427, 0.387, 0.767, 0.566, 0.642, 0.313, 0.495, 0.885, 0.609, 0.574, 0.147, 0.776, 0.581, 0.506, 0.361, 0.324, 0.413, 0.25, 0.317, 0.213, 0.054, 0.006, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.812, 1.0, 0.831, 1.0, 0.762, 1.0, 0.996, 0.181, 0.004, 0.001, 0.001, 0.319, 0.501, 0.336, 0.56, 0.968, 0.669, 0.68, 0.643, 0.268, 0.004, 0.001, 0.0, 0.001, 0.247, 0.997, 0.042, 0.575, 0.81, 0.57, 0.112, 0.811, 0.632, 0.686, 0.123, 0.69, 0.769, 0.661, 0.852, 0.712, 0.398, 0.331, 1.0, 0.384, 0.398, 0.254, 0.102, 0.004, 0.003, 0.001, 0.41, 1.0, 0.356, 0.612, 0.599, 0.098, 0.629, 0.29, 0.366, 0.524, 0.658, 0.337, 0.019, 0.521, 0.997, 0.846, 0.386, 0.176, 0.397, 0.255, 0.25, 0.259, 0.316, 0.319, 0.223, 0.124, 0.317, 0.206, 0.068, 0.003, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.001, 0.836, 0.833, 0.265, 0.845, 0.632, 0.445, 0.751, 0.821, 0.669, 0.618, 0.34, 0.403, 0.526, 0.581, 0.526, 0.681, 0.66, 0.109, 0.056, 0.388, 0.079, 0.59, 0.09, 0.724, 0.731, 0.155, 0.623, 0.673, 0.666, 0.582, 0.433, 0.563, 0.243, 0.298, 0.566, 0.458, 0.378, 0.527, 0.566, 0.26, 0.446, 0.388, 0.29, 0.528, 0.39, 0.246, 0.097, 0.008, 0.0, 0.0, 0.0, 0.049, 0.749, 0.785, 0.784, 0.473, 0.357, 0.982, 1.0, 0.486, 0.266, 0.105, 0.003, 0.001, 0.0, 0.0, 0.0, 0.0, 0.161, 0.982, 0.919, 0.495, 0.363, 0.797, 0.879, 0.867, 0.44, 0.757, 0.663, 0.553, 0.459, 0.335, 0.849, 1.0, 0.485, 0.385, 0.335, 0.408, 0.236, 0.584, 0.671, 0.593, 0.568, 0.391, 0.518, 0.457, 0.325, 0.801, 0.649, 0.625, 0.835, 0.582, 0.332, 0.53, 0.331, 0.333, 0.95, 0.655, 0.529, 0.301, 0.531, 0.486, 0.261, 0.377, 0.323, 0.253, 0.159, 0.103, 0.054, 0.002, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.183, 0.832, 1.0, 0.12, 0.32, 0.847, 0.376, 0.119, 0.843, 0.67, 0.504, 0.146, 0.82, 0.761, 0.723, 0.395, 0.528, 0.163, 0.908, 0.482, 0.44, 0.306, 0.502, 0.182, 0.681, 0.719, 0.805, 0.6, 0.411, 0.481, 0.459, 0.195, 0.478, 0.547, 0.296, 0.181, 0.008, 0.003, 0.002, 0.279, 0.993, 0.648, 0.772, 0.106, 0.832, 0.988, 0.694, 0.17, 0.352, 0.414, 0.366, 0.112, 0.486, 0.422, 0.796, 0.42, 0.271, 0.88, 0.435, 0.749, 0.936, 0.344, 0.433, 0.848, 0.516, 0.662, 0.435, 0.404, 0.493, 0.107, 0.476, 0.273, 0.326, 0.256, 0.23, 0.158, 0.025, 0.001, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.001, 0.0, 0.0, 0.0, 0.0, 0.002, 0.344, 0.927, 0.978, 1.0, 0.567, 0.093, 1.0, 0.566, 0.995, 1.0, 0.391, 0.144, 0.407, 0.207, 0.03, 0.001, 0.0, 0.001, 0.632, 0.833, 1.0, 1.0, 0.706, 0.668, 0.257, 0.768, 0.216, 0.506, 0.474, 0.915, 0.787, 0.423, 0.194, 0.022, 0.0, 0.0, 0.229, 0.804, 0.425, 0.413, 0.542, 0.174, 0.6, 0.555, 0.638, 0.532, 0.715, 0.38, 0.592, 0.625, 0.694, 0.277, 0.389, 0.313, 0.384, 0.299, 0.138, 0.648, 0.359, 0.566, 0.713, 0.831, 0.598, 0.468, 0.377, 0.308, 0.228, 0.302, 0.13, 0.337, 0.34, 0.225, 0.208, 0.058, 0.003, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.8, 0.966, 0.912, 0.937, 0.154, 0.7, 0.352, 0.441, 0.723, 0.544, 1.0, 0.37, 0.397, 0.194, 0.02, 0.0, 0.0, 0.0, 0.085, 0.849, 0.814, 1.0, 0.887, 0.428, 0.764, 0.648, 0.731, 0.481, 0.177, 0.847, 0.811, 0.045, 0.317, 0.2, 0.028, 0.001, 0.0, 0.001, 0.005, 0.799, 0.52, 0.456, 0.844, 0.377, 0.421, 0.795, 0.59, 0.847, 0.72, 0.849, 0.901, 0.448, 0.575, 0.324, 0.361, 0.475, 0.118, 0.978, 0.597, 0.419, 0.308, 0.208, 0.103, 0.8, 0.489, 0.81, 0.349, 0.122, 0.453, 0.326, 0.327, 0.195, 0.349, 0.259, 0.112, 0.014, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.001, 0.0, 0.0, 0.001, 0.18, 1.0, 0.611, 0.707, 0.7, 0.767, 0.937, 0.748, 0.269, 0.979, 0.268, 0.363, 0.6, 0.58, 0.679, 0.491, 0.584, 0.389, 0.329, 0.087, 0.894, 0.783, 0.596, 0.49, 0.196, 0.199, 0.802, 0.112, 0.697, 0.423, 0.505, 0.472, 0.356, 0.212, 0.61, 0.568, 0.425, 0.182, 0.969, 0.475, 0.361, 0.854, 0.683, 0.398, 0.499, 0.767, 0.43, 0.306, 0.547, 0.329, 0.398, 0.248, 0.048, 0.278, 0.169, 0.027, 0.001, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0];            /* una muestra cada 66 ms, de 0 a 1 */
+        var PASO = 0.066;
+        var audio = new Audio('audio/3u5-intro.mp3');
+        audio.preload = 'none';
+        var raf = null, parpadeo = 0, tParp = 0;
+
+        /* El personaje se dibuja entero cada cuadro: la boca depende del
+           volumen de la voz en ese instante, y los ojos parpadean solos.   */
+        function dibuja(a, ojosCerrados){
+          var abre = 3 + a * 13;                 /* alto de la boca */
+          var ancho = 15 + a * 5;
+          var ceja = -a * 2.5;                   /* las cejas acompanan */
+          var ojo = ojosCerrados
+            ? '<path d="M35 46 h11 M64 46 h11" stroke="#202124" stroke-width="2.6" stroke-linecap="round"/>'
+            : '<circle cx="40.5" cy="46" r="4.2" fill="#202124"/>'
+            + '<circle cx="69.5" cy="46" r="4.2" fill="#202124"/>'
+            + '<circle cx="42" cy="44.6" r="1.5" fill="#fff"/>'
+            + '<circle cx="71" cy="44.6" r="1.5" fill="#fff"/>';
+          return '<svg viewBox="0 0 110 120" aria-hidden="true">'
+            /* cuerpo, en azul de la web */
+            + '<path d="M22 120 v-18 q0-16 16-20 h34 q16 4 16 20 v18 Z" fill="#4285f4"/>'
+            + '<path d="M46 82 h18 v12 h-18 Z" fill="#e8b48a"/>'
+            /* cabeza */
+            + '<rect x="26" y="20" width="58" height="66" rx="16" fill="#f3d3b3" stroke="#d3ae87" stroke-width="2"/>'
+            /* pelo, plano y geometrico */
+            + '<path d="M26 40 v-6 q0-14 29-14 q29 0 29 14 v6 q-8-9-29-9 q-21 0-29 9 Z" fill="#3c4043"/>'
+            /* cejas */
+            + '<path d="M33 ' + (37+ceja) + ' h13" stroke="#3c4043" stroke-width="3" stroke-linecap="round"/>'
+            + '<path d="M64 ' + (37+ceja) + ' h13" stroke="#3c4043" stroke-width="3" stroke-linecap="round"/>'
+            + ojo
+            /* colorete */
+            + '<circle cx="32" cy="58" r="5" fill="#ea4335" opacity=".17"/>'
+            + '<circle cx="78" cy="58" r="5" fill="#ea4335" opacity=".17"/>'
+            /* boca: se abre con la voz */
+            + '<ellipse cx="55" cy="66" rx="' + (ancho/2).toFixed(1) + '" ry="' + (abre/2).toFixed(1)
+            + '" fill="#8c3b2e"/>'
+            + (a > 0.35 ? '<ellipse cx="55" cy="' + (66 + abre/4).toFixed(1)
+                 + '" rx="' + (ancho/3).toFixed(1) + '" ry="' + (abre/5).toFixed(1) + '" fill="#c96a5a"/>' : '')
+            + '</svg>';
+        }
+
+        function cuadro(){
+          var t = audio.currentTime;
+          var i = Math.floor(t / PASO);
+          var a = (i >= 0 && i < ENV.length) ? ENV[i] : 0;
+          /* parpadeo cada 3-5 segundos */
+          if(t > tParp){ parpadeo = 6; tParp = t + 3 + Math.random()*2; }
+          if(parpadeo > 0) parpadeo--;
+          fig.innerHTML = dibuja(a, parpadeo > 3);
+          if(audio.duration) barra.style.width = (100*t/audio.duration).toFixed(1) + '%';
+          if(!audio.paused) raf = requestAnimationFrame(cuadro);
+        }
+
+        C.querySelector('[data-a="play"]').addEventListener('click', function(){
+          audio.currentTime = 0;
+          audio.play().then(function(){ cuadro(); }).catch(function(){
+            C.querySelector('.narrador-nota').innerHTML =
+              'No se ha podido reproducir el audio. Comprueba el sonido del equipo.';
+          });
+        });
+        C.querySelector('[data-a="stop"]').addEventListener('click', function(){
+          audio.pause(); audio.currentTime = 0;
+          if(raf) cancelAnimationFrame(raf);
+          fig.innerHTML = dibuja(0, false); barra.style.width = '0';
+        });
+        audio.addEventListener('ended', function(){
+          if(raf) cancelAnimationFrame(raf);
+          fig.innerHTML = dibuja(0, false); barra.style.width = '0';
+        });
+
+        fig.innerHTML = dibuja(0, false);
+      })();
+      </script>
+
+      <div class="def">
+        <span class="n-tag">Definici&oacute;n</span>
+        Un <b>sistema de control</b> regula el funcionamiento de un automatismo para que funcione
+        como se ha previsto.
+      </div>
+      <div class="escena" id="esc-lazo">
+        <div class="escena-barra">
+          <span class="escena-titulo">Compara los dos sistemas</span>
+          <div class="seg" id="seg-lazo">
+            <button type="button" data-l="abierto" aria-pressed="true">Lazo abierto</button>
+            <button type="button" data-l="cerrado">Lazo cerrado</button>
+          </div>
+        </div>
+        <div class="pie" id="pie-lazo"></div>
+      </div>
+      <script>
+      (function(){
+        var L = {
+          abierto: '<b>Se&ntilde;al de entrada &rarr; controlador &rarr; actuador &rarr; se&ntilde;al '
+                 + 'de salida.</b> No se tiene en cuenta el resultado. Ejemplo: una tostadora con '
+                 + 'tiempo fijo &mdash;si se est&aacute; quemando la tostada, el sistema no se entera '
+                 + 'ni corrige nada.',
+          cerrado: '<b>Se&ntilde;al de entrada &rarr; comparador &rarr; controlador &rarr; actuador '
+                 + '&rarr; se&ntilde;al de salida</b>, con un <b>sensor</b> que devuelve la salida al '
+                 + 'comparador. Ejemplo: un termostato a 21&deg;&mdash;mide la temperatura real y '
+                 + 'enciende o apaga la calefacci&oacute;n para corregir el error.'
+        };
+        var seg = document.getElementById('seg-lazo'), pie = document.getElementById('pie-lazo');
+        function pon(k){
+          seg.querySelectorAll('button').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.l===k?'true':'false'); });
+          pie.innerHTML = L[k];
+        }
+        seg.addEventListener('click', function(e){ var b=e.target.closest('button[data-l]'); if(b) pon(b.dataset.l); });
+        pon('abierto');
+      })();
+      </script>
+      <p>En el taller, programar una tarjeta controladora o un robot sigue casi siempre el modelo de
+      <b>lazo cerrado</b>, para lograr m&aacute;s precisi&oacute;n: <b>sensor</b> (mide) &rarr;
+      <b>comparador</b> (compara con lo programado) &rarr; <b>controlador</b> (decide) &rarr;
+      <b>actuador</b> (act&uacute;a).</p>
+      <p><b>ACTIVIDADES</b> (p.&nbsp;152)</p>
+      <ol>
+              <li>Di si estos sistemas son de lazo abierto o cerrado: tostadora, frigor&iacute;fico, batidora, aire acondicionado programado, vitrocer&aacute;mica, enfoque autom&aacute;tico de una c&aacute;mara.
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p><b>Abierto:</b> tostadora, batidora, vitrocer&aacute;mica (no miden el resultado). <b>Cerrado:</b> frigor&iacute;fico (mide y mantiene la temperatura), aire acondicionado programado (corrige seg&uacute;n la temperatura real), enfoque autom&aacute;tico (corrige seg&uacute;n la nitidez detectada).</p></div></details></li>
+
+      </ol>
+  
+    </section>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">03</span> Sensores y actuadores</div>
+
+      <h4>Sensores m&aacute;s usados en rob&oacute;tica</h4>
+      <div class="tipos-grid"><div class="tipo-card"><b>LDR</b><span>Intensidad luminosa (resistencia dependiente de la luz).</span></div><div class="tipo-card"><b>NTC</b><span>Temperatura (resistencia que baja al subir la temperatura).</span></div><div class="tipo-card"><b>Ultrasonidos (HC-SR04)</b><span>Distancia a un objeto, con ondas sonoras.</span></div><div class="tipo-card"><b>Infrarrojos (CNY70)</b><span>Diferencia entre blanco/negro o claro/oscuro.</span></div><div class="tipo-card"><b>PIR</b><span>Movimiento, detectando la radiaci&oacute;n infrarroja de personas u objetos.</span></div><div class="tipo-card"><b>Final de carrera</b><span>Contacto mec&aacute;nico: fin de un recorrido.</span></div><div class="tipo-card"><b>Aceler&oacute;metro</b><span>Aceleraci&oacute;n e inclinaci&oacute;n.</span></div></div>
+      <p><b>Actuadores</b> (transforman energ&iacute;a el&eacute;ctrica en un efecto): <b>diodos LED</b>
+      (con polaridad, necesitan una resistencia en serie de &sim;220&nbsp;&Omega;), <b>motores de
+      corriente continua</b> (giran seg&uacute;n la polaridad; Arduino necesita un transistor, rel&eacute;
+      o circuito integrado L293/L298 para moverlos, porque solo da 40&nbsp;mA) y <b>servomotores</b>
+      (giro preciso de 0&deg; a 180&deg;, con tres cables: +5&nbsp;V, GND y pin digital).</p>
+      <div class="nota" id="curriculo-andalucia">
+        <span class="n-tag">Curr&iacute;culo de Andaluc&iacute;a</span>
+        Esta unidad trabaja la <b>competencia espec&iacute;fica 4</b>, los <b>criterios de
+        evaluaci&oacute;n 5.1 y 5.3</b>, y los <b>saberes b&aacute;sicos C.1 y C.2</b> (rob&oacute;tica
+        y sistemas de control), seg&uacute;n la
+        <a href="https://www.juntadeandalucia.es/boja/2023/104/BOJA23-104-00281-9728-01_00284744.pdf"
+        target="_blank" rel="noopener">Orden de 30 de mayo de 2023 (BOJA n&uacute;m. 104)</a>, anexo&nbsp;II.
+      </div>
+      <div class="aviso">
+        <span class="n-tag">Pendiente</span>
+        Software de programaci&oacute;n para Arduino, c&oacute;mo conectarlo, pr&aacute;cticas de
+        ordenador, resumen y autoevaluaci&oacute;n.
+      </div>
+  
+    </section>
+
+  </div>
+
+</main>
+
+<footer><div class="wrap">Tema 5 &middot; 3.&ordm; de ESO &middot; Tecnolog&iacute;a y Digitalizaci&oacute;n</div></footer>
+
+<script>
+(function(){
+  var nav = document.getElementById('nav');
+  if(!nav) return;
+  nav.addEventListener('click', function(e){
+    var b = e.target.closest('button[data-ses]');
+    if(!b || b.disabled) return;
+    nav.querySelectorAll('button').forEach(function(x){
+      x.setAttribute('aria-selected', x === b ? 'true' : 'false');
+    });
+    document.querySelectorAll('[id^="ses-"]').forEach(function(p){
+      p.hidden = (p.id !== 'ses-' + b.dataset.ses);
+    });
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+})();
+</script>
+
+</body>
+</html>
