@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tema 3 &middot; T&eacute;cnicas de representaci&oacute;n gr&aacute;fica</title>
+<meta name="description" content="Tema 3 de Tecnolog&iacute;a y Digitalizaci&oacute;n de 2.&ordm; de ESO (Andaluc&iacute;a): instrumentos de dibujo, normalizaci&oacute;n, tipos de l&iacute;nea y las vistas principales de un objeto, con las competencias, criterios y saberes b&aacute;sicos de la Orden de 30 de mayo de 2023.">
+<link rel="canonical" href="https://rgllorente82-png.github.io/danieltecnologia/2eso/TyD/tema3/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"Tema 3 &middot; T&eacute;cnicas de representaci&oacute;n gr&aacute;fica","url":"https://rgllorente82-png.github.io/danieltecnologia/2eso/TyD/tema3/","inLanguage":"es",
+ "isAccessibleForFree":true,
+ "educationalLevel":"Educaci&oacute;n Secundaria Obligatoria","learningResourceType":"Unidad did&aacute;ctica interactiva"}
+</script>
+<style>
+:root{
+  --paper:#f8f9fa;--surface:#fff;--surface-2:#f1f3f4;--ink:#202124;--ink-soft:#5f6368;
+  --line:#dadce0;--line-soft:#e8eaed;--accent:#1a73e8;--accent-soft:#e8f0fe;
+  --goo-azul:#4285f4;--goo-rojo:#ea4335;--goo-amarillo:#fbbc04;--goo-verde:#34a853;
+  --grid:rgba(66,133,244,.09);
+  --f-b:"Roboto",-apple-system,"Segoe UI",Arial,sans-serif;
+  --f-m:"Roboto Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#202124;--surface:#292a2d;--surface-2:#35363a;--ink:#e8eaed;--ink-soft:#9aa0a6;
+  --line:#5f6368;--line-soft:#3c4043;--accent:#8ab4f8;--accent-soft:#1f3347;
+  --goo-azul:#8ab4f8;--goo-rojo:#f28b82;--goo-amarillo:#fdd663;--goo-verde:#81c995;
+  --grid:rgba(138,180,248,.09)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 var(--f-b);letter-spacing:.01em}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+header.top{background:var(--surface);border-bottom:2px solid var(--ink);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:24px 24px;position:sticky;top:0;z-index:50}
+header.top .wrap{padding-block:16px 0}
+.eyebrow{font-family:var(--f-m);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.eyebrow a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
+.eyebrow a:hover{border-bottom-color:currentColor}
+h1{font-weight:700;font-size:clamp(22px,4.4vw,30px);margin:6px 0 12px;letter-spacing:-.015em}
+nav.sesiones{display:flex;gap:8px;overflow-x:auto;padding-bottom:12px}
+nav.sesiones button{flex:none;background:var(--surface);color:var(--ink-soft);border:1.5px solid var(--line);
+  border-radius:2px;padding:7px 14px;font:400 13px var(--f-m);cursor:pointer;white-space:nowrap}
+nav.sesiones button[aria-selected="true"]{background:var(--goo-azul);border-color:var(--goo-azul);color:#fff}
+nav.sesiones button[disabled]{opacity:.45;cursor:default}
+main{padding-block:26px 70px}
+.ses-head{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;padding:20px;margin-bottom:26px}
+.ses-head h2{font-size:22px;margin:6px 0 8px;letter-spacing:-.01em}
+.ses-head p{margin:0 0 14px;color:var(--ink-soft)}
+.minutado{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.min{font-family:var(--f-m);font-size:11.5px;border:1px solid var(--line);border-radius:2px;padding:4px 9px;color:var(--ink-soft)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-family:var(--f-m);font-size:11px;border:1px solid var(--goo-azul);color:var(--goo-azul);border-radius:2px;padding:3px 8px}
+.chip.sab{border-color:var(--line);color:var(--ink-soft)}
+.bloque{margin-bottom:34px}
+.rotulo{display:flex;align-items:center;gap:10px;font-family:var(--f-m);font-size:12px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-soft);margin-bottom:12px}
+.rotulo .num{background:var(--goo-azul);color:#fff;border-radius:2px;min-width:26px;height:24px;
+  display:inline-grid;place-items:center;font-weight:500}
+.rotulo::after{content:"";flex:1;height:2px;background:var(--goo-azul);opacity:.3}
+.bloque:nth-of-type(4n+2) .rotulo .num,.bloque:nth-of-type(4n+2) .rotulo::after{background:var(--goo-rojo)}
+.bloque:nth-of-type(4n+3) .rotulo .num,.bloque:nth-of-type(4n+3) .rotulo::after{background:var(--goo-verde)}
+.bloque:nth-of-type(4n+4) .rotulo .num{background:var(--goo-amarillo);color:#202124}
+.bloque:nth-of-type(4n+4) .rotulo::after{background:var(--goo-amarillo)}
+h3{font-size:18px;margin:22px 0 6px;letter-spacing:-.01em}
+h4{font-size:15.5px;margin:16px 0 4px}
+.bloque ul,.bloque ol{padding-left:22px}
+.bloque li{margin-bottom:5px}
+.nota,.aviso,.def{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;padding:14px 16px;margin:16px 0}
+.nota{border-left:5px solid var(--goo-azul)}
+.aviso{border-left:5px solid var(--goo-amarillo)}
+.def{border-left:5px solid var(--goo-verde)}
+.n-tag{display:block;font-family:var(--f-m);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-soft);margin-bottom:5px}
+.nota .n-tag{color:var(--goo-azul)}
+.escena{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;margin:18px 0}
+.escena-barra{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
+  padding:12px 16px;border-bottom:1px solid var(--line)}
+.escena-titulo{font-family:var(--f-m);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.seg button{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;padding:6px 12px;
+  font:400 12px var(--f-m);color:var(--ink-soft);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--goo-azul);border-color:var(--goo-azul);color:#fff}
+.lienzo{padding:10px;background:var(--surface);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:20px 20px}
+.lienzo svg{width:100%;height:auto;display:block}
+.pie{padding:12px 16px;border-top:1px solid var(--line);font-size:14.5px;color:var(--ink-soft)}
+.ficha{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;margin:16px 0;overflow:hidden}
+.ficha-cab{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;
+  background:var(--ink);color:var(--surface);padding:12px 16px;font-family:var(--f-m);font-size:11.5px;
+  letter-spacing:.08em;text-transform:uppercase}
+.ficha-cab .chip{border-color:var(--surface);color:var(--surface)}
+.ficha-cuerpo{padding:16px}
+.resp{border:1px solid var(--line);border-radius:2px;margin:8px 0}
+.resp summary{cursor:pointer;padding:9px 13px;font-family:var(--f-m);font-size:11.5px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink-soft)}
+.resp summary::-webkit-details-marker{display:none}
+.resp-cuerpo{padding:0 13px 13px}
+.resp-cuerpo p:last-child{margin-bottom:0}
+
+.narra{display:flex;gap:14px;align-items:flex-start}
+.avatar-caja{flex:none;width:104px}
+.avatar-caja svg.avatar{width:104px;height:72px;display:block}
+.avatar.habla{animation:habla .34s ease-in-out infinite alternate}
+@keyframes habla{from{transform:translateY(0)}to{transform:translateY(-2.5px)}}
+.globo{flex:1;background:var(--surface-2);border:1.5px solid var(--line);border-radius:2px;padding:11px 13px;position:relative}
+.globo::before{content:"";position:absolute;left:-9px;top:20px;width:0;height:0;
+  border-top:8px solid transparent;border-bottom:8px solid transparent;border-right:9px solid var(--line)}
+.avatar-dice{margin-top:8px;font-family:var(--f-m);font-size:12px;color:var(--goo-azul);font-style:italic}
+.voz-no{margin:10px 0 0;font-size:13px;color:var(--ink-soft)}
+@media (max-width:520px){.narra{flex-direction:column;align-items:center}.globo::before{display:none}}
+
+.reto-piensa{background:var(--surface);border:1.5px solid var(--goo-amarillo);border-left-width:5px;
+  border-radius:2px;padding:14px 16px;margin:16px 0}
+.reto-piensa .n-tag{color:#9a7326}
+.reto-piensa p{margin:0}
+.resp.revela summary{color:var(--goo-azul);font-weight:500}
+.resp.revela[open] summary{color:var(--ink-soft)}
+.resp.revela table{margin:0}
+.secuencia li.oculto{color:transparent;background:var(--surface-2);border-radius:2px;user-select:none}
+.secuencia li.oculto *{visibility:hidden}
+.secuencia li{transition:color .25s ease,background .25s ease;padding:2px 4px}
+#btn-secuencia{background:var(--surface);border:1.5px solid var(--goo-azul);color:var(--goo-azul);
+  border-radius:2px;padding:7px 14px;font:500 12px var(--f-m);cursor:pointer}
+#btn-secuencia:disabled{border-color:var(--line);color:var(--ink-soft);cursor:default}
+
+/* series del grafico de coste: validadas con el script de dataviz
+   claro  #ea4335/#1a73e8  -> min CVD 27.0, vision normal 36.8
+   oscuro #ef5350/#4285f4  -> min CVD 24.6, vision normal 33.2 */
+:root{--c-analog:#ea4335;--c-digital:#1a73e8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--c-analog:#ef5350;--c-digital:#4285f4}}
+.ejeq{fill:var(--ink-soft);font-family:var(--f-m);font-size:11px}
+.etq{fill:var(--ink);font-family:var(--f-m);font-size:11px;font-weight:500}
+
+
+.foto{margin:16px 0;border:1.5px solid var(--line);border-radius:2px;background:var(--surface);overflow:hidden}
+.foto img{width:100%;height:auto;display:block}
+.foto figcaption{padding:11px 14px;font-size:14px;line-height:1.5;color:var(--ink);border-top:1px solid var(--line)}
+.credito{display:block;margin-top:7px;font-family:var(--f-m);font-size:10.5px;color:var(--ink-soft);letter-spacing:.02em}
+.credito a{color:var(--ink-soft)}
+.galeria-ri{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));margin:16px 0}
+.galeria-ri .foto{margin:0}
+.galeria-ri figcaption{font-size:13.5px}
+
+.video{margin:16px 0}
+.video-play{width:100%;display:flex;align-items:center;gap:16px;padding:22px 20px;cursor:pointer;
+  background:var(--surface);border:1.5px solid var(--line);border-radius:2px;text-align:left;
+  transition:border-color .18s ease}
+.video-play:hover{border-color:var(--goo-rojo)}
+.video-tri{flex:none;width:52px;height:38px;border-radius:6px;background:var(--goo-rojo);position:relative}
+.video-tri::after{content:"";position:absolute;left:20px;top:11px;border-left:14px solid #fff;
+  border-top:8px solid transparent;border-bottom:8px solid transparent}
+.video-txt b{display:block;font:500 16px var(--f-b);color:var(--ink);margin-bottom:3px}
+.video-txt span{font:400 12px var(--f-m);color:var(--ink-soft)}
+.video-nota{margin:9px 0 0;font-size:12.5px;color:var(--ink-soft);line-height:1.5}
+.video iframe{width:100%;aspect-ratio:16/9;height:auto;border:1.5px solid var(--line);border-radius:2px;display:block}
+
+/* lo que se copia en la libreta, frente a lo que es solo para entender */
+.copiar{background:var(--surface);border:2px solid var(--goo-azul);border-radius:2px;
+  padding:16px 18px;margin:18px 0;position:relative}
+.copiar::before{content:"PARA LA LIBRETA";position:absolute;top:-11px;left:14px;
+  background:var(--goo-azul);color:#fff;font-family:var(--f-m);font-size:10.5px;letter-spacing:.1em;
+  padding:3px 9px;border-radius:2px}
+.copiar > :first-child{margin-top:6px}
+.copiar > :last-child{margin-bottom:0}
+.copiar h4{font-size:15px;margin:10px 0 4px}
+.entender{border-left:4px solid var(--line);padding:2px 0 2px 16px;margin:18px 0;color:var(--ink-soft)}
+.entender .e-tag{display:block;font-family:var(--f-m);font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
+.entender b{color:var(--ink)}
+@media print{
+  .entender,.escena,.video,.narra,nav.sesiones{display:none}
+  .copiar{border-width:1.5px;break-inside:avoid}
+}
+.rotulo-svg{fill:var(--ink-soft);font-family:var(--f-m);font-size:11px;letter-spacing:.06em}
+.hito{fill:var(--surface);stroke:var(--goo-azul);stroke-width:2;cursor:pointer}
+.hito.on{fill:var(--goo-azul)}
+.eje-t{fill:none;stroke:var(--line);stroke-width:2}
+
+.necesidades{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:16px 0}
+.necesidad{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;padding:14px 10px;text-align:center;
+  transition:border-color .18s ease,transform .18s ease}
+.necesidad:hover{border-color:var(--goo-azul);transform:translateY(-2px)}
+.necesidad svg{width:34px;height:34px;display:block;margin:0 auto 8px;stroke:var(--goo-azul);fill:none;
+  stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.necesidad b{display:block;font-size:13.5px;margin-bottom:3px}
+.necesidad span{font-size:11.5px;color:var(--ink-soft);line-height:1.3}
+
+.stepper{display:flex;flex-wrap:wrap;gap:2px;padding:16px 6px;justify-content:center}
+.fase-nodo{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1 0 18%;min-width:82px;
+  background:none;border:none;cursor:pointer;padding:8px 4px;font-family:var(--f-b)}
+.fase-nodo .num{width:32px;height:32px;border-radius:50%;border:2px solid var(--line);display:grid;
+  place-items:center;font-family:var(--f-m);font-weight:700;font-size:13px;color:var(--ink-soft);
+  background:var(--surface);transition:all .18s ease}
+.fase-nodo[aria-pressed="true"] .num{background:var(--goo-azul);border-color:var(--goo-azul);color:#fff;
+  transform:scale(1.12)}
+.fase-nodo .etq{font-size:10.5px;text-align:center;color:var(--ink-soft);line-height:1.25;max-width:90px}
+.fase-nodo[aria-pressed="true"] .etq{color:var(--ink);font-weight:500}
+.fase-nodo:hover .num{border-color:var(--goo-azul)}
+
+footer{border-top:1px solid var(--line);color:var(--ink-soft);font-size:13.5px;margin-top:30px}
+footer .wrap{padding-block:18px 26px}
+@media (max-width:560px){body{font-size:15.5px}.lienzo{padding:4px}}
+
+/* ---- avatar narrador, plano y sincronizado con la voz ---- */
+.narrador{display:flex;gap:16px;align-items:flex-start;background:var(--surface);
+  border:1.5px solid var(--line);border-radius:2px;padding:16px;margin:18px 0}
+.narrador-fig{flex:none;width:110px}
+.narrador-fig svg{width:110px;height:120px;display:block}
+.narrador-txt{flex:1;min-width:0}
+.narrador-txt h4{margin:0 0 3px;font-size:15.5px}
+.narrador-quien{font-family:var(--f-m);font-size:11px;color:var(--ink-soft);display:block;margin-bottom:9px}
+.narrador-barra{height:4px;background:var(--surface-2);border-radius:2px;overflow:hidden;margin:11px 0 8px}
+.narrador-barra i{display:block;height:100%;width:0;background:var(--goo-azul);transition:width .1s linear}
+.narrador-nota{font-size:12.5px;color:var(--ink-soft);margin:8px 0 0;line-height:1.5}
+@media (max-width:520px){.narrador{flex-direction:column;align-items:center}
+  .narrador-txt{text-align:center}}
+
+.durezas{display:flex;align-items:center;gap:2px;margin:16px 0;flex-wrap:wrap}
+.dureza{flex:1;min-width:26px;text-align:center;font-family:var(--f-m);font-size:10.5px;
+  padding:8px 2px;color:#fff;font-weight:600}
+.din-grid{display:flex;align-items:flex-end;gap:2px;margin:16px 0;flex-wrap:wrap}
+.din-caja{background:var(--accent-soft);border:1.5px solid var(--goo-azul);display:flex;
+  align-items:center;justify-content:center;font-family:var(--f-m);font-size:11px;color:var(--goo-azul);
+  font-weight:700}
+.lineas-tabla{display:flex;flex-direction:column;gap:12px;margin:16px 0}
+.linea-fila{display:flex;align-items:center;gap:14px}
+.linea-fila svg{flex:none;width:120px;height:16px}
+.linea-fila span{font-size:13.5px;color:var(--ink-soft)}
+.vistas-demo{display:flex;gap:18px;align-items:center;flex-wrap:wrap;justify-content:center;padding:10px 0}
+.vistas-demo .pieza{width:150px}
+.vistas-caja{display:grid;grid-template-columns:repeat(2,44px);grid-template-rows:repeat(2,44px);gap:3px}
+.v-alzado{background:#8fd6c8}.v-planta{background:#f4a6c6}.v-perfil{background:#b9c9e8}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="eyebrow"><a href="../../../">Inicio</a> &middot; <a href="../../">2.&ordm; ESO</a> &middot; <a href="../">TyD</a> &middot; Tema 3</div>
+    <h1>T&eacute;cnicas de representaci&oacute;n gr&aacute;fica</h1>
+    <nav class="sesiones" id="nav" aria-label="Sesiones del tema"><button type="button" data-ses="1" aria-selected="true">S1 &middot; S1 &middot; Dibujo t&eacute;cnico</button></nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div id="ses-1">
+    <div class="ses-head">
+      <div class="eyebrow">Sesi&oacute;n 1 &middot; 60 minutos</div>
+      <h2>T&eacute;cnicas de representaci&oacute;n gr&aacute;fica</h2>
+      <p>Soportes e instrumentos de dibujo, medida de longitudes, normalizaci&oacute;n y formatos, tipos de l&iacute;nea, boceto/croquis/dibujo t&eacute;cnico y las vistas principales de un objeto.</p>
+      <div class="minutado"><span class="min"><b>0-15</b> Instrumentos y medidas</span><span class="min"><b>15-30</b> Normalizaci&oacute;n y l&iacute;neas</span><span class="min"><b>30-55</b> Vistas principales y actividades</span></div>
+      <div class="chips"><span class="chip">CE1 &middot; 1.1</span><span class="chip">CE2 &middot; 4.1</span><span class="chip sab">B.1</span><span class="chip sab">B.2</span><span class="chip sab">B.3</span></div>
+    </div>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">01</span> Soportes, &uacute;tiles e instrumentos de dibujo y medida</div>
+
+      <p>El <b>dibujo t&eacute;cnico</b> es un medio de expresi&oacute;n que se rige por normas. Los
+      soportes m&aacute;s usados son el papel opaco, el cuadriculado y el milimetrado; los principales
+      instrumentos son el l&aacute;piz, la regla y otros instrumentos de medida, la escuadra y el
+      cart&oacute;n.</p>
+      <h4>El l&aacute;piz: dureza de la mina</h4>
+      <div class="durezas"><div class="dureza" style="background:#1a73e8">9H</div><div class="dureza" style="background:#4285f4">7H</div><div class="dureza" style="background:#669df6">5H</div><div class="dureza" style="background:#8ab4f8">3H</div><div class="dureza" style="background:#aecbfa">H</div><div class="dureza" style="background:#5f6368">HB</div><div class="dureza" style="background:#f6a99a">B</div><div class="dureza" style="background:#f28b82">3B</div><div class="dureza" style="background:#ee675c">5B</div><div class="dureza" style="background:#e8483a">7B</div><div class="dureza" style="background:#c5221f">9B</div></div>
+      <p style="font-size:13px;color:var(--ink-soft);margin-top:-8px">De <b>duras (H)</b>, trazo
+      claro y fino, hasta <b>blandas (B)</b>, trazo oscuro y ancho. La <b>HB</b> es la intermedia,
+      la de uso general.</p>
+      <h4>Instrumentos de medida</h4>
+      <ul>
+        <li><b>Regla:</b> mide cent&iacute;metros o mil&iacute;metros.</li>
+        <li><b>Metro o flex&oacute;metro / cinta m&eacute;trica:</b> desde cent&iacute;metros hasta
+        varios metros.</li>
+        <li><b>Medidor l&aacute;ser:</b> grandes distancias.</li>
+      </ul>
+      <p>La <b>escuadra</b> (90&deg;-45&deg;-45&deg;) y el <b>cart&oacute;n</b> (90&deg;-60&deg;-30&deg;)
+      se combinan para trazar l&iacute;neas paralelas, perpendiculares y &aacute;ngulos.</p>
+  
+    </section>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">02</span> Medida de longitudes</div>
+
+      <div class="def">
+        <span class="n-tag">Escala del Sistema Internacional</span>
+        km &middot; hm &middot; dam &middot; <b>m</b> &middot; dm &middot; cm &middot; mm &mdash;
+        para pasar una casilla a la <b>derecha</b> se <b>multiplica &times;10</b>; para pasar una
+        casilla a la <b>izquierda</b> se <b>divide &divide;10</b>.
+      </div>
+      <div class="ficha">
+        <div class="ficha-cab"><span>Ejemplos resueltos</span><span class="chips"></span><span>2 saltos</span></div>
+        <div class="ficha-cuerpo">
+          <p><b>&iquest;Cu&aacute;ntos metros son 1 hect&oacute;metro?</b> Dos saltos a la derecha:
+          1&nbsp;hm &times; 10 &times; 10 = <b>100&nbsp;m</b>.</p>
+          <p><b>&iquest;Cu&aacute;ntos metros es 1 cent&iacute;metro?</b> Dos saltos a la izquierda:
+          1&nbsp;cm &divide; 10 &divide; 10 = <b>0,01&nbsp;m</b>.</p>
+        </div>
+      </div>
+      <p><b>ACTIVIDADES</b> (selecci&oacute;n, p.&nbsp;96 y 104)</p>
+      <ol>
+              <li>Expresa el ancho de tu mesa en mil&iacute;metros y en metros.
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>Respuesta abierta seg&uacute;n tu mesa real: mide en cent&iacute;metros y convierte (&times;10 para mm, &divide;100 para m).</p></div></details></li>
+        <li>Copia y completa: a) 12&nbsp;cm = &hellip;&nbsp;mm  b) 0,34&nbsp;mm = &hellip;&nbsp;m  c) 1&nbsp;km = &hellip;&nbsp;dam
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>a) 12&nbsp;cm = <b>120&nbsp;mm</b> (&times;10). b) 0,34&nbsp;mm = <b>0,00034&nbsp;m</b> (&divide;10 cuatro veces). c) 1&nbsp;km = <b>100&nbsp;dam</b> (&times;10 dos veces).</p></div></details></li>
+        <li>Convierte a cent&iacute;metros: a) 1,5&nbsp;m  b) 0,04&nbsp;hm  c) 7&nbsp;dam  d) 456&nbsp;mm  e) 32&nbsp;dm
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>a) <b>150&nbsp;cm</b>. b) <b>400&nbsp;cm</b>. c) <b>7000&nbsp;cm</b>. d) <b>45,6&nbsp;cm</b>. e) <b>320&nbsp;cm</b>.</p></div></details></li>
+
+      </ol>
+  
+    </section>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">03</span> Normalizaci&oacute;n. Formatos y tipos de l&iacute;nea</div>
+
+      <div class="def">
+        <span class="n-tag">Definici&oacute;n</span>
+        La <b>normalizaci&oacute;n</b> es el conjunto de normas que regulan todos los elementos del
+        dibujo t&eacute;cnico: formatos, rotulaci&oacute;n y simbolog&iacute;a. En Espa&ntilde;a las
+        fija la <b>UNE</b> (Asociaci&oacute;n Espa&ntilde;ola de Normalizaci&oacute;n), coincidentes
+        en gran parte con las <b>ISO</b> internacionales.
+      </div>
+      <h4>Los formatos DIN, a escala entre s&iacute;</h4>
+      <div class="din-grid"><div class="din-caja" style="width:81.78px;height:58px">A0</div><div class="din-caja" style="width:57.809999999999995px;height:41px">A1</div><div class="din-caja" style="width:40.89px;height:29px">A2</div><div class="din-caja" style="width:28.904999999999998px;height:20.5px">A3</div><div class="din-caja" style="width:20.445px;height:14.5px">A4</div><div class="din-caja" style="width:14.1px;height:10px">A5</div></div>
+      <p style="font-size:13px;color:var(--ink-soft)">El m&aacute;s usado es el <b>DIN A4</b>
+      (210&nbsp;&times;&nbsp;297&nbsp;mm). Cada formato mide la mitad que el anterior: A0 = 841&nbsp;&times;&nbsp;1.189&nbsp;mm.</p>
+      <p>El dibujo se hace dentro de un <b>marco</b>, con un <b>cajet&iacute;n</b> en la esquina
+      inferior con el t&iacute;tulo, la fecha, el nombre y el curso.</p>
+      <h4>Tipos de l&iacute;nea normalizados</h4>
+      <div class="lineas-tabla"><div class="linea-fila"><svg viewBox="0 0 120 16"><line x1="4" y1="8" x2="116" y2="8" stroke="var(--ink)" stroke-width="6" stroke-linecap="round"/></svg><span><b>L&iacute;nea gruesa</b> &middot; Contornos y aristas visibles</span></div><div class="linea-fila"><svg viewBox="0 0 120 16"><line x1="4" y1="8" x2="116" y2="8" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/></svg><span><b>L&iacute;nea fina</b> &middot; Cotas, ejes de rayado</span></div><div class="linea-fila"><svg viewBox="0 0 120 16"><line x1="4" y1="8" x2="116" y2="8" stroke="var(--ink)" stroke-width="2" stroke-dasharray="10,2,2" stroke-linecap="round"/></svg><span><b>L&iacute;nea de trazo y punto</b> &middot; Ejes de revoluci&oacute;n</span></div><div class="linea-fila"><svg viewBox="0 0 120 16"><line x1="4" y1="8" x2="116" y2="8" stroke="var(--ink)" stroke-width="2" stroke-dasharray="8,4" stroke-linecap="round"/></svg><span><b>L&iacute;nea de trazos</b> &middot; Contornos y aristas ocultas</span></div></div>
+      <p><b>ACTIVIDADES</b> (selecci&oacute;n, p.&nbsp;97 y 104)</p>
+      <ol>
+              <li>&iquest;Qu&eacute; organismo se encarga de la normalizaci&oacute;n en Espa&ntilde;a? &iquest;C&oacute;mo se llaman sus normas, y las internacionales equivalentes?
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>En Espa&ntilde;a, la <b>UNE</b>; sus normas se llaman tambi&eacute;n <b>UNE</b> ("una norma espa&ntilde;ola"). A nivel internacional coinciden en gran parte con las normas <b>ISO</b>.</p></div></details></li>
+        <li>Busca cinco ejemplos de objetos en los que la normalizaci&oacute;n sea importante.
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>Por ejemplo: los enchufes el&eacute;ctricos, el ancho de v&iacute;a del tren, las medidas del papel (A4), las roscas de los tornillos, los neum&aacute;ticos de coche.</p></div></details></li>
+
+      </ol>
+  
+    </section>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">04</span> Boceto, croquis y dibujo t&eacute;cnico</div>
+
+      <p>Para representar un objeto se sigue siempre el mismo camino: primero un <b>boceto</b>, luego
+      un <b>croquis</b> y por &uacute;ltimo el <b>dibujo t&eacute;cnico</b>.</p>
+      <table style="width:100%;border-collapse:collapse;font-size:13.5px;margin:14px 0">
+        <tr style="border-bottom:1.5px solid var(--line)"><td></td>
+          <td style="text-align:center;padding:6px"><b>Boceto</b></td>
+          <td style="text-align:center;padding:6px"><b>Croquis</b></td>
+          <td style="text-align:center;padding:6px"><b>Dibujo t&eacute;cnico</b></td></tr>
+        <tr><td style="padding:6px 8px 6px 0">A mano alzada</td>
+          <td style="text-align:center">&#10003;</td><td style="text-align:center">&#10003;</td>
+          <td style="text-align:center">&mdash;</td></tr>
+        <tr><td style="padding:6px 8px 6px 0">Con regla, escuadra y cart&oacute;n</td>
+          <td style="text-align:center">&mdash;</td><td style="text-align:center">&mdash;</td>
+          <td style="text-align:center">&#10003;</td></tr>
+        <tr><td style="padding:6px 8px 6px 0">Lleva medidas (acotado)</td>
+          <td style="text-align:center">&mdash;</td><td style="text-align:center">&#10003;</td>
+          <td style="text-align:center">&#10003;</td></tr>
+        <tr><td style="padding:6px 8px 6px 0">Se hace a escala</td>
+          <td style="text-align:center">&mdash;</td><td style="text-align:center">&mdash;</td>
+          <td style="text-align:center">&#10003;</td></tr>
+        <tr><td style="padding:6px 8px 6px 0">Debe estar proporcionado</td>
+          <td style="text-align:center">&#10003;</td><td style="text-align:center">&#10003;</td>
+          <td style="text-align:center">&#10003;</td></tr>
+      </table>
+  
+    </section>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">05</span> Representaci&oacute;n de objetos. Vistas principales</div>
+
+
+      <div class="narrador" id="nar-u3">
+        <div class="narrador-fig" id="nar-u3-fig"></div>
+        <div class="narrador-txt">
+          <h4>C&oacute;mo se dibuja un objeto con volumen</h4>
+          <span class="narrador-quien">Narrado &middot; 44 s</span>
+          <div class="seg">
+            <button type="button" data-a="play">&#9654; Escuchar</button>
+            <button type="button" data-a="stop">&#9632; Parar</button>
+          </div>
+          <div class="narrador-barra"><i></i></div>
+          <p class="narrador-nota">Escucha la explicaci&oacute;n y compara despu&eacute;s las tres vistas de la pieza.</p>
+        </div>
+      </div>
+
+      <script>
+      (function(){
+        var C = document.getElementById('nar-u3');
+        if(!C) return;
+        var fig = document.getElementById('nar-u3-fig');
+        var barra = C.querySelector('.narrador-barra i');
+        var ENV = [0.0, 0.0, 0.0, 0.349, 1.0, 0.809, 0.527, 0.738, 0.495, 0.682, 0.646, 0.635, 0.245, 0.303, 0.661, 0.879, 0.434, 0.563, 0.642, 0.378, 0.313, 0.143, 0.013, 0.002, 0.001, 0.066, 0.855, 0.82, 0.287, 0.688, 0.422, 0.654, 0.855, 0.775, 0.574, 0.55, 0.476, 0.137, 0.418, 0.388, 0.228, 0.276, 0.168, 0.024, 0.001, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.002, 1.0, 0.662, 1.0, 0.965, 0.471, 0.302, 0.789, 0.7, 0.612, 0.549, 0.62, 0.49, 0.657, 0.625, 0.195, 0.299, 0.959, 0.762, 0.471, 0.68, 0.915, 0.686, 0.306, 0.597, 0.081, 0.863, 0.816, 0.642, 0.355, 0.13, 0.357, 0.178, 0.005, 0.001, 0.0, 0.116, 0.938, 0.344, 0.303, 0.82, 0.407, 0.659, 0.726, 0.802, 0.581, 0.444, 0.927, 0.88, 0.628, 0.549, 0.242, 0.047, 0.819, 0.513, 0.194, 0.38, 0.068, 0.955, 0.425, 0.079, 0.773, 0.58, 0.698, 0.399, 0.541, 0.816, 0.687, 0.557, 0.463, 0.392, 0.344, 0.896, 0.759, 0.71, 0.677, 0.356, 0.61, 0.589, 0.238, 0.254, 0.25, 0.253, 0.297, 0.093, 0.002, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.797, 0.839, 0.19, 0.904, 0.898, 0.337, 0.637, 0.265, 0.552, 0.967, 1.0, 0.665, 1.0, 0.466, 0.53, 0.892, 0.123, 0.7, 0.458, 0.686, 0.812, 0.711, 0.51, 0.276, 0.105, 0.988, 0.54, 0.368, 0.15, 0.013, 0.0, 0.0, 0.051, 0.295, 0.953, 0.777, 0.618, 0.673, 1.0, 0.556, 0.338, 0.12, 0.06, 0.002, 0.0, 0.007, 0.159, 0.32, 0.996, 1.0, 0.877, 0.697, 0.848, 0.454, 0.266, 0.433, 0.24, 0.896, 0.33, 0.365, 0.391, 0.298, 0.382, 0.304, 0.184, 0.056, 0.002, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.109, 0.317, 1.0, 0.407, 1.0, 0.377, 0.1, 0.846, 0.962, 1.0, 0.619, 0.495, 1.0, 0.55, 0.211, 0.35, 0.135, 0.067, 0.002, 0.0, 0.001, 0.06, 0.203, 0.894, 0.734, 0.47, 0.874, 0.413, 0.611, 0.62, 0.598, 0.459, 0.104, 0.919, 0.797, 0.754, 0.429, 0.534, 0.792, 0.744, 0.367, 0.411, 0.115, 0.487, 0.316, 0.234, 0.161, 0.08, 0.057, 0.008, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.802, 0.496, 1.0, 0.802, 0.834, 0.774, 0.689, 0.532, 0.264, 0.425, 0.971, 0.907, 0.523, 0.702, 0.453, 1.0, 0.152, 0.783, 0.324, 0.839, 0.548, 0.429, 0.416, 0.084, 0.367, 0.339, 0.055, 0.002, 0.0, 0.487, 0.84, 0.576, 0.27, 0.402, 0.912, 0.381, 0.298, 0.092, 0.007, 0.001, 0.0, 0.0, 0.626, 0.813, 0.55, 0.414, 0.79, 0.692, 0.34, 0.366, 0.254, 0.053, 0.002, 0.001, 0.001, 0.654, 0.298, 0.551, 0.97, 0.602, 0.424, 0.86, 0.514, 0.371, 0.553, 0.644, 0.443, 0.727, 0.43, 1.0, 0.711, 0.363, 0.326, 0.2, 0.395, 0.19, 0.457, 0.22, 0.232, 0.119, 0.08, 0.03, 0.001, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.331, 0.928, 0.938, 0.671, 0.733, 0.467, 0.465, 0.477, 0.784, 0.329, 0.628, 0.623, 0.798, 0.665, 0.1, 0.388, 0.67, 0.407, 0.318, 0.075, 0.564, 0.473, 0.588, 0.703, 1.0, 0.701, 0.734, 0.755, 0.869, 0.805, 0.347, 0.706, 0.484, 0.844, 0.322, 0.338, 0.731, 0.525, 0.362, 0.241, 0.037, 0.001, 0.211, 0.583, 0.324, 0.714, 0.563, 0.568, 0.242, 0.529, 0.408, 0.265, 0.934, 0.312, 0.442, 0.541, 0.128, 0.333, 0.551, 0.169, 0.458, 0.138, 0.667, 0.32, 0.267, 0.109, 0.066, 0.001, 0.0, 0.0, 0.357, 0.279, 0.085, 0.822, 0.729, 0.292, 0.21, 0.03, 0.001, 0.0, 0.0, 0.0, 0.0, 0.0, 0.625, 1.0, 0.989, 0.561, 1.0, 0.334, 0.804, 0.358, 0.092, 0.679, 0.657, 0.332, 0.18, 0.013, 0.001, 0.0, 0.001, 0.092, 0.955, 0.969, 0.702, 0.361, 0.844, 1.0, 0.846, 0.087, 0.82, 0.622, 0.597, 0.744, 0.572, 0.245, 0.727, 0.847, 0.187, 0.709, 0.886, 0.476, 0.59, 0.565, 0.371, 0.532, 0.432, 0.5, 0.462, 0.478, 0.297, 0.166, 0.298, 0.117, 0.003, 0.0, 0.188, 0.902, 0.606, 0.4, 0.567, 0.32, 0.811, 0.756, 0.789, 0.834, 0.473, 0.765, 0.267, 0.46, 0.329, 0.327, 0.359, 0.238, 0.267, 0.125, 0.007, 0.001, 0.001, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.018, 0.196, 0.832, 0.133, 0.815, 0.09, 0.96, 0.813, 0.706, 0.63, 0.336, 0.11, 0.886, 0.434, 0.59, 0.858, 0.906, 0.671, 0.392, 0.291, 1.0, 0.47, 0.583, 0.637, 0.406, 0.29, 0.103, 0.509, 0.466, 0.438, 0.282, 0.158, 0.006, 0.001, 0.0, 0.001, 0.001, 0.642, 0.832, 0.958, 0.153, 0.809, 0.909, 1.0, 0.725, 0.58, 0.313, 0.457, 0.8, 0.619, 0.921, 0.405, 0.095, 0.808, 0.59, 0.363, 0.124, 0.806, 0.797, 0.319, 0.431, 0.455, 0.434, 0.396, 0.816, 0.468, 0.274, 0.396, 0.08, 0.403, 0.285, 0.401, 0.284, 0.264, 0.113, 0.011, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0];            /* una muestra cada 66 ms, de 0 a 1 */
+        var PASO = 0.066;
+        var audio = new Audio('audio/u3-intro.mp3');
+        audio.preload = 'none';
+        var raf = null, parpadeo = 0, tParp = 0;
+
+        /* El personaje se dibuja entero cada cuadro: la boca depende del
+           volumen de la voz en ese instante, y los ojos parpadean solos.   */
+        function dibuja(a, ojosCerrados){
+          var abre = 3 + a * 13;                 /* alto de la boca */
+          var ancho = 15 + a * 5;
+          var ceja = -a * 2.5;                   /* las cejas acompanan */
+          var ojo = ojosCerrados
+            ? '<path d="M35 46 h11 M64 46 h11" stroke="#202124" stroke-width="2.6" stroke-linecap="round"/>'
+            : '<circle cx="40.5" cy="46" r="4.2" fill="#202124"/>'
+            + '<circle cx="69.5" cy="46" r="4.2" fill="#202124"/>'
+            + '<circle cx="42" cy="44.6" r="1.5" fill="#fff"/>'
+            + '<circle cx="71" cy="44.6" r="1.5" fill="#fff"/>';
+          return '<svg viewBox="0 0 110 120" aria-hidden="true">'
+            /* cuerpo, en azul de la web */
+            + '<path d="M22 120 v-18 q0-16 16-20 h34 q16 4 16 20 v18 Z" fill="#4285f4"/>'
+            + '<path d="M46 82 h18 v12 h-18 Z" fill="#e8b48a"/>'
+            /* cabeza */
+            + '<rect x="26" y="20" width="58" height="66" rx="16" fill="#f3d3b3" stroke="#d3ae87" stroke-width="2"/>'
+            /* pelo, plano y geometrico */
+            + '<path d="M26 40 v-6 q0-14 29-14 q29 0 29 14 v6 q-8-9-29-9 q-21 0-29 9 Z" fill="#3c4043"/>'
+            /* cejas */
+            + '<path d="M33 ' + (37+ceja) + ' h13" stroke="#3c4043" stroke-width="3" stroke-linecap="round"/>'
+            + '<path d="M64 ' + (37+ceja) + ' h13" stroke="#3c4043" stroke-width="3" stroke-linecap="round"/>'
+            + ojo
+            /* colorete */
+            + '<circle cx="32" cy="58" r="5" fill="#ea4335" opacity=".17"/>'
+            + '<circle cx="78" cy="58" r="5" fill="#ea4335" opacity=".17"/>'
+            /* boca: se abre con la voz */
+            + '<ellipse cx="55" cy="66" rx="' + (ancho/2).toFixed(1) + '" ry="' + (abre/2).toFixed(1)
+            + '" fill="#8c3b2e"/>'
+            + (a > 0.35 ? '<ellipse cx="55" cy="' + (66 + abre/4).toFixed(1)
+                 + '" rx="' + (ancho/3).toFixed(1) + '" ry="' + (abre/5).toFixed(1) + '" fill="#c96a5a"/>' : '')
+            + '</svg>';
+        }
+
+        function cuadro(){
+          var t = audio.currentTime;
+          var i = Math.floor(t / PASO);
+          var a = (i >= 0 && i < ENV.length) ? ENV[i] : 0;
+          /* parpadeo cada 3-5 segundos */
+          if(t > tParp){ parpadeo = 6; tParp = t + 3 + Math.random()*2; }
+          if(parpadeo > 0) parpadeo--;
+          fig.innerHTML = dibuja(a, parpadeo > 3);
+          if(audio.duration) barra.style.width = (100*t/audio.duration).toFixed(1) + '%';
+          if(!audio.paused) raf = requestAnimationFrame(cuadro);
+        }
+
+        C.querySelector('[data-a="play"]').addEventListener('click', function(){
+          audio.currentTime = 0;
+          audio.play().then(function(){ cuadro(); }).catch(function(){
+            C.querySelector('.narrador-nota').innerHTML =
+              'No se ha podido reproducir el audio. Comprueba el sonido del equipo.';
+          });
+        });
+        C.querySelector('[data-a="stop"]').addEventListener('click', function(){
+          audio.pause(); audio.currentTime = 0;
+          if(raf) cancelAnimationFrame(raf);
+          fig.innerHTML = dibuja(0, false); barra.style.width = '0';
+        });
+        audio.addEventListener('ended', function(){
+          if(raf) cancelAnimationFrame(raf);
+          fig.innerHTML = dibuja(0, false); barra.style.width = '0';
+        });
+
+        fig.innerHTML = dibuja(0, false);
+      })();
+      </script>
+
+      <div class="def">
+        <span class="n-tag">Definici&oacute;n</span>
+        Las <b>vistas</b> de un objeto son representaciones en dos dimensiones de cada una de sus
+        caras. Un objeto tiene seis vistas posibles, pero basta con las tres <b>vistas
+        principales</b>: <b>alzado</b> (la cara m&aacute;s representativa), <b>planta</b> (vista
+        superior, se coloca debajo del alzado) y <b>perfil</b> (vista lateral).
+      </div>
+      <div class="escena" id="esc-vistas">
+        <div class="escena-barra"><span class="escena-titulo">Pieza en escal&oacute;n: sus tres vistas</span></div>
+        <div class="lienzo">
+          <div class="vistas-demo">
+            <svg class="pieza" viewBox="0 0 160 140" aria-label="Pieza en forma de escal&oacute;n">
+              <path d="M20 120 60 100 60 60 100 40 140 60 140 100 100 120Z" fill="#f4a6c6" stroke="#202124" stroke-width="1.2"/>
+              <path d="M20 120 60 140 100 120 60 100Z" fill="#8fd6c8" stroke="#202124" stroke-width="1.2"/>
+              <path d="M140 60 140 100 100 120 100 40Z" fill="#b9c9e8" stroke="#202124" stroke-width="1.2"/>
+            </svg>
+            <div>
+              <div class="vistas-caja">
+                <div></div><div class="v-alzado" title="Alzado">Alzado</div>
+                <div class="v-planta" title="Planta">Planta</div><div class="v-perfil" title="Perfil izquierdo">Perfil</div>
+              </div>
+              <p style="font-size:12px;color:var(--ink-soft);max-width:200px;margin-top:8px">
+                La planta va <b>debajo</b> del alzado, y el perfil izquierdo, a su <b>derecha</b>:
+                lo que ves a la izquierda se dibuja a la derecha.</p>
+            </div>
+          </div>
+        </div>
+        <div class="pie">Cada color de la pieza corresponde a la cara que se proyecta en esa vista.</div>
+      </div>
+      <p><b>ACTIVIDAD</b> (p.&nbsp;103)</p>
+      <ol>
+              <li>&iquest;Por qu&eacute; la planta se coloca siempre debajo del alzado, y no al lado?
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>Porque as&iacute; lo fija la <b>normalizaci&oacute;n</b>: la colocaci&oacute;n de las vistas est&aacute; normalizada para que cualquiera que lea el plano sepa, sin necesidad de etiquetas, qu&eacute; vista es cada una y desde d&oacute;nde se mira.</p></div></details></li>
+
+      </ol>
+      <div class="nota" id="curriculo-andalucia">
+        <span class="n-tag">Curr&iacute;culo de Andaluc&iacute;a</span>
+        Esta unidad trabaja las <b>competencias espec&iacute;ficas 1 y 2</b>, los <b>criterios de
+        evaluaci&oacute;n 1.1 y 4.1</b>, y los <b>saberes b&aacute;sicos B.1, B.2 y B.3</b> (t&eacute;cnicas
+        de representaci&oacute;n gr&aacute;fica), seg&uacute;n la
+        <a href="https://www.juntadeandalucia.es/boja/2023/104/BOJA23-104-00281-9728-01_00284744.pdf"
+        target="_blank" rel="noopener">Orden de 30 de mayo de 2023 (BOJA n&uacute;m. 104)</a>, anexo&nbsp;II.
+      </div>
+      <div class="aviso">
+        <span class="n-tag">Pendiente de la pr&oacute;xima sesi&oacute;n</span>
+        Resumen de la unidad y autoevaluaci&oacute;n.
+      </div>
+  
+    </section>
+
+  </div>
+
+</main>
+
+<footer><div class="wrap">Tema 3 &middot; 2.&ordm; de ESO &middot; Tecnolog&iacute;a y Digitalizaci&oacute;n</div></footer>
+
+<script>
+(function(){
+  var nav = document.getElementById('nav');
+  if(!nav) return;
+  nav.addEventListener('click', function(e){
+    var b = e.target.closest('button[data-ses]');
+    if(!b || b.disabled) return;
+    nav.querySelectorAll('button').forEach(function(x){
+      x.setAttribute('aria-selected', x === b ? 'true' : 'false');
+    });
+    document.querySelectorAll('[id^="ses-"]').forEach(function(p){
+      p.hidden = (p.id !== 'ses-' + b.dataset.ses);
+    });
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+})();
+</script>
+
+</body>
+</html>
