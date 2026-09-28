@@ -217,6 +217,46 @@ footer .wrap{padding-block:18px 26px}
 .narrador-nota{font-size:12.5px;color:var(--ink-soft);margin:8px 0 0;line-height:1.5}
 @media (max-width:520px){.narrador{flex-direction:column;align-items:center}
   .narrador-txt{text-align:center}}
+
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.seg button{font-family:var(--f-m);font-size:12px;padding:6px 12px;border:0;cursor:pointer;
+  background:var(--surface);color:var(--ink-soft)}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--goo-azul);color:#fff}
+.btn{font-family:var(--f-m);font-size:12px;padding:6px 12px;cursor:pointer;
+  background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:3px}
+.btn:hover{border-color:var(--goo-azul)}
+.btn.primary{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+:root{--c-alzado:#cde2f3;--c-planta:#d4e8cf;--c-perfil:#f2e0bf;
+      --c-alzado-bd:#2b6f9c;--c-planta-bd:#3f7a45;--c-perfil-bd:#8a6410}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+      --c-alzado:#1b384b;--c-planta:#243d28;--c-perfil:#43331d;
+      --c-alzado-bd:#6fb6dd;--c-planta-bd:#7dba82;--c-perfil-bd:#cba85e}}
+:root[data-theme="dark"]{--c-alzado:#1b384b;--c-planta:#243d28;--c-perfil:#43331d;
+      --c-alzado-bd:#6fb6dd;--c-planta-bd:#7dba82;--c-perfil-bd:#cba85e}
+
+.st{opacity:0;transition:opacity .45s ease}
+.st.on{opacity:1}
+.draw{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .9s ease;vector-effect:non-scaling-stroke}
+.draw.on{stroke-dashoffset:0}
+.ref{fill:none;stroke:var(--goo-azul);stroke-width:.7;stroke-dasharray:4 4;opacity:.7}
+.vista{fill:var(--accent-soft);stroke:currentColor;stroke-width:2.2;stroke-linejoin:round}
+.vista.v-alzado{fill:var(--c-alzado);stroke:var(--c-alzado-bd)}
+.vista.v-planta{fill:var(--c-planta);stroke:var(--c-planta-bd)}
+.vista.v-perfil{fill:var(--c-perfil);stroke:var(--c-perfil-bd)}
+.gruesa{fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.gruesa.g-planta{stroke:var(--c-planta-bd)}
+.gruesa.g-perfil{stroke:var(--c-perfil-bd)}
+.cuerpo{fill:var(--c-alzado);stroke:var(--c-alzado-bd);stroke-width:2.4;stroke-linejoin:round}
+.cara{stroke:currentColor;stroke-width:1.8;stroke-linejoin:round}
+.cara.techo{fill:var(--c-planta);stroke:var(--c-planta-bd)}
+.cara.lateral{fill:var(--c-perfil);stroke:var(--c-perfil-bd)}
+.cruz{fill:none;stroke:var(--goo-azul);stroke-width:1.2;stroke-dasharray:8 5;opacity:.55}
+.flecha{fill:none;stroke:var(--goo-azul);stroke-width:2.4;stroke-linecap:round}
+.flecha-cabeza{fill:var(--goo-azul);stroke:none}
+.flecha-rot{fill:var(--goo-azul);font-family:var(--f-m);font-size:10px;letter-spacing:.1em;font-weight:500}
+.rotulo-svg{fill:var(--ink-soft);font-family:var(--f-m);font-size:11px;letter-spacing:.06em}
 </style>
 </head>
 <body>
@@ -289,7 +329,208 @@ footer .wrap{padding-block:18px 26px}
       siempre los mismos cuatro pasos: 1) marcar las medidas sobre los ejes, 2) dibujar cada plano
       con las medidas de la vista que le corresponde, 3) trazar paralelas a las aristas, 4) borrar
       las l&iacute;neas auxiliares y remarcar las aristas visibles.</p>
+      <h4>Ve el proceso completo, paso a paso</h4>
+
+      <div class="escena" id="esc-t3u2v1">
+        <div class="escena-barra">
+          <span class="escena-titulo">De la pieza a las tres vistas</span>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+            <span class="seg" role="group" aria-label="Pieza">
+              <button type="button" data-pieza="0" aria-pressed="true">Escal&oacute;n</button>
+              <button type="button" data-pieza="1" aria-pressed="false">Pieza en T</button>
+              <button type="button" data-pieza="2" aria-pressed="false">Doble escal&oacute;n</button>
+            </span>
+            <span>
+              <button type="button" class="btn" data-vpaso="-1">&#9664;</button>
+              <button type="button" class="btn primary" data-vpaso="+1">Siguiente &#9654;</button>
+              <button type="button" class="btn" data-vreset>&#8634;</button>
+            </span>
+          </div>
+        </div>
+        <div class="lienzo">
+          <svg viewBox="0 0 640 360" id="svg-t3u2v1" role="img"
+               aria-label="Una pieza en perspectiva y la obtenci&oacute;n de su alzado, planta y perfil en sistema europeo"></svg>
+        </div>
+        <div class="pie" data-pie role="status" aria-live="polite" aria-atomic="true">La pieza,
+        en perspectiva. Pulsa <b>Siguiente</b> para ir sacando las vistas.</div>
+      </div>
+
   
+      <script>
+      (function(){
+        function relanza(nodos, reset, play, paso){
+          if(!nodos.length) return;
+          nodos.forEach(function(n){ n.style.transition='none'; n.style.transitionDelay='0s'; reset(n); });
+          void nodos[0].getBoundingClientRect();
+          nodos.forEach(function(n,i){ n.style.transition=''; n.style.transitionDelay=(i*paso)+'s'; play(n); });
+        }
+        function resetTrazo(n){ n.classList.remove('on'); }
+        function playTrazo(n){ n.classList.add('on'); }
+
+        var svgV = document.getElementById('svg-t3u2v1');
+        if(!svgV) return;
+        var PIEZAS = [
+          { nombre:'Escal\u00f3n',       cols:[{w:30,h:55},{w:60,h:25}], d:40 },
+          { nombre:'Pieza en T',    cols:[{w:20,h:20},{w:30,h:60},{w:20,h:20}], d:35 },
+          { nombre:'Doble escal\u00f3n', cols:[{w:30,h:60},{w:25,h:40},{w:25,h:20}], d:40 }
+        ];
+        var S = 1.5, SI = 1.25, VX = 330, VY = 72, GAP = 34, IX = 20, IBASE = 180;
+        var CS = Math.cos(Math.PI/6);
+
+        function geo(p){
+          var W=0,H=0,x=0,pts=[[0,0]],bordes=[],alturas=[];
+          p.cols.forEach(function(c){ W+=c.w; H=Math.max(H,c.h); });
+          p.cols.forEach(function(c){ pts.push([x,c.h]); x+=c.w; pts.push([x,c.h]); });
+          pts.push([W,0]);
+          x=0;
+          for(var i=0;i<p.cols.length-1;i++){
+            x+=p.cols[i].w;
+            if(p.cols[i].h !== p.cols[i+1].h) bordes.push(x);
+          }
+          p.cols.forEach(function(c){ if(c.h<H && alturas.indexOf(c.h)<0) alturas.push(c.h); });
+          return {W:W,H:H,d:p.d,pts:pts,bordes:bordes,alturas:alturas};
+        }
+        function vpx(g,x,y){ return [(VX+x*S).toFixed(1), (VY+(g.H-y)*S).toFixed(1)]; }
+        function ipx(g,x,y,z){
+          return [(IX+(x*CS+z*CS)*SI).toFixed(1), (IBASE-(y-x*0.5+z*0.5)*SI).toFixed(1)];
+        }
+        function poli(puntos,cerrar){
+          return 'M'+puntos.map(function(q){ return q[0]+' '+q[1]; }).join(' L')+(cerrar?' Z':'');
+        }
+        function rot(x,y,t,tam){
+          return '<text x="'+x+'" y="'+y+'" text-anchor="middle" class="rotulo-svg"'
+               + (tam?' style="font-size:'+tam+'px"':'')+'>'+t+'</text>';
+        }
+        function flecha(px,py,dx,dy,largo,texto){
+          var x0=(px-dx*largo).toFixed(1), y0=(py-dy*largo).toFixed(1);
+          var nx=-dy, ny=dx, c=9, a=4.6;
+          var bx=px-dx*c, by=py-dy*c;
+          var cabeza=[[px,py],[bx+nx*a,by+ny*a],[bx-nx*a,by-ny*a]]
+            .map(function(q){ return q[0].toFixed(1)+' '+q[1].toFixed(1); }).join(' L');
+          var mx=px-dx*largo/2, my=py-dy*largo/2;
+          var lx=mx+nx*15, ly=my+ny*15+3.5;
+          return '<path class="flecha" d="M'+x0+' '+y0+' L'+bx.toFixed(1)+' '+by.toFixed(1)+'"></path>'
+               + '<path class="flecha-cabeza" d="M'+cabeza+' Z"></path>'
+               + '<text class="flecha-rot" x="'+lx.toFixed(1)+'" y="'+ly.toFixed(1)+'" text-anchor="middle">'+texto+'</text>';
+        }
+
+        function construye(idx){
+          var g = geo(PIEZAS[idx]);
+          var PY = VY+g.H*S+GAP, PX = VX+g.W*S+GAP;
+          var frente = g.pts.map(function(q){ return ipx(g,q[0],q[1],0); });
+          var trozos=[], x0=0;
+          PIEZAS[idx].cols.forEach(function(c,i){
+            var x1=x0+c.w, t='';
+            t += '<path class="cara techo" d="'+poli([ipx(g,x0,c.h,0),ipx(g,x1,c.h,0),ipx(g,x1,c.h,g.d),ipx(g,x0,c.h,g.d)],true)+'"></path>';
+            var sig = PIEZAS[idx].cols[i+1];
+            if(sig && c.h>sig.h){
+              t += '<path class="cara lateral" d="'+poli([ipx(g,x1,sig.h,0),ipx(g,x1,c.h,0),ipx(g,x1,c.h,g.d),ipx(g,x1,sig.h,g.d)],true)+'"></path>';
+            }
+            trozos.push(t); x0=x1;
+          });
+          var caras = trozos.join('');
+          var ultima = PIEZAS[idx].cols[PIEZAS[idx].cols.length-1];
+          caras += '<path class="cara lateral" d="'+poli([ipx(g,g.W,0,0),ipx(g,g.W,ultima.h,0),ipx(g,g.W,ultima.h,g.d),ipx(g,g.W,0,g.d)],true)+'"></path>';
+
+          var m = '';
+          m += '<g class="st" data-st="0">'+caras
+             + '<path class="cuerpo" d="'+poli(frente,true)+'"></path>'
+             + rot(120, IBASE+74, 'LA PIEZA')
+             + rot(120, IBASE+90, 'PERSPECTIVA ISOM\u00c9TRICA \u00b7 EJES A 30\u00b0', 9)
+             + '</g>';
+
+          var cruzX=(VX+g.W*S+GAP/2).toFixed(1), cruzY=(VY+g.H*S+GAP/2).toFixed(1);
+          var caraF = ipx(g, g.W*0.7, g.H*0.35, 0);
+          var fx=parseFloat(caraF[0]), fy=parseFloat(caraF[1]);
+          var DX=CS, DY=-0.5;
+          var mira = flecha(fx-DX*22, fy-DY*22, DX, DY, 52, 'ALZADO');
+
+          m += '<g class="st" data-st="1">'+mira
+             + '<path class="cruz" d="M'+cruzX+' '+(VY-30)+' L'+cruzX+' '+(PY+g.d*S+10).toFixed(1)
+                 +' M'+(VX-30)+' '+cruzY+' L'+(PX+g.d*S+10).toFixed(1)+' '+cruzY+'"></path>'
+             + '<path class="vista v-alzado draw" pathLength="1" d="'+poli(g.pts.map(function(q){ return vpx(g,q[0],q[1]); }),true)+'"></path>'
+             + rot(VX+g.W*S/2, VY-14, 'ALZADO')
+             + '</g>';
+
+          var lineasPlanta='';
+          g.bordes.forEach(function(b){
+            lineasPlanta += 'M'+(VX+b*S).toFixed(1)+' '+PY.toFixed(1)+' L'+(VX+b*S).toFixed(1)+' '+(PY+g.d*S).toFixed(1)+' ';
+          });
+          var refV='';
+          [0,g.W].concat(g.bordes).forEach(function(x){
+            refV += 'M'+(VX+x*S).toFixed(1)+' '+(VY+g.H*S+5).toFixed(1)+' L'+(VX+x*S).toFixed(1)+' '+(PY-5).toFixed(1)+' ';
+          });
+          m += '<g class="st" data-st="2">'
+             + '<path class="ref" d="'+refV+'"></path>'
+             + '<path class="vista v-planta draw" pathLength="1" d="M'+VX+' '+PY.toFixed(1)+' L'+(VX+g.W*S).toFixed(1)+' '+PY.toFixed(1)
+                 +' L'+(VX+g.W*S).toFixed(1)+' '+(PY+g.d*S).toFixed(1)+' L'+VX+' '+(PY+g.d*S).toFixed(1)+' Z"></path>'
+             + (lineasPlanta ? '<path class="gruesa g-planta draw" pathLength="1" d="'+lineasPlanta+'"></path>' : '')
+             + rot(VX+g.W*S/2, PY+g.d*S+20, 'PLANTA')
+             + '</g>';
+
+          var lineasPerfil='';
+          g.alturas.forEach(function(a){
+            lineasPerfil += 'M'+PX.toFixed(1)+' '+(VY+(g.H-a)*S).toFixed(1)+' L'+(PX+g.d*S).toFixed(1)+' '+(VY+(g.H-a)*S).toFixed(1)+' ';
+          });
+          var refH='';
+          [0,g.H].concat(g.alturas).forEach(function(y){
+            refH += 'M'+(VX+g.W*S+5).toFixed(1)+' '+(VY+(g.H-y)*S).toFixed(1)+' L'+(PX-5).toFixed(1)+' '+(VY+(g.H-y)*S).toFixed(1)+' ';
+          });
+          m += '<g class="st" data-st="3">'
+             + '<path class="ref" d="'+refH+'"></path>'
+             + '<path class="vista v-perfil draw" pathLength="1" d="M'+PX.toFixed(1)+' '+VY+' L'+(PX+g.d*S).toFixed(1)+' '+VY
+                 +' L'+(PX+g.d*S).toFixed(1)+' '+(VY+g.H*S).toFixed(1)+' L'+PX.toFixed(1)+' '+(VY+g.H*S).toFixed(1)+' Z"></path>'
+             + (lineasPerfil ? '<path class="gruesa g-perfil draw" pathLength="1" d="'+lineasPerfil+'"></path>' : '')
+             + rot(PX+g.d*S/2, VY-14, 'PERFIL IZQUIERDO', 10)
+             + '</g>';
+
+          m += '<g class="st" data-st="4">'
+             + rot((VX+PX+g.d*S)/2, PY+g.d*S+44, 'SISTEMA EUROPEO \u00b7 EL PERFIL IZQUIERDO VA A LA DERECHA', 9.5)
+             + '</g>';
+
+          svgV.innerHTML = m;
+        }
+
+        var escV = document.getElementById('esc-t3u2v1');
+        var pieV = escV.querySelector('[data-pie]');
+        var piezaActual=0, pasoV=0;
+        var textosV = [
+          'La pieza, en perspectiva. Pulsa <b>Siguiente</b> para ir sacando las vistas.',
+          '<b>Alzado:</b> lo que se ve de frente. Da el ancho y la altura reales, sin deformaci\u00f3n.',
+          '<b>Planta:</b> desde arriba, y va <b>debajo</b> del alzado. Las l\u00edneas de referencia bajan los anchos: por eso encajan.',
+          '<b>Perfil izquierdo:</b> se mira desde la izquierda y se dibuja <b>a la derecha</b>, a la misma altura que el alzado.',
+          'Ya est\u00e1 definida: tres dibujos planos, ninguna medida deformada y una sola pieza posible.'
+        ];
+        function pintaV(){
+          svgV.querySelectorAll('[data-st]').forEach(function(n){
+            n.classList.toggle('on', Number(n.dataset.st) <= pasoV);
+          });
+          var activo = svgV.querySelector('[data-st="'+pasoV+'"]');
+          if(activo) relanza(Array.prototype.slice.call(activo.querySelectorAll('.draw')), resetTrazo, playTrazo, 0.1);
+          svgV.querySelectorAll('[data-st]').forEach(function(n){
+            if(Number(n.dataset.st) < pasoV) n.querySelectorAll('.draw').forEach(function(p){ p.classList.add('on'); });
+          });
+          pieV.innerHTML = textosV[pasoV];
+        }
+        escV.addEventListener('click', function(e){
+          var b = e.target.closest('button'); if(!b) return;
+          if(b.dataset.pieza !== undefined){
+            piezaActual = Number(b.dataset.pieza);
+            escV.querySelectorAll('button[data-pieza]').forEach(function(x){
+              x.setAttribute('aria-pressed', x===b ? 'true' : 'false');
+            });
+            construye(piezaActual); pintaV(); return;
+          }
+          if(b.hasAttribute('data-vreset')) pasoV=0;
+          else if(b.dataset.vpaso==='+1') pasoV=Math.min(4,pasoV+1);
+          else if(b.dataset.vpaso==='-1') pasoV=Math.max(0,pasoV-1);
+          pintaV();
+        });
+        construye(0);
+        pintaV();
+      })();
+      </script>
+
     </section>
     <section class="bloque">
       <div class="rotulo"><span class="num">03</span> Perspectiva isom&eacute;trica y caballera</div>
@@ -389,6 +630,42 @@ footer .wrap{padding-block:18px 26px}
       })();
       </script>
 
+      <div class="escena">
+        <div class="escena-barra"><span class="escena-titulo">Los ejes, uno al lado del otro</span></div>
+        <div class="lienzo">
+          <svg viewBox="0 0 640 260" role="img" aria-label="El mismo cubo dibujado en perspectiva caballera, con el eje de profundidad a 45 grados reducido a la mitad, y en perspectiva isométrica, con los tres ejes a 120 grados">
+            <g style="fill:var(--ink)" font-family="inherit" font-size="12">
+              <g transform="translate(40,40)">
+                <text x="90" y="-12" text-anchor="middle" font-weight="600">Caballera</text>
+                <rect x="20" y="40" width="110" height="110" style="fill:var(--accent-soft);stroke:var(--ink)" stroke-width="2.5"/>
+                <path d="M20 40 L75 -1 M130 40 L185 -1 M130 150 L185 109" fill="none" style="stroke:var(--ink)" stroke-width="2.5"/>
+                <path d="M75 -1 h110 v110" fill="none" style="stroke:var(--ink)" stroke-width="2.5"/>
+                <g style="stroke:var(--goo-rojo)" stroke-width="2" fill="none">
+                  <path d="M20 150 h150"/><path d="M20 150 v-125"/><path d="M20 150 l62 -46"/>
+                </g>
+                <text x="150" y="168" style="fill:var(--goo-rojo)">X</text>
+                <text x="4" y="30" style="fill:var(--goo-rojo)">Z</text>
+                <text x="86" y="100" style="fill:var(--goo-rojo)">Y &middot; 45&deg;</text>
+              </g>
+              <g transform="translate(360,40)">
+                <text x="105" y="-12" text-anchor="middle" font-weight="600">Isom&eacute;trica</text>
+                <path d="M105 30 L185 76 L185 168 L105 214 L25 168 L25 76 Z" style="fill:var(--accent-soft);stroke:var(--ink)" stroke-width="2.5"/>
+                <path d="M105 30 L105 122 L185 168 M105 122 L25 168" fill="none" style="stroke:var(--ink)" stroke-width="2.5"/>
+                <g style="stroke:var(--goo-rojo)" stroke-width="2" fill="none">
+                  <path d="M105 122 l80 46"/><path d="M105 122 l-80 46"/><path d="M105 122 v-100"/>
+                </g>
+                <text x="190" y="176" style="fill:var(--goo-rojo)">X &middot; 30&deg;</text>
+                <text x="2" y="176" style="fill:var(--goo-rojo)">Y &middot; 30&deg;</text>
+                <text x="112" y="24" style="fill:var(--goo-rojo)">Z</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <div class="pie">En rojo, los <b>ejes</b>: es lo &uacute;nico que cambia de un sistema a otro,
+        y de ah&iacute; sale todo lo dem&aacute;s. En la caballera, la cara de frente (el cuadrado) no se
+        deforma; en la isom&eacute;trica, ninguna cara est&aacute; de frente y las tres se ven por
+        igual.</div>
+      </div>
       <div class="escena" id="esc-persp">
         <div class="escena-barra">
           <span class="escena-titulo">Compara los dos sistemas</span>
