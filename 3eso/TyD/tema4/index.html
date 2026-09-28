@@ -224,7 +224,7 @@ footer .wrap{padding-block:18px 26px}
   <div class="wrap">
     <div class="eyebrow"><a href="../../../">Inicio</a> &middot; <a href="../../">3.&ordm; ESO</a> &middot; <a href="../">TyD</a> &middot; Tema 4</div>
     <h1>Electricidad y electr&oacute;nica b&aacute;sicas</h1>
-    <nav class="sesiones" id="nav" aria-label="Sesiones del tema"><button type="button" data-ses="1" aria-selected="true">S1 &middot; S1 &middot; Ley de Ohm</button><button type="button" data-ses="2">S2 &middot; S2 &middot; Repaso</button></nav>
+    <nav class="sesiones" id="nav" aria-label="Sesiones del tema"><button type="button" data-ses="1" aria-selected="true">S1 &middot; S1 &middot; Ley de Ohm</button><button type="button" data-ses="2">S2 &middot; S2 &middot; Asociaciones</button><button type="button" data-ses="3">S3 &middot; S3 &middot; Componentes</button><button type="button" data-ses="4">S4 &middot; S4 &middot; Repaso</button></nav>
   </div>
 </header>
 
@@ -259,66 +259,6 @@ footer .wrap{padding-block:18px 26px}
       <p>Los <b>componentes activos</b> sirven para <b>amplificar</b> la corriente o <b>dirigirla</b>
       (que fluya en un solo sentido). La electr&oacute;nica se divide en <b>anal&oacute;gica</b>
       (variables continuas: intensidad, voltaje) y <b>digital</b> (valores discretos: ceros y unos).</p>
-      <div class="video" id="vid-t3u4-componentes" data-vid="4mkFR5bZxVY">
-        <button type="button" class="video-play" aria-label="Reproducir el v&iacute;deo: Componentes electr&oacute;nicos y sus funciones">
-          <span class="video-tri" aria-hidden="true"></span>
-          <span class="video-txt">
-            <b>Componentes electr&oacute;nicos y sus funciones</b>
-            <span>Canal Electr&oacute;nica AWV</span>
-          </span>
-        </button>
-        <p class="video-nota">Citado en el libro de texto (p.&nbsp;118). El v&iacute;deo no se carga hasta que lo pulsas, y se reproduce sin
-          cookies de seguimiento. Si no se ve aqu&iacute;,
-          <a href="https://www.youtube.com/watch?v=4mkFR5bZxVY" target="_blank" rel="noopener">&aacute;brelo directamente aqu&iacute;</a>.
-          El v&iacute;deo es de su autor y no forma parte del material publicado en esta p&aacute;gina.</p>
-      </div>
-      <script>
-      (function(){
-        var c = document.getElementById('vid-t3u4-componentes');
-        if(!c) return;
-        var b = c.querySelector('.video-play');
-        b.addEventListener('click', function(){
-          var f = document.createElement('iframe');
-          f.src = 'https://www.youtube-nocookie.com/embed/' + c.dataset.vid + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
-          f.title = b.querySelector('.video-txt b').textContent;
-          f.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture';
-          f.referrerPolicy = 'strict-origin-when-cross-origin';
-          f.allowFullscreen = true;
-          b.replaceWith(f);
-        });
-      })();
-      </script>
-
-      <div class="video" id="vid-t3u4-transistor" data-vid="w14cvydBC8g">
-        <button type="button" class="video-play" aria-label="Reproducir el v&iacute;deo: Transistor, &iquest;c&oacute;mo funciona?">
-          <span class="video-tri" aria-hidden="true"></span>
-          <span class="video-txt">
-            <b>Transistor, &iquest;c&oacute;mo funciona?</b>
-            <span>Canal Lesics Espa&ntilde;ola</span>
-          </span>
-        </button>
-        <p class="video-nota">Citado en el libro de texto (p.&nbsp;123). El v&iacute;deo no se carga hasta que lo pulsas, y se reproduce sin
-          cookies de seguimiento. Si no se ve aqu&iacute;,
-          <a href="https://www.youtube.com/watch?v=w14cvydBC8g" target="_blank" rel="noopener">&aacute;brelo directamente aqu&iacute;</a>.
-          El v&iacute;deo es de su autor y no forma parte del material publicado en esta p&aacute;gina.</p>
-      </div>
-      <script>
-      (function(){
-        var c = document.getElementById('vid-t3u4-transistor');
-        if(!c) return;
-        var b = c.querySelector('.video-play');
-        b.addEventListener('click', function(){
-          var f = document.createElement('iframe');
-          f.src = 'https://www.youtube-nocookie.com/embed/' + c.dataset.vid + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
-          f.title = b.querySelector('.video-txt b').textContent;
-          f.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture';
-          f.referrerPolicy = 'strict-origin-when-cross-origin';
-          f.allowFullscreen = true;
-          b.replaceWith(f);
-        });
-      })();
-      </script>
-
   
     </section>
     <section class="bloque">
@@ -508,26 +448,340 @@ footer .wrap{padding-block:18px 26px}
   <div id="ses-2" hidden>
     <div class="ses-head">
       <div class="eyebrow">Sesi&oacute;n 2 &middot; 60 minutos</div>
+      <h2>Asociaci&oacute;n de resistencias y generadores</h2>
+      <p>C&oacute;mo calcular la resistencia equivalente, la intensidad y el voltaje en circuitos serie, paralelo y mixto, y c&oacute;mo se asocian los generadores.</p>
+      <div class="minutado"><span class="min"><b>0-20</b> Serie y paralelo, con n&uacute;meros</span><span class="min"><b>20-35</b> Circuito mixto</span><span class="min"><b>35-50</b> Asociaci&oacute;n de generadores</span></div>
+      <div class="chips"><span class="chip">CE1 &middot; 1.2</span><span class="chip">CE3 &middot; 3.1</span><span class="chip sab">A.3</span></div>
+    </div>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">04</span> Asociaci&oacute;n de resistencias</div>
+
+      <p>Adem&aacute;s de la relaci&oacute;n entre resistencias, intensidades y voltajes que ya
+      conoces, en cualquier asociaci&oacute;n se cumple que las <b>potencias se suman</b> siempre:
+      P<sub>t</sub> = P<sub>1</sub>+P<sub>2</sub>+&hellip;+P<sub>n</sub>.</p>
+      <div class="ficha">
+        <div class="ficha-cab"><span>Ejercicio resuelto &middot; circuito serie</span>
+        <span class="chips"></span><span>R1=2k&Omega;, R2=3k&Omega;, R3=5k&Omega;, V=100&nbsp;V</span></div>
+        <div class="ficha-cuerpo">
+          <p><b>R</b><sub>t</sub> = 2+3+5 = <b>10&nbsp;k&Omega;</b>. <b>I</b><sub>t</sub>=I<sub>1</sub>=I<sub>2</sub>=I<sub>3</sub>
+          = 100/10.000 = <b>10&nbsp;mA</b>. <b>V</b><sub>1</sub>=20&nbsp;V, V<sub>2</sub>=30&nbsp;V,
+          V<sub>3</sub>=50&nbsp;V (suma = 100&nbsp;V &#10003;). <b>P</b><sub>1</sub>=0,2&nbsp;W,
+          P<sub>2</sub>=0,3&nbsp;W, P<sub>3</sub>=0,5&nbsp;W &rarr; P<sub>t</sub>=<b>1&nbsp;W</b>.</p>
+        </div>
+      </div>
+      <p><b>ACTIVIDAD</b> (p.&nbsp;115)</p>
+      <ol>
+              <li>Repite el ejercicio anterior con una pila de 3&nbsp;V y tres resistencias de 3, 9 y 18&nbsp;&Omega; en serie.
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>R<sub>t</sub>=3+9+18=<b>30&nbsp;&Omega;</b>. I<sub>t</sub>=3/30=<b>0,1&nbsp;A</b>. V<sub>1</sub>=0,3&nbsp;V, V<sub>2</sub>=0,9&nbsp;V, V<sub>3</sub>=1,8&nbsp;V (suma=3&nbsp;V). P<sub>1</sub>=0,03&nbsp;W, P<sub>2</sub>=0,09&nbsp;W, P<sub>3</sub>=0,18&nbsp;W &rarr; P<sub>t</sub>=<b>0,3&nbsp;W</b>.</p></div></details></li>
+
+      </ol>
+      <div class="ficha">
+        <div class="ficha-cab"><span>Ejercicio resuelto &middot; circuito paralelo</span>
+        <span class="chips"></span><span>R1=30&Omega;, R2=90&Omega;, R3=180&Omega;, V=3&nbsp;V</span></div>
+        <div class="ficha-cuerpo">
+          <p><b>R</b><sub>t</sub>: 1/R<sub>t</sub>=1/30+1/90+1/180 &rarr; <b>R</b><sub>t</sub>=<b>20&nbsp;&Omega;</b>.
+          <b>I</b><sub>t</sub>=3/20=150&nbsp;mA. <b>V</b><sub>1</sub>=V<sub>2</sub>=V<sub>3</sub>=3&nbsp;V.
+          <b>I</b><sub>1</sub>=0,1&nbsp;A, I<sub>2</sub>&asymp;0,033&nbsp;A, I<sub>3</sub>&asymp;0,017&nbsp;A
+          (suma&asymp;0,15&nbsp;A). <b>P</b><sub>1</sub>=0,3&nbsp;W, P<sub>2</sub>&asymp;0,099&nbsp;W,
+          P<sub>3</sub>&asymp;0,051&nbsp;W &rarr; P<sub>t</sub>=<b>0,45&nbsp;W</b>.</p>
+        </div>
+      </div>
+      <p><b>ACTIVIDAD</b> (p.&nbsp;116)</p>
+      <ol>
+              <li>Repite el ejercicio anterior con una pila de 10&nbsp;V y tres resistencias en paralelo de 20, 30 y 50&nbsp;k&Omega;.
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>1/R<sub>t</sub>=1/20+1/30+1/50 &rarr; <b>R</b><sub>t</sub>&asymp;<b>9,68&nbsp;k&Omega;</b>. <b>I</b><sub>t</sub>=10/9.680&asymp;<b>1,03&nbsp;mA</b>. V<sub>1</sub>=V<sub>2</sub>=V<sub>3</sub>=10&nbsp;V. I<sub>1</sub>=0,5&nbsp;mA, I<sub>2</sub>&asymp;0,33&nbsp;mA, I<sub>3</sub>=0,2&nbsp;mA (suma&asymp;1,03&nbsp;mA).</p></div></details></li>
+
+      </ol>
+  
+    </section>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">05</span> Circuito mixto y asociaci&oacute;n de generadores</div>
+
+      <div class="ficha">
+        <div class="ficha-cab"><span>Ejercicio resuelto &middot; circuito mixto</span>
+        <span class="chips"></span><span>R2&#8214;R3, en serie con R1 y R4</span></div>
+        <div class="ficha-cuerpo">
+          <p>R1=5&Omega;, R2=20&Omega;, R3=30&Omega;, R4=5&Omega;, V=5&nbsp;V. Primero se reduce la
+          parte en paralelo: <b>R</b><sub>23</sub>=12&nbsp;&Omega;. Luego, todo en serie:
+          <b>R</b><sub>t</sub>=R1+R4+R23=5+5+12=<b>22&nbsp;&Omega;</b>. <b>I</b><sub>t</sub>=5/22&asymp;<b>0,23&nbsp;A</b>.
+          V<sub>1</sub>=V<sub>4</sub>&asymp;1,15&nbsp;V; V<sub>23</sub>=V<sub>2</sub>=V<sub>3</sub>&asymp;2,7&nbsp;V;
+          I<sub>2</sub>&asymp;0,13&nbsp;A, I<sub>3</sub>&asymp;0,1&nbsp;A.</p>
+        </div>
+      </div>
+      <p><b>ACTIVIDAD</b> (p.&nbsp;117)</p>
+      <ol>
+              <li>Repite el ejercicio mixto anterior con una pila de 1&nbsp;V y las cuatro resistencias iguales, de 10&nbsp;&Omega; cada una.
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>R2&#8214;R3 = 5&nbsp;&Omega;. <b>R</b><sub>t</sub>=10+10+5=<b>25&nbsp;&Omega;</b>. <b>I</b><sub>t</sub>=1/25=<b>40&nbsp;mA</b>. V<sub>1</sub>=V<sub>4</sub>=0,4&nbsp;V; V<sub>23</sub>=0,2&nbsp;V; I<sub>2</sub>=I<sub>3</sub>=20&nbsp;mA (se reparte a partes iguales, por ser R2=R3).</p></div></details></li>
+
+      </ol>
+      <h4>Asociaci&oacute;n de generadores</h4>
+      <div class="nota">
+        <span class="n-tag">En serie</span>
+        Los voltajes se suman si se unen por polos opuestos (V<sub>t</sub>=V<sub>1</sub>+V<sub>2</sub>+&hellip;)
+        o se restan si se unen por el mismo signo. Ejemplo: dos pilas de 1,5&nbsp;V en serie por
+        polos opuestos dan <b>3&nbsp;V</b>; las mismas dos unidas por el mismo polo dan
+        <b>0&nbsp;V</b> (no luce).
+      </div>
+      <div class="nota">
+        <span class="n-tag">En paralelo</span>
+        Solo se asocian generadores <b>iguales</b>. El voltaje no cambia
+        (V<sub>t</sub>=V<sub>1</sub>=V<sub>2</sub>&hellip;), pero aumenta la <b>autonom&iacute;a</b>
+        (duran m&aacute;s). Si se unen dos generadores iguales en anti-paralelo (signos opuestos), se
+        descargan uno a otro.
+      </div>
+      <div class="nota" id="curriculo-andalucia">
+        <span class="n-tag">Curr&iacute;culo de Andaluc&iacute;a</span>
+        Esta unidad trabaja las <b>competencias espec&iacute;ficas 1 y 3</b>, los <b>criterios de
+        evaluaci&oacute;n 1.2 y 3.1</b>, y el <b>saber b&aacute;sico A.3</b> (electricidad y
+        electr&oacute;nica b&aacute;sica), seg&uacute;n la
+        <a href="https://www.juntadeandalucia.es/boja/2023/104/BOJA23-104-00281-9728-01_00284744.pdf"
+        target="_blank" rel="noopener">Orden de 30 de mayo de 2023 (BOJA n&uacute;m. 104)</a>, anexo&nbsp;II.
+      </div>
+  
+    </section>
+
+  </div>
+
+  <div id="ses-3" hidden>
+    <div class="ses-head">
+      <div class="eyebrow">Sesi&oacute;n 3 &middot; 60 minutos</div>
+      <h2>Funciones b&aacute;sicas de los componentes de un circuito</h2>
+      <p>Generadores, receptores, conductores y control; resistencias y sus variables; el rel&eacute;, el diodo LED, el transistor y el condensador.</p>
+      <div class="minutado"><span class="min"><b>0-15</b> Cuatro grupos de componentes</span><span class="min"><b>15-30</b> Resistencias y variables</span><span class="min"><b>30-50</b> Rel&eacute;, diodo, transistor y condensador</span></div>
+      <div class="chips"><span class="chip sab">A.3</span></div>
+    </div>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">06</span> Generadores, receptores, conductores y control</div>
+
+      <p>Los circuitos el&eacute;ctricos constan de cuatro grupos de elementos fundamentales, y en los
+      que usan componentes semiconductores se distingue adem&aacute;s entre activos y pasivos.</p>
+      <div class="tipos-grid">
+        <div class="tipo-card"><b>Generadores</b><span>Proporcionan la energ&iacute;a el&eacute;ctrica:
+        pila, bater&iacute;a.</span></div>
+        <div class="tipo-card"><b>Receptores</b><span>Reciben la energ&iacute;a de los generadores:
+        motor, bombilla, resistencia, zumbador.</span></div>
+        <div class="tipo-card"><b>Elementos de control y protecci&oacute;n</b><span>Gobiernan el
+        circuito: pulsador, interruptor, conmutador, rel&eacute;, fusible.</span></div>
+        <div class="tipo-card"><b>Conductores</b><span>Transportan la corriente: el cable.</span></div>
+      </div>
+      <div class="video" id="vid-t3u4-componentes" data-vid="4mkFR5bZxVY">
+        <button type="button" class="video-play" aria-label="Reproducir el v&iacute;deo: Componentes electr&oacute;nicos y sus funciones">
+          <span class="video-tri" aria-hidden="true"></span>
+          <span class="video-txt">
+            <b>Componentes electr&oacute;nicos y sus funciones</b>
+            <span>Canal Electr&oacute;nica AWV</span>
+          </span>
+        </button>
+        <p class="video-nota">Citado en el libro de texto (p.&nbsp;118). El v&iacute;deo no se carga hasta que lo pulsas, y se reproduce sin
+          cookies de seguimiento. Si no se ve aqu&iacute;,
+          <a href="https://www.youtube.com/watch?v=4mkFR5bZxVY" target="_blank" rel="noopener">&aacute;brelo directamente aqu&iacute;</a>.
+          El v&iacute;deo es de su autor y no forma parte del material publicado en esta p&aacute;gina.</p>
+      </div>
+      <script>
+      (function(){
+        var c = document.getElementById('vid-t3u4-componentes');
+        if(!c) return;
+        var b = c.querySelector('.video-play');
+        b.addEventListener('click', function(){
+          var f = document.createElement('iframe');
+          f.src = 'https://www.youtube-nocookie.com/embed/' + c.dataset.vid + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+          f.title = b.querySelector('.video-txt b').textContent;
+          f.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture';
+          f.referrerPolicy = 'strict-origin-when-cross-origin';
+          f.allowFullscreen = true;
+          b.replaceWith(f);
+        });
+      })();
+      </script>
+
+      <div class="nota">
+        <span class="n-tag">Activos frente a pasivos</span>
+        Los <b>componentes activos</b> (diodo, transistor) tienen comportamiento <b>no lineal</b>
+        (no cumplen la ley de Ohm) y pueden amplificar o modificar la corriente. Los
+        <b>componentes pasivos</b> (resistencia, condensador) tienen comportamiento <b>lineal</b> (s&iacute;
+        cumplen la ley de Ohm) y no pueden actuar sobre el circuito.
+      </div>
+  
+    </section>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">07</span> Resistencias: c&oacute;digo de colores y resistencias variables</div>
+
+      <p>Las resistencias se fabrican con carbono recubierto de cer&aacute;mica, y limitan el paso de
+      la corriente. Notaciones equivalentes: 2.200&nbsp;&Omega; = 2,2&nbsp;k&Omega; = 2k2;
+      4.700&nbsp;&Omega; = 4,7&nbsp;k&Omega; = 4k7.</p>
+      <h4>El c&oacute;digo de colores (4 anillos)</h4>
+      <table style="width:100%;border-collapse:collapse;font-size:12.5px;margin:12px 0">
+        <tr style="border-bottom:1.5px solid var(--line)"><td style="padding:4px"><b>Color</b></td>
+        <td style="padding:4px"><b>Cifra</b></td><td style="padding:4px"><b>Multiplicador</b></td>
+        <td style="padding:4px"><b>Tolerancia</b></td></tr>
+        <tr><td style="padding:4px">Negro</td><td style="padding:4px">0</td><td style="padding:4px">&times;1</td><td></td></tr>
+        <tr><td style="padding:4px">Marr&oacute;n</td><td style="padding:4px">1</td><td style="padding:4px">&times;10</td><td style="padding:4px">&plusmn;1%</td></tr>
+        <tr><td style="padding:4px">Rojo</td><td style="padding:4px">2</td><td style="padding:4px">&times;100</td><td style="padding:4px">&plusmn;2%</td></tr>
+        <tr><td style="padding:4px">Naranja</td><td style="padding:4px">3</td><td style="padding:4px">&times;1.000</td><td></td></tr>
+        <tr><td style="padding:4px">Amarillo</td><td style="padding:4px">4</td><td style="padding:4px">&times;10.000</td><td></td></tr>
+        <tr><td style="padding:4px">Verde</td><td style="padding:4px">5</td><td style="padding:4px">&times;100.000</td><td></td></tr>
+        <tr><td style="padding:4px">Azul</td><td style="padding:4px">6</td><td style="padding:4px">&times;1.000.000</td><td></td></tr>
+        <tr><td style="padding:4px">Violeta</td><td style="padding:4px">7</td><td></td><td></td></tr>
+        <tr><td style="padding:4px">Gris</td><td style="padding:4px">8</td><td></td><td></td></tr>
+        <tr><td style="padding:4px">Blanco</td><td style="padding:4px">9</td><td></td><td></td></tr>
+        <tr><td style="padding:4px">Oro</td><td></td><td></td><td style="padding:4px">&plusmn;5%</td></tr>
+        <tr><td style="padding:4px">Plata</td><td></td><td></td><td style="padding:4px">&plusmn;10%</td></tr>
+      </table>
+      <div class="ficha">
+        <div class="ficha-cab"><span>Ejemplo resuelto</span><span class="chips"></span><span>naranja-rojo-rojo-oro</span></div>
+        <div class="ficha-cuerpo">
+          <p>3-2-&times;100-&plusmn;5% &rarr; 32&times;100 = <b>3.200&nbsp;&Omega; = 3k2</b>, tolerancia
+          &plusmn;5% de 3.200 = &plusmn;160&nbsp;&Omega; (rango: 3.040 a 3.360&nbsp;&Omega;).</p>
+        </div>
+      </div>
+      <h4>Resistencias variables</h4>
+      <div class="tipos-grid">
+        <div class="tipo-card"><b>Potenci&oacute;metro</b><span>Se ajusta a mano, con un valor
+        m&aacute;ximo marcado (1k, 10k, 100k&hellip;).</span></div>
+        <div class="tipo-card"><b>LDR</b><span><i>Light dependent resistor</i>: a m&aacute;s luz,
+        menos resistencia.</span></div>
+        <div class="tipo-card"><b>Termistor NTC</b><span>Su resistencia <b>baja</b> cuando sube la
+        temperatura.</span></div>
+        <div class="tipo-card"><b>Termistor PTC</b><span>Su resistencia <b>sube</b> cuando sube la
+        temperatura.</span></div>
+      </div>
+      <p><b>ACTIVIDAD</b> (p.&nbsp;119)</p>
+      <ol>
+              <li>Identifica el valor de una resistencia con las bandas verde-azul-marr&oacute;n-oro.
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>5-6-&times;10-&plusmn;5% &rarr; 56&times;10 = <b>560&nbsp;&Omega;</b>, &plusmn;5%.</p></div></details></li>
+
+      </ol>
+  
+    </section>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">08</span> El rel&eacute;, el diodo LED, el transistor y el condensador</div>
+
+      <h4>El rel&eacute;</h4>
+      <p>Dispositivo electromagn&eacute;tico que act&uacute;a como interruptor, controlado por un
+      <b>electroim&aacute;n</b>. Tiene dos circuitos: el de <b>activaci&oacute;n</b> (control) y el de
+      <b>conmutaci&oacute;n</b> (potencia). La bobina, al recibir corriente, magnetiza un n&uacute;cleo
+      que atrae una armadura y conmuta los contactos; permite controlar <b>grandes corrientes</b> con
+      una corriente peque&ntilde;a, y actuar <b>a distancia</b>.</p>
+      <h4>El diodo y el diodo LED</h4>
+      <p>El <b>diodo</b> tiene dos electrodos, &aacute;nodo (+) y c&aacute;todo (&minus;), y solo deja
+      pasar la corriente en sentido &aacute;nodo-c&aacute;todo. El <b>LED</b> es un diodo que emite luz;
+      la pata <b>larga</b> es el &aacute;nodo y la <b>corta</b> el c&aacute;todo.</p>
+      <div class="nota">
+        <span class="n-tag">Aviso del libro</span>
+        Un LED nunca debe conectarse directamente a la alimentaci&oacute;n: siempre necesita una
+        <b>resistencia en serie</b> que lo proteja.
+      </div>
+      <div class="ficha">
+        <div class="ficha-cab"><span>Ejercicio resuelto &middot; resistencia de protecci&oacute;n</span>
+        <span class="chips"></span><span>V=6&nbsp;V, V<sub>LED</sub>=1,6&nbsp;V, I<sub>m&aacute;x</sub>=20&nbsp;mA</span></div>
+        <div class="ficha-cuerpo">
+          <p>R = (V&minus;V<sub>LED</sub>)/I = (6&minus;1,6)/0,02 = <b>220&nbsp;&Omega;</b> &mdash;el
+          valor que se usa siempre para proteger un LED.</p>
+        </div>
+      </div>
+      <h4>El transistor</h4>
+      <p>Tres patillas: <b>emisor (E)</b>, <b>base (B)</b> y <b>colector (C)</b>. Como
+      <b>interruptor</b>: sin corriente de base (I<sub>b</sub>=0) est&aacute; en corte, no circula
+      corriente C-E. Como <b>amplificador</b>: con una peque&ntilde;a I<sub>b</sub>&gt;0, amplifica la
+      corriente entre C y E seg&uacute;n su <b>ganancia</b> (&beta;): <b>I<sub>c</sub> =
+      &beta;&middot;I<sub>b</sub></b>.</p>
+      <div class="ficha">
+        <div class="ficha-cab"><span>Ejercicio resuelto &middot; ganancia</span>
+        <span class="chips"></span><span>BC108, &beta;=100, I<sub>b</sub>=0,5&nbsp;mA</span></div>
+        <div class="ficha-cuerpo">
+          <p>I<sub>c</sub> = &beta;&middot;I<sub>b</sub> = 100&times;0,5&nbsp;mA = <b>50&nbsp;mA</b>.</p>
+          <p style="font-size:12px;color:var(--ink-soft)">(El libro imprime &laquo;500&nbsp;mA&raquo;
+          en este paso; 100&times;0,5&nbsp;mA son matem&aacute;ticamente 50&nbsp;mA. Lo indicamos por
+          precisi&oacute;n, no es un error tuyo si te sale distinto al del libro.)</p>
+        </div>
+      </div>
+      <div class="video" id="vid-t3u4-transistor" data-vid="w14cvydBC8g">
+        <button type="button" class="video-play" aria-label="Reproducir el v&iacute;deo: Transistor, &iquest;c&oacute;mo funciona?">
+          <span class="video-tri" aria-hidden="true"></span>
+          <span class="video-txt">
+            <b>Transistor, &iquest;c&oacute;mo funciona?</b>
+            <span>Canal Lesics Espa&ntilde;ola</span>
+          </span>
+        </button>
+        <p class="video-nota">Citado en el libro de texto (p.&nbsp;123). El v&iacute;deo no se carga hasta que lo pulsas, y se reproduce sin
+          cookies de seguimiento. Si no se ve aqu&iacute;,
+          <a href="https://www.youtube.com/watch?v=w14cvydBC8g" target="_blank" rel="noopener">&aacute;brelo directamente aqu&iacute;</a>.
+          El v&iacute;deo es de su autor y no forma parte del material publicado en esta p&aacute;gina.</p>
+      </div>
+      <script>
+      (function(){
+        var c = document.getElementById('vid-t3u4-transistor');
+        if(!c) return;
+        var b = c.querySelector('.video-play');
+        b.addEventListener('click', function(){
+          var f = document.createElement('iframe');
+          f.src = 'https://www.youtube-nocookie.com/embed/' + c.dataset.vid + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+          f.title = b.querySelector('.video-txt b').textContent;
+          f.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture';
+          f.referrerPolicy = 'strict-origin-when-cross-origin';
+          f.allowFullscreen = true;
+          b.replaceWith(f);
+        });
+      })();
+      </script>
+
+      <h4>El condensador</h4>
+      <p>Almacena energ&iacute;a el&eacute;ctrica cuando se carga y la cede al circuito cuando se
+      descarga. Se mide en <b>faradios (F)</b>; en la pr&aacute;ctica, en microfaradios (&micro;F),
+      nanofaradios (nF) o picofaradios (pF). Puede ser <b>polarizado</b> (electrolítico, con + y
+      &minus;) o <b>no polarizado</b> (cer&aacute;mico, poli&eacute;ster). El tiempo de carga o
+      descarga completa es <b>t = 5&middot;R&middot;C</b>.</p>
+      <p><b>ACTIVIDADES</b> (selecci&oacute;n, p.&nbsp;122 y 124)</p>
+      <ol>
+              <li>Explica el funcionamiento de un circuito con rel&eacute; en el que un pulsador excita la bobina y esta conmuta dos bombillas y dos zumbadores en circuitos independientes.
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>Al pulsar, la bobina del rel&eacute; se magnetiza y <b>conmuta</b> sus contactos: as&iacute;, <b>un &uacute;nico interruptor</b> (el pulsador, de poca corriente) controla <b>a distancia</b> dos circuitos separados de mayor corriente (bombillas y zumbadores), sin que el pulsador toque directamente esos circuitos.</p></div></details></li>
+        <li>&iquest;Por qu&eacute; un LED tiene las patas de distinta longitud, y qu&eacute; pasa si lo conectas al rev&eacute;s?
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>Para distinguir &aacute;nodo (larga, +) de c&aacute;todo (corta, &minus;). Conectado al rev&eacute;s, el LED queda en polarizaci&oacute;n inversa y <b>no deja pasar corriente</b>: no luce, se comporta como un interruptor abierto.</p></div></details></li>
+
+      </ol>
+      <div class="nota" id="curriculo-andalucia">
+        <span class="n-tag">Curr&iacute;culo de Andaluc&iacute;a</span>
+        Esta unidad trabaja las <b>competencias espec&iacute;ficas 1 y 3</b>, los <b>criterios de
+        evaluaci&oacute;n 1.2 y 3.1</b>, y el <b>saber b&aacute;sico A.3</b> (electricidad y
+        electr&oacute;nica b&aacute;sica), seg&uacute;n la
+        <a href="https://www.juntadeandalucia.es/boja/2023/104/BOJA23-104-00281-9728-01_00284744.pdf"
+        target="_blank" rel="noopener">Orden de 30 de mayo de 2023 (BOJA n&uacute;m. 104)</a>, anexo&nbsp;II.
+      </div>
+  
+    </section>
+
+  </div>
+
+  <div id="ses-4" hidden>
+    <div class="ses-head">
+      <div class="eyebrow">Sesi&oacute;n 4 &middot; 60 minutos</div>
       <h2>Resumen y autoevaluaci&oacute;n</h2>
-      <p>Recapitulamos electricidad, ley de Ohm y circuitos, y comprobamos lo aprendido.</p>
+      <p>Recapitulamos electricidad, ley de Ohm, circuitos y componentes, y comprobamos lo aprendido.</p>
       <div class="minutado"><span class="min"><b>0-20</b> Resumen</span><span class="min"><b>20-50</b> Autoevaluaci&oacute;n</span></div>
       <div class="chips"><span class="chip sab">A.3</span></div>
     </div>
     <section class="bloque">
-      <div class="rotulo"><span class="num">04</span> Resumen de la unidad</div>
+      <div class="rotulo"><span class="num">09</span> Resumen de la unidad</div>
 
       <ol>
         <li><b>Electricidad</b> (materiales conductores) frente a <b>electr&oacute;nica</b>
         (materiales semiconductores, con componentes activos).</li>
         <li><b>Ley de Ohm:</b> I = V/R. <b>Potencia:</b> P = V&middot;I.</li>
         <li><b>Serie:</b> misma intensidad, el voltaje se reparte. <b>Paralelo:</b> mismo voltaje, la
-        intensidad se reparte.</li>
+        intensidad se reparte. <b>Mixto:</b> se reduce primero la parte en paralelo.</li>
         <li><b>Balance energ&eacute;tico:</b> la potencia suministrada siempre iguala a la consumida.</li>
+        <li><b>Cuatro grupos de componentes:</b> generadores, receptores, conductores, control y
+        protecci&oacute;n; y, con semiconductores, activos (diodo, transistor) y pasivos (resistencia,
+        condensador).</li>
+        <li><b>Resistencias:</b> c&oacute;digo de 4 colores; variables (potenci&oacute;metro, LDR,
+        termistor NTC/PTC).</li>
+        <li><b>Rel&eacute;, LED (con su resistencia de protecci&oacute;n), transistor</b>
+        (I<sub>c</sub>=&beta;&middot;I<sub>b</sub>) <b>y condensador</b> (t=5RC).</li>
       </ol>
   
     </section>
     <section class="bloque">
-      <div class="rotulo"><span class="num">05</span> Autoevaluaci&oacute;n</div>
+      <div class="rotulo"><span class="num">10</span> Autoevaluaci&oacute;n</div>
 
       <ol>
               <li>Calcula la intensidad de un circuito con una pila de 12&nbsp;V y una resistencia de 400&nbsp;&Omega;.
