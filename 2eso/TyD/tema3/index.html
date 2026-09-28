@@ -311,6 +311,36 @@ footer .wrap{padding-block:18px 26px}
       </ul>
       <p>La <b>escuadra</b> (90&deg;-45&deg;-45&deg;) y el <b>cart&oacute;n</b> (90&deg;-60&deg;-30&deg;)
       se combinan para trazar l&iacute;neas paralelas, perpendiculares y &aacute;ngulos.</p>
+      <div class="video" id="vid-u3-escuadra" data-vid="4tpTZjV-ewU">
+        <button type="button" class="video-play" aria-label="Reproducir el v&iacute;deo: Paralelas y perpendiculares, escuadra y cart&oacute;n">
+          <span class="video-tri" aria-hidden="true"></span>
+          <span class="video-txt">
+            <b>Paralelas y perpendiculares, escuadra y cart&oacute;n</b>
+            <span>Canal Profevili</span>
+          </span>
+        </button>
+        <p class="video-nota">Citado en el libro de texto (p.&nbsp;95). El v&iacute;deo no se carga hasta que lo pulsas, y se reproduce sin
+          cookies de seguimiento. Si no se ve aqu&iacute;,
+          <a href="https://www.youtube.com/watch?v=4tpTZjV-ewU" target="_blank" rel="noopener">&aacute;brelo directamente aqu&iacute;</a>.
+          El v&iacute;deo es de su autor y no forma parte del material publicado en esta p&aacute;gina.</p>
+      </div>
+      <script>
+      (function(){
+        var c = document.getElementById('vid-u3-escuadra');
+        if(!c) return;
+        var b = c.querySelector('.video-play');
+        b.addEventListener('click', function(){
+          var f = document.createElement('iframe');
+          f.src = 'https://www.youtube-nocookie.com/embed/' + c.dataset.vid + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+          f.title = b.querySelector('.video-txt b').textContent;
+          f.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture';
+          f.referrerPolicy = 'strict-origin-when-cross-origin';
+          f.allowFullscreen = true;
+          b.replaceWith(f);
+        });
+      })();
+      </script>
+
   
     </section>
     <section class="bloque">
@@ -528,6 +558,36 @@ footer .wrap{padding-block:18px 26px}
         <div class="pie" data-pie role="status" aria-live="polite" aria-atomic="true">La pieza,
         en perspectiva. Pulsa <b>Siguiente</b> para ir sacando las vistas.</div>
       </div>
+
+      <div class="video" id="vid-u3-vistas" data-vid="nI7F6pr0WGU">
+        <button type="button" class="video-play" aria-label="Reproducir el v&iacute;deo: Obtenci&oacute;n de vistas">
+          <span class="video-tri" aria-hidden="true"></span>
+          <span class="video-txt">
+            <b>Obtenci&oacute;n de vistas</b>
+            <span>Canal Tecnomies</span>
+          </span>
+        </button>
+        <p class="video-nota">Citado en el libro de texto (p.&nbsp;100). El v&iacute;deo no se carga hasta que lo pulsas, y se reproduce sin
+          cookies de seguimiento. Si no se ve aqu&iacute;,
+          <a href="https://www.youtube.com/watch?v=nI7F6pr0WGU" target="_blank" rel="noopener">&aacute;brelo directamente aqu&iacute;</a>.
+          El v&iacute;deo es de su autor y no forma parte del material publicado en esta p&aacute;gina.</p>
+      </div>
+      <script>
+      (function(){
+        var c = document.getElementById('vid-u3-vistas');
+        if(!c) return;
+        var b = c.querySelector('.video-play');
+        b.addEventListener('click', function(){
+          var f = document.createElement('iframe');
+          f.src = 'https://www.youtube-nocookie.com/embed/' + c.dataset.vid + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+          f.title = b.querySelector('.video-txt b').textContent;
+          f.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture';
+          f.referrerPolicy = 'strict-origin-when-cross-origin';
+          f.allowFullscreen = true;
+          b.replaceWith(f);
+        });
+      })();
+      </script>
 
       <p><b>ACTIVIDAD</b> (p.&nbsp;103)</p>
       <ol>

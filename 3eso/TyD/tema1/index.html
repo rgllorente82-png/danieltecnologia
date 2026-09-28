@@ -300,6 +300,36 @@ footer .wrap{padding-block:18px 26px}
           <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>Respuesta abierta, por ejemplo: cobijo (cueva &rarr; casa con calefacci&oacute;n), comida (lanza/fuego &rarr; nevera y microondas), trabajo (piedra tallada &rarr; herramientas el&eacute;ctricas y ordenador).</p></div></details></li>
 
       </ol>
+      <div class="video" id="vid-t3u1-inventos" data-vid="HYWptA3qHZI">
+        <button type="button" class="video-play" aria-label="Reproducir el v&iacute;deo: 10 inventos que cambiaron la historia">
+          <span class="video-tri" aria-hidden="true"></span>
+          <span class="video-txt">
+            <b>10 inventos que cambiaron la historia</b>
+            <span>Canal Alexi Vlog</span>
+          </span>
+        </button>
+        <p class="video-nota">Citado en el libro de texto (p.&nbsp;18). El v&iacute;deo no se carga hasta que lo pulsas, y se reproduce sin
+          cookies de seguimiento. Si no se ve aqu&iacute;,
+          <a href="https://www.youtube.com/watch?v=HYWptA3qHZI" target="_blank" rel="noopener">&aacute;brelo directamente aqu&iacute;</a>.
+          El v&iacute;deo es de su autor y no forma parte del material publicado en esta p&aacute;gina.</p>
+      </div>
+      <script>
+      (function(){
+        var c = document.getElementById('vid-t3u1-inventos');
+        if(!c) return;
+        var b = c.querySelector('.video-play');
+        b.addEventListener('click', function(){
+          var f = document.createElement('iframe');
+          f.src = 'https://www.youtube-nocookie.com/embed/' + c.dataset.vid + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+          f.title = b.querySelector('.video-txt b').textContent;
+          f.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture';
+          f.referrerPolicy = 'strict-origin-when-cross-origin';
+          f.allowFullscreen = true;
+          b.replaceWith(f);
+        });
+      })();
+      </script>
+
   
     </section>
     <section class="bloque">

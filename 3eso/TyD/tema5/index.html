@@ -397,6 +397,36 @@ footer .wrap{padding-block:18px 26px}
       <b>lazo cerrado</b>, para lograr m&aacute;s precisi&oacute;n: <b>sensor</b> (mide) &rarr;
       <b>comparador</b> (compara con lo programado) &rarr; <b>controlador</b> (decide) &rarr;
       <b>actuador</b> (act&uacute;a).</p>
+      <div class="video" id="vid-t3u5-arduino" data-vid="R6lrBZLINrw">
+        <button type="button" class="video-play" aria-label="Reproducir el v&iacute;deo: Arduino, &iquest;qu&eacute; es y para qu&eacute; sirve?">
+          <span class="video-tri" aria-hidden="true"></span>
+          <span class="video-txt">
+            <b>Arduino, &iquest;qu&eacute; es y para qu&eacute; sirve?</b>
+            <span>Canal de Alejandro P&eacute;rez</span>
+          </span>
+        </button>
+        <p class="video-nota">Citado en el libro de texto (p.&nbsp;153). El v&iacute;deo no se carga hasta que lo pulsas, y se reproduce sin
+          cookies de seguimiento. Si no se ve aqu&iacute;,
+          <a href="https://www.youtube.com/watch?v=R6lrBZLINrw" target="_blank" rel="noopener">&aacute;brelo directamente aqu&iacute;</a>.
+          El v&iacute;deo es de su autor y no forma parte del material publicado en esta p&aacute;gina.</p>
+      </div>
+      <script>
+      (function(){
+        var c = document.getElementById('vid-t3u5-arduino');
+        if(!c) return;
+        var b = c.querySelector('.video-play');
+        b.addEventListener('click', function(){
+          var f = document.createElement('iframe');
+          f.src = 'https://www.youtube-nocookie.com/embed/' + c.dataset.vid + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+          f.title = b.querySelector('.video-txt b').textContent;
+          f.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture';
+          f.referrerPolicy = 'strict-origin-when-cross-origin';
+          f.allowFullscreen = true;
+          b.replaceWith(f);
+        });
+      })();
+      </script>
+
       <p><b>ACTIVIDADES</b> (p.&nbsp;152)</p>
       <ol>
               <li>Di si estos sistemas son de lazo abierto o cerrado: tostadora, frigor&iacute;fico, batidora, aire acondicionado programado, vitrocer&aacute;mica, enfoque autom&aacute;tico de una c&aacute;mara.

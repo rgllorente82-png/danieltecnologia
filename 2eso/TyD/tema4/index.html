@@ -266,6 +266,36 @@ footer .wrap{padding-block:18px 26px}
           <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>Se obtiene del <b>gusano de seda</b> (larva de <i>Bombyx mori</i>), que fabrica un capullo con un &uacute;nico hilo continuo de fibra prote&iacute;nica; ese hilo se desenrolla y se hila para obtener la seda.</p></div></details></li>
 
       </ol>
+      <div class="video" id="vid-u4-papel" data-vid="0TdqB4Zqlzk">
+        <button type="button" class="video-play" aria-label="Reproducir el v&iacute;deo: As&iacute; se hace - Papel">
+          <span class="video-tri" aria-hidden="true"></span>
+          <span class="video-txt">
+            <b>As&iacute; se hace - Papel</b>
+            <span>Canal Discovery Max</span>
+          </span>
+        </button>
+        <p class="video-nota">Citado en el libro de texto (p.&nbsp;126). El v&iacute;deo no se carga hasta que lo pulsas, y se reproduce sin
+          cookies de seguimiento. Si no se ve aqu&iacute;,
+          <a href="https://www.youtube.com/watch?v=0TdqB4Zqlzk" target="_blank" rel="noopener">&aacute;brelo directamente aqu&iacute;</a>.
+          El v&iacute;deo es de su autor y no forma parte del material publicado en esta p&aacute;gina.</p>
+      </div>
+      <script>
+      (function(){
+        var c = document.getElementById('vid-u4-papel');
+        if(!c) return;
+        var b = c.querySelector('.video-play');
+        b.addEventListener('click', function(){
+          var f = document.createElement('iframe');
+          f.src = 'https://www.youtube-nocookie.com/embed/' + c.dataset.vid + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+          f.title = b.querySelector('.video-txt b').textContent;
+          f.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture';
+          f.referrerPolicy = 'strict-origin-when-cross-origin';
+          f.allowFullscreen = true;
+          b.replaceWith(f);
+        });
+      })();
+      </script>
+
   
     </section>
     <section class="bloque">
@@ -463,6 +493,36 @@ footer .wrap{padding-block:18px 26px}
         <li><b>Aluminio:</b> blanco, ligero, reciclable y no t&oacute;xico &mdash;envases de alimentos.</li>
         <li><b>Cinc:</b> resistente a la oxidaci&oacute;n &mdash;recubre hierro y acero para protegerlos.</li>
       </ul>
+      <div class="video" id="vid-u4-metales" data-vid="v6Uz3fq7KK4">
+        <button type="button" class="video-play" aria-label="Reproducir el v&iacute;deo: La Edad de los Metales">
+          <span class="video-tri" aria-hidden="true"></span>
+          <span class="video-txt">
+            <b>La Edad de los Metales</b>
+            <span>Canal Happy Learning</span>
+          </span>
+        </button>
+        <p class="video-nota">Citado en el libro de texto (p.&nbsp;132). El v&iacute;deo no se carga hasta que lo pulsas, y se reproduce sin
+          cookies de seguimiento. Si no se ve aqu&iacute;,
+          <a href="https://www.youtube.com/watch?v=v6Uz3fq7KK4" target="_blank" rel="noopener">&aacute;brelo directamente aqu&iacute;</a>.
+          El v&iacute;deo es de su autor y no forma parte del material publicado en esta p&aacute;gina.</p>
+      </div>
+      <script>
+      (function(){
+        var c = document.getElementById('vid-u4-metales');
+        if(!c) return;
+        var b = c.querySelector('.video-play');
+        b.addEventListener('click', function(){
+          var f = document.createElement('iframe');
+          f.src = 'https://www.youtube-nocookie.com/embed/' + c.dataset.vid + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+          f.title = b.querySelector('.video-txt b').textContent;
+          f.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture';
+          f.referrerPolicy = 'strict-origin-when-cross-origin';
+          f.allowFullscreen = true;
+          b.replaceWith(f);
+        });
+      })();
+      </script>
+
       <div class="nota" id="curriculo-andalucia">
         <span class="n-tag">Curr&iacute;culo de Andaluc&iacute;a</span>
         Esta unidad trabaja la <b>competencia espec&iacute;fica 7</b>, los <b>criterios de
