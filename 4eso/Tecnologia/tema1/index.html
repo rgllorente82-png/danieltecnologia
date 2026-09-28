@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tema 1 &middot; Proceso de resoluci&oacute;n de problemas</title>
+<meta name="description" content="Tema 1 de Tecnolog&iacute;a de 4.&ordm; de ESO (Andaluc&iacute;a): metodolog&iacute;a en cascada frente a &aacute;gil, Scrum, Kanban y herramientas de gesti&oacute;n de proyectos, con las competencias, criterios y saberes b&aacute;sicos de la Orden de 30 de mayo de 2023.">
+<link rel="canonical" href="https://rgllorente82-png.github.io/danieltecnologia/4eso/Tecnologia/tema1/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"Tema 1 &middot; Proceso de resoluci&oacute;n de problemas","url":"https://rgllorente82-png.github.io/danieltecnologia/4eso/Tecnologia/tema1/","inLanguage":"es",
+ "isAccessibleForFree":true,
+ "educationalLevel":"Educaci&oacute;n Secundaria Obligatoria","learningResourceType":"Unidad did&aacute;ctica interactiva"}
+</script>
+<style>
+:root{
+  --paper:#f8f9fa;--surface:#fff;--surface-2:#f1f3f4;--ink:#202124;--ink-soft:#5f6368;
+  --line:#dadce0;--line-soft:#e8eaed;--accent:#1a73e8;--accent-soft:#e8f0fe;
+  --goo-azul:#4285f4;--goo-rojo:#ea4335;--goo-amarillo:#fbbc04;--goo-verde:#34a853;
+  --grid:rgba(66,133,244,.09);
+  --f-b:"Roboto",-apple-system,"Segoe UI",Arial,sans-serif;
+  --f-m:"Roboto Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#202124;--surface:#292a2d;--surface-2:#35363a;--ink:#e8eaed;--ink-soft:#9aa0a6;
+  --line:#5f6368;--line-soft:#3c4043;--accent:#8ab4f8;--accent-soft:#1f3347;
+  --goo-azul:#8ab4f8;--goo-rojo:#f28b82;--goo-amarillo:#fdd663;--goo-verde:#81c995;
+  --grid:rgba(138,180,248,.09)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 var(--f-b);letter-spacing:.01em}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+header.top{background:var(--surface);border-bottom:2px solid var(--ink);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:24px 24px;position:sticky;top:0;z-index:50}
+header.top .wrap{padding-block:16px 0}
+.eyebrow{font-family:var(--f-m);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.eyebrow a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
+.eyebrow a:hover{border-bottom-color:currentColor}
+h1{font-weight:700;font-size:clamp(22px,4.4vw,30px);margin:6px 0 12px;letter-spacing:-.015em}
+nav.sesiones{display:flex;gap:8px;overflow-x:auto;padding-bottom:12px}
+nav.sesiones button{flex:none;background:var(--surface);color:var(--ink-soft);border:1.5px solid var(--line);
+  border-radius:2px;padding:7px 14px;font:400 13px var(--f-m);cursor:pointer;white-space:nowrap}
+nav.sesiones button[aria-selected="true"]{background:var(--goo-azul);border-color:var(--goo-azul);color:#fff}
+nav.sesiones button[disabled]{opacity:.45;cursor:default}
+main{padding-block:26px 70px}
+.ses-head{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;padding:20px;margin-bottom:26px}
+.ses-head h2{font-size:22px;margin:6px 0 8px;letter-spacing:-.01em}
+.ses-head p{margin:0 0 14px;color:var(--ink-soft)}
+.minutado{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.min{font-family:var(--f-m);font-size:11.5px;border:1px solid var(--line);border-radius:2px;padding:4px 9px;color:var(--ink-soft)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-family:var(--f-m);font-size:11px;border:1px solid var(--goo-azul);color:var(--goo-azul);border-radius:2px;padding:3px 8px}
+.chip.sab{border-color:var(--line);color:var(--ink-soft)}
+.bloque{margin-bottom:34px}
+.rotulo{display:flex;align-items:center;gap:10px;font-family:var(--f-m);font-size:12px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-soft);margin-bottom:12px}
+.rotulo .num{background:var(--goo-azul);color:#fff;border-radius:2px;min-width:26px;height:24px;
+  display:inline-grid;place-items:center;font-weight:500}
+.rotulo::after{content:"";flex:1;height:2px;background:var(--goo-azul);opacity:.3}
+.bloque:nth-of-type(4n+2) .rotulo .num,.bloque:nth-of-type(4n+2) .rotulo::after{background:var(--goo-rojo)}
+.bloque:nth-of-type(4n+3) .rotulo .num,.bloque:nth-of-type(4n+3) .rotulo::after{background:var(--goo-verde)}
+.bloque:nth-of-type(4n+4) .rotulo .num{background:var(--goo-amarillo);color:#202124}
+.bloque:nth-of-type(4n+4) .rotulo::after{background:var(--goo-amarillo)}
+h3{font-size:18px;margin:22px 0 6px;letter-spacing:-.01em}
+h4{font-size:15.5px;margin:16px 0 4px}
+.bloque ul,.bloque ol{padding-left:22px}
+.bloque li{margin-bottom:5px}
+.nota,.aviso,.def{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;padding:14px 16px;margin:16px 0}
+.nota{border-left:5px solid var(--goo-azul)}
+.aviso{border-left:5px solid var(--goo-amarillo)}
+.def{border-left:5px solid var(--goo-verde)}
+.n-tag{display:block;font-family:var(--f-m);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-soft);margin-bottom:5px}
+.nota .n-tag{color:var(--goo-azul)}
+.escena{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;margin:18px 0}
+.escena-barra{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
+  padding:12px 16px;border-bottom:1px solid var(--line)}
+.escena-titulo{font-family:var(--f-m);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.seg button{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;padding:6px 12px;
+  font:400 12px var(--f-m);color:var(--ink-soft);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--goo-azul);border-color:var(--goo-azul);color:#fff}
+.lienzo{padding:10px;background:var(--surface);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:20px 20px}
+.lienzo svg{width:100%;height:auto;display:block}
+.pie{padding:12px 16px;border-top:1px solid var(--line);font-size:14.5px;color:var(--ink-soft)}
+.ficha{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;margin:16px 0;overflow:hidden}
+.ficha-cab{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;
+  background:var(--ink);color:var(--surface);padding:12px 16px;font-family:var(--f-m);font-size:11.5px;
+  letter-spacing:.08em;text-transform:uppercase}
+.ficha-cab .chip{border-color:var(--surface);color:var(--surface)}
+.ficha-cuerpo{padding:16px}
+.resp{border:1px solid var(--line);border-radius:2px;margin:8px 0}
+.resp summary{cursor:pointer;padding:9px 13px;font-family:var(--f-m);font-size:11.5px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink-soft)}
+.resp summary::-webkit-details-marker{display:none}
+.resp-cuerpo{padding:0 13px 13px}
+.resp-cuerpo p:last-child{margin-bottom:0}
+
+.narra{display:flex;gap:14px;align-items:flex-start}
+.avatar-caja{flex:none;width:104px}
+.avatar-caja svg.avatar{width:104px;height:72px;display:block}
+.avatar.habla{animation:habla .34s ease-in-out infinite alternate}
+@keyframes habla{from{transform:translateY(0)}to{transform:translateY(-2.5px)}}
+.globo{flex:1;background:var(--surface-2);border:1.5px solid var(--line);border-radius:2px;padding:11px 13px;position:relative}
+.globo::before{content:"";position:absolute;left:-9px;top:20px;width:0;height:0;
+  border-top:8px solid transparent;border-bottom:8px solid transparent;border-right:9px solid var(--line)}
+.avatar-dice{margin-top:8px;font-family:var(--f-m);font-size:12px;color:var(--goo-azul);font-style:italic}
+.voz-no{margin:10px 0 0;font-size:13px;color:var(--ink-soft)}
+@media (max-width:520px){.narra{flex-direction:column;align-items:center}.globo::before{display:none}}
+
+.reto-piensa{background:var(--surface);border:1.5px solid var(--goo-amarillo);border-left-width:5px;
+  border-radius:2px;padding:14px 16px;margin:16px 0}
+.reto-piensa .n-tag{color:#9a7326}
+.reto-piensa p{margin:0}
+.resp.revela summary{color:var(--goo-azul);font-weight:500}
+.resp.revela[open] summary{color:var(--ink-soft)}
+.resp.revela table{margin:0}
+.secuencia li.oculto{color:transparent;background:var(--surface-2);border-radius:2px;user-select:none}
+.secuencia li.oculto *{visibility:hidden}
+.secuencia li{transition:color .25s ease,background .25s ease;padding:2px 4px}
+#btn-secuencia{background:var(--surface);border:1.5px solid var(--goo-azul);color:var(--goo-azul);
+  border-radius:2px;padding:7px 14px;font:500 12px var(--f-m);cursor:pointer}
+#btn-secuencia:disabled{border-color:var(--line);color:var(--ink-soft);cursor:default}
+
+/* series del grafico de coste: validadas con el script de dataviz
+   claro  #ea4335/#1a73e8  -> min CVD 27.0, vision normal 36.8
+   oscuro #ef5350/#4285f4  -> min CVD 24.6, vision normal 33.2 */
+:root{--c-analog:#ea4335;--c-digital:#1a73e8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--c-analog:#ef5350;--c-digital:#4285f4}}
+.ejeq{fill:var(--ink-soft);font-family:var(--f-m);font-size:11px}
+.etq{fill:var(--ink);font-family:var(--f-m);font-size:11px;font-weight:500}
+
+
+.foto{margin:16px 0;border:1.5px solid var(--line);border-radius:2px;background:var(--surface);overflow:hidden}
+.foto img{width:100%;height:auto;display:block}
+.foto figcaption{padding:11px 14px;font-size:14px;line-height:1.5;color:var(--ink);border-top:1px solid var(--line)}
+.credito{display:block;margin-top:7px;font-family:var(--f-m);font-size:10.5px;color:var(--ink-soft);letter-spacing:.02em}
+.credito a{color:var(--ink-soft)}
+.galeria-ri{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));margin:16px 0}
+.galeria-ri .foto{margin:0}
+.galeria-ri figcaption{font-size:13.5px}
+
+.video{margin:16px 0}
+.video-play{width:100%;display:flex;align-items:center;gap:16px;padding:22px 20px;cursor:pointer;
+  background:var(--surface);border:1.5px solid var(--line);border-radius:2px;text-align:left;
+  transition:border-color .18s ease}
+.video-play:hover{border-color:var(--goo-rojo)}
+.video-tri{flex:none;width:52px;height:38px;border-radius:6px;background:var(--goo-rojo);position:relative}
+.video-tri::after{content:"";position:absolute;left:20px;top:11px;border-left:14px solid #fff;
+  border-top:8px solid transparent;border-bottom:8px solid transparent}
+.video-txt b{display:block;font:500 16px var(--f-b);color:var(--ink);margin-bottom:3px}
+.video-txt span{font:400 12px var(--f-m);color:var(--ink-soft)}
+.video-nota{margin:9px 0 0;font-size:12.5px;color:var(--ink-soft);line-height:1.5}
+.video iframe{width:100%;aspect-ratio:16/9;height:auto;border:1.5px solid var(--line);border-radius:2px;display:block}
+
+/* lo que se copia en la libreta, frente a lo que es solo para entender */
+.copiar{background:var(--surface);border:2px solid var(--goo-azul);border-radius:2px;
+  padding:16px 18px;margin:18px 0;position:relative}
+.copiar::before{content:"PARA LA LIBRETA";position:absolute;top:-11px;left:14px;
+  background:var(--goo-azul);color:#fff;font-family:var(--f-m);font-size:10.5px;letter-spacing:.1em;
+  padding:3px 9px;border-radius:2px}
+.copiar > :first-child{margin-top:6px}
+.copiar > :last-child{margin-bottom:0}
+.copiar h4{font-size:15px;margin:10px 0 4px}
+.entender{border-left:4px solid var(--line);padding:2px 0 2px 16px;margin:18px 0;color:var(--ink-soft)}
+.entender .e-tag{display:block;font-family:var(--f-m);font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
+.entender b{color:var(--ink)}
+@media print{
+  .entender,.escena,.video,.narra,nav.sesiones{display:none}
+  .copiar{border-width:1.5px;break-inside:avoid}
+}
+.rotulo-svg{fill:var(--ink-soft);font-family:var(--f-m);font-size:11px;letter-spacing:.06em}
+.hito{fill:var(--surface);stroke:var(--goo-azul);stroke-width:2;cursor:pointer}
+.hito.on{fill:var(--goo-azul)}
+.eje-t{fill:none;stroke:var(--line);stroke-width:2}
+
+.necesidades{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:16px 0}
+.necesidad{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;padding:14px 10px;text-align:center;
+  transition:border-color .18s ease,transform .18s ease}
+.necesidad:hover{border-color:var(--goo-azul);transform:translateY(-2px)}
+.necesidad svg{width:34px;height:34px;display:block;margin:0 auto 8px;stroke:var(--goo-azul);fill:none;
+  stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.necesidad b{display:block;font-size:13.5px;margin-bottom:3px}
+.necesidad span{font-size:11.5px;color:var(--ink-soft);line-height:1.3}
+
+.stepper{display:flex;flex-wrap:wrap;gap:2px;padding:16px 6px;justify-content:center}
+.fase-nodo{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1 0 18%;min-width:82px;
+  background:none;border:none;cursor:pointer;padding:8px 4px;font-family:var(--f-b)}
+.fase-nodo .num{width:32px;height:32px;border-radius:50%;border:2px solid var(--line);display:grid;
+  place-items:center;font-family:var(--f-m);font-weight:700;font-size:13px;color:var(--ink-soft);
+  background:var(--surface);transition:all .18s ease}
+.fase-nodo[aria-pressed="true"] .num{background:var(--goo-azul);border-color:var(--goo-azul);color:#fff;
+  transform:scale(1.12)}
+.fase-nodo .etq{font-size:10.5px;text-align:center;color:var(--ink-soft);line-height:1.25;max-width:90px}
+.fase-nodo[aria-pressed="true"] .etq{color:var(--ink);font-weight:500}
+.fase-nodo:hover .num{border-color:var(--goo-azul)}
+
+footer{border-top:1px solid var(--line);color:var(--ink-soft);font-size:13.5px;margin-top:30px}
+footer .wrap{padding-block:18px 26px}
+@media (max-width:560px){body{font-size:15.5px}.lienzo{padding:4px}}
+
+/* ---- avatar narrador, plano y sincronizado con la voz ---- */
+.narrador{display:flex;gap:16px;align-items:flex-start;background:var(--surface);
+  border:1.5px solid var(--line);border-radius:2px;padding:16px;margin:18px 0}
+.narrador-fig{flex:none;width:110px}
+.narrador-fig svg{width:110px;height:120px;display:block}
+.narrador-txt{flex:1;min-width:0}
+.narrador-txt h4{margin:0 0 3px;font-size:15.5px}
+.narrador-quien{font-family:var(--f-m);font-size:11px;color:var(--ink-soft);display:block;margin-bottom:9px}
+.narrador-barra{height:4px;background:var(--surface-2);border-radius:2px;overflow:hidden;margin:11px 0 8px}
+.narrador-barra i{display:block;height:100%;width:0;background:var(--goo-azul);transition:width .1s linear}
+.narrador-nota{font-size:12.5px;color:var(--ink-soft);margin:8px 0 0;line-height:1.5}
+@media (max-width:520px){.narrador{flex-direction:column;align-items:center}
+  .narrador-txt{text-align:center}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="eyebrow"><a href="../../../">Inicio</a> &middot; <a href="../../">4.&ordm; ESO</a> &middot; <a href="../">Tecnolog&iacute;a</a> &middot; Tema 1</div>
+    <h1>Proceso de resoluci&oacute;n de problemas</h1>
+    <nav class="sesiones" id="nav" aria-label="Sesiones del tema"><button type="button" data-ses="1" aria-selected="true">S1 &middot; S1 &middot; Cascada o &aacute;gil</button></nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div id="ses-1">
+    <div class="ses-head">
+      <div class="eyebrow">Sesi&oacute;n 1 &middot; 60 minutos</div>
+      <h2>Proceso de resoluci&oacute;n de problemas</h2>
+      <p>Metodolog&iacute;a en cascada frente a metodolog&iacute;as &aacute;giles, y c&oacute;mo funcionan Scrum y Kanban.</p>
+      <div class="minutado"><span class="min"><b>0-20</b> Cascada vs &aacute;gil</span><span class="min"><b>20-40</b> Scrum y Kanban</span><span class="min"><b>40-50</b> Herramientas de gesti&oacute;n</span></div>
+      <div class="chips"><span class="chip">CE1 &middot; 1.2</span><span class="chip">CE1 &middot; 1.3</span><span class="chip sab">A.1</span></div>
+    </div>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">01</span> Metodolog&iacute;a en cascada o metodolog&iacute;as &aacute;giles</div>
+
+
+      <div class="narrador" id="nar-4u1">
+        <div class="narrador-fig" id="nar-4u1-fig"></div>
+        <div class="narrador-txt">
+          <h4>Construir una casa no es programar una app</h4>
+          <span class="narrador-quien">Narrado &middot; 47 s</span>
+          <div class="seg">
+            <button type="button" data-a="play">&#9654; Escuchar</button>
+            <button type="button" data-a="stop">&#9632; Parar</button>
+          </div>
+          <div class="narrador-barra"><i></i></div>
+          <p class="narrador-nota">Escucha la diferencia y compara despu&eacute;s las dos metodolog&iacute;as.</p>
+        </div>
+      </div>
+
+      <script>
+      (function(){
+        var C = document.getElementById('nar-4u1');
+        if(!C) return;
+        var fig = document.getElementById('nar-4u1-fig');
+        var barra = C.querySelector('.narrador-barra i');
+        var ENV = [0.0, 0.0, 0.0, 0.013, 1.0, 0.924, 0.369, 0.756, 0.651, 0.206, 0.374, 0.851, 0.667, 0.686, 0.714, 0.556, 0.379, 0.79, 0.272, 0.25, 0.366, 0.457, 0.511, 0.274, 0.522, 0.308, 0.589, 0.56, 0.845, 0.874, 0.77, 0.879, 0.455, 0.726, 0.652, 0.397, 0.156, 0.292, 0.4, 0.018, 0.205, 0.287, 0.099, 0.002, 0.0, 0.0, 0.095, 0.619, 0.776, 0.871, 0.68, 0.774, 0.741, 0.202, 0.342, 0.446, 0.731, 0.776, 0.254, 0.308, 0.19, 0.104, 0.009, 0.0, 0.0, 0.225, 0.625, 1.0, 0.71, 0.971, 0.804, 0.383, 0.104, 0.425, 0.357, 0.46, 0.245, 0.252, 0.1, 0.052, 0.003, 0.0, 0.0, 0.0, 0.001, 0.001, 0.509, 1.0, 1.0, 0.969, 1.0, 0.661, 0.402, 0.307, 0.235, 0.516, 0.283, 0.313, 0.164, 0.018, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.381, 0.905, 0.947, 0.049, 1.0, 0.601, 0.86, 0.376, 0.824, 0.64, 0.567, 0.375, 0.484, 0.844, 0.699, 0.1, 0.592, 0.406, 0.164, 0.946, 0.771, 0.871, 0.736, 0.204, 0.483, 0.21, 0.486, 0.435, 0.388, 0.471, 0.333, 0.173, 0.699, 0.342, 0.322, 0.254, 0.316, 0.273, 0.278, 0.156, 0.002, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.733, 0.611, 0.356, 0.82, 0.793, 0.36, 0.857, 0.92, 0.885, 0.147, 0.777, 0.558, 0.643, 0.616, 0.18, 0.586, 1.0, 0.672, 0.398, 0.169, 0.446, 0.245, 0.088, 0.484, 0.262, 0.286, 0.161, 0.038, 0.002, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.948, 0.922, 0.689, 0.421, 0.874, 0.265, 0.428, 0.598, 0.262, 0.305, 0.732, 0.815, 0.737, 0.766, 0.849, 0.751, 0.851, 0.356, 0.435, 0.356, 0.399, 0.236, 0.304, 0.78, 0.342, 0.249, 0.07, 0.001, 0.0, 0.0, 0.0, 0.66, 1.0, 0.736, 0.395, 0.521, 0.816, 0.461, 0.128, 0.783, 0.591, 0.704, 0.83, 0.565, 0.369, 0.284, 0.558, 0.885, 0.532, 0.29, 0.662, 0.379, 0.103, 0.82, 0.273, 0.371, 0.167, 0.034, 0.001, 0.0, 0.036, 0.231, 1.0, 0.368, 0.055, 0.641, 0.121, 0.625, 0.428, 0.191, 0.239, 0.118, 0.013, 0.0, 0.0, 0.0, 0.0, 0.0, 0.807, 1.0, 0.988, 0.205, 0.707, 0.904, 1.0, 0.424, 0.621, 0.743, 0.752, 0.681, 0.464, 1.0, 0.389, 0.349, 0.529, 0.369, 0.33, 0.26, 0.169, 0.086, 0.098, 0.047, 0.002, 0.0, 0.001, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.001, 0.006, 0.896, 0.38, 0.4, 0.786, 0.639, 0.293, 0.911, 0.852, 0.725, 0.546, 0.788, 0.714, 0.57, 0.406, 0.114, 0.802, 0.862, 0.498, 0.324, 0.078, 0.217, 0.37, 0.245, 0.117, 0.003, 0.0, 0.13, 0.864, 0.405, 0.871, 0.515, 0.2, 0.81, 0.45, 0.509, 0.925, 0.612, 0.844, 0.373, 0.385, 0.437, 0.341, 0.872, 0.514, 0.456, 0.256, 0.296, 0.461, 0.648, 0.583, 0.473, 0.286, 0.159, 0.253, 0.307, 0.251, 0.131, 0.009, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.001, 0.406, 0.917, 0.166, 0.669, 0.28, 0.272, 0.643, 0.674, 0.362, 0.48, 0.874, 0.805, 0.371, 0.442, 0.706, 0.275, 0.738, 0.208, 0.646, 0.604, 0.289, 0.579, 0.27, 0.112, 0.799, 0.1, 0.202, 0.222, 0.087, 0.038, 0.001, 0.0, 0.026, 0.266, 0.521, 0.403, 0.086, 0.402, 0.362, 0.961, 0.127, 0.409, 0.189, 0.108, 0.011, 0.0, 0.001, 0.125, 0.373, 0.693, 0.415, 0.815, 0.839, 0.588, 0.3, 0.11, 0.003, 0.0, 0.0, 0.018, 0.356, 0.965, 0.648, 0.55, 0.439, 0.329, 0.169, 0.992, 0.5, 0.286, 0.093, 0.001, 0.0, 0.001, 0.0, 0.504, 1.0, 1.0, 0.73, 0.543, 0.29, 0.844, 0.632, 0.414, 0.121, 0.399, 0.956, 0.909, 0.418, 0.469, 0.213, 0.002, 0.0, 0.4, 0.879, 0.822, 0.721, 0.807, 0.337, 0.8, 0.505, 0.316, 0.627, 0.394, 0.151, 0.255, 0.167, 0.04, 0.001, 0.0, 0.0, 0.0, 0.042, 0.241, 0.653, 1.0, 0.728, 1.0, 1.0, 0.352, 0.783, 0.683, 0.219, 0.347, 0.256, 0.105, 0.098, 0.05, 0.003, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.175, 0.921, 1.0, 0.979, 0.158, 0.689, 0.757, 0.478, 0.822, 0.122, 0.922, 0.637, 0.858, 0.733, 0.315, 0.717, 0.31, 0.785, 0.92, 0.32, 0.67, 0.38, 0.223, 0.398, 0.995, 0.345, 0.588, 0.14, 0.773, 0.49, 0.23, 0.277, 0.192, 0.093, 0.011, 0.0, 0.0, 0.0, 0.539, 0.915, 1.0, 0.881, 0.533, 0.164, 0.587, 0.119, 0.717, 0.304, 0.065, 0.663, 0.727, 0.245, 0.544, 0.351, 0.081, 0.512, 0.302, 0.515, 0.383, 0.376, 0.412, 0.915, 0.332, 0.49, 0.382, 0.293, 0.368, 0.264, 0.424, 0.335, 0.387, 0.165, 0.097, 0.259, 0.215, 0.103, 0.005, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.179, 1.0, 0.636, 0.834, 0.79, 0.792, 0.892, 0.501, 0.43, 0.978, 0.352, 0.788, 0.428, 0.781, 0.652, 0.902, 0.84, 0.204, 0.445, 1.0, 0.564, 0.248, 0.226, 0.789, 0.54, 0.672, 0.102, 0.908, 0.602, 0.435, 0.044, 0.067, 1.0, 0.727, 0.69, 0.315, 0.719, 0.683, 0.877, 0.555, 0.245, 0.061, 0.734, 0.576, 0.342, 0.465, 0.595, 0.616, 0.131, 0.832, 0.282, 0.5, 0.342, 0.292, 0.25, 0.287, 0.371, 0.255, 0.027, 0.199, 0.272, 0.096, 0.005, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0];            /* una muestra cada 66 ms, de 0 a 1 */
+        var PASO = 0.066;
+        var audio = new Audio('audio/4u1-intro.mp3');
+        audio.preload = 'none';
+        var raf = null, parpadeo = 0, tParp = 0;
+
+        /* El personaje se dibuja entero cada cuadro: la boca depende del
+           volumen de la voz en ese instante, y los ojos parpadean solos.   */
+        function dibuja(a, ojosCerrados){
+          var abre = 3 + a * 13;                 /* alto de la boca */
+          var ancho = 15 + a * 5;
+          var ceja = -a * 2.5;                   /* las cejas acompanan */
+          var ojo = ojosCerrados
+            ? '<path d="M35 46 h11 M64 46 h11" stroke="#202124" stroke-width="2.6" stroke-linecap="round"/>'
+            : '<circle cx="40.5" cy="46" r="4.2" fill="#202124"/>'
+            + '<circle cx="69.5" cy="46" r="4.2" fill="#202124"/>'
+            + '<circle cx="42" cy="44.6" r="1.5" fill="#fff"/>'
+            + '<circle cx="71" cy="44.6" r="1.5" fill="#fff"/>';
+          return '<svg viewBox="0 0 110 120" aria-hidden="true">'
+            /* cuerpo, en azul de la web */
+            + '<path d="M22 120 v-18 q0-16 16-20 h34 q16 4 16 20 v18 Z" fill="#4285f4"/>'
+            + '<path d="M46 82 h18 v12 h-18 Z" fill="#e8b48a"/>'
+            /* cabeza */
+            + '<rect x="26" y="20" width="58" height="66" rx="16" fill="#f3d3b3" stroke="#d3ae87" stroke-width="2"/>'
+            /* pelo, plano y geometrico */
+            + '<path d="M26 40 v-6 q0-14 29-14 q29 0 29 14 v6 q-8-9-29-9 q-21 0-29 9 Z" fill="#3c4043"/>'
+            /* cejas */
+            + '<path d="M33 ' + (37+ceja) + ' h13" stroke="#3c4043" stroke-width="3" stroke-linecap="round"/>'
+            + '<path d="M64 ' + (37+ceja) + ' h13" stroke="#3c4043" stroke-width="3" stroke-linecap="round"/>'
+            + ojo
+            /* colorete */
+            + '<circle cx="32" cy="58" r="5" fill="#ea4335" opacity=".17"/>'
+            + '<circle cx="78" cy="58" r="5" fill="#ea4335" opacity=".17"/>'
+            /* boca: se abre con la voz */
+            + '<ellipse cx="55" cy="66" rx="' + (ancho/2).toFixed(1) + '" ry="' + (abre/2).toFixed(1)
+            + '" fill="#8c3b2e"/>'
+            + (a > 0.35 ? '<ellipse cx="55" cy="' + (66 + abre/4).toFixed(1)
+                 + '" rx="' + (ancho/3).toFixed(1) + '" ry="' + (abre/5).toFixed(1) + '" fill="#c96a5a"/>' : '')
+            + '</svg>';
+        }
+
+        function cuadro(){
+          var t = audio.currentTime;
+          var i = Math.floor(t / PASO);
+          var a = (i >= 0 && i < ENV.length) ? ENV[i] : 0;
+          /* parpadeo cada 3-5 segundos */
+          if(t > tParp){ parpadeo = 6; tParp = t + 3 + Math.random()*2; }
+          if(parpadeo > 0) parpadeo--;
+          fig.innerHTML = dibuja(a, parpadeo > 3);
+          if(audio.duration) barra.style.width = (100*t/audio.duration).toFixed(1) + '%';
+          if(!audio.paused) raf = requestAnimationFrame(cuadro);
+        }
+
+        C.querySelector('[data-a="play"]').addEventListener('click', function(){
+          audio.currentTime = 0;
+          audio.play().then(function(){ cuadro(); }).catch(function(){
+            C.querySelector('.narrador-nota').innerHTML =
+              'No se ha podido reproducir el audio. Comprueba el sonido del equipo.';
+          });
+        });
+        C.querySelector('[data-a="stop"]').addEventListener('click', function(){
+          audio.pause(); audio.currentTime = 0;
+          if(raf) cancelAnimationFrame(raf);
+          fig.innerHTML = dibuja(0, false); barra.style.width = '0';
+        });
+        audio.addEventListener('ended', function(){
+          if(raf) cancelAnimationFrame(raf);
+          fig.innerHTML = dibuja(0, false); barra.style.width = '0';
+        });
+
+        fig.innerHTML = dibuja(0, false);
+      })();
+      </script>
+
+      <div class="escena" id="esc-meto">
+        <div class="escena-barra">
+          <span class="escena-titulo">Compara las dos metodolog&iacute;as</span>
+          <div class="seg" id="seg-meto">
+            <button type="button" data-m="cascada" aria-pressed="true">En cascada</button>
+            <button type="button" data-m="agil">&Aacute;gil</button>
+          </div>
+        </div>
+        <div class="pie" id="pie-meto"></div>
+      </div>
+      <script>
+      (function(){
+        var M = {
+          cascada: '<b>Secuencial:</b> un coordinador reparte tareas individuales. Cada fase '
+                 + 'empieza cuando termina la anterior, <b>sin vuelta atr&aacute;s</b>. Se usa en '
+                 + 'fabricaci&oacute;n y construcci&oacute;n, con tareas bien definidas y un orden '
+                 + 'estricto (ej.: construir una vivienda).',
+          agil: '<b>Iterativa:</b> no hay coordinador &uacute;nico, todo el equipo tiene la misma '
+              + 'importancia y se comunica en tiempo real. El proyecto se <b>modifica y adapta</b> '
+              + 'sobre la marcha. Se usa en software, proyectos creativos o sin tareas muy '
+              + 'concretas. Se basa en <b>fragmentaci&oacute;n, cooperaci&oacute;n, sencillez y '
+              + 'adaptaci&oacute;n</b>.'
+        };
+        var seg = document.getElementById('seg-meto'), pie = document.getElementById('pie-meto');
+        function pon(k){
+          seg.querySelectorAll('button').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.m===k?'true':'false'); });
+          pie.innerHTML = M[k];
+        }
+        seg.addEventListener('click', function(e){ var b=e.target.closest('button[data-m]'); if(b) pon(b.dataset.m); });
+        pon('cascada');
+      })();
+      </script>
+      <h4>Las mismas cinco fases &middot; toca cada una</h4>
+      <div class="escena" id="esc-fases4">
+        <div class="escena-barra"><span class="escena-titulo">Requisitos &rarr; Dise&ntilde;o &rarr; Fabricaci&oacute;n &rarr; Pruebas &rarr; Despliegue</span></div>
+        <div class="lienzo"><div class="stepper" id="stepper-fases4"></div></div>
+        <div class="pie" id="pie-fases4">Toca una fase para ver en qu&eacute; consiste.</div>
+      </div>
+      <script>
+      (function(){
+        var F = [
+          ['Requisitos', 'La fase que m&aacute;s tiempo ocupa: se determinan recursos, equipo y el resto de fases.'],
+          ['Dise&ntilde;o', 'Bocetos, dise&ntilde;os y el listado de materiales y herramientas.'],
+          ['Fabricaci&oacute;n', 'Se desarrolla el producto seg&uacute;n lo establecido en requisitos.'],
+          ['Pruebas', 'Se comprueba el funcionamiento y el control de calidad.'],
+          ['Despliegue', 'Se entrega el producto terminado al usuario final.']
+        ];
+        var t = document.getElementById('stepper-fases4'), p = document.getElementById('pie-fases4');
+        F.forEach(function(f, i){
+          var b = document.createElement('button');
+          b.type = 'button'; b.className = 'fase-nodo'; b.setAttribute('aria-pressed', 'false');
+          b.innerHTML = '<span class="num">' + (i+1) + '</span><span class="etq">' + f[0] + '</span>';
+          b.addEventListener('click', function(){
+            t.querySelectorAll('.fase-nodo').forEach(function(x){ x.setAttribute('aria-pressed','false'); });
+            b.setAttribute('aria-pressed', 'true'); p.innerHTML = '<b>' + f[0] + '.</b> ' + f[1];
+          });
+          t.appendChild(b);
+        });
+      })();
+      </script>
+      <p style="font-size:13px;color:var(--ink-soft)">En cascada, estas cinco fases van en l&iacute;nea
+      recta; en &aacute;gil, se recorren en ciclos cortos que se repiten hasta completar el producto.</p>
+  
+    </section>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">02</span> Scrum y Kanban</div>
+
+      <div class="def">
+        <span class="n-tag">Scrum</span>
+        El equipo (con el <i>Scrum master</i> y el <i>product owner</i>) divide el trabajo en
+        <b>sprints</b> cortos (m&aacute;ximo dos semanas). Cada <i>sprint</i> genera un entregable
+        que se va mejorando, lo que permite <b>corregir fallos r&aacute;pido</b>.
+      </div>
+      <div class="def">
+        <span class="n-tag">Kanban</span>
+        Metodolog&iacute;a &aacute;gil basada en los sistemas de producci&oacute;n de Toyota
+        (&laquo;tarjetas visuales&raquo; en japon&eacute;s). Un <b>tablero por columnas</b>
+        (pendiente, en proceso, en pruebas, hecho) con <b>tarjetas</b> que representan cada tarea y
+        van avanzando de columna hasta terminarse.
+      </div>
+      <p><b>Herramientas de gesti&oacute;n de proyectos colaborativos:</b> intercambio de ideas
+      (mapas mentales, <i>brainstorming</i>), para compartir (Drive, Dropbox), de comunicaci&oacute;n
+      (Teams, Slack), de gesti&oacute;n de tiempos (Google Calendar, Gantt) y de documentaci&oacute;n
+      (blogs, wikis). Herramientas todo-en-uno: Trello, Asana, Basecamp, Jira.</p>
+      <div class="nota" id="curriculo-andalucia">
+        <span class="n-tag">Curr&iacute;culo de Andaluc&iacute;a</span>
+        Esta unidad trabaja la <b>competencia espec&iacute;fica 1</b>, los <b>criterios de
+        evaluaci&oacute;n 1.2 y 1.3</b>, y el <b>saber b&aacute;sico A.1</b> (estrategias de
+        gesti&oacute;n de proyectos colaborativos), seg&uacute;n la
+        <a href="https://www.juntadeandalucia.es/boja/2023/104/BOJA23-104-00281-9728-01_00284744.pdf"
+        target="_blank" rel="noopener">Orden de 30 de mayo de 2023 (BOJA n&uacute;m. 104)</a>, anexo&nbsp;II.
+      </div>
+      <div class="aviso">
+        <span class="n-tag">Pendiente</span>
+        Proyecto colaborativo escolar, <i>design thinking</i>, ciclo de vida y selecci&oacute;n de
+        materiales, fabricaci&oacute;n manual/mec&aacute;nica/digital, comunicaci&oacute;n y
+        difusi&oacute;n, pr&aacute;cticas de ordenador, resumen y autoevaluaci&oacute;n.
+      </div>
+  
+    </section>
+
+  </div>
+
+</main>
+
+<footer><div class="wrap">Tema 1 &middot; 4.&ordm; de ESO &middot; Tecnolog&iacute;a</div></footer>
+
+<script>
+(function(){
+  var nav = document.getElementById('nav');
+  if(!nav) return;
+  nav.addEventListener('click', function(e){
+    var b = e.target.closest('button[data-ses]');
+    if(!b || b.disabled) return;
+    nav.querySelectorAll('button').forEach(function(x){
+      x.setAttribute('aria-selected', x === b ? 'true' : 'false');
+    });
+    document.querySelectorAll('[id^="ses-"]').forEach(function(p){
+      p.hidden = (p.id !== 'ses-' + b.dataset.ses);
+    });
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+})();
+</script>
+
+</body>
+</html>
