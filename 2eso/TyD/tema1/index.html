@@ -178,9 +178,45 @@ h4{font-size:15.5px;margin:16px 0 4px}
 .hito{fill:var(--surface);stroke:var(--goo-azul);stroke-width:2;cursor:pointer}
 .hito.on{fill:var(--goo-azul)}
 .eje-t{fill:none;stroke:var(--line);stroke-width:2}
+
+.necesidades{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:16px 0}
+.necesidad{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;padding:14px 10px;text-align:center;
+  transition:border-color .18s ease,transform .18s ease}
+.necesidad:hover{border-color:var(--goo-azul);transform:translateY(-2px)}
+.necesidad svg{width:34px;height:34px;display:block;margin:0 auto 8px;stroke:var(--goo-azul);fill:none;
+  stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.necesidad b{display:block;font-size:13.5px;margin-bottom:3px}
+.necesidad span{font-size:11.5px;color:var(--ink-soft);line-height:1.3}
+
+.stepper{display:flex;flex-wrap:wrap;gap:2px;padding:16px 6px;justify-content:center}
+.fase-nodo{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1 0 18%;min-width:82px;
+  background:none;border:none;cursor:pointer;padding:8px 4px;font-family:var(--f-b)}
+.fase-nodo .num{width:32px;height:32px;border-radius:50%;border:2px solid var(--line);display:grid;
+  place-items:center;font-family:var(--f-m);font-weight:700;font-size:13px;color:var(--ink-soft);
+  background:var(--surface);transition:all .18s ease}
+.fase-nodo[aria-pressed="true"] .num{background:var(--goo-azul);border-color:var(--goo-azul);color:#fff;
+  transform:scale(1.12)}
+.fase-nodo .etq{font-size:10.5px;text-align:center;color:var(--ink-soft);line-height:1.25;max-width:90px}
+.fase-nodo[aria-pressed="true"] .etq{color:var(--ink);font-weight:500}
+.fase-nodo:hover .num{border-color:var(--goo-azul)}
+
 footer{border-top:1px solid var(--line);color:var(--ink-soft);font-size:13.5px;margin-top:30px}
 footer .wrap{padding-block:18px 26px}
 @media (max-width:560px){body{font-size:15.5px}.lienzo{padding:4px}}
+
+/* ---- avatar narrador, plano y sincronizado con la voz ---- */
+.narrador{display:flex;gap:16px;align-items:flex-start;background:var(--surface);
+  border:1.5px solid var(--line);border-radius:2px;padding:16px;margin:18px 0}
+.narrador-fig{flex:none;width:110px}
+.narrador-fig svg{width:110px;height:120px;display:block}
+.narrador-txt{flex:1;min-width:0}
+.narrador-txt h4{margin:0 0 3px;font-size:15.5px}
+.narrador-quien{font-family:var(--f-m);font-size:11px;color:var(--ink-soft);display:block;margin-bottom:9px}
+.narrador-barra{height:4px;background:var(--surface-2);border-radius:2px;overflow:hidden;margin:11px 0 8px}
+.narrador-barra i{display:block;height:100%;width:0;background:var(--goo-azul);transition:width .1s linear}
+.narrador-nota{font-size:12.5px;color:var(--ink-soft);margin:8px 0 0;line-height:1.5}
+@media (max-width:520px){.narrador{flex-direction:column;align-items:center}
+  .narrador-txt{text-align:center}}
 </style>
 </head>
 <body>
@@ -217,18 +253,16 @@ footer .wrap{padding-block:18px 26px}
       <p>As&iacute;, la labor de un tecn&oacute;logo ser&aacute; inventar, dise&ntilde;ar y construir
       <b>productos tecnol&oacute;gicos</b>, o modificar algunos ya inventados, para dar respuesta a
       las necesidades planteadas.</p>
-      <div class="copiar">
-        <h4>Siete necesidades, siete familias de productos</h4>
-        <table style="width:100%;border-collapse:collapse;font-size:14.5px">
-          <tr><td style="padding:4px 8px 4px 0"><b>Alimentaci&oacute;n</b></td><td>nevera, microondas, batidora&hellip;</td></tr>
-          <tr><td style="padding:4px 8px 4px 0"><b>Vestido</b></td><td>pantal&oacute;n, camisa, zapatillas&hellip;</td></tr>
-          <tr><td style="padding:4px 8px 4px 0"><b>Refugio</b></td><td>casas, pisos&hellip;</td></tr>
-          <tr><td style="padding:4px 8px 4px 0"><b>Transporte</b></td><td>autob&uacute;s, avi&oacute;n, bicicleta&hellip;</td></tr>
-          <tr><td style="padding:4px 8px 4px 0"><b>Trabajo</b></td><td>ordenador, calculadora, herramientas&hellip;</td></tr>
-          <tr><td style="padding:4px 8px 4px 0"><b>Ocio</b></td><td>parques de atracciones, videojuegos&hellip;</td></tr>
-          <tr><td style="padding:4px 8px 4px 0"><b>Comunicaci&oacute;n</b></td><td>tel&eacute;fono, televisi&oacute;n, peri&oacute;dico&hellip;</td></tr>
-          <tr><td style="padding:4px 8px 4px 0"><b>Salud e higiene</b></td><td>aparatos de rayos X, jeringuilla, jab&oacute;n&hellip;</td></tr>
-        </table>
+      <h4>Siete necesidades, siete familias de productos</h4>
+      <div class="necesidades">
+        <div class="necesidad"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2h14v9a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3V2Z"/><path d="M5 8h14"/><path d="M12 14v8"/><path d="M9 22h6"/></svg><b>Alimentaci&oacute;n</b><span>nevera, microondas, batidora&hellip;</span></div>
+        <div class="necesidad"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3 5 6l2 3-1 12h12L17 9l2-3-4-3-3 3-3-3Z"/></svg><b>Vestido</b><span>pantal&oacute;n, camisa, zapatillas&hellip;</span></div>
+        <div class="necesidad"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg><b>Refugio</b><span>casas, pisos&hellip;</span></div>
+        <div class="necesidad"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="10" rx="2"/><path d="M3 12h18"/><circle cx="7.5" cy="18.5" r="1.7"/><circle cx="16.5" cy="18.5" r="1.7"/></svg><b>Transporte</b><span>autob&uacute;s, avi&oacute;n, bicicleta&hellip;</span></div>
+        <div class="necesidad"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg><b>Trabajo</b><span>ordenador, calculadora, herramientas&hellip;</span></div>
+        <div class="necesidad"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="8" width="19" height="10" rx="5"/><path d="M7 11v4M5 13h4"/><circle cx="16" cy="12" r="1"/><circle cx="18.5" cy="15" r="1"/></svg><b>Ocio</b><span>parques de atracciones, videojuegos&hellip;</span></div>
+        <div class="necesidad"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v12H8l-4 4Z"/><path d="M8 9h8M8 12.5h5"/></svg><b>Comunicaci&oacute;n</b><span>tel&eacute;fono, televisi&oacute;n, peri&oacute;dico&hellip;</span></div>
+        <div class="necesidad"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg><b>Salud e higiene</b><span>rayos&nbsp;X, jeringuilla, jab&oacute;n&hellip;</span></div>
       </div>
       <div class="def">
         <span class="n-tag">Definici&oacute;n</span>
@@ -249,29 +283,138 @@ footer .wrap{padding-block:18px 26px}
         pr&aacute;cticos que se presentan en cualquier sociedad. Sigue un m&eacute;todo estructurado
         en diez fases, desde el problema planteado hasta la soluci&oacute;n encontrada.
       </div>
-      <h4>Las diez fases</h4>
-      <ol>
-        <li><b>Detecci&oacute;n de un problema o una necesidad.</b> &iquest;Con qu&eacute; problema nos
-        encontramos o qu&eacute; propuesta de trabajo nos han hecho? &iquest;Con qu&eacute; condiciones?</li>
-        <li><b>B&uacute;squeda de informaci&oacute;n e investigaci&oacute;n.</b> Se recopila, analiza y
-        selecciona la informaci&oacute;n relacionada con las distintas posibilidades de resolver el
-        problema, y se analizan productos que satisfagan necesidades semejantes.</li>
-        <li><b>B&uacute;squeda de soluciones posibles.</b> Se piensan distintas alternativas y se
-        analizan y eval&uacute;an para saber si son viables.</li>
-        <li><b>Elecci&oacute;n de una de las soluciones,</b> de acuerdo con los criterios que se
-        consideren prioritarios (tipo de material, tama&ntilde;o, forma, costes&hellip;).</li>
-        <li><b>Dise&ntilde;o.</b> Bocetos, croquis y esquemas o planos de la soluci&oacute;n elegida,
-        primero a mano alzada y luego con m&aacute;s detalle.</li>
-        <li><b>Preparaci&oacute;n y planificaci&oacute;n del trabajo:</b> materiales, t&eacute;cnicas
-        y herramientas; tareas, tiempos y secuencia.</li>
-        <li><b>Construcci&oacute;n del producto.</b> Fabricaci&oacute;n, montaje y acabados,
-        economizando materiales.</li>
-        <li><b>Comprobaci&oacute;n del resultado.</b> &iquest;Funciona? &iquest;Responde a su
-        finalidad? Se propone mejoras si hace falta.</li>
-        <li><b>Presentaci&oacute;n y evaluaci&oacute;n.</b> Se expone el trabajo y se somete a la
-        valoraci&oacute;n de personas externas al grupo.</li>
-        <li><b>Elaboraci&oacute;n de la memoria</b> del proyecto realizado.</li>
-      </ol>
+
+      <div class="narrador" id="nar-u1">
+        <div class="narrador-fig" id="nar-u1-fig"></div>
+        <div class="narrador-txt">
+          <h4>Antes de las diez fases&hellip;</h4>
+          <span class="narrador-quien">Narrado &middot; 37 s</span>
+          <div class="seg">
+            <button type="button" data-a="play">&#9654; Escuchar</button>
+            <button type="button" data-a="stop">&#9632; Parar</button>
+          </div>
+          <div class="narrador-barra"><i></i></div>
+          <p class="narrador-nota">Escucha la introducci&oacute;n y luego toca cada fase del esquema.</p>
+        </div>
+      </div>
+
+      <script>
+      (function(){
+        var C = document.getElementById('nar-u1');
+        if(!C) return;
+        var fig = document.getElementById('nar-u1-fig');
+        var barra = C.querySelector('.narrador-barra i');
+        var ENV = [0.0, 0.0, 0.0, 0.001, 1.0, 0.744, 0.962, 0.999, 0.754, 0.432, 1.0, 0.763, 0.417, 0.618, 0.226, 0.484, 0.731, 0.761, 0.758, 0.91, 0.471, 0.223, 0.062, 0.002, 0.001, 0.203, 0.857, 0.786, 0.548, 0.955, 0.745, 0.908, 0.751, 0.954, 0.68, 0.458, 0.159, 0.583, 0.395, 0.263, 0.275, 0.921, 0.345, 0.488, 0.285, 0.294, 0.381, 0.089, 0.374, 0.177, 0.447, 0.526, 0.246, 0.34, 0.348, 0.182, 0.423, 0.263, 0.241, 0.114, 0.006, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.84, 0.9, 0.477, 0.908, 0.184, 0.777, 0.388, 0.69, 1.0, 0.856, 0.994, 0.892, 0.298, 0.634, 0.708, 0.704, 1.0, 0.645, 0.425, 0.25, 0.418, 0.43, 0.338, 0.406, 0.298, 0.428, 0.287, 0.344, 0.286, 0.08, 0.013, 0.001, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.015, 0.77, 0.84, 0.581, 0.529, 0.596, 0.917, 0.907, 0.627, 0.131, 0.57, 0.853, 0.796, 0.625, 0.299, 0.702, 0.364, 0.221, 0.247, 0.127, 0.005, 0.001, 0.001, 0.001, 0.001, 0.107, 1.0, 0.728, 0.362, 1.0, 0.727, 0.118, 1.0, 0.82, 0.158, 0.854, 0.728, 0.25, 0.881, 0.922, 0.548, 0.261, 0.731, 1.0, 0.854, 0.175, 0.712, 0.354, 0.607, 0.162, 0.837, 0.527, 0.502, 0.475, 0.317, 0.431, 0.227, 0.054, 0.899, 0.579, 0.35, 0.756, 0.593, 0.537, 0.161, 0.643, 0.79, 0.513, 0.364, 0.414, 0.493, 0.333, 0.104, 0.591, 0.082, 0.871, 0.399, 0.732, 0.479, 0.503, 0.344, 0.632, 0.61, 1.0, 0.398, 0.426, 0.28, 0.542, 0.48, 0.454, 0.338, 0.68, 0.468, 0.901, 0.427, 0.162, 0.826, 0.505, 0.862, 0.852, 0.738, 0.364, 0.315, 0.513, 0.418, 0.562, 0.807, 0.647, 0.346, 0.461, 0.379, 0.29, 0.297, 0.272, 0.129, 0.019, 0.0, 0.0, 0.0, 0.0, 0.002, 0.931, 0.354, 0.963, 0.781, 0.767, 0.831, 0.905, 0.823, 0.456, 0.688, 0.701, 0.65, 0.824, 0.39, 1.0, 0.704, 0.592, 0.18, 0.431, 0.129, 0.55, 0.874, 0.29, 0.321, 0.193, 0.023, 0.001, 0.002, 0.307, 0.904, 0.477, 0.105, 0.582, 0.253, 0.788, 0.788, 0.766, 0.621, 0.621, 0.351, 0.545, 0.27, 0.831, 0.715, 0.567, 0.28, 0.295, 0.737, 0.6, 0.174, 0.677, 0.687, 0.514, 0.911, 0.372, 0.721, 0.431, 0.509, 0.478, 0.473, 0.282, 0.268, 0.139, 0.008, 0.0, 0.0, 0.094, 0.583, 0.615, 0.917, 0.715, 0.492, 0.746, 0.814, 0.61, 0.419, 0.31, 0.346, 0.442, 0.286, 0.034, 0.201, 0.269, 0.114, 0.064, 0.003, 0.0, 0.0, 0.0, 0.001, 0.002, 0.784, 0.973, 0.72, 1.0, 0.528, 0.081, 0.891, 0.915, 0.274, 0.291, 0.298, 0.137, 0.07, 0.001, 0.001, 0.171, 0.619, 1.0, 0.437, 1.0, 0.881, 0.518, 0.688, 0.057, 0.518, 0.575, 0.807, 0.393, 0.529, 0.718, 0.649, 0.958, 0.807, 0.824, 0.489, 0.2, 0.545, 0.432, 0.163, 0.335, 0.62, 0.938, 0.789, 0.466, 0.797, 0.74, 0.535, 0.775, 0.677, 0.489, 0.259, 0.184, 0.368, 0.289, 0.285, 0.217, 0.108, 0.006, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.022, 0.423, 0.73, 0.266, 0.678, 0.297, 0.933, 0.837, 0.681, 0.372, 0.162, 0.998, 0.765, 0.075, 0.409, 0.93, 0.305, 0.481, 0.297, 0.371, 0.605, 0.514, 0.184, 0.694, 0.605, 0.49, 0.382, 0.523, 0.36, 0.104, 0.003, 0.001, 0.0, 0.001, 0.177, 0.924, 0.109, 0.589, 0.644, 0.414, 0.283, 0.649, 0.754, 0.12, 0.893, 0.817, 0.928, 0.595, 0.281, 0.092, 0.003, 0.001, 0.003, 0.923, 0.729, 0.973, 0.801, 0.462, 0.215, 0.578, 0.775, 0.742, 0.366, 0.47, 0.699, 0.779, 0.866, 0.374, 0.299, 0.524, 0.797, 0.583, 0.368, 0.121, 0.447, 0.456, 0.393, 0.426, 0.374, 0.181, 0.277, 0.429, 0.177, 0.045, 0.001, 0.001, 0.0, 0.0, 0.0, 0.053, 0.268, 0.992, 1.0, 0.926, 0.311, 0.034, 1.0, 0.472, 0.4, 0.603, 0.331, 0.123, 0.645, 0.909, 0.69, 0.326, 0.531, 0.345, 0.617, 0.433, 0.849, 0.275, 0.053, 0.683, 0.964, 1.0, 0.312, 0.5, 0.377, 0.477, 0.391, 0.449, 0.956, 0.904, 0.65, 0.705, 0.803, 0.73, 0.096, 0.047, 0.568, 0.266, 0.805, 0.349, 0.066, 0.732, 1.0, 0.901, 0.381, 0.393, 0.961, 0.659, 0.47, 0.408, 0.289, 0.351, 0.187, 0.396, 0.265, 0.347, 0.242, 0.07, 0.005, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0];            /* una muestra cada 66 ms, de 0 a 1 */
+        var PASO = 0.066;
+        var audio = new Audio('audio/u1-intro.mp3');
+        audio.preload = 'none';
+        var raf = null, parpadeo = 0, tParp = 0;
+
+        /* El personaje se dibuja entero cada cuadro: la boca depende del
+           volumen de la voz en ese instante, y los ojos parpadean solos.   */
+        function dibuja(a, ojosCerrados){
+          var abre = 3 + a * 13;                 /* alto de la boca */
+          var ancho = 15 + a * 5;
+          var ceja = -a * 2.5;                   /* las cejas acompanan */
+          var ojo = ojosCerrados
+            ? '<path d="M35 46 h11 M64 46 h11" stroke="#202124" stroke-width="2.6" stroke-linecap="round"/>'
+            : '<circle cx="40.5" cy="46" r="4.2" fill="#202124"/>'
+            + '<circle cx="69.5" cy="46" r="4.2" fill="#202124"/>'
+            + '<circle cx="42" cy="44.6" r="1.5" fill="#fff"/>'
+            + '<circle cx="71" cy="44.6" r="1.5" fill="#fff"/>';
+          return '<svg viewBox="0 0 110 120" aria-hidden="true">'
+            /* cuerpo, en azul de la web */
+            + '<path d="M22 120 v-18 q0-16 16-20 h34 q16 4 16 20 v18 Z" fill="#4285f4"/>'
+            + '<path d="M46 82 h18 v12 h-18 Z" fill="#e8b48a"/>'
+            /* cabeza */
+            + '<rect x="26" y="20" width="58" height="66" rx="16" fill="#f3d3b3" stroke="#d3ae87" stroke-width="2"/>'
+            /* pelo, plano y geometrico */
+            + '<path d="M26 40 v-6 q0-14 29-14 q29 0 29 14 v6 q-8-9-29-9 q-21 0-29 9 Z" fill="#3c4043"/>'
+            /* cejas */
+            + '<path d="M33 ' + (37+ceja) + ' h13" stroke="#3c4043" stroke-width="3" stroke-linecap="round"/>'
+            + '<path d="M64 ' + (37+ceja) + ' h13" stroke="#3c4043" stroke-width="3" stroke-linecap="round"/>'
+            + ojo
+            /* colorete */
+            + '<circle cx="32" cy="58" r="5" fill="#ea4335" opacity=".17"/>'
+            + '<circle cx="78" cy="58" r="5" fill="#ea4335" opacity=".17"/>'
+            /* boca: se abre con la voz */
+            + '<ellipse cx="55" cy="66" rx="' + (ancho/2).toFixed(1) + '" ry="' + (abre/2).toFixed(1)
+            + '" fill="#8c3b2e"/>'
+            + (a > 0.35 ? '<ellipse cx="55" cy="' + (66 + abre/4).toFixed(1)
+                 + '" rx="' + (ancho/3).toFixed(1) + '" ry="' + (abre/5).toFixed(1) + '" fill="#c96a5a"/>' : '')
+            + '</svg>';
+        }
+
+        function cuadro(){
+          var t = audio.currentTime;
+          var i = Math.floor(t / PASO);
+          var a = (i >= 0 && i < ENV.length) ? ENV[i] : 0;
+          /* parpadeo cada 3-5 segundos */
+          if(t > tParp){ parpadeo = 6; tParp = t + 3 + Math.random()*2; }
+          if(parpadeo > 0) parpadeo--;
+          fig.innerHTML = dibuja(a, parpadeo > 3);
+          if(audio.duration) barra.style.width = (100*t/audio.duration).toFixed(1) + '%';
+          if(!audio.paused) raf = requestAnimationFrame(cuadro);
+        }
+
+        C.querySelector('[data-a="play"]').addEventListener('click', function(){
+          audio.currentTime = 0;
+          audio.play().then(function(){ cuadro(); }).catch(function(){
+            C.querySelector('.narrador-nota').innerHTML =
+              'No se ha podido reproducir el audio. Comprueba el sonido del equipo.';
+          });
+        });
+        C.querySelector('[data-a="stop"]').addEventListener('click', function(){
+          audio.pause(); audio.currentTime = 0;
+          if(raf) cancelAnimationFrame(raf);
+          fig.innerHTML = dibuja(0, false); barra.style.width = '0';
+        });
+        audio.addEventListener('ended', function(){
+          if(raf) cancelAnimationFrame(raf);
+          fig.innerHTML = dibuja(0, false); barra.style.width = '0';
+        });
+
+        fig.innerHTML = dibuja(0, false);
+      })();
+      </script>
+
+      <h4>Las diez fases &middot; toca cada una</h4>
+      <div class="escena" id="esc-fases">
+        <div class="escena-barra"><span class="escena-titulo">M&eacute;todo de proyectos</span></div>
+        <div class="lienzo">
+          <div class="stepper" id="stepper-fases"></div>
+        </div>
+        <div class="pie" id="pie-fases">Toca un n&uacute;mero para ver en qu&eacute; consiste esa fase.</div>
+      </div>
+      <script>
+      (function(){
+        var FASES = [
+          ['Detecci&oacute;n', '<b>Detecci&oacute;n de un problema o una necesidad.</b> &iquest;Con qu&eacute; problema nos encontramos o qu&eacute; propuesta de trabajo nos han hecho? &iquest;Con qu&eacute; condiciones?'],
+          ['Investigaci&oacute;n', '<b>B&uacute;squeda de informaci&oacute;n e investigaci&oacute;n.</b> Se recopila, analiza y selecciona la informaci&oacute;n relacionada con las distintas posibilidades de resolver el problema, y se analizan productos que satisfagan necesidades semejantes.'],
+          ['Soluciones posibles', '<b>B&uacute;squeda de soluciones posibles.</b> Se piensan distintas alternativas, y se analizan y eval&uacute;an para saber si son viables.'],
+          ['Elecci&oacute;n', '<b>Elecci&oacute;n de una de las soluciones,</b> de acuerdo con los criterios que se consideren prioritarios (tipo de material, tama&ntilde;o, forma, costes&hellip;).'],
+          ['Dise&ntilde;o', '<b>Dise&ntilde;o.</b> Bocetos, croquis y esquemas o planos de la soluci&oacute;n elegida, primero a mano alzada y luego con m&aacute;s detalle.'],
+          ['Planificaci&oacute;n', '<b>Preparaci&oacute;n y planificaci&oacute;n del trabajo:</b> materiales, t&eacute;cnicas y herramientas; tareas, tiempos y secuencia.'],
+          ['Construcci&oacute;n', '<b>Construcci&oacute;n del producto.</b> Fabricaci&oacute;n, montaje y acabados, economizando materiales.'],
+          ['Comprobaci&oacute;n', '<b>Comprobaci&oacute;n del resultado.</b> &iquest;Funciona? &iquest;Responde a su finalidad? Se proponen mejoras si hace falta.'],
+          ['Presentaci&oacute;n', '<b>Presentaci&oacute;n y evaluaci&oacute;n.</b> Se expone el trabajo y se somete a la valoraci&oacute;n de personas externas al grupo.'],
+          ['Memoria', '<b>Elaboraci&oacute;n de la memoria</b> del proyecto realizado.']
+        ];
+        var track = document.getElementById('stepper-fases');
+        var pie = document.getElementById('pie-fases');
+        FASES.forEach(function(f, i){
+          var b = document.createElement('button');
+          b.type = 'button'; b.className = 'fase-nodo'; b.setAttribute('aria-pressed', 'false');
+          b.innerHTML = '<span class="num">' + (i+1) + '</span><span class="etq">' + f[0] + '</span>';
+          b.addEventListener('click', function(){
+            track.querySelectorAll('.fase-nodo').forEach(function(x){ x.setAttribute('aria-pressed','false'); });
+            b.setAttribute('aria-pressed', 'true');
+            pie.innerHTML = f[1];
+          });
+          track.appendChild(b);
+        });
+      })();
+      </script>
       <div class="nota">
         <span class="n-tag">Ojo</span>
         Las diez fases est&aacute;n conectadas: en muchas ocasiones hay que <b>volver a una etapa
