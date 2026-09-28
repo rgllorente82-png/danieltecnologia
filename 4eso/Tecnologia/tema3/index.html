@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Tema 3 &middot; Electr&oacute;nica digital</title>
-<meta name="description" content="Tema 3 de Tecnolog&iacute;a de 4.&ordm; de ESO (Andaluc&iacute;a): se&ntilde;ales anal&oacute;gicas y digitales, el sistema binario y el &aacute;lgebra de Boole, con las competencias, criterios y saberes b&aacute;sicos de la Orden de 30 de mayo de 2023.">
+<meta name="description" content="Tema 3 de Tecnolog&iacute;a de 4.&ordm; de ESO (Andaluc&iacute;a): se&ntilde;ales anal&oacute;gicas y digitales, el sistema binario, el &aacute;lgebra de Boole y las puertas l&oacute;gicas, la simplificaci&oacute;n con el m&eacute;todo de Karnaugh y el dise&ntilde;o completo de un circuito l&oacute;gico, con las competencias, criterios y saberes b&aacute;sicos de la Orden de 30 de mayo de 2023.">
 <link rel="canonical" href="https://rgllorente82-png.github.io/danieltecnologia/4eso/Tecnologia/tema3/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -454,7 +454,105 @@ footer .wrap{padding-block:18px 26px}
   
     </section>
     <section class="bloque">
-      <div class="rotulo"><span class="num">05</span> Aprende con el ordenador</div>
+      <div class="rotulo"><span class="num">05</span> Simplificaci&oacute;n de funciones l&oacute;gicas: el m&eacute;todo de Karnaugh</div>
+
+      <p>Una funci&oacute;n l&oacute;gica se representa siempre con una &uacute;nica tabla de verdad,
+      aunque puede tener <b>distintas expresiones algebraicas</b>. Simplificarla hace el circuito
+      <b>m&aacute;s sencillo y econ&oacute;mico</b>: menos puertas, menos coste.</p>
+      <h4>C&oacute;mo se construye el mapa</h4>
+      <p>Se coloca cada variable en filas y columnas, siempre en el orden <b>00-01-11-10</b> (no
+      00-01-10-11): as&iacute; dos celdas vecinas &mdash;en fila o columna&mdash; se diferencian en
+      <b>una sola variable</b>.</p>
+      <table style="border-collapse:collapse;font-size:13px;margin:12px auto;text-align:center">
+        <tr><td></td><td style="padding:4px 8px"><b>b&#772;</b></td><td style="padding:4px 8px"><b>b</b></td></tr>
+        <tr><td style="padding:4px 8px"><b>a&#772;</b></td><td style="border:1px solid var(--line);padding:6px 10px">a&#772;b&#772;</td><td style="border:1px solid var(--line);padding:6px 10px">a&#772;b</td></tr>
+        <tr><td style="padding:4px 8px"><b>a</b></td><td style="border:1px solid var(--line);padding:6px 10px">ab&#772;</td><td style="border:1px solid var(--line);padding:6px 10px">ab</td></tr>
+      </table>
+      <p style="font-size:12.5px;color:var(--ink-soft);text-align:center">Mapa de 2 variables (a, b).
+      Para 3 variables se a&ntilde;aden columnas (bc en 00-01-11-10); para 4, tambi&eacute;n filas
+      (ab en 00-01-11-10): 16 celdas.</p>
+      <h4>Proceso, en cinco pasos</h4>
+      <ol class="pasos">
+        <li>De la tabla de verdad, se obtiene la expresi&oacute;n algebraica.</li>
+        <li>Se pone un <b>1</b> en la celda de cada t&eacute;rmino de esa expresi&oacute;n.</li>
+        <li>Las celdas donde no aparece el t&eacute;rmino se completan con <b>0</b>.</li>
+        <li>Se <b>agrupan todos los unos</b>, siguiendo estas reglas: los grupos deben tener un
+        n&uacute;mero de celdas que sea <b>potencia de 2</b> (1, 2, 4, 8&hellip;); solo se agrupa en
+        <b>horizontal o vertical</b> (nunca en diagonal); cada grupo debe ser <b>lo m&aacute;s grande
+        posible</b>; todos los unos deben estar en alg&uacute;n grupo (pueden compartirse entre
+        grupos); y los <b>bordes del mapa est&aacute;n conectados</b> entre s&iacute; (se puede
+        agrupar una orilla con la opuesta).</li>
+        <li>Por cada grupo, se quedan las variables que <b>no cambian</b> de valor en todas sus
+        celdas: si valen 1, se ponen tal cual; si valen 0, se ponen <b>negadas</b>. Las que
+        cambian de valor <b>desaparecen</b>.</li>
+      </ol>
+      <div class="ficha">
+        <div class="ficha-cab"><span>Cuatro ejemplos resueltos del libro</span>
+        <span class="chips"></span><span>agrupaciones &rarr; funci&oacute;n</span></div>
+        <div class="ficha-cuerpo">
+          <p>Cuatro mapas distintos, ya agrupados seg&uacute;n esas reglas, dan estas funciones
+          simplificadas: <b>S = a</b>, <b>S = c</b>, <b>S = b&#772;&middot;c&#772;</b>, y
+          <b>S = a + b&#772;</b>.</p>
+        </div>
+      </div>
+  
+    </section>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">06</span> Dise&ntilde;o de un circuito l&oacute;gico con puertas l&oacute;gicas</div>
+
+      <p>El proceso completo, desde el problema hasta el circuito montado, sigue siempre estos
+      pasos:</p>
+      <div class="escena" id="esc-diseno-logico">
+        <div class="escena-barra"><span class="escena-titulo">De la idea al circuito</span></div>
+        <div class="lienzo"><div class="stepper" id="stepper-diseno-logico"></div></div>
+        <div class="pie" id="pie-diseno-logico">Toca un paso para ver en qu&eacute; consiste.</div>
+      </div>
+      <script>
+      (function(){
+        var F = [
+          ['Planteamiento', 'Se describe el problema tecnol&oacute;gico que hay que resolver.'],
+          ['An&aacute;lisis', 'Se asigna una variable de entrada a cada sensor o interruptor, y una funci&oacute;n l&oacute;gica de salida a cada actuador.'],
+          ['Tabla de verdad', 'Se construye con un 1 en las combinaciones que activan el actuador, y 0 en el resto.'],
+          ['Expresi&oacute;n algebraica', 'Se obtiene a partir de la tabla de verdad.'],
+          ['Simplificaci&oacute;n', 'Por el mapa de Karnaugh, se obtiene la funci&oacute;n simplificada.'],
+          ['Diagrama l&oacute;gico', 'Se dibuja con las puertas que corresponden a la funci&oacute;n simplificada.'],
+          ['Montaje', 'Se monta el circuito con circuitos integrados reales.']
+        ];
+        var t = document.getElementById('stepper-diseno-logico'), p = document.getElementById('pie-diseno-logico');
+        F.forEach(function(f, i){
+          var b = document.createElement('button');
+          b.type = 'button'; b.className = 'fase-nodo'; b.setAttribute('aria-pressed', 'false');
+          b.innerHTML = '<span class="num">' + (i+1) + '</span><span class="etq">' + f[0] + '</span>';
+          b.addEventListener('click', function(){
+            t.querySelectorAll('.fase-nodo').forEach(function(x){ x.setAttribute('aria-pressed','false'); });
+            b.setAttribute('aria-pressed', 'true'); p.innerHTML = '<b>' + f[0] + '.</b> ' + f[1];
+          });
+          t.appendChild(b);
+        });
+      })();
+      </script>
+      <div class="ficha">
+        <div class="ficha-cab"><span>Ejemplo resuelto completo</span>
+        <span class="chips"></span><span>un sensor y un pulsador encienden un LED</span></div>
+        <div class="ficha-cuerpo">
+          <p><b>Variables:</b> a = sensor (0/1), b = pulsador (0/1), S = LED (0/1).</p>
+          <p><b>Tabla de verdad:</b> a=0,b=0&rarr;S=0; a=0,b=1&rarr;S=1; a=1,b=0&rarr;S=1; a=1,b=1&rarr;S=1.</p>
+          <p><b>Expresi&oacute;n:</b> S = a&#772;&middot;b + a&middot;b&#772; + a&middot;b.
+          <b>Simplificada con Karnaugh: S = a + b</b> (una sola puerta <b>OR</b>).</p>
+          <p><b>Montaje:</b> puerta OR (circuito integrado 74HC32) con sus dos entradas a los
+          interruptores, y la salida a una resistencia de 220&nbsp;&Omega; en serie con el LED.</p>
+        </div>
+      </div>
+      <p><b>ACTIVIDAD</b></p>
+      <ol>
+              <li>&iquest;Por qu&eacute; el circuito del ejemplo se puede montar con una &uacute;nica puerta OR, en vez de con las tres operaciones de la expresi&oacute;n sin simplificar (dos AND, una NOT y un OR)?
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>Porque el mapa de Karnaugh demuestra que <b>S = a + b</b> da exactamente la misma tabla de verdad que la expresi&oacute;n larga: la simplificaci&oacute;n no cambia el resultado, solo el n&uacute;mero de componentes que hacen falta para conseguirlo &mdash;una puerta en vez de cuatro.</p></div></details></li>
+
+      </ol>
+  
+    </section>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">07</span> Aprende con el ordenador</div>
 
       <p><b>6 pr&aacute;cticas</b> de simulaci&oacute;n y montaje: circuitos con puertas <b>OR</b>,
       <b>NOT</b> y <b>AND</b>, y tres circuitos de control reales &mdash;un <b>sistema de riego</b>,
@@ -462,7 +560,7 @@ footer .wrap{padding-block:18px 26px}
   
     </section>
     <section class="bloque">
-      <div class="rotulo"><span class="num">06</span> Resumen y autoevaluaci&oacute;n</div>
+      <div class="rotulo"><span class="num">08</span> Resumen y autoevaluaci&oacute;n</div>
 
       <ol>
         <li><b>Anal&oacute;gico</b> (continuo) frente a <b>digital</b> (finito; binario: solo 0 y 1).</li>
@@ -470,6 +568,10 @@ footer .wrap{padding-block:18px 26px}
         por la base elevada a un exponente.</li>
         <li><b>&Aacute;lgebra de Boole:</b> suma (OR), producto (AND), negaci&oacute;n (NOT), y las
         puertas l&oacute;gicas que las representan.</li>
+        <li><b>Mapa de Karnaugh:</b> agrupar los unos en potencias de 2, sin diagonales, lo m&aacute;s
+        grande posible, para simplificar la funci&oacute;n.</li>
+        <li><b>Dise&ntilde;o de un circuito:</b> planteamiento &rarr; variables &rarr; tabla de verdad
+        &rarr; expresi&oacute;n &rarr; simplificaci&oacute;n &rarr; diagrama &rarr; montaje.</li>
       </ol>
       <p><b>Autoevaluaci&oacute;n</b></p>
       <ol>
@@ -477,6 +579,8 @@ footer .wrap{padding-block:18px 26px}
           <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>50 = 32+16+2 = <b>110010<sub>2</sub></b>.</p></div></details></li>
         <li>&iquest;Qu&eacute; puerta l&oacute;gica da como salida un 1 solo cuando <b>las dos</b> entradas son 1?
           <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>La puerta <b>AND</b> (producto).</p></div></details></li>
+        <li>En un mapa de Karnaugh, &iquest;por qu&eacute; no se puede agrupar en diagonal?
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>Porque dos celdas en diagonal se diferencian en <b>m&aacute;s de una variable</b>, y el m&eacute;todo solo funciona agrupando celdas que difieren en <b>una sola</b> &mdash;eso es lo que permite que esa variable &laquo;desaparezca&raquo; al simplificar.</p></div></details></li>
         <li>&iquest;Qu&eacute; hace una puerta NOT con una entrada a 0?
           <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>Da como salida un <b>1</b> (invierte el valor).</p></div></details></li>
 
