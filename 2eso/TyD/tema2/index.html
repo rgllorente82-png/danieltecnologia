@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tema 2 &middot; Pensamiento computacional. Algoritmos y programaci&oacute;n</title>
+<meta name="description" content="Tema 2 de Tecnolog&iacute;a y Digitalizaci&oacute;n de 2.&ordm; de ESO (Andaluc&iacute;a): algoritmos, programas, Scratch, diagramas de flujo y los tres tipos de algoritmo, con las competencias, criterios y saberes b&aacute;sicos de la Orden de 30 de mayo de 2023.">
+<link rel="canonical" href="https://rgllorente82-png.github.io/danieltecnologia/2eso/TyD/tema2/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"Tema 2 &middot; Pensamiento computacional. Algoritmos y programaci&oacute;n","url":"https://rgllorente82-png.github.io/danieltecnologia/2eso/TyD/tema2/","inLanguage":"es",
+ "isAccessibleForFree":true,
+ "educationalLevel":"Educaci&oacute;n Secundaria Obligatoria","learningResourceType":"Unidad did&aacute;ctica interactiva"}
+</script>
+<style>
+:root{
+  --paper:#f8f9fa;--surface:#fff;--surface-2:#f1f3f4;--ink:#202124;--ink-soft:#5f6368;
+  --line:#dadce0;--line-soft:#e8eaed;--accent:#1a73e8;--accent-soft:#e8f0fe;
+  --goo-azul:#4285f4;--goo-rojo:#ea4335;--goo-amarillo:#fbbc04;--goo-verde:#34a853;
+  --grid:rgba(66,133,244,.09);
+  --f-b:"Roboto",-apple-system,"Segoe UI",Arial,sans-serif;
+  --f-m:"Roboto Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#202124;--surface:#292a2d;--surface-2:#35363a;--ink:#e8eaed;--ink-soft:#9aa0a6;
+  --line:#5f6368;--line-soft:#3c4043;--accent:#8ab4f8;--accent-soft:#1f3347;
+  --goo-azul:#8ab4f8;--goo-rojo:#f28b82;--goo-amarillo:#fdd663;--goo-verde:#81c995;
+  --grid:rgba(138,180,248,.09)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 var(--f-b);letter-spacing:.01em}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+header.top{background:var(--surface);border-bottom:2px solid var(--ink);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:24px 24px;position:sticky;top:0;z-index:50}
+header.top .wrap{padding-block:16px 0}
+.eyebrow{font-family:var(--f-m);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.eyebrow a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
+.eyebrow a:hover{border-bottom-color:currentColor}
+h1{font-weight:700;font-size:clamp(22px,4.4vw,30px);margin:6px 0 12px;letter-spacing:-.015em}
+nav.sesiones{display:flex;gap:8px;overflow-x:auto;padding-bottom:12px}
+nav.sesiones button{flex:none;background:var(--surface);color:var(--ink-soft);border:1.5px solid var(--line);
+  border-radius:2px;padding:7px 14px;font:400 13px var(--f-m);cursor:pointer;white-space:nowrap}
+nav.sesiones button[aria-selected="true"]{background:var(--goo-azul);border-color:var(--goo-azul);color:#fff}
+nav.sesiones button[disabled]{opacity:.45;cursor:default}
+main{padding-block:26px 70px}
+.ses-head{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;padding:20px;margin-bottom:26px}
+.ses-head h2{font-size:22px;margin:6px 0 8px;letter-spacing:-.01em}
+.ses-head p{margin:0 0 14px;color:var(--ink-soft)}
+.minutado{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.min{font-family:var(--f-m);font-size:11.5px;border:1px solid var(--line);border-radius:2px;padding:4px 9px;color:var(--ink-soft)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-family:var(--f-m);font-size:11px;border:1px solid var(--goo-azul);color:var(--goo-azul);border-radius:2px;padding:3px 8px}
+.chip.sab{border-color:var(--line);color:var(--ink-soft)}
+.bloque{margin-bottom:34px}
+.rotulo{display:flex;align-items:center;gap:10px;font-family:var(--f-m);font-size:12px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-soft);margin-bottom:12px}
+.rotulo .num{background:var(--goo-azul);color:#fff;border-radius:2px;min-width:26px;height:24px;
+  display:inline-grid;place-items:center;font-weight:500}
+.rotulo::after{content:"";flex:1;height:2px;background:var(--goo-azul);opacity:.3}
+.bloque:nth-of-type(4n+2) .rotulo .num,.bloque:nth-of-type(4n+2) .rotulo::after{background:var(--goo-rojo)}
+.bloque:nth-of-type(4n+3) .rotulo .num,.bloque:nth-of-type(4n+3) .rotulo::after{background:var(--goo-verde)}
+.bloque:nth-of-type(4n+4) .rotulo .num{background:var(--goo-amarillo);color:#202124}
+.bloque:nth-of-type(4n+4) .rotulo::after{background:var(--goo-amarillo)}
+h3{font-size:18px;margin:22px 0 6px;letter-spacing:-.01em}
+h4{font-size:15.5px;margin:16px 0 4px}
+.bloque ul,.bloque ol{padding-left:22px}
+.bloque li{margin-bottom:5px}
+.nota,.aviso,.def{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;padding:14px 16px;margin:16px 0}
+.nota{border-left:5px solid var(--goo-azul)}
+.aviso{border-left:5px solid var(--goo-amarillo)}
+.def{border-left:5px solid var(--goo-verde)}
+.n-tag{display:block;font-family:var(--f-m);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-soft);margin-bottom:5px}
+.nota .n-tag{color:var(--goo-azul)}
+.escena{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;margin:18px 0}
+.escena-barra{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
+  padding:12px 16px;border-bottom:1px solid var(--line)}
+.escena-titulo{font-family:var(--f-m);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.seg button{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;padding:6px 12px;
+  font:400 12px var(--f-m);color:var(--ink-soft);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--goo-azul);border-color:var(--goo-azul);color:#fff}
+.lienzo{padding:10px;background:var(--surface);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:20px 20px}
+.lienzo svg{width:100%;height:auto;display:block}
+.pie{padding:12px 16px;border-top:1px solid var(--line);font-size:14.5px;color:var(--ink-soft)}
+.ficha{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;margin:16px 0;overflow:hidden}
+.ficha-cab{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;
+  background:var(--ink);color:var(--surface);padding:12px 16px;font-family:var(--f-m);font-size:11.5px;
+  letter-spacing:.08em;text-transform:uppercase}
+.ficha-cab .chip{border-color:var(--surface);color:var(--surface)}
+.ficha-cuerpo{padding:16px}
+.resp{border:1px solid var(--line);border-radius:2px;margin:8px 0}
+.resp summary{cursor:pointer;padding:9px 13px;font-family:var(--f-m);font-size:11.5px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink-soft)}
+.resp summary::-webkit-details-marker{display:none}
+.resp-cuerpo{padding:0 13px 13px}
+.resp-cuerpo p:last-child{margin-bottom:0}
+
+.narra{display:flex;gap:14px;align-items:flex-start}
+.avatar-caja{flex:none;width:104px}
+.avatar-caja svg.avatar{width:104px;height:72px;display:block}
+.avatar.habla{animation:habla .34s ease-in-out infinite alternate}
+@keyframes habla{from{transform:translateY(0)}to{transform:translateY(-2.5px)}}
+.globo{flex:1;background:var(--surface-2);border:1.5px solid var(--line);border-radius:2px;padding:11px 13px;position:relative}
+.globo::before{content:"";position:absolute;left:-9px;top:20px;width:0;height:0;
+  border-top:8px solid transparent;border-bottom:8px solid transparent;border-right:9px solid var(--line)}
+.avatar-dice{margin-top:8px;font-family:var(--f-m);font-size:12px;color:var(--goo-azul);font-style:italic}
+.voz-no{margin:10px 0 0;font-size:13px;color:var(--ink-soft)}
+@media (max-width:520px){.narra{flex-direction:column;align-items:center}.globo::before{display:none}}
+
+.reto-piensa{background:var(--surface);border:1.5px solid var(--goo-amarillo);border-left-width:5px;
+  border-radius:2px;padding:14px 16px;margin:16px 0}
+.reto-piensa .n-tag{color:#9a7326}
+.reto-piensa p{margin:0}
+.resp.revela summary{color:var(--goo-azul);font-weight:500}
+.resp.revela[open] summary{color:var(--ink-soft)}
+.resp.revela table{margin:0}
+.secuencia li.oculto{color:transparent;background:var(--surface-2);border-radius:2px;user-select:none}
+.secuencia li.oculto *{visibility:hidden}
+.secuencia li{transition:color .25s ease,background .25s ease;padding:2px 4px}
+#btn-secuencia{background:var(--surface);border:1.5px solid var(--goo-azul);color:var(--goo-azul);
+  border-radius:2px;padding:7px 14px;font:500 12px var(--f-m);cursor:pointer}
+#btn-secuencia:disabled{border-color:var(--line);color:var(--ink-soft);cursor:default}
+
+/* series del grafico de coste: validadas con el script de dataviz
+   claro  #ea4335/#1a73e8  -> min CVD 27.0, vision normal 36.8
+   oscuro #ef5350/#4285f4  -> min CVD 24.6, vision normal 33.2 */
+:root{--c-analog:#ea4335;--c-digital:#1a73e8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--c-analog:#ef5350;--c-digital:#4285f4}}
+.ejeq{fill:var(--ink-soft);font-family:var(--f-m);font-size:11px}
+.etq{fill:var(--ink);font-family:var(--f-m);font-size:11px;font-weight:500}
+
+
+.foto{margin:16px 0;border:1.5px solid var(--line);border-radius:2px;background:var(--surface);overflow:hidden}
+.foto img{width:100%;height:auto;display:block}
+.foto figcaption{padding:11px 14px;font-size:14px;line-height:1.5;color:var(--ink);border-top:1px solid var(--line)}
+.credito{display:block;margin-top:7px;font-family:var(--f-m);font-size:10.5px;color:var(--ink-soft);letter-spacing:.02em}
+.credito a{color:var(--ink-soft)}
+.galeria-ri{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));margin:16px 0}
+.galeria-ri .foto{margin:0}
+.galeria-ri figcaption{font-size:13.5px}
+
+.video{margin:16px 0}
+.video-play{width:100%;display:flex;align-items:center;gap:16px;padding:22px 20px;cursor:pointer;
+  background:var(--surface);border:1.5px solid var(--line);border-radius:2px;text-align:left;
+  transition:border-color .18s ease}
+.video-play:hover{border-color:var(--goo-rojo)}
+.video-tri{flex:none;width:52px;height:38px;border-radius:6px;background:var(--goo-rojo);position:relative}
+.video-tri::after{content:"";position:absolute;left:20px;top:11px;border-left:14px solid #fff;
+  border-top:8px solid transparent;border-bottom:8px solid transparent}
+.video-txt b{display:block;font:500 16px var(--f-b);color:var(--ink);margin-bottom:3px}
+.video-txt span{font:400 12px var(--f-m);color:var(--ink-soft)}
+.video-nota{margin:9px 0 0;font-size:12.5px;color:var(--ink-soft);line-height:1.5}
+.video iframe{width:100%;aspect-ratio:16/9;height:auto;border:1.5px solid var(--line);border-radius:2px;display:block}
+
+/* lo que se copia en la libreta, frente a lo que es solo para entender */
+.copiar{background:var(--surface);border:2px solid var(--goo-azul);border-radius:2px;
+  padding:16px 18px;margin:18px 0;position:relative}
+.copiar::before{content:"PARA LA LIBRETA";position:absolute;top:-11px;left:14px;
+  background:var(--goo-azul);color:#fff;font-family:var(--f-m);font-size:10.5px;letter-spacing:.1em;
+  padding:3px 9px;border-radius:2px}
+.copiar > :first-child{margin-top:6px}
+.copiar > :last-child{margin-bottom:0}
+.copiar h4{font-size:15px;margin:10px 0 4px}
+.entender{border-left:4px solid var(--line);padding:2px 0 2px 16px;margin:18px 0;color:var(--ink-soft)}
+.entender .e-tag{display:block;font-family:var(--f-m);font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
+.entender b{color:var(--ink)}
+@media print{
+  .entender,.escena,.video,.narra,nav.sesiones{display:none}
+  .copiar{border-width:1.5px;break-inside:avoid}
+}
+.rotulo-svg{fill:var(--ink-soft);font-family:var(--f-m);font-size:11px;letter-spacing:.06em}
+.hito{fill:var(--surface);stroke:var(--goo-azul);stroke-width:2;cursor:pointer}
+.hito.on{fill:var(--goo-azul)}
+.eje-t{fill:none;stroke:var(--line);stroke-width:2}
+
+.necesidades{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:16px 0}
+.necesidad{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;padding:14px 10px;text-align:center;
+  transition:border-color .18s ease,transform .18s ease}
+.necesidad:hover{border-color:var(--goo-azul);transform:translateY(-2px)}
+.necesidad svg{width:34px;height:34px;display:block;margin:0 auto 8px;stroke:var(--goo-azul);fill:none;
+  stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.necesidad b{display:block;font-size:13.5px;margin-bottom:3px}
+.necesidad span{font-size:11.5px;color:var(--ink-soft);line-height:1.3}
+
+.stepper{display:flex;flex-wrap:wrap;gap:2px;padding:16px 6px;justify-content:center}
+.fase-nodo{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1 0 18%;min-width:82px;
+  background:none;border:none;cursor:pointer;padding:8px 4px;font-family:var(--f-b)}
+.fase-nodo .num{width:32px;height:32px;border-radius:50%;border:2px solid var(--line);display:grid;
+  place-items:center;font-family:var(--f-m);font-weight:700;font-size:13px;color:var(--ink-soft);
+  background:var(--surface);transition:all .18s ease}
+.fase-nodo[aria-pressed="true"] .num{background:var(--goo-azul);border-color:var(--goo-azul);color:#fff;
+  transform:scale(1.12)}
+.fase-nodo .etq{font-size:10.5px;text-align:center;color:var(--ink-soft);line-height:1.25;max-width:90px}
+.fase-nodo[aria-pressed="true"] .etq{color:var(--ink);font-weight:500}
+.fase-nodo:hover .num{border-color:var(--goo-azul)}
+
+footer{border-top:1px solid var(--line);color:var(--ink-soft);font-size:13.5px;margin-top:30px}
+footer .wrap{padding-block:18px 26px}
+@media (max-width:560px){body{font-size:15.5px}.lienzo{padding:4px}}
+
+/* ---- avatar narrador, plano y sincronizado con la voz ---- */
+.narrador{display:flex;gap:16px;align-items:flex-start;background:var(--surface);
+  border:1.5px solid var(--line);border-radius:2px;padding:16px;margin:18px 0}
+.narrador-fig{flex:none;width:110px}
+.narrador-fig svg{width:110px;height:120px;display:block}
+.narrador-txt{flex:1;min-width:0}
+.narrador-txt h4{margin:0 0 3px;font-size:15.5px}
+.narrador-quien{font-family:var(--f-m);font-size:11px;color:var(--ink-soft);display:block;margin-bottom:9px}
+.narrador-barra{height:4px;background:var(--surface-2);border-radius:2px;overflow:hidden;margin:11px 0 8px}
+.narrador-barra i{display:block;height:100%;width:0;background:var(--goo-azul);transition:width .1s linear}
+.narrador-nota{font-size:12.5px;color:var(--ink-soft);margin:8px 0 0;line-height:1.5}
+@media (max-width:520px){.narrador{flex-direction:column;align-items:center}
+  .narrador-txt{text-align:center}}
+
+.scratch-cats{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.scratch-cat{color:#fff;font-size:12.5px;font-weight:500;padding:6px 12px;border-radius:14px}
+.flujo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:16px 0}
+.flujo-item{background:var(--surface);border:1.5px solid var(--line);border-radius:2px;
+  padding:14px 10px;text-align:center}
+.flujo-item svg{width:100%;height:46px;display:block;margin-bottom:8px}
+.flujo-item svg *{fill:none;stroke:var(--goo-azul);stroke-width:2.2}
+.flujo-item b{display:block;font-size:13px;margin-bottom:3px}
+.flujo-item span{font-size:11.5px;color:var(--ink-soft);line-height:1.3}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="eyebrow"><a href="../../../">Inicio</a> &middot; <a href="../../">2.&ordm; ESO</a> &middot; <a href="../">TyD</a> &middot; Tema 2</div>
+    <h1>Pensamiento computacional. Algoritmos y programaci&oacute;n</h1>
+    <nav class="sesiones" id="nav" aria-label="Sesiones del tema"><button type="button" data-ses="1" aria-selected="true">S1 &middot; S1 &middot; Algoritmos y Scratch</button></nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div id="ses-1">
+    <div class="ses-head">
+      <div class="eyebrow">Sesi&oacute;n 1 &middot; 60 minutos</div>
+      <h2>Pensamiento computacional. Algoritmos y programaci&oacute;n</h2>
+      <p>Qu&eacute; es un algoritmo y un programa, el entorno Scratch, c&oacute;mo se representan gr&aacute;ficamente los algoritmos y sus tres tipos.</p>
+      <div class="minutado"><span class="min"><b>0-15</b> Algoritmos y Scratch</span><span class="min"><b>15-30</b> Diagramas de flujo</span><span class="min"><b>30-55</b> Tipos de algoritmos y actividades</span></div>
+      <div class="chips"><span class="chip">CE4 &middot; 5.1</span><span class="chip">CE4 &middot; 5.2</span><span class="chip">CE4 &middot; 5.3</span><span class="chip sab">C.1</span><span class="chip sab">C.2</span><span class="chip sab">C.3</span></div>
+    </div>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">01</span> Algoritmos y programas</div>
+
+      <p>El proceso de resoluci&oacute;n de problemas en un ordenador lleva a la creaci&oacute;n de
+      programas. Para crear un programa necesitamos descomponer los problemas complicados en
+      acciones sencillas, ya que los ordenadores solo pueden realizar tareas simples como sumar o
+      comparar.</p>
+      <div class="def">
+        <span class="n-tag">Definici&oacute;n</span>
+        Un <b>algoritmo</b> es una serie de instrucciones o pasos ordenados que nos llevan a
+        realizar una actividad o resolver un problema. Un <b>programa</b> es un algoritmo escrito
+        en un lenguaje que pueda ser entendido y procesado por el ordenador: un <b>lenguaje de
+        programaci&oacute;n</b>.
+      </div>
+      <div class="ficha">
+        <div class="ficha-cab"><span>Ejemplo del libro</span>
+          <span class="chips"><span class="chip">C.1</span></span><span>3 fases</span></div>
+        <div class="ficha-cuerpo">
+          <p>Queremos que un gato en la pantalla se mueva una distancia y luego diga &laquo;&iexcl;Hola!&raquo;.</p>
+          <p><b>Fase 1 &middot; algoritmo:</b> Inicio &rarr; Mover 30 pasos &rarr; Decir &laquo;&iexcl;Hola!&raquo; 2 segundos &rarr; Fin.</p>
+          <p><b>Fase 2 &middot; programa</b> (en Scratch): se ensamblan los bloques <code>mover 30 pasos</code>
+          y <code>decir &iexcl;Hola! durante 2 segundos</code>.</p>
+          <p><b>Fase 3 &middot; ejecuci&oacute;n:</b> el gato se mueve la distancia programada y dice
+          &laquo;&iexcl;Hola!&raquo; durante el tiempo indicado.</p>
+        </div>
+      </div>
+      <h4>Qu&eacute; es Scratch</h4>
+      <p><b>Scratch</b> es un entorno de programaci&oacute;n gr&aacute;fico y gratuito, desarrollado por
+      el MIT bajo la direcci&oacute;n del Dr. Mitchel Resnick. Su sintaxis se basa en <b>bloques
+      gr&aacute;ficos</b> que se ensamblan para crear programas &mdash;puedes usar la versi&oacute;n
+      instalada o la online en <a href="https://scratch.mit.edu" target="_blank" rel="noopener">scratch.mit.edu</a>.</p>
+      <p>Los bloques se agrupan por categor&iacute;as, cada una con su color:</p>
+      <div class="scratch-cats"><span class="scratch-cat" style="background:#4C97FF">Movimiento</span><span class="scratch-cat" style="background:#9966FF">Apariencia</span><span class="scratch-cat" style="background:#CF63CF">Sonido</span><span class="scratch-cat" style="background:#FFBF00">Eventos</span><span class="scratch-cat" style="background:#FFAB19">Control</span><span class="scratch-cat" style="background:#5CB1D6">Sensores</span><span class="scratch-cat" style="background:#59C059">Operadores</span><span class="scratch-cat" style="background:#FF8C1A">Variables</span><span class="scratch-cat" style="background:#FF6680">Mis bloques</span></div>
+      <div class="nota">
+        <span class="n-tag">&iquest;Sab&iacute;as que&hellip;?</span>
+        La extensi&oacute;n de los archivos de Scratch es <b>.sb3</b>; la de los fondos, <b>.svg</b>;
+        y la de los objetos, <b>.sprite3</b>.
+      </div>
+  
+    </section>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">02</span> Algoritmos: representaci&oacute;n gr&aacute;fica</div>
+
+      <p>Los algoritmos pueden representarse gr&aacute;ficamente mediante un <b>diagrama de flujo</b>
+      (u organigrama), que muestra con s&iacute;mbolos unidos por flechas la secuencia de acciones.</p>
+      <div class="flujo-grid">
+        <div class="flujo-item"><svg viewBox="0 0 100 48"><rect x="10" y="6" width="80" height="34" rx="17"/></svg><b>Terminal</b>
+          <span>Inicio o fin del algoritmo</span></div>
+        <div class="flujo-item"><svg viewBox="0 0 100 48"><rect x="12" y="6" width="76" height="34"/></svg><b>Proceso</b>
+          <span>Una acci&oacute;n del algoritmo</span></div>
+        <div class="flujo-item"><svg viewBox="0 0 100 48"><path d="M22 6h68l-12 34H10Z"/></svg><b>Entrada/salida</b>
+          <span>Datos que entran o resultados que salen</span></div>
+        <div class="flujo-item"><svg viewBox="0 0 100 48"><path d="M50 4 92 23 50 42 8 23Z"/></svg><b>Decisi&oacute;n</b>
+          <span>Elegir entre dos o m&aacute;s caminos</span></div>
+        <div class="flujo-item"><svg viewBox="0 0 100 48"><path d="M6 23h78"/><path d="M74 13l16 10-16 10"/></svg><b>L&iacute;nea de flujo</b>
+          <span>Marca el orden de las acciones</span></div>
+      </div>
+      <div class="nota">
+        <span class="n-tag">Ojo</span>
+        El diagrama de flujo facilita comprobar y depurar duplicidades y errores <b>antes</b> de
+        escribir ni una l&iacute;nea de c&oacute;digo.
+      </div>
+  
+    </section>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">03</span> Tipos de algoritmos</div>
+
+
+      <div class="narrador" id="nar-u2">
+        <div class="narrador-fig" id="nar-u2-fig"></div>
+        <div class="narrador-txt">
+          <h4>Tres formas de encadenar pasos</h4>
+          <span class="narrador-quien">Narrado &middot; 35 s</span>
+          <div class="seg">
+            <button type="button" data-a="play">&#9654; Escuchar</button>
+            <button type="button" data-a="stop">&#9632; Parar</button>
+          </div>
+          <div class="narrador-barra"><i></i></div>
+          <p class="narrador-nota">Escucha la explicaci&oacute;n y luego compara los tres tipos abajo.</p>
+        </div>
+      </div>
+
+      <script>
+      (function(){
+        var C = document.getElementById('nar-u2');
+        if(!C) return;
+        var fig = document.getElementById('nar-u2-fig');
+        var barra = C.querySelector('.narrador-barra i');
+        var ENV = [0.0, 0.0, 0.0, 0.421, 1.0, 1.0, 0.889, 0.674, 0.892, 0.731, 0.554, 1.0, 0.531, 0.722, 0.911, 0.843, 0.622, 0.188, 1.0, 0.824, 0.677, 0.477, 0.082, 0.647, 0.37, 0.066, 0.089, 0.889, 0.511, 0.576, 0.841, 0.386, 0.464, 0.305, 0.399, 0.301, 0.352, 0.238, 0.263, 0.079, 0.003, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.7, 0.968, 0.31, 0.948, 0.884, 0.766, 0.782, 0.422, 0.965, 0.368, 0.319, 0.322, 0.157, 0.105, 0.001, 0.0, 0.09, 0.991, 0.977, 0.724, 1.0, 0.322, 0.672, 0.785, 0.263, 0.931, 0.955, 0.429, 0.325, 0.315, 0.149, 0.005, 0.001, 0.002, 0.654, 0.414, 0.486, 0.971, 0.655, 0.342, 0.694, 0.796, 0.492, 0.537, 0.438, 0.378, 0.196, 0.276, 0.19, 0.05, 0.001, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.017, 0.974, 1.0, 0.694, 1.0, 0.912, 0.395, 0.526, 0.709, 0.458, 0.781, 0.887, 0.925, 0.365, 0.417, 0.297, 0.281, 0.64, 0.45, 0.236, 0.212, 0.871, 0.69, 0.601, 0.445, 0.686, 0.856, 0.669, 0.817, 0.716, 0.538, 1.0, 0.431, 0.234, 0.334, 0.044, 0.559, 0.451, 0.497, 0.329, 0.415, 0.427, 0.347, 0.866, 0.302, 0.008, 0.401, 1.0, 0.468, 0.538, 0.115, 0.414, 0.061, 0.373, 0.238, 0.525, 0.253, 0.093, 0.002, 0.0, 0.0, 0.0, 0.084, 0.805, 0.807, 0.487, 0.24, 0.336, 0.814, 0.637, 0.041, 0.132, 0.024, 0.0, 0.0, 0.001, 0.001, 0.0, 0.073, 0.311, 0.787, 0.135, 1.0, 0.966, 0.977, 1.0, 0.443, 0.658, 1.0, 0.941, 1.0, 0.834, 0.323, 0.864, 0.55, 0.463, 0.336, 0.274, 0.175, 0.057, 0.003, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.644, 0.956, 0.474, 0.488, 0.764, 0.392, 0.178, 0.491, 0.919, 0.612, 0.809, 0.388, 0.726, 0.662, 0.29, 0.476, 0.379, 0.435, 0.612, 0.727, 0.657, 0.342, 0.499, 0.309, 0.051, 0.825, 0.297, 0.229, 0.304, 0.125, 0.082, 0.002, 0.001, 0.092, 0.879, 0.942, 0.712, 0.961, 0.364, 0.475, 0.75, 0.25, 0.732, 0.968, 0.376, 0.556, 0.369, 0.361, 0.55, 0.357, 0.382, 0.304, 0.135, 0.092, 0.005, 0.001, 0.001, 0.601, 0.441, 0.378, 0.725, 0.514, 0.33, 0.539, 0.067, 0.542, 0.347, 0.088, 0.563, 0.425, 0.261, 0.124, 0.005, 0.006, 0.003, 0.001, 0.0, 0.091, 0.326, 0.942, 1.0, 0.707, 0.38, 0.583, 0.374, 0.544, 0.049, 0.977, 0.693, 0.307, 0.979, 0.899, 0.862, 0.44, 0.708, 0.713, 0.571, 0.287, 0.324, 0.795, 0.449, 0.269, 0.094, 0.001, 0.0, 0.0, 0.707, 0.521, 0.412, 0.751, 0.499, 0.362, 0.54, 0.83, 0.382, 0.017, 0.97, 0.689, 0.488, 0.284, 0.045, 0.001, 0.0, 0.309, 0.922, 0.472, 0.75, 0.212, 0.522, 0.393, 0.926, 0.531, 0.784, 0.852, 0.736, 1.0, 0.704, 0.427, 0.694, 0.41, 0.89, 0.661, 0.719, 0.278, 0.445, 0.731, 0.075, 0.314, 0.228, 0.122, 0.037, 0.001, 0.001, 0.01, 0.701, 0.403, 0.459, 0.96, 0.99, 0.339, 0.647, 0.231, 0.656, 0.447, 0.255, 0.297, 0.363, 0.27, 0.235, 0.051, 0.001, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.048, 1.0, 0.134, 0.623, 0.651, 0.792, 0.209, 0.331, 0.841, 0.357, 0.039, 0.765, 0.198, 0.533, 0.299, 0.42, 0.507, 0.465, 0.145, 0.57, 0.431, 0.396, 0.63, 0.514, 0.346, 0.947, 0.746, 0.513, 0.097, 0.816, 0.098, 0.585, 0.28, 0.571, 0.596, 0.58, 0.47, 0.386, 0.087, 0.685, 0.519, 0.225, 0.832, 0.658, 0.451, 0.403, 0.465, 0.395, 0.338, 0.339, 0.284, 0.181, 0.031, 0.001, 0.0, 0.0, 0.0, 0.0, 0.205, 0.953, 0.898, 0.362, 0.992, 0.378, 0.46, 0.942, 0.489, 0.35, 0.88, 0.337, 0.572, 0.656, 0.217, 0.481, 0.872, 0.536, 0.629, 0.599, 0.687, 0.58, 0.209, 0.381, 0.249, 0.18, 0.194, 0.331, 0.242, 0.053, 0.089, 0.062, 0.002, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0];            /* una muestra cada 66 ms, de 0 a 1 */
+        var PASO = 0.066;
+        var audio = new Audio('audio/u2-intro.mp3');
+        audio.preload = 'none';
+        var raf = null, parpadeo = 0, tParp = 0;
+
+        /* El personaje se dibuja entero cada cuadro: la boca depende del
+           volumen de la voz en ese instante, y los ojos parpadean solos.   */
+        function dibuja(a, ojosCerrados){
+          var abre = 3 + a * 13;                 /* alto de la boca */
+          var ancho = 15 + a * 5;
+          var ceja = -a * 2.5;                   /* las cejas acompanan */
+          var ojo = ojosCerrados
+            ? '<path d="M35 46 h11 M64 46 h11" stroke="#202124" stroke-width="2.6" stroke-linecap="round"/>'
+            : '<circle cx="40.5" cy="46" r="4.2" fill="#202124"/>'
+            + '<circle cx="69.5" cy="46" r="4.2" fill="#202124"/>'
+            + '<circle cx="42" cy="44.6" r="1.5" fill="#fff"/>'
+            + '<circle cx="71" cy="44.6" r="1.5" fill="#fff"/>';
+          return '<svg viewBox="0 0 110 120" aria-hidden="true">'
+            /* cuerpo, en azul de la web */
+            + '<path d="M22 120 v-18 q0-16 16-20 h34 q16 4 16 20 v18 Z" fill="#4285f4"/>'
+            + '<path d="M46 82 h18 v12 h-18 Z" fill="#e8b48a"/>'
+            /* cabeza */
+            + '<rect x="26" y="20" width="58" height="66" rx="16" fill="#f3d3b3" stroke="#d3ae87" stroke-width="2"/>'
+            /* pelo, plano y geometrico */
+            + '<path d="M26 40 v-6 q0-14 29-14 q29 0 29 14 v6 q-8-9-29-9 q-21 0-29 9 Z" fill="#3c4043"/>'
+            /* cejas */
+            + '<path d="M33 ' + (37+ceja) + ' h13" stroke="#3c4043" stroke-width="3" stroke-linecap="round"/>'
+            + '<path d="M64 ' + (37+ceja) + ' h13" stroke="#3c4043" stroke-width="3" stroke-linecap="round"/>'
+            + ojo
+            /* colorete */
+            + '<circle cx="32" cy="58" r="5" fill="#ea4335" opacity=".17"/>'
+            + '<circle cx="78" cy="58" r="5" fill="#ea4335" opacity=".17"/>'
+            /* boca: se abre con la voz */
+            + '<ellipse cx="55" cy="66" rx="' + (ancho/2).toFixed(1) + '" ry="' + (abre/2).toFixed(1)
+            + '" fill="#8c3b2e"/>'
+            + (a > 0.35 ? '<ellipse cx="55" cy="' + (66 + abre/4).toFixed(1)
+                 + '" rx="' + (ancho/3).toFixed(1) + '" ry="' + (abre/5).toFixed(1) + '" fill="#c96a5a"/>' : '')
+            + '</svg>';
+        }
+
+        function cuadro(){
+          var t = audio.currentTime;
+          var i = Math.floor(t / PASO);
+          var a = (i >= 0 && i < ENV.length) ? ENV[i] : 0;
+          /* parpadeo cada 3-5 segundos */
+          if(t > tParp){ parpadeo = 6; tParp = t + 3 + Math.random()*2; }
+          if(parpadeo > 0) parpadeo--;
+          fig.innerHTML = dibuja(a, parpadeo > 3);
+          if(audio.duration) barra.style.width = (100*t/audio.duration).toFixed(1) + '%';
+          if(!audio.paused) raf = requestAnimationFrame(cuadro);
+        }
+
+        C.querySelector('[data-a="play"]').addEventListener('click', function(){
+          audio.currentTime = 0;
+          audio.play().then(function(){ cuadro(); }).catch(function(){
+            C.querySelector('.narrador-nota').innerHTML =
+              'No se ha podido reproducir el audio. Comprueba el sonido del equipo.';
+          });
+        });
+        C.querySelector('[data-a="stop"]').addEventListener('click', function(){
+          audio.pause(); audio.currentTime = 0;
+          if(raf) cancelAnimationFrame(raf);
+          fig.innerHTML = dibuja(0, false); barra.style.width = '0';
+        });
+        audio.addEventListener('ended', function(){
+          if(raf) cancelAnimationFrame(raf);
+          fig.innerHTML = dibuja(0, false); barra.style.width = '0';
+        });
+
+        fig.innerHTML = dibuja(0, false);
+      })();
+      </script>
+
+      <div class="escena" id="esc-algo">
+        <div class="escena-barra">
+          <span class="escena-titulo">Compara los tres tipos de algoritmo</span>
+          <div class="seg" id="seg-algo">
+            <button type="button" data-t="sec" aria-pressed="true">Secuencial</button>
+            <button type="button" data-t="sel">Selectiva</button>
+            <button type="button" data-t="ite">Iterativa</button>
+          </div>
+        </div>
+        <div class="pie" id="pie-algo"></div>
+      </div>
+      <script>
+      (function(){
+        var T = {
+          sec: '<b>Estructura secuencial:</b> las instrucciones se cumplen una tras otra, en el '
+             + 'orden en que aparecen. Ejemplo del libro: para aprobar Tecnolog&iacute;a &mdash;'
+             + '1&ordm;) asistir a clase, 2&ordm;) atender las explicaciones, 3&ordm;) preguntar dudas, '
+             + '4&ordm;) estudiar en casa, 5&ordm;) hacer el examen. No tendr&iacute;a sentido '
+             + 'invertir el orden.',
+          sel: '<b>Estructura selectiva (condicional):</b> una serie de instrucciones se cumple SOLO '
+             + 'si se da una condici&oacute;n. Ejemplo: se calcula la nota media de examen y taller; '
+             + 'si es &ge;&nbsp;5, <i>aprobado</i>; si no, <i>suspenso</i>. En Scratch se programa con '
+             + '<code>si&hellip;entonces</code> / <code>si&hellip;entonces&hellip;si no</code>.',
+          ite: '<b>Estructura iterativa (bucle):</b> una serie de instrucciones se repite varias '
+             + 'veces, hasta que se cumple una condici&oacute;n. Ejemplo: repetir examen y/o trabajo '
+             + 'de taller hasta conseguir una media &ge;&nbsp;5. En Scratch: <code>repetir&hellip;</code>, '
+             + '<code>por siempre</code> y <code>repetir hasta que&hellip;</code>.'
+        };
+        var seg = document.getElementById('seg-algo');
+        var pie = document.getElementById('pie-algo');
+        function pon(t){
+          seg.querySelectorAll('button').forEach(function(b){
+            b.setAttribute('aria-pressed', b.dataset.t === t ? 'true' : 'false');
+          });
+          pie.innerHTML = T[t];
+        }
+        seg.addEventListener('click', function(e){
+          var b = e.target.closest('button[data-t]'); if(!b) return; pon(b.dataset.t);
+        });
+        pon('sec');
+      })();
+      </script>
+      <p><b>ACTIVIDADES DE REFUERZO</b> (del libro, p.&nbsp;66-67, selecci&oacute;n)</p>
+      <ol>
+              <li>&iquest;Qu&eacute; es un algoritmo?
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>Una serie de instrucciones o pasos ordenados que nos llevan a realizar una actividad o resolver un problema.</p></div></details></li>
+        <li>Uno de los algoritmos m&aacute;s famosos es el del cubo de Rubik. Busca qui&eacute;n lo invent&oacute; y qu&eacute; es el m&eacute;todo Fridrich.
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>El cubo lo invent&oacute; el h&uacute;ngaro <b>Ern&otilde; Rubik</b> en 1974. El <b>m&eacute;todo Fridrich (CFOP)</b> es un algoritmo de resoluci&oacute;n r&aacute;pida por capas, usado en competiciones de speedcubing.</p></div></details></li>
+        <li>El objeto Octopus tiene dos disfraces. Para simular su movimiento en la pantalla, &iquest;qu&eacute; opci&oacute;n es mejor: cambiar de disfraz una vez (A) o dentro de un bucle <code>por siempre</code> (B)? &iquest;Por qu&eacute;?
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>La <b>opci&oacute;n B</b>: sin el bucle, el disfraz cambia una sola vez y el pulpo se queda quieto; con <code>por siempre</code>, alterna sus dos disfraces sin parar, dando la sensaci&oacute;n real de movimiento.</p></div></details></li>
+        <li>&iquest;Qu&eacute; es un algoritmo de estructura secuencial? Pon dos ejemplos.
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>Aquel en el que las instrucciones se cumplen una tras otra, en el orden en que aparecen. Ejemplos: la rutina de la ma&ntilde;ana (levantarse, ducharse, vestirse, desayunar); una receta de cocina seguida paso a paso.</p></div></details></li>
+        <li>&iquest;Qu&eacute; es un algoritmo de estructura iterativa? Pon dos ejemplos.
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>Aquel en el que una serie de instrucciones se repite varias veces. Ejemplos: hacer series de abdominales (repetir 20 veces); pasar lista en clase (preguntar por cada alumno hasta terminar).</p></div></details></li>
+        <li>&iquest;Qu&eacute; es un algoritmo de estructura condicional? Pon dos ejemplos.
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>Aquel en el que unas instrucciones se cumplen solo si se da una condici&oacute;n. Ejemplos: &laquo;si llueve, cojo paraguas&raquo;; &laquo;si la luz est&aacute; en rojo, el coche se para&raquo;.</p></div></details></li>
+
+      </ol>
+      <div class="nota" id="curriculo-andalucia">
+        <span class="n-tag">Curr&iacute;culo de Andaluc&iacute;a</span>
+        Esta unidad trabaja la <b>competencia espec&iacute;fica 4</b>, los <b>criterios de
+        evaluaci&oacute;n 5.1, 5.2 y 5.3</b>, y los <b>saberes b&aacute;sicos C.1, C.2 y C.3</b>
+        (pensamiento computacional, algoritmos y programaci&oacute;n), seg&uacute;n la
+        <a href="https://www.juntadeandalucia.es/boja/2023/104/BOJA23-104-00281-9728-01_00284744.pdf"
+        target="_blank" rel="noopener">Orden de 30 de mayo de 2023 (BOJA n&uacute;m. 104)</a>, anexo&nbsp;II.
+      </div>
+      <div class="aviso">
+        <span class="n-tag">Pendiente de la pr&oacute;xima sesi&oacute;n</span>
+        Las 8 pr&aacute;cticas de <b>Aprende con el ordenador</b> con Scratch, el rinc&oacute;n del
+        programador, el resumen de la unidad y la autoevaluaci&oacute;n.
+      </div>
+  
+    </section>
+
+  </div>
+
+</main>
+
+<footer><div class="wrap">Tema 2 &middot; 2.&ordm; de ESO &middot; Tecnolog&iacute;a y Digitalizaci&oacute;n</div></footer>
+
+<script>
+(function(){
+  var nav = document.getElementById('nav');
+  if(!nav) return;
+  nav.addEventListener('click', function(e){
+    var b = e.target.closest('button[data-ses]');
+    if(!b || b.disabled) return;
+    nav.querySelectorAll('button').forEach(function(x){
+      x.setAttribute('aria-selected', x === b ? 'true' : 'false');
+    });
+    document.querySelectorAll('[id^="ses-"]').forEach(function(p){
+      p.hidden = (p.id !== 'ses-' + b.dataset.ses);
+    });
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+})();
+</script>
+
+</body>
+</html>
