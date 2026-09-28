@@ -305,12 +305,42 @@ footer .wrap{padding-block:18px 26px}
         <div class="flujo-item"><svg viewBox="0 0 100 48"><path d="M6 23h78"/><path d="M74 13l16 10-16 10"/></svg><b>L&iacute;nea de flujo</b>
           <span>Marca el orden de las acciones</span></div>
       </div>
+  
       <div class="nota">
         <span class="n-tag">Ojo</span>
         El diagrama de flujo facilita comprobar y depurar duplicidades y errores <b>antes</b> de
         escribir ni una l&iacute;nea de c&oacute;digo.
       </div>
-  
+      <div class="video" id="vid-u2-algoritmos" data-vid="l8N65NBZMww">
+        <button type="button" class="video-play" aria-label="Reproducir el v&iacute;deo: Representaci&oacute;n de algoritmos">
+          <span class="video-tri" aria-hidden="true"></span>
+          <span class="video-txt">
+            <b>Representaci&oacute;n de algoritmos</b>
+            <span>Canal Open Education Edinburgh</span>
+          </span>
+        </button>
+        <p class="video-nota">Citado en el libro de texto (p.&nbsp;60). El v&iacute;deo no se carga hasta que lo pulsas, y se reproduce sin
+          cookies de seguimiento. Si no se ve aqu&iacute;,
+          <a href="https://www.youtube.com/watch?v=l8N65NBZMww" target="_blank" rel="noopener">&aacute;brelo directamente aqu&iacute;</a>.
+          El v&iacute;deo es de su autor y no forma parte del material publicado en esta p&aacute;gina.</p>
+      </div>
+      <script>
+      (function(){
+        var c = document.getElementById('vid-u2-algoritmos');
+        if(!c) return;
+        var b = c.querySelector('.video-play');
+        b.addEventListener('click', function(){
+          var f = document.createElement('iframe');
+          f.src = 'https://www.youtube-nocookie.com/embed/' + c.dataset.vid + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+          f.title = b.querySelector('.video-txt b').textContent;
+          f.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture';
+          f.referrerPolicy = 'strict-origin-when-cross-origin';
+          f.allowFullscreen = true;
+          b.replaceWith(f);
+        });
+      })();
+      </script>
+
     </section>
     <section class="bloque">
       <div class="rotulo"><span class="num">03</span> Tipos de algoritmos</div>

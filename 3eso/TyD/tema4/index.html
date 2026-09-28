@@ -259,6 +259,66 @@ footer .wrap{padding-block:18px 26px}
       <p>Los <b>componentes activos</b> sirven para <b>amplificar</b> la corriente o <b>dirigirla</b>
       (que fluya en un solo sentido). La electr&oacute;nica se divide en <b>anal&oacute;gica</b>
       (variables continuas: intensidad, voltaje) y <b>digital</b> (valores discretos: ceros y unos).</p>
+      <div class="video" id="vid-t3u4-componentes" data-vid="4mkFR5bZxVY">
+        <button type="button" class="video-play" aria-label="Reproducir el v&iacute;deo: Componentes electr&oacute;nicos y sus funciones">
+          <span class="video-tri" aria-hidden="true"></span>
+          <span class="video-txt">
+            <b>Componentes electr&oacute;nicos y sus funciones</b>
+            <span>Canal Electr&oacute;nica AWV</span>
+          </span>
+        </button>
+        <p class="video-nota">Citado en el libro de texto (p.&nbsp;118). El v&iacute;deo no se carga hasta que lo pulsas, y se reproduce sin
+          cookies de seguimiento. Si no se ve aqu&iacute;,
+          <a href="https://www.youtube.com/watch?v=4mkFR5bZxVY" target="_blank" rel="noopener">&aacute;brelo directamente aqu&iacute;</a>.
+          El v&iacute;deo es de su autor y no forma parte del material publicado en esta p&aacute;gina.</p>
+      </div>
+      <script>
+      (function(){
+        var c = document.getElementById('vid-t3u4-componentes');
+        if(!c) return;
+        var b = c.querySelector('.video-play');
+        b.addEventListener('click', function(){
+          var f = document.createElement('iframe');
+          f.src = 'https://www.youtube-nocookie.com/embed/' + c.dataset.vid + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+          f.title = b.querySelector('.video-txt b').textContent;
+          f.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture';
+          f.referrerPolicy = 'strict-origin-when-cross-origin';
+          f.allowFullscreen = true;
+          b.replaceWith(f);
+        });
+      })();
+      </script>
+
+      <div class="video" id="vid-t3u4-transistor" data-vid="w14cvydBC8g">
+        <button type="button" class="video-play" aria-label="Reproducir el v&iacute;deo: Transistor, &iquest;c&oacute;mo funciona?">
+          <span class="video-tri" aria-hidden="true"></span>
+          <span class="video-txt">
+            <b>Transistor, &iquest;c&oacute;mo funciona?</b>
+            <span>Canal Lesics Espa&ntilde;ola</span>
+          </span>
+        </button>
+        <p class="video-nota">Citado en el libro de texto (p.&nbsp;123). El v&iacute;deo no se carga hasta que lo pulsas, y se reproduce sin
+          cookies de seguimiento. Si no se ve aqu&iacute;,
+          <a href="https://www.youtube.com/watch?v=w14cvydBC8g" target="_blank" rel="noopener">&aacute;brelo directamente aqu&iacute;</a>.
+          El v&iacute;deo es de su autor y no forma parte del material publicado en esta p&aacute;gina.</p>
+      </div>
+      <script>
+      (function(){
+        var c = document.getElementById('vid-t3u4-transistor');
+        if(!c) return;
+        var b = c.querySelector('.video-play');
+        b.addEventListener('click', function(){
+          var f = document.createElement('iframe');
+          f.src = 'https://www.youtube-nocookie.com/embed/' + c.dataset.vid + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+          f.title = b.querySelector('.video-txt b').textContent;
+          f.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture';
+          f.referrerPolicy = 'strict-origin-when-cross-origin';
+          f.allowFullscreen = true;
+          b.replaceWith(f);
+        });
+      })();
+      </script>
+
   
     </section>
     <section class="bloque">
