@@ -257,6 +257,11 @@ footer .wrap{padding-block:18px 26px}
 .flecha-cabeza{fill:var(--goo-azul);stroke:none}
 .flecha-rot{fill:var(--goo-azul);font-family:var(--f-m);font-size:10px;letter-spacing:.1em;font-weight:500}
 .rotulo-svg{fill:var(--ink-soft);font-family:var(--f-m);font-size:11px;letter-spacing:.06em}
+
+.lineas-tabla{display:flex;flex-direction:column;gap:12px;margin:16px 0}
+.linea-fila{display:flex;align-items:center;gap:14px}
+.linea-fila svg{flex:none;width:120px;height:16px}
+.linea-fila span{font-size:13.5px;color:var(--ink-soft)}
 </style>
 </head>
 <body>
@@ -264,7 +269,7 @@ footer .wrap{padding-block:18px 26px}
   <div class="wrap">
     <div class="eyebrow"><a href="../../../">Inicio</a> &middot; <a href="../../">3.&ordm; ESO</a> &middot; <a href="../">TyD</a> &middot; Tema 2</div>
     <h1>Comunicaci&oacute;n de ideas mediante la representaci&oacute;n gr&aacute;fica</h1>
-    <nav class="sesiones" id="nav" aria-label="Sesiones del tema"><button type="button" data-ses="1" aria-selected="true">S1 &middot; S1 &middot; Escalas y perspectiva</button><button type="button" data-ses="2">S2 &middot; S2 &middot; Repaso</button></nav>
+    <nav class="sesiones" id="nav" aria-label="Sesiones del tema"><button type="button" data-ses="1" aria-selected="true">S1 &middot; S1 &middot; Escalas y perspectiva</button><button type="button" data-ses="2">S2 &middot; S2 &middot; Acotaci&oacute;n y repaso</button></nav>
   </div>
 </header>
 
@@ -801,13 +806,93 @@ footer .wrap{padding-block:18px 26px}
   <div id="ses-2" hidden>
     <div class="ses-head">
       <div class="eyebrow">Sesi&oacute;n 2 &middot; 60 minutos</div>
-      <h2>Resumen y autoevaluaci&oacute;n</h2>
-      <p>Recapitulamos escalas, vistas y perspectiva, y comprobamos lo aprendido.</p>
-      <div class="minutado"><span class="min"><b>0-20</b> Resumen</span><span class="min"><b>20-50</b> Autoevaluaci&oacute;n</span></div>
-      <div class="chips"><span class="chip sab">B.1</span><span class="chip sab">B.2</span></div>
+      <h2>Acotaci&oacute;n, tipos de l&iacute;nea, resumen y autoevaluaci&oacute;n</h2>
+      <p>C&oacute;mo se acota una pieza, los tipos de l&iacute;nea normalizados, y el repaso de toda la unidad.</p>
+      <div class="minutado"><span class="min"><b>0-25</b> Acotaci&oacute;n y tipos de l&iacute;nea</span><span class="min"><b>25-35</b> Resumen</span><span class="min"><b>35-50</b> Autoevaluaci&oacute;n</span></div>
+      <div class="chips"><span class="chip">CE4 &middot; 4.1</span><span class="chip sab">B.1</span><span class="chip sab">B.2</span></div>
     </div>
     <section class="bloque">
-      <div class="rotulo"><span class="num">04</span> Resumen de la unidad</div>
+      <div class="rotulo"><span class="num">04</span> Acotaci&oacute;n. Tipos de l&iacute;neas</div>
+
+      <div class="def">
+        <span class="n-tag">Definici&oacute;n</span>
+        <b>Acotar</b> una pieza es indicar sobre el dibujo que la representa (vistas o perspectiva)
+        las medidas reales necesarias para definirla.
+      </div>
+      <h4>Elementos de la acotaci&oacute;n</h4>
+      <ul>
+        <li><b>L&iacute;neas de cota:</b> indican las medidas. Paralelas a la arista correspondiente,
+        en el exterior de la pieza, a <b>8&nbsp;mm</b> de la figura.</li>
+        <li><b>L&iacute;neas auxiliares de cota:</b> delimitan las l&iacute;neas de cota; perpendiculares
+        a ellas, sobresaliendo unos <b>2&nbsp;mm</b> a cada lado. Nunca se cruzan entre s&iacute;.</li>
+        <li><b>Terminales de cota</b> (flechas, puntos o trazos): si hay espacio, flechas de 15&deg;;
+        si no, trazos de 45&deg; o puntos.</li>
+        <li><b>N&uacute;meros:</b> la medida real en mil&iacute;metros (si es otra unidad, se indica),
+        centrados encima de la l&iacute;nea de cota.</li>
+        <li><b>Simbolog&iacute;a:</b> R (radio), &Oslash; (di&aacute;metro), &#9633; (secci&oacute;n
+        cuadrada).</li>
+      </ul>
+      <h4>Tipos de l&iacute;nea normalizados</h4>
+      <div class="lineas-tabla"><div class="linea-fila"><svg viewBox="0 0 120 16"><line x1="4" y1="8" x2="116" y2="8" stroke="var(--ink)" stroke-width="6" stroke-linecap="round"/></svg><span><b>L&iacute;nea gruesa</b> &middot; Contornos y aristas visibles</span></div><div class="linea-fila"><svg viewBox="0 0 120 16"><line x1="4" y1="8" x2="116" y2="8" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/></svg><span><b>L&iacute;nea fina</b> &middot; L&iacute;neas de cota y auxiliares de cota &middot; ejes &middot; rayado</span></div><div class="linea-fila"><svg viewBox="0 0 120 16"><line x1="4" y1="8" x2="116" y2="8" stroke="var(--ink)" stroke-width="2" stroke-dasharray="10,2,2" stroke-linecap="round"/></svg><span><b>L&iacute;nea fina de trazo y punto</b> &middot; Ejes de revoluci&oacute;n</span></div><div class="linea-fila"><svg viewBox="0 0 120 16"><line x1="4" y1="8" x2="116" y2="8" stroke="var(--ink)" stroke-width="2" stroke-dasharray="8,4" stroke-linecap="round"/></svg><span><b>L&iacute;nea fina de trazos</b> &middot; Contornos y aristas ocultas</span></div><div class="linea-fila"><svg viewBox="0 0 120 16"><path d="M4 8 Q14 2 24 8 T44 8 T64 8 T84 8 T104 8 T120 8" fill="none" stroke="var(--ink)" stroke-width="1.6" stroke-linecap="round"/></svg><span><b>L&iacute;nea fina a mano alzada</b> &middot; l&iacute;mites de vistas o cortes parciales interrumpidos</span></div></div>
+      <div class="nota">
+        <span class="n-tag">Tres normas de acotaci&oacute;n</span>
+        Se indican <b>todas</b> las cotas necesarias para reproducir la figura; las medidas <b>no se
+        repiten</b> (se ponen las m&iacute;nimas posibles); siempre se usa la <b>misma unidad</b>,
+        indicada en el cajet&iacute;n, y son siempre las <b>medidas reales</b> del objeto (no las del
+        dibujo, aunque est&eacute; a escala).
+      </div>
+      <div class="video" id="vid-t3u2-acotar" data-vid="v1vjHB60c8Q">
+        <button type="button" class="video-play" aria-label="Reproducir el v&iacute;deo: Normas b&aacute;sicas para aprender a acotar">
+          <span class="video-tri" aria-hidden="true"></span>
+          <span class="video-txt">
+            <b>Normas b&aacute;sicas para aprender a acotar</b>
+            <span>Canal Arturo Geometr&iacute;a</span>
+          </span>
+        </button>
+        <p class="video-nota">Citado en el libro de texto (p.&nbsp;54). El v&iacute;deo no se carga hasta que lo pulsas, y se reproduce sin
+          cookies de seguimiento. Si no se ve aqu&iacute;,
+          <a href="https://www.youtube.com/watch?v=v1vjHB60c8Q" target="_blank" rel="noopener">&aacute;brelo directamente aqu&iacute;</a>.
+          El v&iacute;deo es de su autor y no forma parte del material publicado en esta p&aacute;gina.</p>
+      </div>
+      <script>
+      (function(){
+        var c = document.getElementById('vid-t3u2-acotar');
+        if(!c) return;
+        var b = c.querySelector('.video-play');
+        b.addEventListener('click', function(){
+          var f = document.createElement('iframe');
+          f.src = 'https://www.youtube-nocookie.com/embed/' + c.dataset.vid + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+          f.title = b.querySelector('.video-txt b').textContent;
+          f.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture';
+          f.referrerPolicy = 'strict-origin-when-cross-origin';
+          f.allowFullscreen = true;
+          b.replaceWith(f);
+        });
+      })();
+      </script>
+
+      <p><b>ACTIVIDADES</b></p>
+      <ol>
+              <li>&iquest;Por qu&eacute; las l&iacute;neas de cota nunca se dibujan sobre las propias aristas o ejes de la pieza?
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>Porque los ejes y las aristas <b>no deben utilizarse como l&iacute;neas de cota</b>: se confundir&iacute;a el contorno real de la pieza con las medidas, y adem&aacute;s las l&iacute;neas de cota deben ir siempre <b>fuera</b> de la figura, a 8&nbsp;mm de ella.</p></div></details></li>
+        <li>Una pieza mide 60&nbsp;mm de largo. Si la dibujas a escala 1:2 (el dibujo mide 30&nbsp;mm sobre el papel), &iquest;qu&eacute; n&uacute;mero escribes en la cota?
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p><b>60</b>, la medida real de la pieza &mdash;nunca la medida del dibujo. La escala afecta a lo que se dibuja, no a lo que se acota.</p></div></details></li>
+        <li>Dibuja una pieza cil&iacute;ndrica de 40&nbsp;mm de largo y 16&nbsp;mm de di&aacute;metro, y ac&oacute;tala con el s&iacute;mbolo correcto para el di&aacute;metro.
+          <details class="resp"><summary>Ver respuesta</summary><div class="resp-cuerpo"><p>Dos cotas: <b>40</b> para la longitud, y <b>&Oslash;16</b> para el di&aacute;metro (el s&iacute;mbolo &Oslash; solo hace falta cuando no se aprecia que es una circunferencia).</p></div></details></li>
+
+      </ol>
+      <div class="nota" id="curriculo-andalucia">
+        <span class="n-tag">Curr&iacute;culo de Andaluc&iacute;a</span>
+        Esta unidad trabaja la <b>competencia espec&iacute;fica 4</b>, el <b>criterio de evaluaci&oacute;n
+        4.1</b>, y los <b>saberes b&aacute;sicos B.1 y B.2</b> (t&eacute;cnicas de representaci&oacute;n
+        gr&aacute;fica), seg&uacute;n la
+        <a href="https://www.juntadeandalucia.es/boja/2023/104/BOJA23-104-00281-9728-01_00284744.pdf"
+        target="_blank" rel="noopener">Orden de 30 de mayo de 2023 (BOJA n&uacute;m. 104)</a>, anexo&nbsp;II.
+      </div>
+  
+    </section>
+    <section class="bloque">
+      <div class="rotulo"><span class="num">05</span> Resumen de la unidad</div>
 
       <ol>
         <li><b>Normalizaci&oacute;n</b> (UNE/ISO) para que cualquiera interprete un plano igual.</li>
@@ -816,11 +901,13 @@ footer .wrap{padding-block:18px 26px}
         europeo (planta debajo del alzado).</li>
         <li><b>Dos perspectivas:</b> isom&eacute;trica (ejes a 120&deg;, sin reducci&oacute;n en la
         pr&aacute;ctica) y caballera (X y Z a 90&deg; sin deformar; Y a 135&deg; con reducci&oacute;n).</li>
+        <li><b>Acotaci&oacute;n:</b> l&iacute;neas de cota, auxiliares, terminales y n&uacute;meros,
+        con la medida real de la pieza; cinco tipos de l&iacute;nea normalizados.</li>
       </ol>
   
     </section>
     <section class="bloque">
-      <div class="rotulo"><span class="num">05</span> Autoevaluaci&oacute;n</div>
+      <div class="rotulo"><span class="num">06</span> Autoevaluaci&oacute;n</div>
 
       <ol>
               <li>Un plano de una ciudad est&aacute; a escala 1:50.000. &iquest;Es de reducci&oacute;n o de ampliaci&oacute;n? &iquest;Por qu&eacute;?
